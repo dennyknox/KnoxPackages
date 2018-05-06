@@ -1,0 +1,511 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20211,        501]
+NotebookOptionsPosition[     16017,        404]
+NotebookOutlinePosition[     18395,        464]
+CellTagsIndexPosition[     18310,        459]
+WindowTitle->ManipulateTangentVector
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "0dbf166f-7835-4395-b40b-c8f8ca7ed74d"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"2498c8e6-0daf-44e3-8c5d-6667a861cdce"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ManipulateTangentVector3D\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/ManipulateTangentVector3D"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "41f06881-5a64-487d-b0c2-e9f8f30fb18e"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"e11db62a-d238-4c13-9e32-d3e1ba187163"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"KnoxPackages/ref/ManipulateTangentVector\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/ManipulateTangentVector"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+ManipulateTangentVector.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$114576], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/ManipulateTangentVector", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "f3a3a83a-06dc-43dc-afd6-59847b893f8f"]
+    }], "AnchorBar",ExpressionUUID->"5c3f49ab-1e19-44a4-9bb1-b3adc22b31ad"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"9d51b684-e54f-47af-8e00-fc92290a9a85"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["ManipulateTangentVector", "ObjectName",ExpressionUUID->
+  "b72311d7-5d02-4e48-b513-9e1de2546c8c"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"571ee943-41d1-4fbf-ac1a-afe71468f0f8"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "f4725f49-563a-4ca5-8dd8-a3e778917b03"]
+}], "ObjectNameGrid",ExpressionUUID->"999095c3-af4b-4773-959c-541bd51a4da6"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"ManipulateTangentVector", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          SubscriptBox["f", "x"], ",", 
+          SubscriptBox["f", "y"]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", 
+          SubscriptBox["t", "min"], ",", 
+          SubscriptBox["t", "max"]}], "}"}], ",", "pt"}], "]"}]], 
+      "InlineFormula",ExpressionUUID->"01f59969-976e-4134-9b0b-95185da98bb6"],
+     " \[LineSeparator]returns an animation of the secant vectors approaching \
+the tangent vector to the curve at the point pt.  "
+    }],ExpressionUUID->"b8ffbd0f-44ed-4d34-bdd8-fe794fac4d45"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"f0b5189f-d737-48e2-8762-b8e1c45da684"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"06696d15-14dc-4cbe-b99b-d17810c9cc3b"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "7e5511f5-035a-437b-8f5a-c72e1f73e43e"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->378170029,ExpressionUUID->"e70fde4d-6357-4b41-b776-b64ef5ea89c1"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "664e5246-84fd-4d10-b76a-7beec8cc401b"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->10148325,ExpressionUUID->"fa2adb2a-6821-4f36-96fc-493523c77398"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Manipulations`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ManipulateTangentVector", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Cos", "[", "t", "]"}], ",", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"2", "t"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"2", "Pi"}]}], "}"}], ",", 
+   RowBox[{"\[Pi]", "/", "6"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->294499455,ExpressionUUID->"d36a6a92-4866-4140-bf7f-587ba0745b4d"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{KnoxPackages`Manipulations`Private`h$$ = 
+    0.5235987755982988, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[KnoxPackages`Manipulations`Private`h$$], 0.5235987755982988, 
+       "Parameter"}, 0.5235987755982988, 0.0001}}, Typeset`size$$ = {
+    513., {27., 33.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, 
+    KnoxPackages`Manipulations`Private`h$272630$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {
+       KnoxPackages`Manipulations`Private`h$$ = 0.5235987755982988}, 
+      "ControllerVariables" :> {
+        Hold[
+        KnoxPackages`Manipulations`Private`h$$, 
+         KnoxPackages`Manipulations`Private`h$272630$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Show[KnoxPackages`Manipulations`Private`curve$272598, 
+        Graphics[
+         Flatten[{KnoxPackages`Manipulations`Private`ptstyle$272598, 
+           Point[
+            KnoxPackages`Manipulations`Private`f$272598[
+            KnoxPackages`Manipulations`Private`npt$272598 + 
+             KnoxPackages`Manipulations`Private`h$$]]}]], 
+        KnoxPackages`Calculus`PlotVector[
+         Evaluate[{
+          KnoxPackages`Calculus`point$272598, 
+           KnoxPackages`Calculus`point$272598 + (
+             KnoxPackages`Manipulations`Private`f$272598[
+              KnoxPackages`Manipulations`Private`npt$272598 + 
+               KnoxPackages`Manipulations`Private`h$$] - 
+             KnoxPackages`Calculus`point$272598)/
+            KnoxPackages`Manipulations`Private`h$$}], 
+         Evaluate[
+          Apply[Sequence, 
+           FilterRules[{}, 
+            Options[KnoxPackages`Calculus`PlotVector]]]], VectorStyle -> 
+         Red]], 
+      "Specifications" :> {{{
+         KnoxPackages`Manipulations`Private`h$$, 0.5235987755982988, 
+          "Parameter"}, 0.5235987755982988, 0.0001}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{562., {73., 79.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ ImageSize->{304, 310},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->48789809,ExpressionUUID->"c968bd89-2d66-4871-87c3-ff8db9455502"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Show","gcomb",
+   "\"Could not combine the graphics objects in \
+\\!\\(\\*RowBox[{\\\"Show\\\", \\\"[\\\", \
+RowBox[{\\\"KnoxPackages`Manipulations`Private`curve$272598\\\", \\\",\\\", \
+GraphicsBox[List[KnoxPackages`Manipulations`Private`ptstyle$272598, \
+PointBox[KnoxPackages`Manipulations`Private`f$272598[Plus[0.5235987755982988`,\
+ KnoxPackages`Manipulations`Private`npt$272598]]]]], \\\",\\\", \
+GraphicsBox[List[List[GrayLevel[0], RGBColor[1, 0, 0], Arrowheads[Medium], \
+ArrowBox[List[List[0, 0], List[point$272598, Plus[Skeleton[2]]]]]]], \
+List[Rule[Axes, True], Rule[PlotRange, All]]]}], \\\"]\\\"}]\\).\"",2,1,13,
+   29374943063998946324,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"",
+ CellID->1604771,ExpressionUUID->"50867932-1deb-4133-bfe3-cba0adffe5da"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Manipulations`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ManipulateTangentVector", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Cos", "[", "t", "]"}], ",", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"2", "t"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"2", "Pi"}]}], "}"}], ",", 
+   RowBox[{"\[Pi]", "/", "2"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->516136620,ExpressionUUID->"759c6300-e1a7-48e0-896a-dd1cecf185bb"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{KnoxPackages`Manipulations`Private`h$$ = 
+    1.2566370614359172`, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[KnoxPackages`Manipulations`Private`h$$], 1.2566370614359172`, 
+       "Parameter"}, 1.2566370614359172`, 0.0001}}, Typeset`size$$ = {
+    513., {27., 33.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, 
+    KnoxPackages`Manipulations`Private`h$272811$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {
+       KnoxPackages`Manipulations`Private`h$$ = 1.2566370614359172`}, 
+      "ControllerVariables" :> {
+        Hold[
+        KnoxPackages`Manipulations`Private`h$$, 
+         KnoxPackages`Manipulations`Private`h$272811$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Show[KnoxPackages`Manipulations`Private`curve$272779, 
+        Graphics[
+         Flatten[{KnoxPackages`Manipulations`Private`ptstyle$272779, 
+           Point[
+            KnoxPackages`Manipulations`Private`f$272779[
+            KnoxPackages`Manipulations`Private`npt$272779 + 
+             KnoxPackages`Manipulations`Private`h$$]]}]], 
+        KnoxPackages`Calculus`PlotVector[
+         Evaluate[{
+          KnoxPackages`Calculus`point$272779, 
+           KnoxPackages`Calculus`point$272779 + (
+             KnoxPackages`Manipulations`Private`f$272779[
+              KnoxPackages`Manipulations`Private`npt$272779 + 
+               KnoxPackages`Manipulations`Private`h$$] - 
+             KnoxPackages`Calculus`point$272779)/
+            KnoxPackages`Manipulations`Private`h$$}], 
+         Evaluate[
+          Apply[Sequence, 
+           FilterRules[{}, 
+            Options[KnoxPackages`Calculus`PlotVector]]]], VectorStyle -> 
+         Red]], "Specifications" :> {{{
+         KnoxPackages`Manipulations`Private`h$$, 1.2566370614359172`, 
+          "Parameter"}, 1.2566370614359172`, 0.0001}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{562., {73., 79.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ ImageSize->{304, 310},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->381847075,ExpressionUUID->"9a5de3ea-9a3d-4a05-ad40-e4ba4a238908"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Show","gcomb",
+   "\"Could not combine the graphics objects in \
+\\!\\(\\*RowBox[{\\\"Show\\\", \\\"[\\\", \
+RowBox[{\\\"KnoxPackages`Manipulations`Private`curve$272779\\\", \\\",\\\", \
+GraphicsBox[List[KnoxPackages`Manipulations`Private`ptstyle$272779, \
+PointBox[KnoxPackages`Manipulations`Private`f$272779[Plus[1.2566370614359172`,\
+ KnoxPackages`Manipulations`Private`npt$272779]]]]], \\\",\\\", \
+GraphicsBox[List[List[GrayLevel[0], RGBColor[1, 0, 0], Arrowheads[Medium], \
+ArrowBox[List[List[0, 0], List[point$272779, Plus[Skeleton[2]]]]]]], \
+List[Rule[Axes, True], Rule[PlotRange, All]]]}], \\\"]\\\"}]\\).\"",2,1,14,
+   29374943063998946324,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"",
+ CellID->473516408,ExpressionUUID->"aeaca0e1-1af7-4ef7-8760-3537a662ecef"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"4f0130c9-8310-4bff-82fb-3c89c12ef9ff"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"e31a5362-d127-4a75-b2c5-6f5de26f698a"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"6ab7f1b4-8b99-47b8-8549-79911de1c257"],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["ManipulateTangentVector3D"]],
+   "paclet:KnoxPackages/ref/ManipulateTangentVector3D"},
+  "RefLink",
+  BaseStyle->{
+   "InlineFormula", FontFamily -> 
+    "Verdana"}]], \
+"InlineFormula",ExpressionUUID->"181d2faa-7265-4c68-862e-f80d7742c7b0"]], \
+"SeeAlso",
+ CellID->929782353,ExpressionUUID->"540dbba7-0184-45a2-baca-c1566b398eb2"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"5a888311-cb28-4812-9ef3-33bc4368bd98"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ManipulateTangentVector",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 46, 37.9154889}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "ManipulateTangentVector[{fx, fy}, {t, tmin, tmax}, pt] returns an \
+animation of the secant vectors approaching the tangent vector to the curve \
+at the point pt. ", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "ManipulateTangentVector", "titlemodifier" -> "", "windowtitle" -> 
+    "ManipulateTangentVector", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/ManipulateTangentVector", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5545, 143, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"e70fde4d-6357-4b41-b776-b64ef5ea89c1",
+   CellTags->"PrimaryExamplesSection",
+   CellID->378170029]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 18112, 452}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[595, 21, 3558, 80, 55, "AnchorBarGrid",ExpressionUUID->"9d51b684-e54f-47af-8e00-fc92290a9a85",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4178, 105, 408, 9, 52, "ObjectNameGrid",ExpressionUUID->"999095c3-af4b-4773-959c-541bd51a4da6"],
+Cell[4589, 116, 919, 22, 112, "Usage",ExpressionUUID->"f0b5189f-d737-48e2-8762-b8e1c45da684",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5545, 143, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"e70fde4d-6357-4b41-b776-b64ef5ea89c1",
+ CellTags->"PrimaryExamplesSection",
+ CellID->378170029],
+Cell[CellGroupData[{
+Cell[6005, 158, 307, 7, 29, "ExampleSection",ExpressionUUID->"fa2adb2a-6821-4f36-96fc-493523c77398",
+ CellID->10148325],
+Cell[CellGroupData[{
+Cell[6337, 169, 551, 15, 43, "Input",ExpressionUUID->"d36a6a92-4866-4140-bf7f-587ba0745b4d",
+ CellID->294499455],
+Cell[6891, 186, 2990, 65, 175, "Output",ExpressionUUID->"c968bd89-2d66-4871-87c3-ff8db9455502",
+ CellID->48789809],
+Cell[9884, 253, 822, 15, 83, "Message",ExpressionUUID->"50867932-1deb-4133-bfe3-cba0adffe5da",
+ CellID->1604771]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10743, 273, 551, 15, 43, "Input",ExpressionUUID->"759c6300-e1a7-48e0-896a-dd1cecf185bb",
+ CellID->516136620],
+Cell[11297, 290, 2990, 64, 175, "Output",ExpressionUUID->"9a5de3ea-9a3d-4a05-ad40-e4ba4a238908",
+ CellID->381847075],
+Cell[14290, 356, 824, 15, 83, "Message",ExpressionUUID->"aeaca0e1-1af7-4ef7-8760-3537a662ecef",
+ CellID->473516408]
+}, Open  ]]
+}, Open  ]],
+Cell[15141, 375, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"4f0130c9-8310-4bff-82fb-3c89c12ef9ff"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15264, 380, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"6ab7f1b4-8b99-47b8-8549-79911de1c257",
+ CellID->1255426704],
+Cell[15527, 389, 393, 10, 70, "SeeAlso",ExpressionUUID->"540dbba7-0184-45a2-baca-c1566b398eb2",
+ CellID->929782353]
+}, Open  ]],
+Cell[15935, 402, 78, 0, 70, "FooterCell",ExpressionUUID->"5a888311-cb28-4812-9ef3-33bc4368bd98"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

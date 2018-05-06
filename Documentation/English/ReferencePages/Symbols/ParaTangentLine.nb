@@ -1,0 +1,1404 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     47874,       1394]
+NotebookOptionsPosition[     37382,       1166]
+NotebookOutlinePosition[     39822,       1227]
+CellTagsIndexPosition[     39736,       1222]
+WindowTitle->ParaTangentLine
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "c7f19df7-7ed1-4ce9-bfcd-d48f67bebaa1"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"3aa70b8c-a371-4733-b489-103b07cd6712"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ParaPlotTangentLine\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/ParaPlotTangentLine"], "\<\"TangentLine\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/TangentLine"], "\<\"PolarTangentLine\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/ref/PolarTangentLine"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "136e5fbe-4bb6-4ea4-8a56-e566d66a1a9f"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"c0d02902-14f8-4b20-bd69-411923574a67"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "37fadfec-7f3d-4ec1-9f55-800deb12c66c"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"c3d98a2b-4a2d-489b-9913-8c6bf6c4582c"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/ParaTangentLine\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/ParaTangentLine"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+ParaTangentLine.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$135368], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/ParaTangentLine", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "8db8e0cf-71bb-44c2-a073-35dbdb463142"]
+    }], "AnchorBar",ExpressionUUID->"80472af2-4bda-427c-ac35-e0bdd3739c52"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"cbca74e5-b2af-4713-810b-67daa742e188"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["ParaTangentLine", "ObjectName",ExpressionUUID->
+  "a3e8320b-fc18-4ec4-892c-197940f3da44"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"694e619a-f0a9-4868-9b36-39bbe3613ac0"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "613998c1-a2ca-4f82-90f1-97f8e369f587"]
+}], "ObjectNameGrid",ExpressionUUID->"795e91f6-9f80-4b92-b323-2403fd647c27"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["ParaTangentLine"]],
+         "paclet:KnoxPackages/ref/ParaTangentLine"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          SubscriptBox[
+           StyleBox["f", "TI"], 
+           StyleBox["x", "TI"]], ",", 
+          SubscriptBox[
+           StyleBox["f", "TI"], 
+           StyleBox["y", "TI"]], ",", "..."}], "}"}], ",", 
+        StyleBox["t", "TI"], ",", 
+        SubscriptBox[
+         StyleBox["t", "TI"], 
+         StyleBox["0", "TR"]]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "799b2faf-353a-4aed-8489-0c0778b67f3f"],
+     " \[LineSeparator]returns the parametric equations of the tangent line \
+to the parametrically defined curve ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox[
+          StyleBox["f", "TI"], 
+          StyleBox["x", "TI"]], "[", 
+         StyleBox["t", "TI"], "]"}], ",", 
+        RowBox[{
+         SubscriptBox[
+          StyleBox["f", "TI"], 
+          StyleBox["y", "TI"]], "[", 
+         StyleBox["t", "TI"], "]"}], ",", "..."}], "}"}]], "InlineFormula",
+      ExpressionUUID->"86c8e25e-7e89-47a4-8e33-3360d275eaea"],
+     " at the point ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox[
+          StyleBox["f", "TI"], 
+          StyleBox["x", "TI"]], "[", 
+         SubscriptBox[
+          StyleBox["t", "TI"], 
+          StyleBox["0", "TR"]], "]"}], ",", 
+        RowBox[{
+         SubscriptBox[
+          StyleBox["f", "TI"], 
+          StyleBox["y", "TI"]], "[", 
+         SubscriptBox[
+          StyleBox["t", "TI"], 
+          StyleBox["0", "TR"]], "]"}], ",", "..."}], "}"}]], "InlineFormula",
+      ExpressionUUID->"1c852d37-7935-4ee7-8520-f849760342f5"],
+     ". Several vector functions and several points may be given in lists."
+    }],ExpressionUUID->"f26e6454-45ef-47c2-8e78-d5e3ad63923c"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"2b51ec54-1f7f-4974-8e04-6c27e4b445ae"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"afbafb81-117f-4df6-901d-87e67d80454a"],
+   "Details and Options"
+  }], "NotesFrameText",ExpressionUUID->"d3e06c90-c1cc-454c-adfa-7cd3462f0846"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"2bc516e7-2848-402b-9837-7c110ca4f7e0"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->457180123,ExpressionUUID->"3636e038-1250-4b52-93cd-a828321ce13d"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"e179d482-b5c0-463b-aafb-8fcf06e52e8b"],
+
+Cell[TextData[{
+ Cell[BoxData[
+ "ParaTangentLine"], "InlineFormula",ExpressionUUID->
+  "180d5a08-fb4d-4f1a-a7b9-8473581f40cd"],
+ " has the following options:"
+}], "Notes",
+ CellID->322543699,ExpressionUUID->"2ea4555a-0f07-45ec-964a-3545497e537e"],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "997d5ae7-1426-45d4-b568-563ddf812cf3"], 
+    ButtonBox["Normalize",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/Normalize"], 
+    ButtonBox["False",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/False"], Cell[TextData[Cell[
+    "whether to return the line parameterized by arc length", "TableText",
+     ExpressionUUID->"7383a183-87ba-49f8-b0df-f7fcec9d07d6"]], "TableText",
+     ExpressionUUID->"cfa6dd13-0134-4f04-91ef-c4e479cb1109"]},
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "6d09f386-4db5-4c82-960b-5122fd4c95af"], 
+    ButtonBox["UseLimit",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/UseLimit"], 
+    ButtonBox["False",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/False"], Cell[TextData[Cell[TextData[{
+     "whether to use the limit of the tangent values as one approaches the \
+desired ",
+     Cell[BoxData[
+      StyleBox["x", "TI"]], "InlineFormula",ExpressionUUID->
+      "9c281439-a43c-4133-a81b-4f0f7d6ecf2a"],
+     "-coordinate, ",
+     "instead of the tangent value at the point itself (which may be \
+indeterminate)."
+    }], "TableText",ExpressionUUID->"7af6030f-f0c0-4c48-bdcc-d4d009c750e6"]], 
+     "TableText",ExpressionUUID->"2b4c281a-2168-4084-bb6a-cc7795ff9023"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True, True}}}},
+ CellID->1279632435,ExpressionUUID->"a90c550d-2999-4732-b8ae-e90fc9c5e979"],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"6a06a5f8-a159-493a-8271-0a3e98555303"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"ba57c6bd-d908-4c79-ac9e-001f4c58fa00"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(6)", "ExampleCount",ExpressionUUID->
+  "8df4a53f-519b-49d8-99ec-5cedbf499feb"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->282397400,ExpressionUUID->"0cad8f53-4377-46cf-bcd9-91446f881617"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount",ExpressionUUID->
+  "c4f7a311-c85a-464b-a229-e2f89cf395df"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->915758139,ExpressionUUID->"ff41813f-7539-4795-bd69-78847186c807"],
+
+Cell["Here we have a basic example:", "ExampleText",
+ CellID->124902002,ExpressionUUID->"1f7b43cd-208d-4b65-931c-07362640b970"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ParaTangentLine", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"t", "-", 
+      RowBox[{"Sin", "[", "t", "]"}]}], ",", 
+     RowBox[{"1", "-", 
+      RowBox[{"Cos", "[", "t", "]"}]}]}], "}"}], ",", "t", ",", 
+   FractionBox["\[Pi]", "2"]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->260350477,ExpressionUUID->"6cf9296a-554a-47f0-9460-51349b6a12cb"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    FractionBox["\[Pi]", "2"], "+", "t"}], ",", 
+   RowBox[{"1", "+", "t"}]}], "}"}]], "Output",
+ ImageSize->{117, 37},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->1745842606,ExpressionUUID->"b975e86a-c9d9-4bc0-b97b-8d03c9683fe2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "79bfa4d3-e645-4efd-adea-66b5dc9f0548"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->14015,ExpressionUUID->"8b797129-10e3-4ae3-98eb-780f9c701b81"],
+
+Cell["Here is another example:", "ExampleText",
+ CellID->861653221,ExpressionUUID->"b6f6f3c5-f2bc-4d1b-bbea-93e33bb97ddf"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tanline", "[", "t_", "]"}], "=", 
+  RowBox[{"ParaTangentLine", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"t", "-", 
+       RowBox[{"Sin", "[", "t", "]"}]}], ",", 
+      RowBox[{"1", "-", 
+       RowBox[{"Cos", "[", "t", "]"}]}], ",", "t"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", 
+      FractionBox["\[Pi]", "2"]}], "}"}], ",", 
+    RowBox[{"Normalize", "\[Rule]", "True"}]}], "]"}]}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->92247235,ExpressionUUID->"d3cbe5cf-1f21-4d33-afca-a9396de4d8e1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    FractionBox["\[Pi]", "2"], "+", 
+    FractionBox["t", 
+     SqrtBox["3"]]}], ",", 
+   RowBox[{"1", "+", 
+    FractionBox["t", 
+     SqrtBox["3"]]}], ",", 
+   RowBox[{
+    FractionBox["\[Pi]", "2"], "+", 
+    FractionBox["t", 
+     SqrtBox["3"]]}]}], "}"}]], "Output",
+ ImageSize->{221, 45},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->1535997432,ExpressionUUID->"db99434c-7f18-4a8a-be5e-f269d4b80b7f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "6dae54cc-628a-4d21-bd78-e3371f7c1410"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->40073480,ExpressionUUID->"33509e5e-3a07-4fa5-bcf5-6b95cc67c470"],
+
+Cell["Here we find the tangent line at three points:", "ExampleText",
+ CellID->409951233,ExpressionUUID->"4be0790d-03e8-4343-8bd2-b8e5d9345355"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ParaTangentLine", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"t", "-", 
+      RowBox[{"Sin", "[", "t", "]"}]}], ",", 
+     RowBox[{"1", "-", 
+      RowBox[{"Cos", "[", "t", "]"}]}]}], "}"}], ",", "t", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["\[Pi]", "2"], ",", "\[Pi]", ",", 
+     RowBox[{"3", 
+      RowBox[{"\[Pi]", "/", "2"}]}]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->105845778,ExpressionUUID->"97f7de58-0180-4aa1-90dd-8ab76a392e17"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      FractionBox["\[Pi]", "2"], "+", "t"}], ",", 
+     RowBox[{"1", "+", "t"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Pi]", "+", 
+      RowBox[{"2", " ", "t"}]}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "+", 
+      FractionBox[
+       RowBox[{"3", " ", "\[Pi]"}], "2"], "+", "t"}], ",", 
+     RowBox[{"1", "-", "t"}]}], "}"}]}], "}"}]], "Output",
+ ImageSize->{337, 39},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->668827917,ExpressionUUID->"e1e0de78-96a1-489b-938d-b9eb026f9ecd"]
+}, Open  ]],
+
+Cell["\<\
+Here we find the tangent line at three points for two functions:\
+\>", "ExampleText",
+ CellID->257140978,ExpressionUUID->"47d67c76-a67f-485d-85b2-35298a2dce03"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ParaTangentLine", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"t", "-", 
+        RowBox[{"Sin", "[", "t", "]"}]}], ",", 
+       RowBox[{"1", "-", 
+        RowBox[{"Cos", "[", "t", "]"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"1", "+", 
+        RowBox[{"Sin", "[", "t", "]"}]}], ",", 
+       RowBox[{"Cos", "[", "t", "]"}]}], "}"}]}], "}"}], ",", "t", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["\[Pi]", "2"], ",", "\[Pi]", ",", 
+     RowBox[{"3", 
+      RowBox[{"\[Pi]", "/", "2"}]}]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->453564936,ExpressionUUID->"029578e8-fd5b-4e6c-a0d8-7be0541cb60b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "1"}], "+", 
+        FractionBox["\[Pi]", "2"], "+", "t"}], ",", 
+       RowBox[{"1", "+", "t"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       RowBox[{"-", "t"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\[Pi]", "+", 
+        RowBox[{"2", " ", "t"}]}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"1", "-", "t"}], ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"1", "+", 
+        FractionBox[
+         RowBox[{"3", " ", "\[Pi]"}], "2"], "+", "t"}], ",", 
+       RowBox[{"1", "-", "t"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "t"}], "}"}]}], "}"}]}], "}"}]], "Output",
+ ImageSize->{565, 39},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->2134326794,ExpressionUUID->"a8bd1b2d-1493-446e-85e8-fe6a4dcdc452"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "25ba68ee-3e10-4114-a1cb-47ff1259b27c"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341,ExpressionUUID->"9b1b5158-7c1d-483f-8f2f-e3d73b29d377"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Normalize",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "e16c581f-75e2-4144-b4ff-533d1546c31e"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783,ExpressionUUID->"5f82d926-8318-413f-89a3-942941d96bd2"],
+
+Cell[TextData[{
+ "The option ",
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{Cell[
+      TextData["Normalize"]],"paclet:ref/Normalize"},
+    "RefLink",
+    BaseStyle->{"InlineFormula"}], "->", 
+   TemplateBox[{Cell[
+      TextData["True"]],"paclet:ref/True"},
+    "RefLink",
+    BaseStyle->{"InlineFormula"}]}]], "InlineFormula",ExpressionUUID->
+  "870b273f-3621-4346-9103-69ac7094fce8"],
+ " will return the line parameterized by arc length."
+}], "ExampleText",
+ CellID->135559139,ExpressionUUID->"d2005365-9b9d-44de-b847-b8a52f7bf517"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tanline", "[", "t_", "]"}], "=", 
+  RowBox[{"ParaTangentLine", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", "t"}], "-", 
+       RowBox[{"Sin", "[", "t", "]"}]}], ",", 
+      RowBox[{"1", "-", 
+       RowBox[{"Cos", "[", "t", "]"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", 
+      FractionBox["\[Pi]", "2"]}], "}"}], ",", 
+    RowBox[{"Normalize", "\[Rule]", "True"}]}], "]"}]}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->173447275,ExpressionUUID->"c22ae2ac-0b6f-4645-9fba-b14c62212f2f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "1"}], "+", "\[Pi]", "+", 
+    FractionBox[
+     RowBox[{"2", " ", "t"}], 
+     SqrtBox["5"]]}], ",", 
+   RowBox[{"1", "+", 
+    FractionBox["t", 
+     SqrtBox["5"]]}]}], "}"}]], "Output",
+ ImageSize->{153, 45},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->569653606,ExpressionUUID->"031a011a-c0bc-4160-a5c5-62da2a2f1960"]
+}, Open  ]],
+
+Cell["Here is the non-normalized version.", "ExampleText",
+ CellID->17654258,ExpressionUUID->"72d2da1c-fc8c-403e-a840-3097c39cc6d9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tanline", "[", "t_", "]"}], "=", 
+  RowBox[{"ParaTangentLine", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", "t"}], "-", 
+       RowBox[{"Sin", "[", "t", "]"}]}], ",", 
+      RowBox[{"1", "-", 
+       RowBox[{"Cos", "[", "t", "]"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", 
+      FractionBox["\[Pi]", "2"]}], "}"}]}], "]"}]}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->53646500,ExpressionUUID->"91c2fe6b-f42c-4f12-ba33-ac0f772fb74a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "1"}], "+", "\[Pi]", "+", 
+    RowBox[{"2", " ", "t"}]}], ",", 
+   RowBox[{"1", "+", "t"}]}], "}"}]], "Output",
+ ImageSize->{122, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->6576604,ExpressionUUID->"5f0ac152-2862-4d70-9398-168fb36d11db"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "UseLimit",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "2b70f86b-ad6f-4ae8-ae26-7dfa8d0f7b22"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1295379749,ExpressionUUID->"39913767-203a-4665-bb3f-75bf39e6c7f7"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{"UseLimit", "->", " ", 
+   TemplateBox[{Cell[
+      TextData["True"]],"paclet:ref/True"},
+    "RefLink",
+    BaseStyle->{"InlineFormula"}]}]], "InlineFormula",ExpressionUUID->
+  "dafcc5f6-0619-4092-ba0c-e6bbc77ba495"],
+ " fixes some situations where there are no derivatives at the points that we \
+are looking at."
+}], "ExampleText",
+ CellID->160357851,ExpressionUUID->"93e2afa8-31ef-46e9-a9b7-5f66b18f193a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Clear", "[", "f", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "0", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "t_", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     FractionBox[
+      RowBox[{"Sin", "[", "t", "]"}], "t"]}], "}"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"ParaTangentLine", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "t", "]"}], ",", "t", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}], ",", 
+   RowBox[{"UseLimit", "->", "True"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->239244338,ExpressionUUID->"941c24db-6e1b-4b05-af31-fb9ffa487aef"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"t", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "+", "t"}], ",", 
+     RowBox[{
+      RowBox[{"t", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Cos", "[", "1", "]"}], "-", 
+         RowBox[{"Sin", "[", "1", "]"}]}], ")"}]}], "+", 
+      RowBox[{"Sin", "[", "1", "]"}]}]}], "}"}]}], "}"}]], "Output",
+ ImageSize->{296, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->1815272419,ExpressionUUID->"d502a5bd-5390-4f3c-ab5f-5a714ba0d498"]
+}, Open  ]],
+
+Cell["The default does not work here:", "ExampleText",
+ CellID->73943252,ExpressionUUID->"e4d89928-82e2-4d11-a1da-d012bbd9d47a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Clear", "[", "f", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "0", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "t_", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     FractionBox[
+      RowBox[{"Sin", "[", "t", "]"}], "t"]}], "}"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"ParaTangentLine", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "t", "]"}], ",", "t", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->724179219,ExpressionUUID->"661bdeec-043f-4f2f-85b3-d96685ec97bd"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "+", "t"}], ",", 
+     RowBox[{
+      RowBox[{"t", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Cos", "[", "1", "]"}], "-", 
+         RowBox[{"Sin", "[", "1", "]"}]}], ")"}]}], "+", 
+      RowBox[{"Sin", "[", "1", "]"}]}]}], "}"}]}], "}"}]], "Output",
+ ImageSize->{296, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->1013206912,ExpressionUUID->"7044b15e-dd34-4df5-bad4-a8732c124401"]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Possible Issues",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "26776e29-5d07-480c-b60a-249a1b928ea6"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1305812373,ExpressionUUID->"30143f32-d959-44b8-9443-8870077fa34b"],
+
+Cell["\<\
+Be careful with piecewise functions. This definition works fine:\
+\>", "ExampleText",
+ CellID->1369718275,ExpressionUUID->"e61953bf-adeb-4954-88e0-5ece809781ec"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Clear", "[", 
+  RowBox[{"f", ",", "g"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "[", "t_", "]"}], ":=", 
+  RowBox[{"\[Piecewise]", GridBox[{
+     {
+      RowBox[{"t", "+", 
+       FractionBox[
+        RowBox[{"Sin", "[", "t", "]"}], "t"]}], 
+      RowBox[{"t", "\[NotEqual]", "0"}]},
+     {"1", 
+      RowBox[{"t", "\[Equal]", "0"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxItemSize->{
+     "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.84]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", "[", "t_", "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{"t", ",", 
+    RowBox[{"f", "[", "t", "]"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"ParaTangentLine", "[", 
+  RowBox[{
+   RowBox[{"g", "[", "t", "]"}], ",", "t", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"UseLimit", "->", "True"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->271114134,ExpressionUUID->"eb1459ea-3b62-41aa-b73a-34802e78a7ac"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"1", "+", "t"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Pi]", "+", "t"}], ",", 
+     RowBox[{"\[Pi]", "+", "t", "-", 
+      FractionBox["t", "\[Pi]"]}]}], "}"}]}], "}"}]], "Output",
+ ImageSize->{195, 40},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->831126210,ExpressionUUID->"67121a92-6853-46bb-a600-857e42a36b64"]
+}, Open  ]],
+
+Cell["It even works with multiple functions:", "ExampleText",
+ CellID->1236459639,ExpressionUUID->"21abd533-9492-49f2-8f70-88340c2345fb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ParaTangentLine", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Cos", "[", "t", "]"}], ",", 
+       RowBox[{"Sin", "[", "t", "]"}]}], "}"}], ",", 
+     RowBox[{"g", "[", "t", "]"}]}], "}"}], ",", "t", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"UseLimit", "->", "True"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->600364388,ExpressionUUID->"1556feda-51cc-4add-9ac4-22ec38e14dd8"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "t"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", 
+       RowBox[{"1", "+", "t"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "t"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\[Pi]", "+", "t"}], ",", 
+       RowBox[{"\[Pi]", "+", "t", "-", 
+        FractionBox["t", "\[Pi]"]}]}], "}"}]}], "}"}]}], "}"}]], "Output",
+ ImageSize->{339, 40},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->1722064927,ExpressionUUID->"fd716586-51aa-4489-9cd7-bd04cb91480b"]
+}, Open  ]],
+
+Cell[TextData[{
+ "However, the following definition will not work when ",
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{Cell[
+      TextData["UseLimit"]],"paclet:KnoxPackages/ref/UseLimit"},
+    "RefLink",
+    BaseStyle->{"InlineFormula"}], "\[Rule]", 
+   TemplateBox[{Cell[
+      TextData["True"]],"paclet:ref/True"},
+    "RefLink",
+    BaseStyle->{"InlineFormula"}]}]], "InlineFormula",ExpressionUUID->
+  "60d04749-9546-4781-a97d-6395f48b7aeb"],
+ ", and gives the wrong answer when ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["UseLimit"]],"paclet:KnoxPackages/ref/UseLimit"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+  "bf243f59-d953-453f-9d14-e9375daa0bdc"],
+ " is not set:"
+}], "ExampleText",
+ CellID->1283343199,ExpressionUUID->"a9a57b0a-b5c2-48d4-b040-c5c86ca6c56d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Clear", "[", "f", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "[", "t_", "]"}], ":=", 
+  RowBox[{"\[Piecewise]", GridBox[{
+     {
+      RowBox[{"{", 
+       RowBox[{"t", ",", 
+        RowBox[{"t", "+", 
+         FractionBox[
+          RowBox[{"Sin", "[", "t", "]"}], "t"]}]}], "}"}], 
+      RowBox[{"t", "\[NotEqual]", "0"}]},
+     {
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}], 
+      RowBox[{"t", "\[Equal]", "0"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxItemSize->{
+     "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.84]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"ParaTangentLine", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "t", "]"}], ",", "t", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "\[Pi]"}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[3]:=",
+ CellID->2090049460,ExpressionUUID->"a6f60887-ed9d-45a4-969a-def00272ffd5"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Pi]", "+", "t"}], ",", 
+     RowBox[{"\[Pi]", "+", "t", "-", 
+      FractionBox["t", "\[Pi]"]}]}], "}"}]}], "}"}]], "Output",
+ ImageSize->{175, 40},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->370977995,ExpressionUUID->"038699be-f605-4fdc-944e-601c4988a57d"]
+}, Open  ]],
+
+Cell["This definition also works fine:", "ExampleText",
+ CellID->1103101878,ExpressionUUID->"287e8595-1638-468a-ab6f-80178116d4f4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Clear", "[", "f", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "0", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "t_", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"t", "+", 
+      FractionBox[
+       RowBox[{"Sin", "[", "t", "]"}], "t"]}]}], "}"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"ParaTangentLine", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "t", "]"}], ",", "t", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"UseLimit", "->", "True"}]}], "]"}]}], "Input",
+ CellLabel->"In[4]:=",
+ CellID->397028021,ExpressionUUID->"cb3fedca-4e21-47b5-957f-c29cd2142581"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"1", "+", "t"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Pi]", "+", "t"}], ",", 
+     RowBox[{"\[Pi]", "+", "t", "-", 
+      FractionBox["t", "\[Pi]"]}]}], "}"}]}], "}"}]], "Output",
+ ImageSize->{195, 40},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[4]=",
+ CellID->1269444137,ExpressionUUID->"98392e1d-7309-43a5-8050-f79a9b398d10"]
+}, Open  ]],
+
+Cell["We can still put in multiple functions:", "ExampleText",
+ CellID->1340339687,ExpressionUUID->"4586d740-a6fd-46c1-bda6-771a17b463f1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Clear", "[", "f", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "0", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "t_", "]"}], ":=", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"t", "+", 
+      FractionBox[
+       RowBox[{"Sin", "[", "t", "]"}], "t"]}]}], "}"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"ParaTangentLine", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Cos", "[", "t", "]"}], ",", 
+       RowBox[{"Sin", "[", "t", "]"}]}], "}"}], ",", 
+     RowBox[{"f", "[", "t", "]"}]}], "}"}], ",", "t", ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"UseLimit", "->", "True"}]}], "]"}]}], "Input",
+ CellLabel->"In[5]:=",
+ CellID->1441016896,ExpressionUUID->"f7c046c4-1a31-44d0-8fb4-239f8a21f503"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "t"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", 
+       RowBox[{"1", "+", "t"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "t"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\[Pi]", "+", "t"}], ",", 
+       RowBox[{"\[Pi]", "+", "t", "-", 
+        FractionBox["t", "\[Pi]"]}]}], "}"}]}], "}"}]}], "}"}]], "Output",
+ ImageSize->{339, 40},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[5]=",
+ CellID->176398876,ExpressionUUID->"7d73087c-4d36-49ad-864e-af1383bfe8b9"]
+}, Open  ]]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"baf3d96e-6439-481f-b713-64b93c08a4c8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"82fa7b50-df36-4473-b436-976e46578160"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"b0c63263-629a-4691-80fb-931800fae6c0"],
+
+Cell[TextData[{
+ StyleBox[ButtonBox["ParaPlotTangentLine",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/ParaPlotTangentLine"],
+  FontFamily->"Verdana",
+  FontSize->11],
+ StyleBox[" \[FilledVerySmallSquare] ",
+  FontSize->11],
+ StyleBox[ButtonBox["TangentLine",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/TangentLine"],
+  FontFamily->"Verdana",
+  FontSize->11],
+ StyleBox[" \[FilledVerySmallSquare] ",
+  FontSize->11],
+ StyleBox[ButtonBox["PolarTangentLine",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/PolarTangentLine"],
+  FontFamily->"Verdana",
+  FontSize->11]
+}], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"7c648094-36c5-4e7a-8716-729ca1a32d69"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"c67762b4-8599-4ed3-b282-a8e702cf7182"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"de330f46-eaa4-4880-9ca6-054a34c8b104"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"77bf4b61-e3b0-4b9c-b42c-40d6d7688add"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->3834743,ExpressionUUID->"5ee9198e-228f-48fe-86b1-c84a6fe36244"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"a024a235-debd-407e-9966-5b0079451487"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ParaTangentLine",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 48, 23.9190179}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "ParaTangentLine[{fx, fy, ...}, t, t0] returns the parametric equations \
+of the tangent line to the parametrically defined curve {fx[t], fy[t], ...} \
+at the point {fx[t0], fy[t0], ...}. Several vector functions and several \
+points may be given in lists.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "ParaTangentLine", "titlemodifier" -> "", "windowtitle" -> 
+    "ParaTangentLine", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/ParaTangentLine", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[10621, 279, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"0cad8f53-4377-46cf-bcd9-91446f881617",
+   CellTags->"PrimaryExamplesSection",
+   CellID->282397400]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 39537, 1215}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[587, 21, 4345, 97, 55, "AnchorBarGrid",ExpressionUUID->"cbca74e5-b2af-4713-810b-67daa742e188",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4957, 122, 400, 9, 52, "ObjectNameGrid",ExpressionUUID->"795e91f6-9f80-4b92-b323-2403fd647c27"],
+Cell[5360, 133, 2277, 65, 156, "Usage",ExpressionUUID->"2b51ec54-1f7f-4974-8e04-6c27e4b445ae",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7674, 203, 867, 21, 37, "NotesSection",ExpressionUUID->"3636e038-1250-4b52-93cd-a828321ce13d",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->457180123],
+Cell[8544, 226, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"e179d482-b5c0-463b-aafb-8fcf06e52e8b"],
+Cell[8633, 228, 246, 6, 70, "Notes",ExpressionUUID->"2ea4555a-0f07-45ec-964a-3545497e537e",
+ CellID->322543699],
+Cell[8882, 236, 1613, 36, 70, "3ColumnTableMod",ExpressionUUID->"a90c550d-2999-4732-b8ae-e90fc9c5e979",
+ CellID->1279632435],
+Cell[10498, 274, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"6a06a5f8-a159-493a-8271-0a3e98555303"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10621, 279, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"0cad8f53-4377-46cf-bcd9-91446f881617",
+ CellTags->"PrimaryExamplesSection",
+ CellID->282397400],
+Cell[CellGroupData[{
+Cell[11081, 294, 308, 7, 29, "ExampleSection",ExpressionUUID->"ff41813f-7539-4795-bd69-78847186c807",
+ CellID->915758139],
+Cell[11392, 303, 127, 1, 38, "ExampleText",ExpressionUUID->"1f7b43cd-208d-4b65-931c-07362640b970",
+ CellID->124902002],
+Cell[CellGroupData[{
+Cell[11544, 308, 487, 13, 63, "Input",ExpressionUUID->"6cf9296a-554a-47f0-9460-51349b6a12cb",
+ CellID->260350477],
+Cell[12034, 323, 365, 11, 58, "Output",ExpressionUUID->"b975e86a-c9d9-4bc0-b97b-8d03c9683fe2",
+ CellID->1745842606]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12436, 339, 238, 5, 8, "ExampleDelimiter",ExpressionUUID->"8b797129-10e3-4ae3-98eb-780f9c701b81",
+ CellID->14015],
+Cell[12677, 346, 122, 1, 38, "ExampleText",ExpressionUUID->"b6f6f3c5-f2bc-4d1b-bbea-93e33bb97ddf",
+ CellID->861653221],
+Cell[CellGroupData[{
+Cell[12824, 351, 657, 18, 63, "Input",ExpressionUUID->"d3cbe5cf-1f21-4d33-afca-a9396de4d8e1",
+ CellID->92247235],
+Cell[13484, 371, 540, 19, 66, "Output",ExpressionUUID->"db99434c-7f18-4a8a-be5e-f269d4b80b7f",
+ CellID->1535997432]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14073, 396, 241, 5, 8, "ExampleDelimiter",ExpressionUUID->"33509e5e-3a07-4fa5-bcf5-6b95cc67c470",
+ CellID->40073480],
+Cell[14317, 403, 144, 1, 38, "ExampleText",ExpressionUUID->"4be0790d-03e8-4343-8bd2-b8e5d9345355",
+ CellID->409951233],
+Cell[CellGroupData[{
+Cell[14486, 408, 604, 17, 70, "Input",ExpressionUUID->"97f7de58-0180-4aa1-90dd-8ab76a392e17",
+ CellID->105845778],
+Cell[15093, 427, 705, 23, 60, "Output",ExpressionUUID->"e1e0de78-96a1-489b-938d-b9eb026f9ecd",
+ CellID->668827917]
+}, Open  ]],
+Cell[15813, 453, 170, 3, 70, "ExampleText",ExpressionUUID->"47d67c76-a67f-485d-85b2-35298a2dce03",
+ CellID->257140978],
+Cell[CellGroupData[{
+Cell[16008, 460, 817, 24, 70, "Input",ExpressionUUID->"029578e8-fd5b-4e6c-a0d8-7be0541cb60b",
+ CellID->453564936],
+Cell[16828, 486, 1118, 38, 60, "Output",ExpressionUUID->"a8bd1b2d-1493-446e-85e8-fe6a4dcdc452",
+ CellID->2134326794]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18007, 531, 302, 7, 70, "ExampleSection",ExpressionUUID->"9b1b5158-7c1d-483f-8f2f-e3d73b29d377",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[18334, 542, 310, 7, 70, "ExampleSubsection",ExpressionUUID->"5f82d926-8318-413f-89a3-942941d96bd2",
+ CellID->1757724783],
+Cell[18647, 551, 533, 15, 70, "ExampleText",ExpressionUUID->"d2005365-9b9d-44de-b847-b8a52f7bf517",
+ CellID->135559139],
+Cell[CellGroupData[{
+Cell[19205, 570, 671, 19, 70, "Input",ExpressionUUID->"c22ae2ac-0b6f-4645-9fba-b14c62212f2f",
+ CellID->173447275],
+Cell[19879, 591, 443, 15, 66, "Output",ExpressionUUID->"031a011a-c0bc-4160-a5c5-62da2a2f1960",
+ CellID->569653606]
+}, Open  ]],
+Cell[20337, 609, 132, 1, 70, "ExampleText",ExpressionUUID->"72d2da1c-fc8c-403e-a840-3097c39cc6d9",
+ CellID->17654258],
+Cell[CellGroupData[{
+Cell[20494, 614, 618, 18, 70, "Input",ExpressionUUID->"91c2fe6b-f42c-4f12-ba33-ac0f772fb74a",
+ CellID->53646500],
+Cell[21115, 634, 364, 11, 35, "Output",ExpressionUUID->"5f0ac152-2862-4d70-9398-168fb36d11db",
+ CellID->6576604]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[21528, 651, 309, 7, 70, "ExampleSubsection",ExpressionUUID->"39913767-203a-4665-bb3f-75bf39e6c7f7",
+ CellID->1295379749],
+Cell[21840, 660, 450, 11, 70, "ExampleText",ExpressionUUID->"93e2afa8-31ef-46e9-a9b7-5f66b18f193a",
+ CellID->160357851],
+Cell[CellGroupData[{
+Cell[22315, 675, 848, 24, 70, "Input",ExpressionUUID->"941c24db-6e1b-4b05-af31-fb9ffa487aef",
+ CellID->239244338],
+Cell[23166, 701, 602, 19, 35, "Output",ExpressionUUID->"d502a5bd-5390-4f3c-ab5f-5a714ba0d498",
+ CellID->1815272419]
+}, Open  ]],
+Cell[23783, 723, 128, 1, 70, "ExampleText",ExpressionUUID->"e4d89928-82e2-4d11-a1da-d012bbd9d47a",
+ CellID->73943252],
+Cell[CellGroupData[{
+Cell[23936, 728, 803, 23, 70, "Input",ExpressionUUID->"661bdeec-043f-4f2f-85b3-d96685ec97bd",
+ CellID->724179219],
+Cell[24742, 753, 602, 19, 35, "Output",ExpressionUUID->"7044b15e-dd34-4df5-bad4-a8732c124401",
+ CellID->1013206912]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[25405, 779, 310, 7, 70, "ExampleSection",ExpressionUUID->"30143f32-d959-44b8-9443-8870077fa34b",
+ CellID->1305812373],
+Cell[25718, 788, 171, 3, 70, "ExampleText",ExpressionUUID->"e61953bf-adeb-4954-88e0-5ece809781ec",
+ CellID->1369718275],
+Cell[CellGroupData[{
+Cell[25914, 795, 1497, 41, 70, "Input",ExpressionUUID->"eb1459ea-3b62-41aa-b73a-34802e78a7ac",
+ CellID->271114134],
+Cell[27414, 838, 482, 15, 61, "Output",ExpressionUUID->"67121a92-6853-46bb-a600-857e42a36b64",
+ CellID->831126210]
+}, Open  ]],
+Cell[27911, 856, 137, 1, 70, "ExampleText",ExpressionUUID->"21abd533-9492-49f2-8f70-88340c2345fb",
+ CellID->1236459639],
+Cell[CellGroupData[{
+Cell[28073, 861, 500, 14, 70, "Input",ExpressionUUID->"1556feda-51cc-4add-9ac4-22ec38e14dd8",
+ CellID->600364388],
+Cell[28576, 877, 749, 25, 61, "Output",ExpressionUUID->"fd716586-51aa-4489-9cd7-bd04cb91480b",
+ CellID->1722064927]
+}, Open  ]],
+Cell[29340, 905, 818, 22, 70, "ExampleText",ExpressionUUID->"a9a57b0a-b5c2-48d4-b040-c5c86ca6c56d",
+ CellID->1283343199],
+Cell[CellGroupData[{
+Cell[30183, 931, 1389, 38, 70, "Input",ExpressionUUID->"a6f60887-ed9d-45a4-969a-def00272ffd5",
+ CellID->2090049460],
+Cell[31575, 971, 456, 14, 61, "Output",ExpressionUUID->"038699be-f605-4fdc-944e-601c4988a57d",
+ CellID->370977995]
+}, Open  ]],
+Cell[32046, 988, 131, 1, 70, "ExampleText",ExpressionUUID->"287e8595-1638-468a-ab6f-80178116d4f4",
+ CellID->1103101878],
+Cell[CellGroupData[{
+Cell[32202, 993, 880, 25, 70, "Input",ExpressionUUID->"cb3fedca-4e21-47b5-957f-c29cd2142581",
+ CellID->397028021],
+Cell[33085, 1020, 483, 15, 61, "Output",ExpressionUUID->"98392e1d-7309-43a5-8050-f79a9b398d10",
+ CellID->1269444137]
+}, Open  ]],
+Cell[33583, 1038, 138, 1, 70, "ExampleText",ExpressionUUID->"4586d740-a6fd-46c1-bda6-771a17b463f1",
+ CellID->1340339687],
+Cell[CellGroupData[{
+Cell[33746, 1043, 1055, 31, 70, "Input",ExpressionUUID->"f7c046c4-1a31-44d0-8fb4-239f8a21f503",
+ CellID->1441016896],
+Cell[34804, 1076, 748, 25, 61, "Output",ExpressionUUID->"7d73087c-4d36-49ad-864e-af1383bfe8b9",
+ CellID->176398876]
+}, Open  ]]
+}, Closed]],
+Cell[35579, 1105, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"baf3d96e-6439-481f-b713-64b93c08a4c8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35702, 1110, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"b0c63263-629a-4691-80fb-931800fae6c0",
+ CellID->1255426704],
+Cell[35965, 1119, 700, 21, 70, "SeeAlso",ExpressionUUID->"7c648094-36c5-4e7a-8716-729ca1a32d69",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36702, 1145, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"de330f46-eaa4-4880-9ca6-054a34c8b104",
+ CellID->38303248],
+Cell[36971, 1154, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"77bf4b61-e3b0-4b9c-b42c-40d6d7688add"],
+Cell[37060, 1156, 225, 5, 70, "MoreAbout",ExpressionUUID->"5ee9198e-228f-48fe-86b1-c84a6fe36244",
+ CellID->3834743]
+}, Open  ]],
+Cell[37300, 1164, 78, 0, 70, "FooterCell",ExpressionUUID->"a024a235-debd-407e-9966-5b0079451487"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

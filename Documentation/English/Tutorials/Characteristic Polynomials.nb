@@ -1,0 +1,1184 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     37531,       1175]
+NotebookOptionsPosition[     28539,        971]
+NotebookOutlinePosition[     30837,       1029]
+CellTagsIndexPosition[     30794,       1026]
+WindowTitle->Characteristic Polynomials
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES TUTORIAL", "PacletNameCell"], Cell[TextData[Cell[
+    BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->
+        False], {"\<\"KnoxPackages/tutorial/Characteristic Polynomials\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["KnoxPackages/tutorial/Characteristic Polynomials"]}, 
+           Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/KnoxPackages/tutorial/\
+Characteristic Polynomials.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$253299], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "KnoxPackages/tutorial/Characteristic Polynomials", ".html"]], 
+          None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Characteristic Polynomials", "Title",
+ CellID->509267359],
+
+Cell["XXXX.", "Caption",
+ CellID->1891092685],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+We find the characteristic polynomial to find the general solution.\
+\>", "MathCaption",
+ CellID->836781195],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->253413638],
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"r", "^", "2"}], "+", " ", 
+    FractionBox["r", "20"], "+", "25"}], "==", "0"}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->2058623809]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The independent solutions are:", "Text",
+ CellID->12965111],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"y1", "[", "t_", "]"}], " ", "=", " ", 
+  RowBox[{
+   RowBox[{"Exp", "[", 
+    FractionBox[
+     RowBox[{"-", "t"}], "40"], "]"}], " ", 
+   RowBox[{"Cos", "[", 
+    RowBox[{
+     FractionBox[
+      SqrtBox["39999"], "40"], "t"}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y2", "[", "t_", "]"}], " ", "=", " ", 
+  RowBox[{
+   RowBox[{"Exp", "[", 
+    FractionBox[
+     RowBox[{"-", "t"}], "40"], "]"}], 
+   RowBox[{"Sin", "[", 
+    RowBox[{
+     FractionBox[
+      SqrtBox["39999"], "40"], "t"}], "]"}]}]}]}], "Input",
+ CellLabel->"In[101]:=",
+ CellID->55941498],
+
+Cell[BoxData[
+ RowBox[{"WronskianDet", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"y1", "[", "t", "]"}], ",", " ", 
+     RowBox[{"y2", "[", "t", "]"}]}], "}"}], ",", " ", "t"}], "]"}]], "Input",\
+
+ CellLabel->"In[104]:=",
+ CellID->479654568]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+By the variations of parameter formul, the driven solution is \
+\>", "Text",
+ CellID->423328073],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"yd", "[", "t_", "]"}], " ", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"y1", "[", "t", "]"}], " ", 
+    RowBox[{
+     UnderoverscriptBox["\[Integral]", "0", "t"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"-", 
+          RowBox[{"y2", "[", "s", "]"}]}], ")"}], 
+        RowBox[{"Sin", "[", 
+         RowBox[{"11", 
+          RowBox[{"s", "/", "2"}]}], "]"}]}], 
+       RowBox[{"WronskianDet", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"y1", "[", "s", "]"}], ",", " ", 
+           RowBox[{"y2", "[", "s", "]"}]}], "}"}], ",", " ", "s"}], "]"}]], 
+      RowBox[{"\[DifferentialD]", "s"}]}]}]}], "+", 
+   RowBox[{
+    RowBox[{"y2", "[", "t", "]"}], " ", 
+    RowBox[{
+     UnderoverscriptBox["\[Integral]", "0", "t"], 
+     RowBox[{
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"y1", "[", "s", "]"}], ")"}], 
+        RowBox[{"Sin", "[", 
+         RowBox[{"11", 
+          RowBox[{"s", "/", "2"}]}], "]"}]}], 
+       RowBox[{"WronskianDet", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"y1", "[", "s", "]"}], ",", " ", 
+           RowBox[{"y2", "[", "s", "]"}]}], "}"}], ",", " ", "s"}], "]"}]], 
+      RowBox[{"\[DifferentialD]", "s"}]}]}]}]}]}]], "Input",
+ CellLabel->"In[107]:=",
+ CellID->926709015],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{"yd", "[", "t", "]"}], "]"}]], "Input",
+ CellLabel->"In[108]:=",
+ CellID->32726477]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Check that it obeys the equation", "Text",
+ CellID->203684296],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"yd", "''"}], "[", "t", "]"}], "+", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"yd", "'"}], "[", "t", "]"}], "20"], "+", 
+   RowBox[{"25", 
+    RowBox[{"yd", "[", "t", "]"}]}]}], "//", "Simplify"}]], "Input",
+ CellLabel->"In[109]:=",
+ CellID->169544030]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Add in homegeneous equation", "Text",
+ CellID->111065724],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ytotal", "[", "t_", "]"}], " ", "=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"yd", "[", "t", "]"}], "+", " ", 
+     RowBox[{"c1", " ", 
+      RowBox[{"y1", "[", "t", "]"}]}], "+", " ", 
+     RowBox[{"c2", " ", 
+      RowBox[{"y2", "[", "t", "]"}]}]}], "//", "Simplify"}], "//", 
+   "Expand"}]}]], "Input",
+ CellLabel->"In[110]:=",
+ CellID->214290962]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Solve for initial conditions: For example, if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"y", "(", "0", ")"}], "\[Equal]", "1"}], TraditionalForm]]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"y", "'"}], 
+     RowBox[{"(", "0", ")"}]}], "\[Equal]", "\[Pi]"}], TraditionalForm]]]
+}], "Text",
+ CellID->360149655],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"ytotal", "[", "0", "]"}], "==", "1"}], ",", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ytotal", "'"}], "[", "0", "]"}], "==", "\[Pi]"}]}], "}"}], 
+    ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"c1", ",", "c2"}], "}"}]}], "]"}], "//", "Simplify"}]], "Input",
+ CellLabel->"In[111]:=",
+ CellID->805962661]
+}, Open  ]],
+
+Cell["The periodic solution.", "MathCaption",
+ CellID->48169998],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "To get periodic solutions, choose ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["c", "1"], TraditionalForm]]],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["c", "2"], TraditionalForm]]],
+ " to eliminate decaying exponentials."
+}], "Text",
+ CellID->281468804],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ourFavSolution", "[", "t_", "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"ytotal", "[", "t", "]"}], " ", "/.", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"c1", "->", 
+       FractionBox[
+        RowBox[{"-", "440"}], "44221"]}], ",", " ", 
+      RowBox[{"c2", "->", 
+       RowBox[{"-", " ", 
+        FractionBox["1848440", 
+         RowBox[{"44221", " ", 
+          SqrtBox["39999"]}]]}]}]}], "}"}]}], "//", "Simplify"}]}]], "Input",
+ CellLabel->"In[112]:=",
+ CellID->158107251]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["This obeys the following initial conditions:", "Text",
+ CellID->570023037],
+
+Cell[BoxData[
+ RowBox[{"ourFavSolution", "[", "0", "]"}]], "Input",
+ CellLabel->"In[113]:=",
+ CellID->84084727],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ourFavSolution", "'"}], "[", "0", "]"}]], "Input",
+ CellLabel->"In[114]:=",
+ CellID->159273225]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Here we have the solution curve.", "MathCaption",
+ CellID->225120391],
+
+Cell[BoxData[
+ RowBox[{"PlotJump", "[", 
+  RowBox[{
+   RowBox[{"ourFavSolution", "[", "t", "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", " ", "0", ",", " ", 
+     RowBox[{"10", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->32102555],
+
+Cell[BoxData[
+ RowBox[{"PlotDSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "''"}], "[", "t", "]"}], "+", 
+     RowBox[{"0.05", 
+      RowBox[{
+       RowBox[{"x", "'"}], "[", "t", "]"}]}], "+", 
+     RowBox[{"25", 
+      RowBox[{"x", "[", "t", "]"}]}]}], "==", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"5.5", "t"}], "]"}]}], ",", " ", 
+   RowBox[{"x", "[", "t", "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", " ", "0", ",", " ", 
+     RowBox[{"10", "\[Pi]"}]}], "}"}], ",", " ", 
+   RowBox[{"InitialValue", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"x", "[", "0", "]"}], "==", 
+       RowBox[{"-", 
+        FractionBox["440", "44221"]}]}], ",", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"x", "'"}], "[", "0", "]"}], "==", 
+       RowBox[{"-", 
+        FractionBox["46200", "44221"]}]}]}], "}"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->306398337]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Comparing the driven solution, we see the driven solution approachs the \
+periodic solution asymptotically.\
+\>", "Text",
+ CellID->856837968],
+
+Cell[BoxData[
+ RowBox[{"PlotJump", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"ourFavSolution", "[", "t", "]"}], ",", 
+     RowBox[{"yd", "[", "t", "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "200"}], "}"}], ",", 
+   RowBox[{"PlotPoints", "\[Rule]", "1037"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellLabel->"In[119]:=",
+ CellID->8978063],
+
+Cell[BoxData[
+ RowBox[{"GraphicsGrid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"PlotJump", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"ourFavSolution", "[", "t", "]"}], ",", 
+          RowBox[{"yd", "[", "t", "]"}]}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", " ", "0", ",", " ", "40"}], "}"}], ",", " ", 
+        RowBox[{"PlotPoints", "->", "1037"}]}], "]"}], ",", 
+      RowBox[{"PlotJump", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"ourFavSolution", "[", "t", "]"}], ",", 
+          RowBox[{"yd", "[", "t", "]"}]}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", " ", "160", ",", " ", "200"}], "}"}], ",", " ", 
+        RowBox[{"PlotPoints", "->", "1037"}]}], "]"}]}], "}"}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellLabel->"In[121]:=",
+ CellID->8129349]
+}, Open  ]],
+
+Cell["Here we have the component curve.", "MathCaption",
+ CellID->800046170],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Technically, the solution is ",
+ Cell[BoxData[
+  RowBox[{"y", 
+   RowBox[{"(", "t", ")"}]}]], "InlineFormula"],
+ " component curve.  The other is the ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"y", "'"}], 
+   RowBox[{"(", "t", ")"}]}]], "InlineFormula"],
+ " component curve"
+}], "Text",
+ CellID->658251214],
+
+Cell[BoxData[
+ RowBox[{"GraphicsGrid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"PlotJump", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"ourFavSolution", "'"}], "[", "t", "]"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", " ", "0", ",", " ", "20"}], "}"}]}], "]"}], ",", 
+      RowBox[{"PlotDSolve", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"v", "'"}], "[", "t", "]"}], "==", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "0.05"}], 
+             RowBox[{"v", "[", "t", "]"}]}], "-", 
+            RowBox[{"25", 
+             RowBox[{"x", "[", "t", "]"}]}], "+", 
+            RowBox[{"Sin", "[", 
+             RowBox[{"5.5", "t"}], "]"}]}]}], ",", " ", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"x", "'"}], "[", "t", "]"}], "==", 
+           RowBox[{"v", "[", "t", "]"}]}]}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"x", "[", "t", "]"}], ",", 
+          RowBox[{"v", "[", "t", "]"}]}], "}"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", " ", "0", ",", " ", "20"}], "}"}], ",", " ", 
+        RowBox[{"InitialValue", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"x", "[", "0", "]"}], "==", 
+            RowBox[{"-", 
+             FractionBox["440", "44221"]}]}], ",", " ", 
+           RowBox[{
+            RowBox[{"v", "[", "0", "]"}], "==", 
+            RowBox[{"-", 
+             FractionBox["46200", "44221"]}]}]}], "}"}]}], ",", " ", 
+        RowBox[{"ShowPlots", "->", 
+         RowBox[{"v", "[", "t", "]"}]}]}], "]"}]}], "}"}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellLabel->"In[122]:=",
+ CellID->124584524]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Here we have the orbits.", "MathCaption",
+ CellID->123934684],
+
+Cell[BoxData[
+ RowBox[{"GraphicsGrid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"DirParametricPlot", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"ourFavSolution", "[", "t", "]"}], ",", 
+          RowBox[{
+           RowBox[{"ourFavSolution", "'"}], "[", "t", "]"}]}], "}"}], ",", 
+        " ", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", " ", "0", ",", " ", "10"}], "}"}], ",", 
+        RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}], ",", 
+      RowBox[{"PlotDSolve", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "''"}], "[", "t", "]"}], "+", 
+          RowBox[{"0.05", 
+           RowBox[{
+            RowBox[{"x", "'"}], "[", "t", "]"}]}], "+", 
+          RowBox[{"25", 
+           RowBox[{"x", "[", "t", "]"}]}]}], "==", 
+         RowBox[{"Sin", "[", 
+          RowBox[{"5.5", "t"}], "]"}]}], ",", " ", 
+        RowBox[{"x", "[", "t", "]"}], ",", " ", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", " ", "0", ",", " ", "10"}], "}"}], ",", " ", 
+        RowBox[{"InitialValue", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"x", "[", "0", "]"}], "==", 
+            RowBox[{"-", 
+             FractionBox["440", "44221"]}]}], ",", " ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"x", "'"}], "[", "0", "]"}], "==", 
+            RowBox[{"-", 
+             FractionBox["46200", "44221"]}]}]}], "}"}]}], ",", " ", 
+        RowBox[{"Orbit", "->", "True"}]}], "]"}]}], "}"}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->218377205]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Comparing the two solutions, we see that they start off rather far apart:\
+\>", "Text",
+ CellID->138466003],
+
+Cell[BoxData[
+ RowBox[{"DirParametricPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ourFavSolution", "[", "t", "]"}], ",", 
+       RowBox[{
+        RowBox[{"ourFavSolution", "'"}], "[", "t", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"yd", "[", "t", "]"}], ",", 
+       RowBox[{
+        RowBox[{"yd", "'"}], "[", "t", "]"}]}], "}"}]}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", " ", "0", ",", " ", "20"}], "}"}], ",", " ", 
+   RowBox[{"PlotStyle", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Thickness", "[", "0.02", "]"}], ",", " ", "Dashed"}], "}"}], 
+      ",", 
+      RowBox[{"{", "Thick", "}"}]}], "}"}]}], ",", " ", 
+   RowBox[{"AspectRatio", "->", "1"}], ",", " ", 
+   RowBox[{"Arrowheads", "->", "True"}], ",", " ", 
+   RowBox[{"ColorFunction", "->", "None"}], ",", " ", 
+   RowBox[{"ArrowNumber", "->", "30"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellLabel->"In[125]:=",
+ CellID->233317880]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["But at later times become indstinguishable.", "Text",
+ CellID->33157227],
+
+Cell[BoxData[
+ RowBox[{"DirParametricPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ourFavSolution", "[", "t", "]"}], ",", 
+       RowBox[{
+        RowBox[{"ourFavSolution", "'"}], "[", "t", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"yd", "[", "t", "]"}], ",", 
+       RowBox[{
+        RowBox[{"yd", "'"}], "[", "t", "]"}]}], "}"}]}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", " ", "180", ",", " ", "200"}], "}"}], ",", " ", 
+   RowBox[{"PlotStyle", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Thickness", "[", "0.02", "]"}], ",", 
+      RowBox[{"{", "Thick", "}"}]}], "}"}]}], ",", " ", 
+   RowBox[{"AspectRatio", "->", "1"}], ",", " ", 
+   RowBox[{"Arrowheads", "->", "True"}], ",", " ", 
+   RowBox[{"ColorFunction", "->", "None"}], ",", " ", 
+   RowBox[{"ArrowNumber", "->", "30"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellLabel->"In[126]:=",
+ CellID->119549275]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Here are the Time-State Curves", "MathCaption",
+ CellID->4338405],
+
+Cell[BoxData[
+ RowBox[{"DirParametricPlot3D", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"ourFavSolution", "[", "t", "]"}], ",", 
+     RowBox[{
+      RowBox[{"ourFavSolution", "'"}], "[", "t", "]"}], ",", "t"}], "}"}], 
+   ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", " ", "0", ",", " ", "20"}], "}"}], ",", " ", 
+   RowBox[{"BoxRatios", "->", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1", ",", "2"}], "}"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellLabel->"In[6]:=",
+ CellID->527610952]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+The periodic solution is a true helix, outlining a cylinder.  The driven \
+wobbles in and out at first, until it finally meshes with the periodic \
+solution. \
+\>", "Text",
+ CellID->908846259],
+
+Cell[BoxData[
+ RowBox[{"GraphicsRow", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"DirParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"yd", "[", "t", "]"}], ",", 
+         RowBox[{
+          RowBox[{"yd", "'"}], "[", "t", "]"}], ",", "t"}], "}"}], " ", ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", " ", "0", ",", " ", "100"}], "}"}], ",", " ", 
+       RowBox[{"BoxRatios", "->", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "1", ",", "2"}], "}"}]}]}], "]"}], ",", 
+     RowBox[{"DirParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"ourFavSolution", "[", "t", "]"}], ",", 
+         RowBox[{
+          RowBox[{"ourFavSolution", "'"}], "[", "t", "]"}], ",", "t"}], "}"}],
+        " ", ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", " ", "0", ",", " ", "100"}], "}"}], ",", " ", 
+       RowBox[{"BoxRatios", "->", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "1", ",", "2"}], "}"}]}]}], "]"}], ",", 
+     RowBox[{"DirParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"ourFavSolution", "[", "t", "]"}], ",", 
+           RowBox[{
+            RowBox[{"ourFavSolution", "'"}], "[", "t", "]"}], ",", "t"}], 
+          "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"yd", "[", "t", "]"}], ",", 
+           RowBox[{
+            RowBox[{"yd", "'"}], "[", "t", "]"}], ",", "t"}], "}"}]}], "}"}], 
+       " ", ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", " ", "0", ",", " ", "100"}], "}"}], ",", " ", 
+       RowBox[{"BoxRatios", "->", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "1", ",", "2"}], "}"}]}]}], "]"}]}], "}"}], ",", 
+   " ", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellLabel->"In[128]:=",
+ CellID->114254800]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Over a long time scale.", "Text",
+ CellID->38869196],
+
+Cell[BoxData[
+ RowBox[{"GraphicsRow", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"DirParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"yd", "[", "t", "]"}], ",", 
+         RowBox[{
+          RowBox[{"yd", "'"}], "[", "t", "]"}], ",", "t"}], "}"}], " ", ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", " ", "0", ",", " ", "200"}], "}"}], ",", " ", 
+       RowBox[{"BoxRatios", "->", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "1", ",", "2"}], "}"}]}]}], "]"}], ",", 
+     RowBox[{"DirParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"ourFavSolution", "[", "t", "]"}], ",", 
+         RowBox[{
+          RowBox[{"ourFavSolution", "'"}], "[", "t", "]"}], ",", "t"}], "}"}],
+        " ", ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", " ", "0", ",", " ", "200"}], "}"}], ",", " ", 
+       RowBox[{"BoxRatios", "->", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "1", ",", "2"}], "}"}]}]}], "]"}], ",", 
+     RowBox[{"DirParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"ourFavSolution", "[", "t", "]"}], ",", 
+           RowBox[{
+            RowBox[{"ourFavSolution", "'"}], "[", "t", "]"}], ",", "t"}], 
+          "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"yd", "[", "t", "]"}], ",", 
+           RowBox[{
+            RowBox[{"yd", "'"}], "[", "t", "]"}], ",", "t"}], "}"}]}], "}"}], 
+       " ", ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", " ", "0", ",", " ", "200"}], "}"}], ",", " ", 
+       RowBox[{"BoxRatios", "->", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "1", ",", "2"}], "}"}]}]}], "]"}]}], "}"}], ",", 
+   " ", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellLabel->"In[129]:=",
+ CellID->413085544]
+}, Open  ]],
+
+Cell["Here are the Time-State Curves", "MathCaption",
+ CellID->11557361],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "How to deal with ",
+ ButtonBox["NDSolve",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/NDSolve"],
+ "."
+}], "Text",
+ CellID->403938507],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"blah", "[", "t_", "]"}], "=", 
+  RowBox[{
+   RowBox[{"x", "[", "t", "]"}], "/.", 
+   RowBox[{
+    RowBox[{"NDSolve", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "''"}], "[", "t", "]"}], "+", 
+          RowBox[{"0.05", 
+           RowBox[{
+            RowBox[{"x", "'"}], "[", "t", "]"}]}], "+", 
+          RowBox[{"25", 
+           RowBox[{"x", "[", "t", "]"}]}]}], "==", 
+         RowBox[{"Sin", "[", 
+          RowBox[{"5.5", "t"}], "]"}]}], ",", 
+        RowBox[{
+         RowBox[{"x", "[", "0", "]"}], "==", 
+         RowBox[{"-", 
+          FractionBox["440", "44221"]}]}], ",", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"x", "'"}], "[", "0", "]"}], "==", 
+         RowBox[{"-", 
+          FractionBox["46200", "44221"]}]}]}], "}"}], ",", " ", 
+      RowBox[{"x", "[", "t", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", " ", "20"}], "}"}]}], "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"1", ",", "1"}], "]"}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"DirParametricPlot3D", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"blah", "[", "t", "]"}], ",", 
+     RowBox[{
+      RowBox[{"blah", "'"}], "[", "t", "]"}], ",", "t"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", " ", "0", ",", " ", "10"}], "}"}], ",", " ", 
+   RowBox[{"BoxRatios", "->", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1", ",", "2"}], "}"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[134]:=",
+ CellID->323159073]
+}, Open  ]],
+
+Cell["Here we have the vector fields.", "MathCaption",
+ CellID->122243024],
+
+Cell[CellGroupData[{
+
+Cell["Vector Field for homoeneous equation.", "Text",
+ CellID->1877662],
+
+Cell[BoxData[
+ RowBox[{"PlotVectorField", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"v", ",", " ", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["v", "20"]}], "-", 
+      RowBox[{"25", "x"}]}]}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", " ", 
+     RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"v", ",", 
+     RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", " ", 
+   RowBox[{"NDSolve", "->", "True"}], ",", " ", 
+   RowBox[{"PlotInterval", "->", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", "0", ",", "40"}], "}"}]}], ",", " ", 
+   RowBox[{"InitialValue", "->", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"x", "[", "0", "]"}], "==", "1"}], ",", " ", 
+       RowBox[{
+        RowBox[{"v", "[", "0", "]"}], "==", "0"}]}], "}"}], "}"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellLabel->"In[136]:=",
+ CellID->72129688]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Here is the corresponding vector field for the driven equation.  Notice \
+that it is a 3 dimensional vector field. (We change the independent variable \
+to ",
+ Cell[BoxData[
+  FormBox["s", TraditionalForm]]],
+ " and introduce a new equation ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "'"}], 
+     RowBox[{"(", "s", ")"}]}], "\[Equal]", "1"}], TraditionalForm]]],
+ " to turn the planar driven system into an autonomous system in 3 variables.)"
+}], "Text",
+ CellID->400680247],
+
+Cell[BoxData[
+ RowBox[{"PlotVectorField3D", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"v", ",", " ", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["v", "20"]}], "-", 
+      RowBox[{"25", "x"}]}], ",", " ", "1"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", " ", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"v", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", " ", "0", ",", " ", "10"}], "}"}], ",", " ", 
+   RowBox[{"NDSolve", "->", "True"}], ",", " ", 
+   RowBox[{"PlotInterval", "->", 
+    RowBox[{"{", 
+     RowBox[{"s", ",", "0", ",", "10"}], "}"}]}], ",", " ", 
+   RowBox[{"InitialValue", "->", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"x", "[", "0", "]"}], "==", "1"}], ",", " ", 
+       RowBox[{
+        RowBox[{"v", "[", "0", "]"}], "==", "0"}], ",", " ", 
+       RowBox[{
+        RowBox[{"t", "[", "0", "]"}], "==", "0"}]}], "}"}], "}"}]}], ",", " ", 
+   RowBox[{"BoxRatios", "->", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1", ",", "1"}], "}"}]}], ",", " ", 
+   RowBox[{"PlotPoints", "->", "7"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellLabel->"In[137]:=",
+ CellID->99251903]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Characteristic Polynomials",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 59, 26.4663099}", 
+    "history" -> {"6.0.2", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Tutorial", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "XXXX. We find the characteristic polynomial to find the general \
+solution. The independent solutions are:", "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$253211, "title" -> 
+    "Characteristic Polynomials", "titlemodifier" -> "", "windowtitle" -> 
+    "Characteristic Polynomials", "type" -> "Tutorial", "uri" -> 
+    "KnoxPackages/tutorial/Characteristic Polynomials"}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", 
+  StyleDefinitions -> "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[598, 21, 2425, 57, 70, "AnchorBarGrid",ExpressionUUID->"3bd4dbcf-3872-46e3-aa2f-2c8fa8b27f9c",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[3048, 82, 63, 1, 70, "Title",ExpressionUUID->"ebac38c4-e031-42fb-b3cc-1be4705dfcd6",
+ CellID->509267359],
+Cell[3114, 85, 45, 1, 70, "Caption",ExpressionUUID->"35e83c10-6c98-4efd-990e-8681919ff0c1",
+ CellID->1891092685],
+Cell[CellGroupData[{
+Cell[3184, 90, 118, 3, 70, "MathCaption",ExpressionUUID->"f4b5c26e-192e-4671-a213-014275a92dd8",
+ CellID->836781195],
+Cell[3305, 95, 130, 3, 70, "Input",ExpressionUUID->"8e0b3af2-0608-44e3-a89b-486f17201515",
+ CellID->253413638],
+Cell[3438, 100, 215, 7, 70, "Input",ExpressionUUID->"31db8215-8b93-4af2-9fe4-a9545622a647",
+ CellID->2058623809]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3690, 112, 65, 1, 70, "Text",ExpressionUUID->"cf5b01d8-46a9-4233-808d-4e0db16b52ec",
+ CellID->12965111],
+Cell[3758, 115, 610, 22, 70, "Input",ExpressionUUID->"e0e85520-9fef-4a89-8483-dff3680dee50",
+ CellID->55941498],
+Cell[4371, 139, 258, 9, 70, "Input",ExpressionUUID->"28522cba-ec52-43e1-9f01-a5c2dbc7dacb",
+ CellID->479654568]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4666, 153, 106, 3, 70, "Text",ExpressionUUID->"a7634d7a-6058-4959-82f7-0cc261a95477",
+ CellID->423328073],
+Cell[4775, 158, 1388, 44, 70, "Input",ExpressionUUID->"48a8f053-110d-4f69-9e51-5e140b7e56e7",
+ CellID->926709015],
+Cell[6166, 204, 134, 4, 70, "Input",ExpressionUUID->"dde3475a-76a3-4dd0-a494-664a0a439813",
+ CellID->32726477]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6337, 213, 68, 1, 70, "Text",ExpressionUUID->"81ed0f86-83c6-432d-8660-49d9c2058a4b",
+ CellID->203684296],
+Cell[6408, 216, 312, 11, 70, "Input",ExpressionUUID->"8c819a99-097b-4ecd-be0c-45dbad9ff44b",
+ CellID->169544030]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6757, 232, 63, 1, 70, "Text",ExpressionUUID->"8209add5-8865-4d3d-b656-0f4dc1bad7c2",
+ CellID->111065724],
+Cell[6823, 235, 400, 13, 70, "Input",ExpressionUUID->"16c135c0-6ac5-4589-98ce-542edf7c864c",
+ CellID->214290962]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7260, 253, 367, 14, 70, "Text",ExpressionUUID->"91e6b363-7dc3-4971-9694-2c973bfe0217",
+ CellID->360149655],
+Cell[7630, 269, 437, 15, 70, "Input",ExpressionUUID->"5ddb0840-5cf4-438d-bc62-9c1641821db1",
+ CellID->805962661]
+}, Open  ]],
+Cell[8082, 287, 64, 1, 70, "MathCaption",ExpressionUUID->"8477f745-c8a5-4b6f-91f7-eefff9184913",
+ CellID->48169998],
+Cell[CellGroupData[{
+Cell[8171, 292, 282, 11, 70, "Text",ExpressionUUID->"22e6f48e-0ad6-4633-bb70-3686c3c188f9",
+ CellID->281468804],
+Cell[8456, 305, 526, 17, 70, "Input",ExpressionUUID->"14f4f5ee-348d-45c4-9524-9e8e48cec031",
+ CellID->158107251]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9019, 327, 80, 1, 70, "Text",ExpressionUUID->"326cc50b-f998-4ead-b8ab-e07d88f11aa0",
+ CellID->570023037],
+Cell[9102, 330, 111, 3, 70, "Input",ExpressionUUID->"52013861-3a03-4783-baf1-8b9540934b60",
+ CellID->84084727],
+Cell[9216, 335, 130, 4, 70, "Input",ExpressionUUID->"1652a96d-84d9-4916-8918-b998e4d8eafc",
+ CellID->159273225]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9383, 344, 75, 1, 70, "MathCaption",ExpressionUUID->"edff24ad-e136-4f84-9c8b-601cab1fbbe2",
+ CellID->225120391],
+Cell[9461, 347, 321, 9, 70, "Input",ExpressionUUID->"70f12531-896c-495d-b89b-22f7b4a14af9",
+ CellID->32102555],
+Cell[9785, 358, 995, 32, 70, "Input",ExpressionUUID->"2ca6e717-a99d-4254-b828-669e878c9d30",
+ CellID->306398337]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10817, 395, 151, 4, 70, "Text",ExpressionUUID->"8a1ecca1-bdab-4ada-a37d-e07b06207fc5",
+ CellID->856837968],
+Cell[10971, 401, 418, 12, 70, "Input",ExpressionUUID->"838cd913-a064-4355-ad65-566296ecfc89",
+ CellID->8978063],
+Cell[11392, 415, 960, 26, 70, "Input",ExpressionUUID->"153dad32-042b-47ff-8afa-d6f5db21eabe",
+ CellID->8129349]
+}, Open  ]],
+Cell[12367, 444, 76, 1, 70, "MathCaption",ExpressionUUID->"aa61b3bd-9ef7-46f2-95f5-027edbe39caa",
+ CellID->800046170],
+Cell[CellGroupData[{
+Cell[12468, 449, 321, 12, 70, "Text",ExpressionUUID->"1a99c930-6e4c-42fb-99ea-00a4214ed1a4",
+ CellID->658251214],
+Cell[12792, 463, 1836, 52, 70, "Input",ExpressionUUID->"32b07966-e692-4f23-b6a0-4e06b30264f0",
+ CellID->124584524]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14665, 520, 67, 1, 70, "MathCaption",ExpressionUUID->"384c58f4-5e3e-4d21-9c7c-10c721b394d7",
+ CellID->123934684],
+Cell[14735, 523, 1700, 48, 70, "Input",ExpressionUUID->"f3cd10b8-04ec-4e0a-b64c-3890e3c522c5",
+ CellID->218377205]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16472, 576, 117, 3, 70, "Text",ExpressionUUID->"e52bef12-2478-47d5-b865-c1017d37412e",
+ CellID->138466003],
+Cell[16592, 581, 1084, 31, 70, "Input",ExpressionUUID->"404af33d-1f39-4709-a662-62e0e05feffe",
+ CellID->233317880]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17713, 617, 78, 1, 70, "Text",ExpressionUUID->"b7ee9498-6c5f-458e-993f-93e5300849ef",
+ CellID->33157227],
+Cell[17794, 620, 1013, 28, 70, "Input",ExpressionUUID->"42cadb58-4666-47eb-b279-65ffd7e370ce",
+ CellID->119549275]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18844, 653, 71, 1, 70, "MathCaption",ExpressionUUID->"d5a433a3-9d47-4af8-b685-fab2a4d0ebb1",
+ CellID->4338405],
+Cell[18918, 656, 548, 16, 70, "Input",ExpressionUUID->"77051374-fe36-44f1-bf8e-17b9c969208b",
+ CellID->527610952]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19503, 677, 202, 5, 70, "Text",ExpressionUUID->"8b1eff89-66be-4c70-a522-86fefd9b7993",
+ CellID->908846259],
+Cell[19708, 684, 1898, 54, 70, "Input",ExpressionUUID->"8c00bb66-4d0b-4579-9cd9-efce45fe9ecc",
+ CellID->114254800]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21643, 743, 58, 1, 70, "Text",ExpressionUUID->"4fe6da17-ada3-43f6-8ed6-35036974dad8",
+ CellID->38869196],
+Cell[21704, 746, 1898, 54, 70, "Input",ExpressionUUID->"85ec3ceb-2428-46a4-a1a4-7668bd2e17b2",
+ CellID->413085544]
+}, Open  ]],
+Cell[23617, 803, 72, 1, 70, "MathCaption",ExpressionUUID->"c153f61d-c78a-44b0-9c64-4666db8f2faa",
+ CellID->11557361],
+Cell[CellGroupData[{
+Cell[23714, 808, 167, 7, 70, "Text",ExpressionUUID->"49c8e772-5b1f-48a1-b966-9df64be0dd09",
+ CellID->403938507],
+Cell[23884, 817, 1618, 49, 70, "Input",ExpressionUUID->"e5c8fdad-25ed-4936-ad77-f3d70d69a33b",
+ CellID->323159073]
+}, Open  ]],
+Cell[25517, 869, 74, 1, 70, "MathCaption",ExpressionUUID->"528b3287-c2d9-46e0-89d4-95333fba0425",
+ CellID->122243024],
+Cell[CellGroupData[{
+Cell[25616, 874, 71, 1, 70, "Text",ExpressionUUID->"8543abdd-9572-406d-ac54-3faa70199bb8",
+ CellID->1877662],
+Cell[25690, 877, 947, 29, 70, "Input",ExpressionUUID->"fc2f389e-62d7-4881-9add-7c91973a63ea",
+ CellID->72129688]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26674, 911, 521, 15, 70, "Text",ExpressionUUID->"240aa451-e465-4960-a57f-f78a06cbb0cd",
+ CellID->400680247],
+Cell[27198, 928, 1287, 37, 70, "Input",ExpressionUUID->"beb090fa-a502-474c-b38a-12d5e26f54db",
+ CellID->99251903]
+}, Open  ]]
+}, Open  ]],
+Cell[28512, 969, 23, 0, 70, "FooterCell",ExpressionUUID->"0145b035-6c13-4c71-90ff-5259d805316c"]
+}
+]
+*)
+
+(* End of internal cache information *)

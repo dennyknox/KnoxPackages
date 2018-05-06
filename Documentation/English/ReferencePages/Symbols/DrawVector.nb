@@ -1,0 +1,574 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21873,        564]
+NotebookOptionsPosition[     17038,        454]
+NotebookOutlinePosition[     19357,        513]
+CellTagsIndexPosition[     19272,        508]
+WindowTitle->DrawVector
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "81aa84a4-72b1-4e8e-a1cc-f6fd5ef585b7"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"b8fbab7f-b1a7-4aee-9d28-b9240df8a3ca"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ManipulateParametricPlot\"\>":>
+       Documentation`HelpLookup[
+       "paclet:ref/ManipulateParametricPlot"], \
+"\<\"ManipulateParametricPlot3D\"\>":>Documentation`HelpLookup[
+       "paclet:ref/ManipulateParametricPlot3D"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "c2cea621-0538-4408-b846-0d9edddb32fe"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"974f5beb-b661-4792-9835-ddc0b862f0fe"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/DrawVector\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/DrawVector"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+DrawVector.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$70345], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/DrawVector", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "2cb65d1a-6cba-4d6e-b339-b793ca6880b0"]
+    }], "AnchorBar",ExpressionUUID->"b364e525-0e96-483b-b5f2-abb4df98462e"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"d1b9490b-62b3-432e-9d72-dc1f87237bdd"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["DrawVector", "ObjectName",ExpressionUUID->
+  "b88056fe-b6c1-4de3-8850-2cee95b1e336"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"f28294d2-f676-4cd0-a5f0-f5801705d313"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "6846c997-0709-4d6a-8f62-fb0c06c13706"]
+}], "ObjectNameGrid",ExpressionUUID->"4b9d8af4-d658-4d31-b362-ce6d782b288e"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"DrawVector", "\[Rule]", 
+       TemplateBox[{Cell[
+          TextData["False"]],"paclet:ref/False"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}]}]], "InlineFormula",ExpressionUUID->
+      "56ee02c6-d1e0-4147-a1d5-b40d403a4a05"],
+     " \[LineSeparator]is an option for ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["ManipulateParametricPlot"]],
+        "paclet:KnoxPackages/ref/ManipulateParametricPlot"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+      "f1590213-48f1-4bfd-ab79-d1c4d7314bbc"],
+     " to replace the vectors from the origin to the curve by a point on the \
+curve."
+    }],ExpressionUUID->"f9920301-5201-4f29-9a59-ad2f884d2d79"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"e3126c42-3074-4379-86fa-7be3e405ab0b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"46ae87b0-82de-4a34-b524-b495b105a03e"],
+   "Details"
+  }], "NotesFrameText",ExpressionUUID->"ba88c9f5-da12-4b47-957e-6a58a5848aba"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"ae86640c-5dd7-4f48-8f84-46b0cf67a9c5"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1789995,ExpressionUUID->"886be858-d7dc-490e-bf4d-3088f4997fac"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"ed1fa29c-75f1-48a3-9f6b-c0dde8e073a4"],
+
+Cell[TextData[{
+ "DrawVector may also be used as an option for ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ManipulateParametricPlot3D"]],
+    "paclet:KnoxPackages/ref/ManipulateParametricPlot3D"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+  "beede74b-ff9e-420b-8931-cf5ba2b72c5b"],
+ "."
+}], "Notes",
+ CellID->1067943069,ExpressionUUID->"ee943ad9-6841-412c-9925-c77420f8d056"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"dfecb964-59ea-4bfe-869a-e188d1d76386"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "d270c29a-b849-4c52-be0a-128868d71928"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->562650382,ExpressionUUID->"6746f6ba-b144-4cd8-93d3-10ec2a06f2a9"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "ed889880-e409-4cac-94a7-c76c41e708ac"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->791099539,ExpressionUUID->"211900bf-167e-4108-a73a-115f9d2fd97a"],
+
+Cell[TextData[{
+ "By default, ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ManipulateParametricPlot"]],
+    "paclet:KnoxPackages/ref/ManipulateParametricPlot"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+  "5af07307-f18d-4078-a453-310bbc30d783"],
+ " shows the tip of the vector tracing out the curve."
+}], "ExampleText",
+ CellID->220667156,ExpressionUUID->"675cea0e-bbe8-48c5-a8f6-51f88af30d07"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ManipulateParametricPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Sin", "[", "t", "]"}], " ", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"2", "t"}], "]"}]}], ",", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"2", "t"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"2", "\[Pi]"}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->13609965,ExpressionUUID->"1f8b6e17-cb8b-4531-8222-a97b7375306a"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{KnoxPackages`Manipulations`Private`k$$ = 0., 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[KnoxPackages`Manipulations`Private`k$$], 0, "Parameter"}, 0, 2 
+      Pi}}, Typeset`size$$ = {180., {87., 93.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    KnoxPackages`Manipulations`Private`k$3313$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {KnoxPackages`Manipulations`Private`k$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[
+        KnoxPackages`Manipulations`Private`k$$, 
+         KnoxPackages`Manipulations`Private`k$3313$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[{
+         ParametricPlot[{Sin[$CellContext`t] Cos[2 $CellContext`t], 
+           Sin[2 $CellContext`t]}, {$CellContext`t, 0 + 1.*^-7, 
+           KnoxPackages`Manipulations`Private`k$$}, PlotRange -> 
+          KnoxPackages`Manipulations`Private`plotrange$3287, 
+          Evaluate[
+           Apply[Sequence, 
+            FilterRules[{}, 
+             Options[ParametricPlot]]]], PlotRangePadding -> Scaled[0.06]], 
+         KnoxPackages`Calculus`PlotVector[
+          ReplaceAll[
+           
+           Map[{{0, 0}, #}& , 
+            KnoxPackages`Manipulations`Private`funl$3287], $CellContext`t -> 
+           KnoxPackages`Manipulations`Private`k$$], VectorStyle -> 
+          KnoxPackages`Manipulations`Private`vstyle$3287, 
+          Evaluate[
+           Apply[Sequence, 
+            FilterRules[{}, 
+             Options[KnoxPackages`Calculus`PlotVector]]]]]}], 
+      "Specifications" :> {{{
+         KnoxPackages`Manipulations`Private`k$$, 0, "Parameter"}, 0, 2 Pi}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{300., {133., 139.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ ImageSize->{304, 274},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->245300467,ExpressionUUID->"ae881efc-243a-4837-85e7-857771b1fc1a"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General","prng",
+   "\"Value of option PlotRange -> \
+\\!\\(\\*RowBox[{\\\"KnoxPackages`Manipulations`Private`plotrange$3287\\\"}]\\\
+) is not All, Full, Automatic, a positive machine number, or an appropriate \
+list of range specifications.\"",2,1,3,29374943063998946324,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"",
+ CellID->236800001,ExpressionUUID->"824ae270-724d-4719-b2e4-7e94ace7ab48"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "06d3e2cf-17e1-4794-a9db-906d846bd523"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1068516729,ExpressionUUID->"a89ebfd4-cca5-4628-8517-5bd637fd96e1"],
+
+Cell[TextData[{
+ "Setting the option ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["DrawVector"]],"paclet:KnoxPackages/ref/DrawVector"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+  "8564ca75-ed9e-44b4-a147-65cef7e53035"],
+ " to False shows a point moving along the curve."
+}], "ExampleText",
+ CellID->608704342,ExpressionUUID->"04b02dc1-6ec0-438c-b532-b595afa9fb94"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ManipulateParametricPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Sin", "[", "t", "]"}], " ", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"2", "t"}], "]"}]}], ",", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"2", "t"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"DrawVector", "\[Rule]", "False"}], ",", 
+   RowBox[{"PointStyle", "\[Rule]", 
+    RowBox[{"PointSize", "[", ".04", "]"}]}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->568223,ExpressionUUID->"90bdaa50-1f94-464b-8190-2e1fb995ed8c"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{KnoxPackages`Manipulations`Private`k$$ = 0., 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[KnoxPackages`Manipulations`Private`k$$], 0, "Parameter"}, 0, 2 
+      Pi}}, Typeset`size$$ = {180., {86., 93.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    KnoxPackages`Manipulations`Private`k$4313$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {KnoxPackages`Manipulations`Private`k$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[
+        KnoxPackages`Manipulations`Private`k$$, 
+         KnoxPackages`Manipulations`Private`k$4313$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Show[KnoxPackages`Manipulations`Private`plot$4286, 
+        Graphics[
+         Flatten[
+          MapThread[{#, 
+            Point[#2]}& , {KnoxPackages`Manipulations`Private`ptstyle$4286, 
+            ReplaceAll[
+            KnoxPackages`Manipulations`Private`funl$4286, $CellContext`t -> 
+             KnoxPackages`Manipulations`Private`k$$]}]]], PlotRange -> 
+        KnoxPackages`Manipulations`Private`plotrange$4286], 
+      "Specifications" :> {{{
+         KnoxPackages`Manipulations`Private`k$$, 0, "Parameter"}, 0, 2 Pi}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{300., {132., 138.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ ImageSize->{304, 272},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->296806670,ExpressionUUID->"1c13868d-6f76-4729-8ccd-8222c5479402"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"2300fa71-ee3a-4140-8b19-2bb18bd61bd5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"dcb47475-96d2-4230-9bcd-f37d10ea0391"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"c9059680-5c66-4bf6-a4fe-ede9a9c746db"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ManipulateParametricPlot"]],
+    "paclet:ref/ManipulateParametricPlot"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"c5b3c07c-aa00-4a0e-b9eb-8f91382d795f"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ManipulateParametricPlot3D"]],
+    "paclet:ref/ManipulateParametricPlot3D"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"cffd0b05-428e-4082-bfee-0c9e5300e584"]
+}], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"f4ba3359-c10e-4d01-9f77-5fbaa830871a"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"c896bf58-c07a-438e-928b-a55f1cbbc55d"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"DrawVector",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 42, 49.2065994}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {"{draw vector}"}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "DrawVector -> False is an option for ManipulateParametricPlot to replace \
+the vectors from the origin to the curve by a point on the curve.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "DrawVector", 
+    "titlemodifier" -> "", "windowtitle" -> "DrawVector", "type" -> "Symbol", 
+    "uri" -> "KnoxPackages/ref/DrawVector", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7064, 187, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"6746f6ba-b144-4cd8-93d3-10ec2a06f2a9",
+   CellTags->"PrimaryExamplesSection",
+   CellID->562650382]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 19074, 501}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[582, 21, 3581, 80, 55, "AnchorBarGrid",ExpressionUUID->"d1b9490b-62b3-432e-9d72-dc1f87237bdd",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4188, 105, 395, 9, 52, "ObjectNameGrid",ExpressionUUID->"4b9d8af4-d658-4d31-b362-ce6d782b288e"],
+Cell[4586, 116, 1034, 25, 133, "Usage",ExpressionUUID->"e3126c42-3074-4379-86fa-7be3e405ab0b",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5657, 146, 853, 21, 37, "NotesSection",ExpressionUUID->"886be858-d7dc-490e-bf4d-3088f4997fac",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1789995],
+Cell[6513, 169, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"ed1fa29c-75f1-48a3-9f6b-c0dde8e073a4"],
+Cell[6602, 171, 425, 11, 70, "Notes",ExpressionUUID->"ee943ad9-6841-412c-9925-c77420f8d056",
+ CellID->1067943069]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7064, 187, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"6746f6ba-b144-4cd8-93d3-10ec2a06f2a9",
+ CellTags->"PrimaryExamplesSection",
+ CellID->562650382],
+Cell[CellGroupData[{
+Cell[7524, 202, 308, 7, 29, "ExampleSection",ExpressionUUID->"211900bf-167e-4108-a73a-115f9d2fd97a",
+ CellID->791099539],
+Cell[7835, 211, 443, 11, 39, "ExampleText",ExpressionUUID->"675cea0e-bbe8-48c5-a8f6-51f88af30d07",
+ CellID->220667156],
+Cell[CellGroupData[{
+Cell[8303, 226, 502, 15, 26, "Input",ExpressionUUID->"1f8b6e17-cb8b-4531-8222-a97b7375306a",
+ CellID->13609965],
+Cell[8808, 243, 2782, 60, 295, "Output",ExpressionUUID->"ae881efc-243a-4837-85e7-857771b1fc1a",
+ CellID->245300467],
+Cell[11593, 305, 445, 9, 35, "Message",ExpressionUUID->"824ae270-724d-4719-b2e4-7e94ace7ab48",
+ CellID->236800001]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12075, 319, 243, 5, 8, "ExampleDelimiter",ExpressionUUID->"a89ebfd4-cca5-4628-8517-5bd637fd96e1",
+ CellID->1068516729],
+Cell[12321, 326, 413, 10, 39, "ExampleText",ExpressionUUID->"04b02dc1-6ec0-438c-b532-b595afa9fb94",
+ CellID->608704342],
+Cell[CellGroupData[{
+Cell[12759, 340, 642, 18, 70, "Input",ExpressionUUID->"90bdaa50-1f94-464b-8190-2e1fb995ed8c",
+ CellID->568223],
+Cell[13404, 360, 2337, 50, 70, "Output",ExpressionUUID->"1c13868d-6f76-4729-8ccd-8222c5479402",
+ CellID->296806670]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[15780, 415, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"2300fa71-ee3a-4140-8b19-2bb18bd61bd5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15903, 420, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"c9059680-5c66-4bf6-a4fe-ede9a9c746db",
+ CellID->1255426704],
+Cell[16166, 429, 775, 20, 70, "SeeAlso",ExpressionUUID->"f4ba3359-c10e-4d01-9f77-5fbaa830871a",
+ CellID->929782353]
+}, Open  ]],
+Cell[16956, 452, 78, 0, 70, "FooterCell",ExpressionUUID->"c896bf58-c07a-438e-928b-a55f1cbbc55d"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

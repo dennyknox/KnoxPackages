@@ -1,0 +1,639 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20090,        630]
+NotebookOptionsPosition[     14711,        510]
+NotebookOutlinePosition[     16968,        568]
+CellTagsIndexPosition[     16883,        563]
+WindowTitle->IntegrationRegion3D
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"KnoxPackages/ref/IntegrationRegion3D\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["KnoxPackages/ref/IntegrationRegion3D"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/KnoxPackages/ref/\
+IntegrationRegion3D.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$92084], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "KnoxPackages/ref/IntegrationRegion3D", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[TextData[{
+ Cell["IntegrationRegion3D", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"IntegrationRegion3D", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["x", "TI"], ",", 
+          SubscriptBox[
+           StyleBox["x", "TI"], 
+           StyleBox["min", "TI"]], ",", 
+          SubscriptBox[
+           StyleBox["x", "TI"], 
+           StyleBox["max", "TI"]]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["y", "TI"], ",", 
+          RowBox[{
+           StyleBox["f", "TI"], 
+           RowBox[{"(", 
+            StyleBox["x", "TI"], ")"}]}], ",", 
+          RowBox[{
+           StyleBox["g", "TI"], 
+           RowBox[{"(", 
+            StyleBox["x", "TI"], ")"}]}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["z", "TI"], ",", 
+          RowBox[{
+           TemplateBox[{Cell[
+              TextData["F"]],"paclet:ref/F"},
+            "RefLink",
+            BaseStyle->{"InlineFormula"}], 
+           RowBox[{"(", 
+            RowBox[{
+             StyleBox["x", "TI"], ",", 
+             StyleBox["y", "TI"]}], ")"}]}], ",", 
+          RowBox[{
+           TemplateBox[{Cell[
+              TextData["G"]],"paclet:ref/G"},
+            "RefLink",
+            BaseStyle->{"InlineFormula"}], 
+           RowBox[{"(", 
+            RowBox[{
+             StyleBox["x", "TI"], ",", 
+             StyleBox["y", "TI"]}], ")"}]}]}], "}"}]}], "]"}]], 
+      "InlineFormula"],
+     " \[LineSeparator]plots the region ",
+     Cell[BoxData[
+      RowBox[{
+       StyleBox["a", "TI"], "\[LessEqual]", 
+       StyleBox["x", "TI"], "\[LessEqual]", 
+       StyleBox["b", "TI"]}]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{
+        StyleBox["f", "TI"], 
+        RowBox[{"(", 
+         StyleBox["x", "TI"], ")"}]}], "\[LessEqual]", 
+       StyleBox["y", "TI"], "\[LessEqual]", 
+       RowBox[{
+        StyleBox["g", "TI"], 
+        RowBox[{"(", 
+         StyleBox["x", "TI"], ")"}]}]}]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{
+        TemplateBox[{Cell[
+           TextData["F"]],"paclet:ref/F"},
+         "RefLink",
+         BaseStyle->{"InlineFormula"}], 
+        RowBox[{"(", 
+         RowBox[{
+          StyleBox["x", "TI"], ",", 
+          StyleBox["y", "TI"]}], ")"}]}], "\[LessEqual]", 
+       StyleBox["z", "TI"], "\[LessEqual]", 
+       RowBox[{
+        TemplateBox[{Cell[
+           TextData["G"]],"paclet:ref/G"},
+         "RefLink",
+         BaseStyle->{"InlineFormula"}], 
+        RowBox[{"(", 
+         RowBox[{
+          StyleBox["x", "TI"], ",", 
+          StyleBox["y", "TI"]}], ")"}]}]}]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell["The following options may be given:", "Notes",
+ CellID->1067943069],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["Faces",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/Faces"], 
+    ButtonBox["True",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/True"], Cell[TextData[{
+     "whether to plot the faces connecting surfaces",
+     Cell["", "TableText"]
+    }], "TableText"]},
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["FaceMesh",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/FaceMesh"], 
+    ButtonBox["None",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/None"], Cell[TextData[Cell[
+    "apply a mesh to the faces", "TableText"]], "TableText"]},
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["FaceStyle",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/FaceStyle"], 
+    RowBox[{"Opacity", "[", "1", "]"}], Cell[TextData[Cell[
+    "apply a style to the faces", "TableText"]], "TableText"]},
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["Order",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/Order"], "dxdydz", Cell[
+    "the order of integration", "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, 
+   "Rows" -> {None, None, None, {None}}, "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True, True, True, True}}}},
+ CellID->487864101]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(5)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1],
+
+Cell["Plot the region to be integrated", "ExampleText",
+ CellID->1331900455],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"IntegrationRegion3D", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      SqrtBox[
+       RowBox[{"4", "-", 
+        SuperscriptBox["x", "2"]}]]}], ",", " ", 
+     RowBox[{
+      FractionBox["1", "2"], 
+      SqrtBox[
+       RowBox[{"4", "-", 
+        SuperscriptBox["x", "2"]}]]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", 
+     RowBox[{
+      SuperscriptBox["x", "2"], "+", 
+      RowBox[{"3", 
+       SuperscriptBox["y", "2"]}]}], ",", 
+     RowBox[{"4", "-", 
+      SuperscriptBox["y", "2"]}]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->714411810],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->556452658],
+
+Cell["A region bounded with faces", "ExampleText",
+ CellID->65287649],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"IntegrationRegion3D", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      SqrtBox[
+       RowBox[{"4", "-", 
+        SuperscriptBox["x", "2"]}]]}], ",", " ", 
+     RowBox[{
+      FractionBox["1", "2"], 
+      SqrtBox[
+       RowBox[{"4", "-", 
+        SuperscriptBox["x", "2"]}]]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", 
+     RowBox[{
+      SuperscriptBox["x", "2"], "+", 
+      RowBox[{"3", 
+       SuperscriptBox["y", "2"]}]}], ",", 
+     RowBox[{"5", "-", 
+      SuperscriptBox["y", "2"]}]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1817515887]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Faces",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783],
+
+Cell["Suppress the faces", "ExampleText",
+ CellID->73017591],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"IntegrationRegion3D", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      SqrtBox[
+       RowBox[{"4", "-", 
+        SuperscriptBox["x", "2"]}]]}], ",", " ", 
+     RowBox[{
+      FractionBox["1", "2"], 
+      SqrtBox[
+       RowBox[{"4", "-", 
+        SuperscriptBox["x", "2"]}]]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", 
+     RowBox[{
+      SuperscriptBox["x", "2"], "+", 
+      RowBox[{"3", 
+       SuperscriptBox["y", "2"]}]}], ",", 
+     RowBox[{"5", "-", 
+      SuperscriptBox["y", "2"]}]}], "}"}], ",", 
+   RowBox[{"Faces", "\[Rule]", "False"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1425074989]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "FaceMesh",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->95452965],
+
+Cell["Add a mesh to the face", "ExampleText",
+ CellID->1753886051],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"IntegrationRegion3D", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      SqrtBox[
+       RowBox[{"4", "-", 
+        SuperscriptBox["x", "2"]}]]}], ",", " ", 
+     RowBox[{
+      FractionBox["1", "2"], 
+      SqrtBox[
+       RowBox[{"4", "-", 
+        SuperscriptBox["x", "2"]}]]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", 
+     RowBox[{
+      SuperscriptBox["x", "2"], "+", 
+      RowBox[{"3", 
+       SuperscriptBox["y", "2"]}]}], ",", 
+     RowBox[{"5", "-", 
+      SuperscriptBox["y", "2"]}]}], "}"}], ",", 
+   RowBox[{"FaceMesh", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1305210418]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "FaceStyle",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->516620133],
+
+Cell["Apply a style to the face", "ExampleText",
+ CellID->414729986],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"IntegrationRegion3D", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], 
+      SqrtBox[
+       RowBox[{"4", "-", 
+        SuperscriptBox["x", "2"]}]]}], ",", " ", 
+     RowBox[{
+      FractionBox["1", "2"], 
+      SqrtBox[
+       RowBox[{"4", "-", 
+        SuperscriptBox["x", "2"]}]]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", 
+     RowBox[{
+      SuperscriptBox["x", "2"], "+", 
+      RowBox[{"3", 
+       SuperscriptBox["y", "2"]}]}], ",", 
+     RowBox[{"5", "-", 
+      SuperscriptBox["y", "2"]}]}], "}"}], ",", 
+   RowBox[{"FaceStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"Orange", ",", 
+       RowBox[{"Opacity", "[", ".4", "]"}]}], "}"}], "}"}]}]}], 
+  "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1104395116]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"IntegrationRegion3D",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 44, 35.3350717}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {"{3D Integration Region Plot}"}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "IntegrationRegion3D[{x, xmin, xmax}, {y, f (x), g (x)}, {z, F (x, y), G \
+(x, y)}] plots the region a <= x <= b, f (x) <= y <= g (x), F (x, y) <= z <= \
+G (x, y).", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "IntegrationRegion3D", "titlemodifier" -> "", "windowtitle" -> 
+    "IntegrationRegion3D", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/IntegrationRegion3D"}},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", 
+  StyleDefinitions -> "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[8129, 249, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"bc5a937d-2ab4-420f-a4ab-860bb50f6366",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 16693, 556}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[591, 21, 2337, 53, 70, "AnchorBarGrid",ExpressionUUID->"55fec6c8-c61f-4036-b5cb-47b40c300051",
+ CellID->1],
+Cell[2931, 76, 176, 6, 70, "ObjectNameGrid",ExpressionUUID->"26184bba-3543-43c6-9fa7-c702e667b6bb"],
+Cell[3110, 84, 2864, 94, 70, "Usage",ExpressionUUID->"64660ea0-20d8-4333-acec-f295ea7164ea",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[5999, 182, 633, 19, 70, "NotesSection",ExpressionUUID->"58fc2002-609b-4db7-b160-9207dbea3146",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+Cell[6635, 203, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"f8bab65d-7d62-47c7-8b68-d3c9c1c31f46"],
+Cell[6669, 205, 73, 1, 70, "Notes",ExpressionUUID->"b14ca9f9-c3d1-4b8b-b332-aeec0148545a",
+ CellID->1067943069],
+Cell[6745, 208, 1347, 36, 70, "3ColumnTableMod",ExpressionUUID->"9aadf5b4-6d4e-411e-8b51-26b80ea02554",
+ CellID->487864101]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8129, 249, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"bc5a937d-2ab4-420f-a4ab-860bb50f6366",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[8413, 263, 187, 6, 70, "ExampleSection",ExpressionUUID->"ed75b3dc-eed7-4581-be69-0de0b1e2a50a",
+ CellID->1],
+Cell[8603, 271, 76, 1, 70, "ExampleText",ExpressionUUID->"cbd8a923-bd44-4105-a725-fa9a82b25417",
+ CellID->1331900455],
+Cell[8682, 274, 866, 30, 70, "Input",ExpressionUUID->"9c7cab47-ed6d-4085-9753-00bf18064aa0",
+ CellID->714411810],
+Cell[CellGroupData[{
+Cell[9573, 308, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"406bbf85-5030-4fdb-976b-23337819b6f5",
+ CellID->556452658],
+Cell[9701, 313, 69, 1, 70, "ExampleText",ExpressionUUID->"cbd79b8a-d8f3-418f-a505-4e3e21001d86",
+ CellID->65287649],
+Cell[9773, 316, 867, 30, 70, "Input",ExpressionUUID->"041d6a96-421b-48c6-ac1a-45010332eb14",
+ CellID->1817515887]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10689, 352, 189, 6, 70, "ExampleSection",ExpressionUUID->"fb113c02-13a4-4856-9c90-d6a31b63b0ae",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[10903, 362, 193, 6, 70, "ExampleSubsection",ExpressionUUID->"235c6128-289f-42c7-a788-0b8a86a4b7d9",
+ CellID->1757724783],
+Cell[11099, 370, 60, 1, 70, "ExampleText",ExpressionUUID->"67b9eb1a-b13e-49d9-a274-e91a4fa04f29",
+ CellID->73017591],
+Cell[11162, 373, 915, 31, 70, "Input",ExpressionUUID->"52c618d9-3fa2-4432-8ef2-4c85bfef1470",
+ CellID->1425074989]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[12114, 409, 194, 6, 70, "ExampleSubsection",ExpressionUUID->"54c7b36a-3d35-4464-a5e1-b1d88da93b99",
+ CellID->95452965],
+Cell[12311, 417, 66, 1, 70, "ExampleText",ExpressionUUID->"9091c90e-4e49-42c7-a4aa-e69876f92831",
+ CellID->1753886051],
+Cell[12380, 420, 917, 31, 70, "Input",ExpressionUUID->"c76c9280-f403-4013-b1ce-a4039e08de3c",
+ CellID->1305210418]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[13334, 456, 196, 6, 70, "ExampleSubsection",ExpressionUUID->"295daad8-2d79-4d82-a974-de6e919fb05b",
+ CellID->516620133],
+Cell[13533, 464, 68, 1, 70, "ExampleText",ExpressionUUID->"2566d45b-f6af-422a-ba76-85620173eb7d",
+ CellID->414729986],
+Cell[13604, 467, 1041, 36, 70, "Input",ExpressionUUID->"80f4e8bd-8dde-4900-ac20-6b40b3fd0681",
+ CellID->1104395116]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+Cell[14684, 508, 23, 0, 70, "FooterCell",ExpressionUUID->"f1889e6d-5ee9-4763-8e78-82742c686198"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,526 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17020,        516]
+NotebookOptionsPosition[     12419,        406]
+NotebookOutlinePosition[     14593,        463]
+CellTagsIndexPosition[     14508,        458]
+WindowTitle->KPGrad
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES PACKAGE SYMBOL", "PacletNameCell",ExpressionUUID->
+     "084c2232-11a4-40b2-874b-98f346ffa1b6"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }],ExpressionUUID->"fefc63a5-74b2-4346-a379-ad9d339dc089"],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"KnoxPackages/ref/KPGrad\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["KnoxPackages/ref/KPGrad"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/KnoxPackages/ref/KPGrad.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+           False]]; SelectionMove[
+        DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$99808], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "KnoxPackages/ref/KPGrad", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "d70af1a1-4f7d-4870-9e0b-1c018089f65e"]], "AnchorBar",ExpressionUUID->
+     "7dcf4c2c-4fe8-4dcc-8124-6daa74f873f7"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"c7764719-6136-431c-a6e2-9886a00ee789"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"5f00e878-1482-4e9c-9379-1516862b68fe"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount",ExpressionUUID->
+  "0890a634-5a14-499b-94f7-79385bbd347f"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->338009257,ExpressionUUID->"f9282c5d-5910-429b-930c-02d8fc4de347"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "c46e0330-37c6-4795-8da4-b9476333b486"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->381161149,ExpressionUUID->"c8b8a8c7-b875-4d88-9c5b-b0b105265e0e"],
+
+Cell[TextData[{
+ "Compute the gradient ",
+ Cell[BoxData[
+  RowBox[{"\[Del]", 
+   StyleBox["f", "TI"]}]], "InlineFormula",ExpressionUUID->
+  "573b0ab1-c4c9-4205-bfb2-54f44d845639"],
+ " of a function:"
+}], "ExampleText",
+ CellID->571957145,ExpressionUUID->"72897784-6d49-43cd-a0c0-1ec159a66204"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"KPGrad", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"x", " ", "y"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->445517148,ExpressionUUID->"a0e7aeb5-9c3d-46fd-a260-00812ab175f1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"y", " ", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"x", " ", "y"}], "]"}]}], ",", 
+   RowBox[{"x", " ", 
+    RowBox[{"Cos", "[", 
+     RowBox[{"x", " ", "y"}], "]"}]}]}], "}"}]], "Output",
+ ImageSize->{153, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->612162551,ExpressionUUID->"6c3f87a4-627f-496c-8ac5-d7f96fbfb088"]
+}, Open  ]],
+
+Cell["Find the gradient evaluated at several points:", "ExampleText",
+ CellID->377811054,ExpressionUUID->"6ae3f0fe-4d42-4b1f-9a04-c460c72eb696"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"KPGrad", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"x", " ", "y"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Pi]", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       FractionBox["\[Pi]", "4"], ",", "1"}], "}"}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->254916692,ExpressionUUID->"ecb269a7-f302-4fb5-a765-9bf4a3543c49"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", 
+      SqrtBox["2"]], ",", 
+     FractionBox["\[Pi]", 
+      RowBox[{"4", " ", 
+       SqrtBox["2"]}]]}], "}"}]}], "}"}]], "Output",
+ ImageSize->{159, 45},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->310495309,ExpressionUUID->"867b76eb-c61a-45f5-814a-4e2e2b383dff"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "9d679cae-e9ee-4db1-a6c9-cec8019af6e3"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->489643989,ExpressionUUID->"d68d3f90-e80f-41df-9fcd-c6cf1f69b365"],
+
+Cell[TextData[{
+ "Setting the option ",
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{Cell[
+      TextData["PowerBehavior"]],"paclet:KnoxPackages/ref/PowerBehavior"},
+    "RefLink",
+    BaseStyle->{"InlineFormula"}], "\[Rule]", 
+   TemplateBox[{Cell[
+      TextData["Real"]],"paclet:ref/Real"},
+    "RefLink",
+    BaseStyle->{"InlineFormula"}]}]], "InlineFormula",ExpressionUUID->
+  "d11d3121-09ff-4e8d-a8a2-234a8d68d3a1"],
+ " forces ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " to use real roots:"
+}], "ExampleText",
+ CellID->563362747,ExpressionUUID->"e7b8d943-9dd6-4366-89b2-5b0854702ddb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Grad", "[", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"x", " ", "y"}], ")"}], 
+      RowBox[{"2", "/", "3"}]], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}]}], "]"}], ",", 
+   RowBox[{"KPGrad", "[", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"x", " ", "y"}], ")"}], 
+      RowBox[{"2", "/", "3"}]], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"KPGrad", "[", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"x", " ", "y"}], ")"}], 
+      RowBox[{"2", "/", "3"}]], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+     RowBox[{"PowerBehavior", "\[Rule]", "Real"}]}], "]"}]}], "}"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1000224613,ExpressionUUID->"02d21f67-0b14-4198-b302-ac0124ae2bcb"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"2", " ", "y"}], 
+      RowBox[{"3", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"x", " ", "y"}], ")"}], 
+        RowBox[{"1", "/", "3"}]]}]], ",", 
+     FractionBox[
+      RowBox[{"2", " ", "x"}], 
+      RowBox[{"3", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"x", " ", "y"}], ")"}], 
+        RowBox[{"1", "/", "3"}]]}]]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["2", "3"]}], " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], 
+       RowBox[{"2", "/", "3"}]]}], ",", 
+     RowBox[{
+      FractionBox["2", "3"], " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], 
+       RowBox[{"2", "/", "3"}]]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["2", "3"]}], ",", 
+     FractionBox["2", "3"]}], "}"}]}], "}"}]], "Output",
+ ImageSize->{395, 42},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->249078824,ExpressionUUID->"049d3c3e-3495-443f-b296-87684aa003a6"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "b0c9fc07-5e59-4c64-87b9-8b6a51960052"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341,ExpressionUUID->"2d650e0c-3946-473a-9d34-894023f3f98a"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "UseLimit",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "600977f5-9db8-4c78-8c9f-9ba78b4b77c3"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->917058901,ExpressionUUID->"46a366cd-1adf-4780-ba3c-28e624d29ef8"],
+
+Cell[TextData[{
+ "Without setting the option UseLimit to True, ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " returns the wrong answer:"
+}], "ExampleText",
+ CellID->1031551267,ExpressionUUID->"44510527-56bb-4159-b293-b666652d716a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "f", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{"\[Piecewise]", GridBox[{
+     {
+      RowBox[{"x", "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["x", "2"], "+", 
+          SuperscriptBox["y", "2"]}], ")"}], "  ", 
+        RowBox[{"Sin", "[", 
+         FractionBox["1", 
+          SqrtBox[
+           RowBox[{
+            SuperscriptBox["x", "2"], "+", " ", 
+            SuperscriptBox["y", "2"]}]]], "]"}]}]}], 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y"}], "}"}], "!=", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}]},
+     {"0", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y"}], "}"}], "==", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}]}
+    }]}]}], "\[IndentingNewLine]", 
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"KPGrad", "[", 
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"x", ",", "y"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"KPGrad", "[", 
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"x", ",", "y"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}], ",", 
+     RowBox[{"UseLimit", "\[Rule]", "True"}]}], "]"}]}], "}"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2112384208,ExpressionUUID->"4eb196c1-a10e-4b46-8f85-df0c90f665cd"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0"}], "}"}]}], "}"}]], "Output",
+ ImageSize->{107, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->567699227,ExpressionUUID->"aae84c2e-978f-4203-b7a4-7b4af790b372"]
+}, Open  ]]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"4ee17571-7395-41ee-b44a-22422d71e2eb"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"KPGrad",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 45, 10.3654240}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {"{grad gradient}"}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Package Symbol", "language" -> "en", "paclet" -> 
+    "KnoxPackages Package", "status" -> "None", "summary" -> " ", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "KPGrad", "titlemodifier" -> 
+    "", "windowtitle" -> "KPGrad", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/KPGrad", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[3188, 81, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"f9282c5d-5910-429b-930c-02d8fc4de347",
+   CellTags->"PrimaryExamplesSection",
+   CellID->338009257]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 14311, 451}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[578, 21, 2585, 56, 55, "AnchorBarGrid",ExpressionUUID->"c7764719-6136-431c-a6e2-9886a00ee789",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[3188, 81, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"f9282c5d-5910-429b-930c-02d8fc4de347",
+ CellTags->"PrimaryExamplesSection",
+ CellID->338009257],
+Cell[CellGroupData[{
+Cell[3648, 96, 308, 7, 29, "ExampleSection",ExpressionUUID->"c8b8a8c7-b875-4d88-9c5b-b0b105265e0e",
+ CellID->381161149],
+Cell[3959, 105, 293, 8, 38, "ExampleText",ExpressionUUID->"72897784-6d49-43cd-a0c0-1ec159a66204",
+ CellID->571957145],
+Cell[CellGroupData[{
+Cell[4277, 117, 285, 8, 26, "Input",ExpressionUUID->"a0e7aeb5-9c3d-46fd-a260-00812ab175f1",
+ CellID->445517148],
+Cell[4565, 127, 423, 13, 35, "Output",ExpressionUUID->"6c3f87a4-627f-496c-8ac5-d7f96fbfb088",
+ CellID->612162551]
+}, Open  ]],
+Cell[5003, 143, 144, 1, 38, "ExampleText",ExpressionUUID->"6ae3f0fe-4d42-4b1f-9a04-c460c72eb696",
+ CellID->377811054],
+Cell[CellGroupData[{
+Cell[5172, 148, 487, 16, 49, "Input",ExpressionUUID->"ecb269a7-f302-4fb5-a765-9bf4a3543c49",
+ CellID->254916692],
+Cell[5662, 166, 473, 16, 66, "Output",ExpressionUUID->"867b76eb-c61a-45f5-814a-4e2e2b383dff",
+ CellID->310495309]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6172, 187, 242, 5, 8, "ExampleDelimiter",ExpressionUUID->"d68d3f90-e80f-41df-9fcd-c6cf1f69b365",
+ CellID->489643989],
+Cell[6417, 194, 598, 18, 39, "ExampleText",ExpressionUUID->"e7b8d943-9dd6-4366-89b2-5b0854702ddb",
+ CellID->563362747],
+Cell[CellGroupData[{
+Cell[7040, 216, 1098, 36, 52, "Input",ExpressionUUID->"02d21f67-0b14-4198-b302-ac0124ae2bcb",
+ CellID->1000224613],
+Cell[8141, 254, 1217, 43, 63, "Output",ExpressionUUID->"049d3c3e-3495-443f-b296-87684aa003a6",
+ CellID->249078824]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9419, 304, 302, 7, 29, "ExampleSection",ExpressionUUID->"2d650e0c-3946-473a-9d34-894023f3f98a",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[9746, 315, 308, 7, 70, "ExampleSubsection",ExpressionUUID->"46a366cd-1adf-4780-ba3c-28e624d29ef8",
+ CellID->917058901],
+Cell[10057, 324, 239, 6, 70, "ExampleText",ExpressionUUID->"44510527-56bb-4159-b293-b666652d716a",
+ CellID->1031551267],
+Cell[CellGroupData[{
+Cell[10321, 334, 1605, 51, 70, "Input",ExpressionUUID->"4eb196c1-a10e-4b46-8f85-df0c90f665cd",
+ CellID->2112384208],
+Cell[11929, 387, 357, 11, 35, "Output",ExpressionUUID->"aae84c2e-978f-4203-b7a4-7b4af790b372",
+ CellID->567699227]
+}, Open  ]]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+Cell[12337, 404, 78, 0, 41, "FooterCell",ExpressionUUID->"4ee17571-7395-41ee-b44a-22422d71e2eb"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

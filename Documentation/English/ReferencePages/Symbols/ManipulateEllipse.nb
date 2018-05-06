@@ -1,0 +1,520 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20018,        510]
+NotebookOptionsPosition[     16099,        419]
+NotebookOutlinePosition[     18582,        481]
+CellTagsIndexPosition[     18497,        476]
+WindowTitle->ManipulateEllipse
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "8da17bbc-e957-42df-86a6-1d1afad5f1c0"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"1de18e59-b6b5-43fe-bd65-1b887d153027"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ManipulateCircle\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/ref/ManipulateCircle"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "cc4f9262-579d-46e5-a497-6eeb73a56960"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"76ac513c-00b3-482b-bb4e-6eb61b1c8a5a"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/ManipulateEllipse\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/ManipulateEllipse"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+ManipulateEllipse.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$108657], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/ManipulateEllipse", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "7cd20bce-7b59-4099-bf21-b268a17b18a3"]
+    }], "AnchorBar",ExpressionUUID->"2049b9ca-a147-4697-bda1-12db91c3998f"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"c90d74fb-9130-4a5c-b91b-697043bb9962"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["ManipulateEllipse", "ObjectName",ExpressionUUID->
+  "adca148c-43f5-4ac1-b34d-e43af9e15a9b"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"6f17f4fc-09c0-40aa-a0ea-2fed1f2c5695"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "99563cae-1ebd-4c88-9052-222dcff783e9"]
+}], "ObjectNameGrid",ExpressionUUID->"85b92159-8e05-494d-b98b-e3fe1a730e6e"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"ManipulateEllipse", "[", 
+       RowBox[{"{", 
+        RowBox[{"xradius", ",", "yradius"}], "}"}], "]"}]], "InlineFormula",
+      ExpressionUUID->"23ebd68a-f706-4864-ba88-3e3d31b938c7"],
+     " \[LineSeparator]produces an animation of an ellipse centered at {0,0} \
+with semi-axes of lengths xradius and yradius being traced out.  Styles for \
+the radius and angle text can be set with ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["RadiusStyle"]],"paclet:KnoxPackages/ref/RadiusStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+      "562ec1f9-f7d0-4755-8595-5f57d80a5bd3"],
+     " and ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["AngleStyle"]],"paclet:KnoxPackages/ref/AngleStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+      "596bbbc8-b5a7-4c87-afe2-5b974676517e"],
+     ".  The style of the ellipse is set by ",
+     ButtonBox["PlotStyle",
+      BaseStyle->"Link",
+      ButtonData->"paclet:ref/PlotStyle"],
+     "."
+    }],ExpressionUUID->"6d53dd3a-3abe-48ef-b62c-53bc82700f5c"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"beee1c5c-b5db-42c3-8e65-9fdcb10cacba"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"78f42bf4-3036-4f0f-9e23-6b1219aead1e"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "b5f6a4a9-e8ee-4201-a638-f7cd2758124d"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->233346645,ExpressionUUID->"80417f50-fd30-4984-ba44-c9b1c0d633ee"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "b7f0afd5-e90c-4389-bf40-37376dc18c35"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->186487586,ExpressionUUID->"8bae174c-df22-4ea8-a1f5-a1acf055c6c2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Manipulations`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ManipulateEllipse", "[", 
+  RowBox[{"{", 
+   RowBox[{"2", ",", "1"}], "}"}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->219101020,ExpressionUUID->"44c6fc0e-3977-471c-bef8-6c1a27ae3f14"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     InterpretationBox[
+      ButtonBox[
+       TooltipBox[
+        GraphicsBox[{
+          {GrayLevel[0], RectangleBox[{0, 0}]}, 
+          {GrayLevel[0], RectangleBox[{1, -1}]}, 
+          {RGBColor[0, 0, 1], RectangleBox[{0, -1}, {2, 1}]}},
+         AspectRatio->1,
+         Frame->True,
+         FrameStyle->RGBColor[0., 0., 0.6666666666666666],
+         FrameTicks->None,
+         ImageSize->
+          Dynamic[{
+           Automatic, 1.35 CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+            Magnification]}],
+         PlotRangePadding->None],
+        "RGBColor[0, 0, 1]"],
+       Appearance->None,
+       BaseStyle->{},
+       BaselinePosition->Baseline,
+       ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]}, 
+         If[
+          Not[
+           AbsoluteCurrentValue["Deployed"]], 
+          SelectionMove[Typeset`box$, All, Expression]; 
+          FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+          FrontEnd`Private`$ColorSelectorInitialColor = RGBColor[0, 0, 1]; 
+          FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+          MathLink`CallFrontEnd[
+            FrontEnd`AttachCell[Typeset`box$, 
+             FrontEndResource["RGBColorValueSelector"], {0, {Left, Bottom}}, {
+             Left, Top}, 
+             "ClosingActions" -> {
+              "SelectionDeparture", "ParentChanged", "EvaluatorQuit"}]]]],
+       DefaultBaseStyle->{},
+       Evaluator->Automatic,
+       Method->"Preemptive"],
+      RGBColor[0, 0, 1],
+      Editable->False,
+      Selectable->False], ",", 
+     RowBox[{"Thickness", "[", "0.01`", "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Thickness", "[", "0.0075`", "]"}], ",", 
+     InterpretationBox[
+      ButtonBox[
+       TooltipBox[
+        GraphicsBox[{
+          {GrayLevel[0], RectangleBox[{0, 0}]}, 
+          {GrayLevel[0], RectangleBox[{1, -1}]}, 
+          {GrayLevel[0.33], RectangleBox[{0, -1}, {2, 1}]}},
+         AspectRatio->1,
+         Frame->True,
+         FrameStyle->GrayLevel[0.22000000000000003`],
+         FrameTicks->None,
+         ImageSize->
+          Dynamic[{
+           Automatic, 1.35 CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+            Magnification]}],
+         PlotRangePadding->None],
+        "GrayLevel[0.33]"],
+       Appearance->None,
+       BaseStyle->{},
+       BaselinePosition->Baseline,
+       ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]}, 
+         If[
+          Not[
+           AbsoluteCurrentValue["Deployed"]], 
+          SelectionMove[Typeset`box$, All, Expression]; 
+          FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+          FrontEnd`Private`$ColorSelectorInitialColor = GrayLevel[0.33]; 
+          FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+          MathLink`CallFrontEnd[
+            FrontEnd`AttachCell[Typeset`box$, 
+             FrontEndResource["GrayLevelColorValueSelector"], {
+             0, {Left, Bottom}}, {Left, Top}, 
+             "ClosingActions" -> {
+              "SelectionDeparture", "ParentChanged", "EvaluatorQuit"}]]]],
+       DefaultBaseStyle->{},
+       Evaluator->Automatic,
+       Method->"Preemptive"],
+      GrayLevel[0.33],
+      Editable->False,
+      Selectable->False]}], "}"}], ",", 
+   InterpretationBox[
+    ButtonBox[
+     TooltipBox[
+      GraphicsBox[{
+        {GrayLevel[0], RectangleBox[{0, 0}]}, 
+        {GrayLevel[0], RectangleBox[{1, -1}]}, 
+        {GrayLevel[0.33], RectangleBox[{0, -1}, {2, 1}]}},
+       AspectRatio->1,
+       Frame->True,
+       FrameStyle->GrayLevel[0.22000000000000003`],
+       FrameTicks->None,
+       ImageSize->
+        Dynamic[{
+         Automatic, 1.35 CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+          Magnification]}],
+       PlotRangePadding->None],
+      "GrayLevel[0.33]"],
+     Appearance->None,
+     BaseStyle->{},
+     BaselinePosition->Baseline,
+     ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]}, 
+       If[
+        Not[
+         AbsoluteCurrentValue["Deployed"]], 
+        SelectionMove[Typeset`box$, All, Expression]; 
+        FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+        FrontEnd`Private`$ColorSelectorInitialColor = GrayLevel[0.33]; 
+        FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+        MathLink`CallFrontEnd[
+          FrontEnd`AttachCell[Typeset`box$, 
+           FrontEndResource["GrayLevelColorValueSelector"], {
+           0, {Left, Bottom}}, {Left, Top}, 
+           "ClosingActions" -> {
+            "SelectionDeparture", "ParentChanged", "EvaluatorQuit"}]]]],
+     DefaultBaseStyle->{},
+     Evaluator->Automatic,
+     Method->"Preemptive"],
+    GrayLevel[0.33],
+    Editable->False,
+    Selectable->False]}], "}"}]], "Print",
+ CellLabel->"During evaluation of In[3]:=",
+ CellID->102900419,ExpressionUUID->"0747c7ed-a363-4500-851c-be730d67cd3d"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{KnoxPackages`Manipulations`Private`k$$ = 0., 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[KnoxPackages`Manipulations`Private`k$$], 0, "Parameter"}, 0, 2 
+      Pi}}, Typeset`size$$ = {180., {89., 95.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    KnoxPackages`Manipulations`Private`k$1155$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {KnoxPackages`Manipulations`Private`k$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[
+        KnoxPackages`Manipulations`Private`k$$, 
+         KnoxPackages`Manipulations`Private`k$1155$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> (
+       KnoxPackages`Manipulations`Private`vec$1153 = 
+        KnoxPackages`Calculus`PlotVector[{{0, 
+           0}, {KnoxPackages`Manipulations`Private`xradius$1153, 
+             KnoxPackages`Manipulations`Private`yradius$1153} {
+             Cos[KnoxPackages`Manipulations`Private`k$$], 
+             Sin[KnoxPackages`Manipulations`Private`k$$]}}, PlotStyle -> 
+          KnoxPackages`Manipulations`Private`radstyle$1153, PlotRange -> 
+          KnoxPackages`Manipulations`Private`plotrange$1153, AspectRatio -> 
+          Automatic]; Show[
+         Graphics[{
+           Flatten[{KnoxPackages`Manipulations`Private`pstyle$1153, 
+             
+             Circle[{0, 0}, {
+              KnoxPackages`Manipulations`Private`xradius$1153, 
+               KnoxPackages`Manipulations`Private`yradius$1153}, {
+              0, KnoxPackages`Manipulations`Private`k$$}]}], 
+           Flatten[{KnoxPackages`Manipulations`Private`angstyle$1153, 
+             Text[
+             KnoxPackages`Manipulations`Private`k$$, 
+              KnoxPackages`Manipulations`Private`smallr$1153 {1/2, 1/4}]}]}], 
+         KnoxPackages`Manipulations`Private`vec$1153, 
+         Apply[Sequence, 
+          FilterRules[{}, 
+           Options[Graphics]]], PlotRange -> 
+         KnoxPackages`Manipulations`Private`plotrange$1153, AspectRatio -> 
+         Automatic, Axes -> Automatic]), 
+      "Specifications" :> {{{
+         KnoxPackages`Manipulations`Private`k$$, 0, "Parameter"}, 0, 2 Pi}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{300., {135., 141.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ ImageSize->{304, 278},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->12229464,ExpressionUUID->"a8894eb5-c7c1-4582-bf0f-e326502a0403"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"2d0304ab-1304-48f0-bb24-5277520b2026"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"ca4b463b-12f3-445c-ba95-55cf6e7e7084"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"37f969de-cf3f-4dae-846d-4ad89e83bbc2"],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["ManipulateCircle"]],"paclet:KnoxPackages/ref/ManipulateCircle"},
+  "RefLink",
+  BaseStyle->{
+   "InlineFormula", FontFamily -> 
+    "Verdana"}]], \
+"InlineFormula",ExpressionUUID->"f5e5fde2-4f72-4a93-9946-a33eccf32e14"]], \
+"SeeAlso",
+ CellID->929782353,ExpressionUUID->"9feaa58e-f9e9-49f3-a981-ff3f9a6ebe12"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"972dd1d9-608b-4df1-acdd-2ae491c5ddb0"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ManipulateEllipse",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 46, 8.2591311}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "ManipulateEllipse[{xradius, yradius}] produces an animation of an \
+ellipse centered at {0,0} with semi-axes of lengths xradius and yradius being \
+traced out. Styles for the radius and angle text can be set with RadiusStyle \
+and AngleStyle. The style of the ellipse is set by PlotStyle.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "ManipulateEllipse", 
+    "titlemodifier" -> "", "windowtitle" -> "ManipulateEllipse", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/ManipulateEllipse", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5975, 152, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"80417f50-fd30-4984-ba44-c9b1c0d633ee",
+   CellTags->"PrimaryExamplesSection",
+   CellID->233346645]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 18299, 469}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[589, 21, 3484, 77, 55, "AnchorBarGrid",ExpressionUUID->"c90d74fb-9130-4a5c-b91b-697043bb9962",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4098, 102, 402, 9, 52, "ObjectNameGrid",ExpressionUUID->"85b92159-8e05-494d-b98b-e3fe1a730e6e"],
+Cell[4503, 113, 1435, 34, 152, "Usage",ExpressionUUID->"beee1c5c-b5db-42c3-8e65-9fdcb10cacba",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5975, 152, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"80417f50-fd30-4984-ba44-c9b1c0d633ee",
+ CellTags->"PrimaryExamplesSection",
+ CellID->233346645],
+Cell[CellGroupData[{
+Cell[6435, 167, 308, 7, 29, "ExampleSection",ExpressionUUID->"8bae174c-df22-4ea8-a1f5-a1acf055c6c2",
+ CellID->186487586],
+Cell[CellGroupData[{
+Cell[6768, 178, 313, 7, 43, "Input",ExpressionUUID->"44c6fc0e-3977-471c-bef8-6c1a27ae3f14",
+ CellID->219101020],
+Cell[7084, 187, 4853, 130, 22, "Print",ExpressionUUID->"0747c7ed-a363-4500-851c-be730d67cd3d",
+ CellID->102900419],
+Cell[11940, 319, 3278, 68, 299, "Output",ExpressionUUID->"a8894eb5-c7c1-4582-bf0f-e326502a0403",
+ CellID->12229464]
+}, Open  ]]
+}, Open  ]],
+Cell[15245, 391, 86, 0, 29, "SectionFooterSpacer",ExpressionUUID->"2d0304ab-1304-48f0-bb24-5277520b2026"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15368, 396, 260, 7, 72, "SeeAlsoSection",ExpressionUUID->"37f969de-cf3f-4dae-846d-4ad89e83bbc2",
+ CellID->1255426704],
+Cell[15631, 405, 371, 9, 70, "SeeAlso",ExpressionUUID->"9feaa58e-f9e9-49f3-a981-ff3f9a6ebe12",
+ CellID->929782353]
+}, Open  ]],
+Cell[16017, 417, 78, 0, 70, "FooterCell",ExpressionUUID->"972dd1d9-608b-4df1-acdd-2ae491c5ddb0"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

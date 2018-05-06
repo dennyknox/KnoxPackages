@@ -1,0 +1,474 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     16355,        464]
+NotebookOptionsPosition[     12085,        365]
+NotebookOutlinePosition[     14268,        422]
+CellTagsIndexPosition[     14183,        417]
+WindowTitle->ProjectionMatrix
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "5a110519-9c28-4db0-b3e1-8ee3ba43d0b9"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"a511e2b6-5aef-4720-9b67-3ed7ed50cc37"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"LinearAlgebra\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/guide/LinearAlgebra"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "86832f5c-3620-48b8-bf0f-e9a38496baa6"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"86afc4b5-dfcf-428b-962c-92fca9e78035"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/ProjectionMatrix\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/ProjectionMatrix"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+ProjectionMatrix.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$189179], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/ProjectionMatrix", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "78be0620-eb32-4ac2-861f-53bc2464e4bd"]
+    }], "AnchorBar",ExpressionUUID->"e276190f-6b17-4ad5-9e39-dc2ac497ac48"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"fae87c2d-de59-4f91-9c98-6889f70219b0"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"d6032e39-a119-4c1c-a1fe-274a24165d01"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "f13c5bfc-0504-47f3-860c-9047e41a2110"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->162188738,ExpressionUUID->"247ff5ef-7590-4b07-862c-6180904b34dc"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "8e0b4d3a-7882-4a59-8edd-ee7b6ddd3d14"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->49999450,ExpressionUUID->"962c52e4-dcc1-4753-969b-d4ab97705585"],
+
+Cell[TextData[{
+ "The projection matrix for the projection of ",
+ Cell[BoxData[
+  SuperscriptBox["\[DoubleStruckCapitalR]", "3"]], "InlineFormula",
+  ExpressionUUID->"8765c1ea-8ee2-49f8-9eb6-c46705710e71"],
+ " onto a line."
+}], "ExampleText",
+ CellID->443316963,ExpressionUUID->"e30dfe6d-841d-4450-90c5-adab123c2884"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ProjectionMatrix", "[", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", 
+      RowBox[{"-", "3"}]}], "}"}], "}"}], "]"}], "//", 
+  "MatrixForm"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->16751566,ExpressionUUID->"8b7ccaf5-f3ff-485c-a9b6-7ce62cced0d5"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      FractionBox["1", "14"], 
+      FractionBox["1", "7"], 
+      RowBox[{"-", 
+       FractionBox["3", "14"]}]},
+     {
+      FractionBox["1", "7"], 
+      FractionBox["2", "7"], 
+      RowBox[{"-", 
+       FractionBox["3", "7"]}]},
+     {
+      RowBox[{"-", 
+       FractionBox["3", "14"]}], 
+      RowBox[{"-", 
+       FractionBox["3", "7"]}], 
+      FractionBox["9", "14"]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{104, 84},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//MatrixForm=",
+ CellID->64882892,ExpressionUUID->"d56b0179-6fb9-40c9-9cc9-a4f12b53da25"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The projection matrix for the projection of ",
+ Cell[BoxData[
+  SuperscriptBox["\[DoubleStruckCapitalR]", "3"]], "InlineFormula",
+  ExpressionUUID->"c41b767d-3404-44dd-97f9-1d75df8b3f0c"],
+ " onto a plane."
+}], "ExampleText",
+ CellID->43436943,ExpressionUUID->"fc467c31-9d0b-4b24-9700-898f54649398"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ProjectionMatrix", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", 
+       RowBox[{"-", "3"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1", ",", "0"}], "}"}]}], "}"}], "]"}], "//", 
+  "MatrixForm"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->301649442,ExpressionUUID->"6ba5c08e-5473-4030-89c9-775be5c4a544"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      FractionBox["5", "6"], 
+      FractionBox["1", "3"], 
+      FractionBox["1", "6"]},
+     {
+      FractionBox["1", "3"], 
+      FractionBox["1", "3"], 
+      RowBox[{"-", 
+       FractionBox["1", "3"]}]},
+     {
+      FractionBox["1", "6"], 
+      RowBox[{"-", 
+       FractionBox["1", "3"]}], 
+      FractionBox["5", "6"]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{86, 84},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]//MatrixForm=",
+ CellID->248047428,ExpressionUUID->"7ef31569-94c5-4b69-b87b-9fc390550356"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The projection matrix for the projection of ",
+ Cell[BoxData[
+  SuperscriptBox["\[DoubleStruckCapitalR]", "5"]], "InlineFormula",
+  ExpressionUUID->"f2f40151-7071-46b0-9804-c7260643df34"],
+ " onto a 3\[Dash]dimensional subspace of ",
+ Cell[BoxData[
+  SuperscriptBox["\[DoubleStruckCapitalR]", "5"]], "InlineFormula",
+  ExpressionUUID->"51fc792a-2c46-4a02-a437-69f35807dde5"],
+ "."
+}], "ExampleText",
+ CellID->92946675,ExpressionUUID->"672d2d5e-7d2d-4fec-9912-ec82d134994c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ProjectionMatrix", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "1", ",", "1", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "1", ",", "2", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "1"}], "}"}]}], "}"}], 
+   "]"}], "//", "MatrixForm"}]], "Input",
+ PageBreakBelow->Automatic,
+ AspectRatioFixed->False,
+ CellLabel->"In[3]:=",
+ CellID->115618223,ExpressionUUID->"dcec443b-ae59-4efd-909d-275596508830"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      FractionBox["7", "10"], 
+      FractionBox["1", "5"], 
+      FractionBox["1", "5"], 
+      RowBox[{"-", 
+       FractionBox["3", "10"]}], 
+      FractionBox["1", "5"]},
+     {
+      FractionBox["1", "5"], 
+      FractionBox["7", "10"], 
+      FractionBox["1", "5"], 
+      FractionBox["1", "5"], 
+      RowBox[{"-", 
+       FractionBox["3", "10"]}]},
+     {
+      FractionBox["1", "5"], 
+      FractionBox["1", "5"], 
+      FractionBox["1", "5"], 
+      FractionBox["1", "5"], 
+      FractionBox["1", "5"]},
+     {
+      RowBox[{"-", 
+       FractionBox["3", "10"]}], 
+      FractionBox["1", "5"], 
+      FractionBox["1", "5"], 
+      FractionBox["7", "10"], 
+      FractionBox["1", "5"]},
+     {
+      FractionBox["1", "5"], 
+      RowBox[{"-", 
+       FractionBox["3", "10"]}], 
+      FractionBox["1", "5"], 
+      FractionBox["1", "5"], 
+      FractionBox["7", "10"]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{158, 142},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]//MatrixForm=",
+ CellID->123775053,ExpressionUUID->"4777cf6e-45fd-478c-9462-d0c89cec55e8"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"3af27c8f-9594-409a-bcbb-8eca7413e31f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"f84b9c46-f2bd-4eda-9f71-8111ab77c9f6"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"be0b6143-ad6c-4267-a508-dd370da7d80b"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"326b58e9-f732-42fa-8fa7-4d4b330dfd67"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["LinearAlgebra"]],"paclet:KnoxPackages/guide/LinearAlgebra"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->362163206,ExpressionUUID->"b4d784ce-54b8-40b4-8a56-398cb07ac872"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"9ca1cf13-4ec6-44c2-8bad-1a7eff34cc50"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ProjectionMatrix",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 54, 1.0079825}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> " ", "synonyms" -> {}, "tabletags" -> {},
+     "title" -> "ProjectionMatrix", "titlemodifier" -> "", "windowtitle" -> 
+    "ProjectionMatrix", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/ProjectionMatrix", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[4103, 102, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"247ff5ef-7590-4b07-862c-6180904b34dc",
+   CellTags->"PrimaryExamplesSection",
+   CellID->162188738]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 13985, 410}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[588, 21, 3490, 77, 55, "AnchorBarGrid",ExpressionUUID->"fae87c2d-de59-4f91-9c98-6889f70219b0",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4103, 102, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"247ff5ef-7590-4b07-862c-6180904b34dc",
+ CellTags->"PrimaryExamplesSection",
+ CellID->162188738],
+Cell[CellGroupData[{
+Cell[4563, 117, 307, 7, 29, "ExampleSection",ExpressionUUID->"962c52e4-dcc1-4753-969b-d4ab97705585",
+ CellID->49999450],
+Cell[4873, 126, 317, 7, 38, "ExampleText",ExpressionUUID->"e30dfe6d-841d-4450-90c5-adab123c2884",
+ CellID->443316963],
+Cell[CellGroupData[{
+Cell[5215, 137, 309, 9, 26, "Input",ExpressionUUID->"8b7ccaf5-f3ff-485c-a9b6-7ce62cced0d5",
+ CellID->16751566],
+Cell[5527, 148, 1135, 36, 105, "Output",ExpressionUUID->"d56b0179-6fb9-40c9-9cc9-a4f12b53da25",
+ CellID->64882892]
+}, Open  ]],
+Cell[6677, 187, 317, 7, 38, "ExampleText",ExpressionUUID->"fc467c31-9d0b-4b24-9700-898f54649398",
+ CellID->43436943],
+Cell[CellGroupData[{
+Cell[7019, 198, 401, 12, 26, "Input",ExpressionUUID->"6ba5c08e-5473-4030-89c9-775be5c4a544",
+ CellID->301649442],
+Cell[7423, 212, 1085, 34, 105, "Output",ExpressionUUID->"7ef31569-94c5-4b69-b87b-9fc390550356",
+ CellID->248047428]
+}, Open  ]],
+Cell[8523, 249, 491, 11, 38, "ExampleText",ExpressionUUID->"672d2d5e-7d2d-4fec-9912-ec82d134994c",
+ CellID->92946675],
+Cell[CellGroupData[{
+Cell[9039, 264, 566, 15, 26, "Input",ExpressionUUID->"dcec443b-ae59-4efd-909d-275596508830",
+ PageBreakBelow->Automatic,
+ CellID->115618223],
+Cell[9608, 281, 1635, 54, 163, "Output",ExpressionUUID->"4777cf6e-45fd-478c-9462-d0c89cec55e8",
+ CellID->123775053]
+}, Open  ]]
+}, Open  ]],
+Cell[11270, 339, 86, 0, 29, "SectionFooterSpacer",ExpressionUUID->"3af27c8f-9594-409a-bcbb-8eca7413e31f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11393, 344, 266, 7, 72, "MoreAboutSection",ExpressionUUID->"be0b6143-ad6c-4267-a508-dd370da7d80b",
+ CellID->38303248],
+Cell[11662, 353, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"326b58e9-f732-42fa-8fa7-4d4b330dfd67"],
+Cell[11751, 355, 237, 5, 70, "MoreAbout",ExpressionUUID->"b4d784ce-54b8-40b4-8a56-398cb07ac872",
+ CellID->362163206]
+}, Open  ]],
+Cell[12003, 363, 78, 0, 70, "FooterCell",ExpressionUUID->"9ca1cf13-4ec6-44c2-8bad-1a7eff34cc50"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

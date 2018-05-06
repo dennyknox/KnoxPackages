@@ -1,0 +1,438 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15483,        428]
+NotebookOptionsPosition[     11349,        332]
+NotebookOutlinePosition[     13675,        392]
+CellTagsIndexPosition[     13590,        387]
+WindowTitle->VandermondeMatrix
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "ec4d942d-9d3f-4c50-9cb0-adaf487d2ced"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"0236f499-4a85-4968-a1de-b6c7ad21c8fb"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"LinearAlgebra\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/guide/LinearAlgebra"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "b11ce9f9-5e45-4faf-bd1e-46e628474162"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"ffd78870-6f6a-4cf4-b206-0b5c96e2479e"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/VandermondeMatrix\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/VandermondeMatrix"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+VandermondeMatrix.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$244875], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/VandermondeMatrix", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "22a92cb9-bd37-46d3-bc05-9454fa673de8"]
+    }], "AnchorBar",ExpressionUUID->"b750142c-09cf-462f-8220-63dfe3cd0dd3"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"8c62578c-1d58-4848-831e-44219205dcf7"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["VandermondeMatrix", "ObjectName",ExpressionUUID->
+  "15013837-2b3b-416d-951f-a599da2ee467"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"20b98324-827e-47fc-b830-7f9905e6c814"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "a427a5f9-b6df-49f5-a9cc-5eb65746988d"]
+}], "ObjectNameGrid",ExpressionUUID->"5779aeb9-d24d-4452-8dfe-aeb5c136285e"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["VandermondeMatrix"]],
+         "paclet:KnoxPackages/ref/VandermondeMatrix"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["data", "TI"], ",", 
+        StyleBox["n", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "5e6b7efd-5b1b-488c-b78e-4beb10ec3156"],
+     " \[LineSeparator]returns the ",
+     Cell[BoxData[
+      StyleBox["m", "TI"]], "InlineFormula",ExpressionUUID->
+      "4dbbe8f7-56f1-4273-8dc0-dbeab24007a3"],
+     " x ",
+     Cell[BoxData[
+      StyleBox["n", "TI"]], "InlineFormula",ExpressionUUID->
+      "bcdab056-55be-4474-885b-38d21c98b425"],
+     " matrix, where ",
+     Cell[BoxData[
+      RowBox[{
+       StyleBox["m", "TI"], "=", 
+       RowBox[{
+        TemplateBox[{Cell[
+           TextData["Length"]],"paclet:ref/Length"},
+         "RefLink",
+         BaseStyle->{"InlineFormula"}], "[", 
+        StyleBox["data", "TI"], "]"}]}]], "InlineFormula",ExpressionUUID->
+      "721fd251-88fe-4c89-8872-35eb2e1085b3"],
+     ", whose columns are ",
+     Cell[BoxData[
+      StyleBox["data", "TI"]], "InlineFormula",ExpressionUUID->
+      "ce57a851-4fe1-450d-9c27-e1aa1770a3b0"],
+     "^0, ",
+     Cell[BoxData[
+      StyleBox["data", "TI"]], "InlineFormula",ExpressionUUID->
+      "d21ebd1a-9a94-458e-b76c-7b67eefbe7ba"],
+     "^1, ..., ",
+     Cell[BoxData[
+      StyleBox["data", "TI"]], "InlineFormula",ExpressionUUID->
+      "cac892da-ffc7-4923-903d-cb13355c6fb6"],
+     "^(",
+     Cell[BoxData[
+      StyleBox["n", "TI"]], "InlineFormula",ExpressionUUID->
+      "c6e96ab8-dcd8-4ed2-9bff-9b798df159aa"],
+     "-1)."
+    }],ExpressionUUID->"59e2fd84-a7cc-4528-9520-a4a06bbafac5"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"4f88a651-cc11-46d6-9346-42c092210cba"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"ff6ed1d9-f792-479d-bddb-92f9b6795224"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "64315df3-3796-4c5a-87ae-6218fdd4c2f3"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->301145305,ExpressionUUID->"3e45220d-6fa9-41bc-ada6-8915c71e0f13"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "f466c070-7f17-4a07-a060-ac03dbca9cf1"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->167276457,ExpressionUUID->"b5f1dc33-40bb-4633-9960-82ad2efd0727"],
+
+Cell["Here is a basic example.", "ExampleText",
+ CellID->358576344,ExpressionUUID->"7124c498-7a65-439b-bec7-83b66a13426b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`LinearAlgebra`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"VandermondeMatrix", "[", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      SubscriptBox["x", "i"], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "0", ",", "3"}], "}"}]}], "]"}], ",", "4"}], "]"}], "//",
+   "MatrixForm"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->43064217,ExpressionUUID->"d457ff4e-7705-441c-9e4f-c2859120f36d"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", 
+      SubscriptBox["x", "0"], 
+      SubsuperscriptBox["x", "0", "2"], 
+      SubsuperscriptBox["x", "0", "3"]},
+     {"1", 
+      SubscriptBox["x", "1"], 
+      SubsuperscriptBox["x", "1", "2"], 
+      SubsuperscriptBox["x", "1", "3"]},
+     {"1", 
+      SubscriptBox["x", "2"], 
+      SubsuperscriptBox["x", "2", "2"], 
+      SubsuperscriptBox["x", "2", "3"]},
+     {"1", 
+      SubscriptBox["x", "3"], 
+      SubsuperscriptBox["x", "3", "2"], 
+      SubsuperscriptBox["x", "3", "3"]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{94, 77},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//MatrixForm=",
+ CellID->49934710,ExpressionUUID->"7ac7158c-a41c-4e0c-b25d-c046e902227e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Det", "[", 
+   RowBox[{"VandermondeMatrix", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       SubscriptBox["x", "i"], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", "3"}], "}"}]}], "]"}], ",", "4"}], "]"}], 
+   "]"}], "//", "Simplify"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->138381770,ExpressionUUID->"2626cb29-2208-4f16-a74a-8da64f2af4be"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    SubscriptBox["x", "0"], "-", 
+    SubscriptBox["x", "1"]}], ")"}], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    SubscriptBox["x", "0"], "-", 
+    SubscriptBox["x", "2"]}], ")"}], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    SubscriptBox["x", "1"], "-", 
+    SubscriptBox["x", "2"]}], ")"}], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    SubscriptBox["x", "0"], "-", 
+    SubscriptBox["x", "3"]}], ")"}], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    SubscriptBox["x", "1"], "-", 
+    SubscriptBox["x", "3"]}], ")"}], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    SubscriptBox["x", "2"], "-", 
+    SubscriptBox["x", "3"]}], ")"}]}]], "Output",
+ ImageSize->{337, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->436825598,ExpressionUUID->"5cfde616-325b-43cc-8862-f55f38f3dbf9"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"01070913-1a5c-4a7a-9010-1d2287754845"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"2a15e3c4-444f-4145-a062-3ffe238dddf0"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"c11ea9c5-dbb3-4476-9ebe-26858a97f114"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"96cc2419-d55c-4aa0-9c97-99b97f1181e0"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["LinearAlgebra"]],"paclet:KnoxPackages/guide/LinearAlgebra"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->298667094,ExpressionUUID->"86581629-49a2-42d2-b97b-e30f10e63b75"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"30476b0a-3956-4121-baf8-bbb39c977853"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"VandermondeMatrix",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 58, 41.8295486}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "VandermondeMatrix[data, n] returns the m x n matrix, where m = \
+Length[data], whose columns are data^0, data^1, ..., data^(n-1).", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "VandermondeMatrix", 
+    "titlemodifier" -> "", "windowtitle" -> "VandermondeMatrix", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/VandermondeMatrix", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6562, 173, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"3e45220d-6fa9-41bc-ada6-8915c71e0f13",
+   CellTags->"PrimaryExamplesSection",
+   CellID->301145305]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 13392, 380}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[589, 21, 3494, 77, 55, "AnchorBarGrid",ExpressionUUID->"8c62578c-1d58-4848-831e-44219205dcf7",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4108, 102, 402, 9, 52, "ObjectNameGrid",ExpressionUUID->"5779aeb9-d24d-4452-8dfe-aeb5c136285e"],
+Cell[4513, 113, 2012, 55, 112, "Usage",ExpressionUUID->"4f88a651-cc11-46d6-9346-42c092210cba",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6562, 173, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"3e45220d-6fa9-41bc-ada6-8915c71e0f13",
+ CellTags->"PrimaryExamplesSection",
+ CellID->301145305],
+Cell[CellGroupData[{
+Cell[7022, 188, 308, 7, 29, "ExampleSection",ExpressionUUID->"b5f1dc33-40bb-4633-9960-82ad2efd0727",
+ CellID->167276457],
+Cell[7333, 197, 122, 1, 38, "ExampleText",ExpressionUUID->"7124c498-7a65-439b-bec7-83b66a13426b",
+ CellID->358576344],
+Cell[CellGroupData[{
+Cell[7480, 202, 476, 13, 43, "Input",ExpressionUUID->"d457ff4e-7705-441c-9e4f-c2859120f36d",
+ CellID->43064217],
+Cell[7959, 217, 1247, 36, 98, "Output",ExpressionUUID->"7ac7158c-a41c-4e0c-b25d-c046e902227e",
+ CellID->49934710]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9243, 258, 415, 12, 26, "Input",ExpressionUUID->"2626cb29-2208-4f16-a74a-8da64f2af4be",
+ CellID->138381770],
+Cell[9661, 272, 846, 30, 35, "Output",ExpressionUUID->"5cfde616-325b-43cc-8862-f55f38f3dbf9",
+ CellID->436825598]
+}, Open  ]]
+}, Open  ]],
+Cell[10534, 306, 86, 0, 29, "SectionFooterSpacer",ExpressionUUID->"01070913-1a5c-4a7a-9010-1d2287754845"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10657, 311, 266, 7, 72, "MoreAboutSection",ExpressionUUID->"c11ea9c5-dbb3-4476-9ebe-26858a97f114",
+ CellID->38303248],
+Cell[10926, 320, 86, 0, 14, "SectionHeaderSpacer",ExpressionUUID->"96cc2419-d55c-4aa0-9c97-99b97f1181e0"],
+Cell[11015, 322, 237, 5, 24, "MoreAbout",ExpressionUUID->"86581629-49a2-42d2-b97b-e30f10e63b75",
+ CellID->298667094]
+}, Open  ]],
+Cell[11267, 330, 78, 0, 41, "FooterCell",ExpressionUUID->"30476b0a-3956-4121-baf8-bbb39c977853"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

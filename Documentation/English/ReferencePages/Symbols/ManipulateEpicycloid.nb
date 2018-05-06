@@ -1,0 +1,414 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15775,        404]
+NotebookOptionsPosition[     11793,        313]
+NotebookOutlinePosition[     14454,        377]
+CellTagsIndexPosition[     14369,        372]
+WindowTitle->ManipulateEpicycloid
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "32cf1007-ed14-4727-84e2-63e60d4e6f8f"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"5b3ccb0a-fc07-4861-8224-0843a3add11a"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"DisplayEpicycloid\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/ref/DisplayEpicycloid"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "ad4da01c-aef9-404d-9881-a4bf0da01bf4"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"c54189d9-0661-4559-bb6e-e3c9ff2572af"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"KnoxPackages/ref/ManipulateEpicycloid\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/ManipulateEpicycloid"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+ManipulateEpicycloid.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$109143], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/ManipulateEpicycloid", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "dabc22ed-1113-4e00-b49a-50f37e50371b"]
+    }], "AnchorBar",ExpressionUUID->"2bc3aa47-d7aa-47d6-b6d5-800285d81cb1"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"00e2b2b6-4821-4457-97b4-d5f3d1e5a1d9"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["ManipulateEpicycloid", "ObjectName",ExpressionUUID->
+  "834d495f-a061-4e02-b921-9f842a05cb90"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"0191be8e-453e-46e0-8836-2397609eddd2"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "73ba735b-2e10-410e-b5a4-736fa67d99b6"]
+}], "ObjectNameGrid",ExpressionUUID->"0dc69622-f496-40be-90a6-284be2f465b2"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{
+        RowBox[{"ManipulateEpicycloid", "[", 
+         RowBox[{"R", ",", "r", ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", 
+            SubscriptBox["t", "min"], ",", 
+            SubscriptBox["t", "max"], ",", 
+            RowBox[{"d", "\[VeryThinSpace]", 
+             RowBox[{"t", ":", ".05"}]}]}], "}"}]}]}], "}"}], "]"}]], 
+      "InlineFormula",ExpressionUUID->"49910514-aaf6-46c2-a3de-943df8e0ea3c"],
+     " \[LineSeparator]produces an animation of the epicycloid determined by \
+a point on a circle of radius ",
+     Cell[BoxData[
+     "r"], "InlineFormula",ExpressionUUID->
+      "b96eaf74-99d8-4028-af8d-90f7f56601e3"],
+     " rolling on the outside of a circle of radius ",
+     Cell[BoxData[
+     "R"], "InlineFormula",ExpressionUUID->
+      "c9d5b94d-9e11-4429-a054-d57d93a57b63"],
+     " when ",
+     Cell[BoxData[
+     "t"], "InlineFormula",ExpressionUUID->
+      "50f64ffc-cdf8-45b4-b45a-41b9d5212ee5"],
+     " is between ",
+     Cell[BoxData[
+      SubscriptBox["t", "min"]],ExpressionUUID->
+      "cb8c4d27-d1a0-4d30-9564-b27e25214398"],
+     " and ",
+     Cell[BoxData[
+      SubscriptBox["t", "max"]],ExpressionUUID->
+      "5652c7fc-646c-461e-a34f-10befdc54a82"],
+     " in steps of ",
+     Cell[BoxData[
+      RowBox[{"d", "\[VeryThinSpace]", "t"}]], "InlineFormula",
+      ExpressionUUID->"eb23e77e-845a-4434-84b7-17a1ed944313"],
+     " (default value is .05)  Styles for the fixed circle, rolling circle, \
+point, and radius can be set with  ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["FixedCircleStyle"]],
+        "paclet:KnoxPackages/ref/FixedCircleStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+      "2e77c0ab-21a8-4c4c-910e-ea80628e70c8"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["RollingCircleStyle"]],
+        "paclet:KnoxPackages/ref/RollingCircleStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+      "0d59f8ab-66c4-4319-9341-ac51b9536507"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["PointStyle"]],"paclet:KnoxPackages/ref/PointStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+      "47378ffc-83ca-4069-a68f-030b4db3e0bf"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["RadiusStyle"]],"paclet:KnoxPackages/ref/RadiusStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+      "8f916427-352e-4a27-b95c-bbbaf4f6439b"],
+     ".  ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["PlotStyle"]],"paclet:ref/PlotStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+      "9d83d758-9dad-4eb1-85b4-23692e3b14a9"],
+     " sets the style for the epicycloid."
+    }],ExpressionUUID->"39004cea-c577-40d9-9f96-d96a675f0358"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"5db8e3dd-833c-47e0-81c8-df30b3adfe84"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"de215397-9eb5-4426-b663-5f4605dfc3a7"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "ab06e424-af1f-429b-b835-58f8ae3206c1"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->163527845,ExpressionUUID->"bdb4636c-7722-4774-8b02-aafdfad52325"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "cd0f9118-f507-43c1-8a1c-2edd34eb1473"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->181813415,ExpressionUUID->"5e138533-e426-40b9-aa9c-9e5b2c056b6b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Manipulations`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ManipulateEpicycloid", "[", 
+  RowBox[{"5", ",", "2", ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"4", " ", "\[Pi]"}]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->353556148,ExpressionUUID->"0dafb942-fced-4c05-90cc-ab78e2f74fd4"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 0.0001, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0.0001, 4 Pi}}, Typeset`size$$ = {
+    180., {87., 93.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$86592$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0.0001}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$86592$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      KnoxPackages`Manipulations`EpiHypotrochoid[
+       5, 2, 2, {0, $CellContext`t$$}, KnoxPackages`Manipulations`Private`Epi,
+         KnoxPackages`Manipulations`Labels -> False], 
+      "Specifications" :> {{$CellContext`t$$, 0.0001, 4 Pi}}, "Options" :> {},
+       "DefaultOptions" :> {}],
+     ImageSizeCache->{253., {133., 139.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ ImageSize->{257, 274},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->359017183,ExpressionUUID->"e8fb7830-1d9b-4f7e-b21f-28636434e555"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"25a87865-933b-474b-beb9-e18c03a0aaec"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"c4ab523e-0bc0-43fe-aff0-6e20190b0479"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"4eaabf13-ec5c-4619-ba03-609046a82e4e"],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["DisplayEpicycloid"]],
+   "paclet:KnoxPackages/ref/DisplayEpicycloid"},
+  "RefLink",
+  BaseStyle->{
+   "InlineFormula", FontFamily -> 
+    "Verdana"}]], \
+"InlineFormula",ExpressionUUID->"20160208-9fc3-4cf7-adf8-af917026486c"]], \
+"SeeAlso",
+ CellID->929782353,ExpressionUUID->"8ae306f1-1260-46db-8c9c-d17ba1199a86"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"948027b2-2fa5-421a-a257-9b27b1580200"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ManipulateEpicycloid",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 46, 11.9196417}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "ManipulateEpicycloid[R, r, {t, tmin, tmax, d t : .05}}] produces an \
+animation of the epicycloid determined by a point on a circle of radius r \
+rolling on the outside of a circle of radius R when t is between tmin and \
+tmax in steps of d t (default value is .05) Styles for the fixed circle, \
+rolling circle, point, and radius can be set with FixedCircleStyle, \
+RollingCircleStyle, PointStyle, RadiusStyle. PlotStyle sets the style for the \
+epicycloid.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "ManipulateEpicycloid", "titlemodifier" -> "", "windowtitle" -> 
+    "ManipulateEpicycloid", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/ManipulateEpicycloid", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7841, 204, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"bdb4636c-7722-4774-8b02-aafdfad52325",
+   CellTags->"PrimaryExamplesSection",
+   CellID->163527845]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 14171, 365}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[592, 21, 3522, 79, 55, "AnchorBarGrid",ExpressionUUID->"00e2b2b6-4821-4457-97b4-d5f3d1e5a1d9",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4139, 104, 405, 9, 52, "ObjectNameGrid",ExpressionUUID->"0dc69622-f496-40be-90a6-284be2f465b2"],
+Cell[4547, 115, 3257, 84, 174, "Usage",ExpressionUUID->"5db8e3dd-833c-47e0-81c8-df30b3adfe84",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7841, 204, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"bdb4636c-7722-4774-8b02-aafdfad52325",
+ CellTags->"PrimaryExamplesSection",
+ CellID->163527845],
+Cell[CellGroupData[{
+Cell[8301, 219, 308, 7, 29, "ExampleSection",ExpressionUUID->"5e138533-e426-40b9-aa9c-9e5b2c056b6b",
+ CellID->181813415],
+Cell[CellGroupData[{
+Cell[8634, 230, 391, 9, 43, "Input",ExpressionUUID->"0dafb942-fced-4c05-90cc-ab78e2f74fd4",
+ CellID->353556148],
+Cell[9028, 241, 1878, 39, 295, "Output",ExpressionUUID->"e8fb7830-1d9b-4f7e-b21f-28636434e555",
+ CellID->359017183]
+}, Open  ]]
+}, Open  ]],
+Cell[10933, 284, 86, 0, 29, "SectionFooterSpacer",ExpressionUUID->"25a87865-933b-474b-beb9-e18c03a0aaec"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11056, 289, 260, 7, 72, "SeeAlsoSection",ExpressionUUID->"4eaabf13-ec5c-4619-ba03-609046a82e4e",
+ CellID->1255426704],
+Cell[11319, 298, 377, 10, 70, "SeeAlso",ExpressionUUID->"8ae306f1-1260-46db-8c9c-d17ba1199a86",
+ CellID->929782353]
+}, Open  ]],
+Cell[11711, 311, 78, 0, 70, "FooterCell",ExpressionUUID->"948027b2-2fa5-421a-a257-9b27b1580200"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

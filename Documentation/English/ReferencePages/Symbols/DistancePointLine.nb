@@ -1,0 +1,758 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     26898,        748]
+NotebookOptionsPosition[     19928,        597]
+NotebookOutlinePosition[     22574,        661]
+CellTagsIndexPosition[     22489,        656]
+WindowTitle->DistancePointLine
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "a444cbff-f80d-4850-8ccb-a025e43a7090"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"2bbc630e-73a6-4d91-844d-4e6fcf40641b"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "05265e39-140d-4414-a81a-7ca8671ee8a0"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"2b72fd8d-7409-4f22-a75f-bb87a3b70d6d"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/DistancePointLine\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/DistancePointLine"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+DistancePointLine.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$61490], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/DistancePointLine", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "a38283fc-6ee3-4809-a48d-8318167dbd79"]
+    }], "AnchorBar",ExpressionUUID->"f78f7ddc-b1d2-4984-a289-bcd8744e5430"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"8a58c209-6662-4b2a-a078-d4f59ee8fe56"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["DistancePointLine", "ObjectName",ExpressionUUID->
+  "fe4dbf0d-1754-4690-bbe0-48780c4176a0"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"3464677b-a4ab-4bf5-9730-8a2fec14e5bf"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "9901a299-74ac-4c88-b741-ff2a92f43a57"]
+}], "ObjectNameGrid",ExpressionUUID->"ce902d15-90ab-4a95-876c-c955220f1959"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["DistancePointLine"]],
+         "paclet:KnoxPackages/ref/DistancePointLine"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          SubscriptBox[
+           StyleBox["x", "TI"], 
+           StyleBox["0", "TR"]], ",", 
+          SubscriptBox[
+           StyleBox["y", "TI"], 
+           StyleBox["0", "TR"]]}], "}"}], ",", 
+        RowBox[{
+         StyleBox[
+          RowBox[{"ax", "+", "by"}], "TI"], "\[Equal]", 
+         StyleBox["c", "TI"]}], ",", 
+        RowBox[{"{", 
+         StyleBox[
+          RowBox[{"x", ",", "y"}], "TI"], "}"}]}], "]"}]], "InlineFormula",
+      ExpressionUUID->"790c03b2-1126-4247-ac53-2f7530a823a7"],
+     " \[LineSeparator]returns the distance from the point ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox[
+         StyleBox["x", "TI"], 
+         StyleBox["0", "TR"]], ",", 
+        SubscriptBox[
+         StyleBox["y", "TI"], 
+         StyleBox["0", "TR"]]}], "}"}]], "InlineFormula",ExpressionUUID->
+      "e1ea33bd-d1cd-49e5-b9c7-6823291e7726"],
+     " to the line ",
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         StyleBox["a", "TI"], " ", 
+         StyleBox["x", "TI"]}], "+", 
+        RowBox[{
+         StyleBox["b", "TI"], " ", 
+         StyleBox["y", "TI"]}]}], "\[Equal]", 
+       StyleBox["c", "TI"]}]], "InlineFormula",ExpressionUUID->
+      "86ccc7ae-8530-4c1f-8ba3-8f5f8e5b491a"],
+     "."
+    }],ExpressionUUID->"ac0f0ed6-5086-4390-bc5d-12f89ab251a9"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["DistancePointLine"]],
+         "paclet:KnoxPackages/ref/DistancePointLine"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["pt", "TI"], ",", " ", 
+        StyleBox["paraeqns", "TI"], ",", 
+        StyleBox["t", "TI"]}], 
+       StyleBox["]", "TI"]}]], "InlineFormula",ExpressionUUID->
+      "def0dd7e-2b4a-4898-97c7-e6867cd00944"],
+     "\[LineSeparator]returns the distance from the point ",
+     Cell[BoxData[Cell[TextData[Cell[BoxData[
+       StyleBox["pt", "TI"]], "InlineFormula",ExpressionUUID->
+       "a3e845bc-1cb6-4481-9e06-cb847805fda4"]], "InlineFormula",
+       ExpressionUUID->"84890de8-b8e6-4005-a4dd-ef8c539023ba"]], 
+      "InlineFormula",ExpressionUUID->"e5dc7700-aec1-4c34-8b24-f02de3509d49"],
+     " to the line defined parametrically by ",
+     Cell[BoxData[
+      StyleBox["paraeqns", "TI"]], "InlineFormula",ExpressionUUID->
+      "0221a9f2-b5dd-436c-8a70-9ba8964da604"],
+     " with ",
+     Cell[BoxData[
+      StyleBox["t", "TI"]], "InlineFormula",ExpressionUUID->
+      "e56fa85a-cfad-4e26-98dc-6a38ed28b9c2"],
+     " as parameter in any dimensional space."
+    }],ExpressionUUID->"5e2ce56c-757c-422e-8485-94897fd7a284"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["DistancePointLine"]],
+         "paclet:KnoxPackages/ref/DistancePointLine"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["pt", "TI"], ",", 
+        RowBox[{"{", 
+         StyleBox[
+          RowBox[{
+           SubscriptBox[
+            StyleBox["pt", "TI"], "1"], ",", 
+           SubscriptBox["pt", "2"]}], "TI"], "}"}]}], "]"}]], "InlineFormula",
+      ExpressionUUID->"cebe9ad9-28c4-461c-b1de-5640b8845e5a"],
+     "\[LineSeparator]returns the distance from the point ",
+     Cell[BoxData[
+      StyleBox["pt", "TI"]], "InlineFormula",ExpressionUUID->
+      "57da72d6-fb38-4690-8a26-28e6aa8faeef"],
+     " to the line determined by the two points ",
+     Cell[BoxData[
+      StyleBox[
+       SubscriptBox["pt", "1"], "TI"]], "InlineFormula",ExpressionUUID->
+      "3ceaa769-799b-46f1-ba5a-a18fe73a2ccf"],
+     " & ",
+     Cell[BoxData[
+      StyleBox[
+       SubscriptBox["pt", "2"], "TI"]], "InlineFormula",ExpressionUUID->
+      "8a036ae5-9d12-41de-b83d-aac79923add7"],
+     " in any dimensional space."
+    }],ExpressionUUID->"c2c0de86-8233-4e8c-bef4-58d7b56a3d4e"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, 
+   "Rows" -> {None, None, {None}}, "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"a1113be8-6340-42f1-965f-ccc8c3ac524e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"a4e8cfb5-74be-49ac-9652-a703233dba85"],
+   "Details and Options"
+  }], "NotesFrameText",ExpressionUUID->"87e4b2f1-f5d5-43d7-b613-50135f0b0a56"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"e7375f0f-39ec-4025-9b6e-8cfbb2ef3647"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->145959656,ExpressionUUID->"71a3e7e3-ed6d-4d92-a4af-7cc27603c571"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"e744c292-be07-4304-9b72-89017f3e6c86"],
+
+Cell["Options", "Notes",
+ CellID->1067943069,ExpressionUUID->"9b220929-cfb3-4340-bbf1-981576394fc3"],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "ab351694-9582-4ddf-abe7-9dfefcf24528"], 
+    ButtonBox["PrintDisplay",
+     BaseStyle->"Link",
+     ButtonData->"paclet:KnoxPackages/ref/PrintDisplay"], 
+    ButtonBox["False",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/False"], Cell["\<\
+whether to print the point on the line nearest the given point\
+\>", "TableText",ExpressionUUID->"b13013e7-16f9-4d44-bd45-42f7ff7c22c9"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True}}}},
+ CellID->132404131,ExpressionUUID->"65b9d98c-63fc-4d0a-a4d3-a749d6efdc6a"],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"5655aeb4-f54d-4bbe-8e89-129a07bddaf8"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"a29b10ac-09f8-4a4e-9e05-d6d0fe5fdf3f"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(4)", "ExampleCount",ExpressionUUID->
+  "c3a570bb-ef20-451e-8072-ca1e543637ba"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->914848328,ExpressionUUID->"3f19b6f2-9bce-4646-9684-75c996c45d97"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount",ExpressionUUID->
+  "edcb6079-b6ef-47a1-a701-ccb835b15526"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->539892994,ExpressionUUID->"c9e88c9d-4b20-4070-bf9c-8fd65649d27f"],
+
+Cell["Here is a basic example", "ExampleText",
+ CellID->564099569,ExpressionUUID->"d8286884-dd92-46f5-8918-2da39c9ad48f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["DistancePointLine",
+   FontFamily->"Courier",
+   FontSize->12], 
+  StyleBox["[",
+   FontFamily->"Courier",
+   FontSize->12], 
+  RowBox[{
+   StyleBox[
+    RowBox[{"{", 
+     RowBox[{"1", ",", 
+      RowBox[{"-", "4"}]}], "}"}],
+    FontFamily->"Courier",
+    FontSize->12], 
+   StyleBox[",",
+    FontFamily->"Courier",
+    FontSize->12], 
+   StyleBox[
+    RowBox[{
+     RowBox[{"3", "x"}], "-", 
+     RowBox[{"4", "y"}], "+", "1"}],
+    FontFamily->"Courier",
+    FontSize->12], 
+   StyleBox[",",
+    FontFamily->"Courier",
+    FontSize->12], 
+   StyleBox[
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}],
+    FontFamily->"Courier",
+    FontSize->12], 
+   StyleBox[",",
+    FontFamily->"Courier",
+    FontSize->12], 
+   RowBox[{
+    StyleBox["PrintDisplay",
+     FontFamily->"Courier",
+     FontSize->12], 
+    StyleBox["\[Rule]",
+     FontFamily->"Courier",
+     FontSize->12], "True"}]}], 
+  StyleBox["]",
+   FontFamily->"Courier",
+   FontSize->12]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->120682969,ExpressionUUID->"7e8ca67c-ca52-46d9-8a66-e241eac65b78"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The point on the line nearest the point \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "4"}]}], "}"}], "\[InvisibleSpace]", "\<\" is \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["7", "5"]}], ",", 
+     RowBox[{"-", 
+      FractionBox["4", "5"]}]}], "}"}]}],
+  SequenceForm["The point on the line nearest the point ", {1, -4}, " is ", {
+    Rational[-7, 5], 
+    Rational[-4, 5]}],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[26]:=",
+ CellID->436872672,ExpressionUUID->"466da1cb-72ce-4378-8fca-4960e6ff4726"],
+
+Cell[BoxData["4"], "Output",
+ ImageSize->{11, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->68612168,ExpressionUUID->"5de3853b-6f05-455d-9695-5f2d4eb12b9e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "245eb598-44f3-4d7c-a18d-60350b9a820a"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->47664653,ExpressionUUID->"7521c32d-3ad9-425f-838b-5ce3a7de95d4"],
+
+Cell["The line can be specified with two points:", "ExampleText",
+ CellID->938713471,ExpressionUUID->"bf7ca3f4-11c2-4654-aebd-fbf2f36eb995"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DistancePointLine", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "7"}], "}"}]}], "}"}], ",", 
+   RowBox[{"PrintDisplay", "->", "True"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->531462626,ExpressionUUID->"ae885404-c63c-40c9-bab6-75b94fd859d5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The point on the line nearest the point \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "6"}], "}"}], "\[InvisibleSpace]", "\<\" is \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["7", "2"], ",", 
+     FractionBox["11", "2"]}], "}"}]}],
+  SequenceForm["The point on the line nearest the point ", {2, 6}, " is ", {
+    Rational[7, 2], 
+    Rational[11, 2]}],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[27]:=",
+ CellID->695317553,ExpressionUUID->"3fe96d19-1ba0-48bc-9806-08553abfe4d4"],
+
+Cell[BoxData[
+ SqrtBox[
+  FractionBox["5", "2"]]], "Output",
+ ImageSize->{34, 54},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->34596580,ExpressionUUID->"24b8a0b3-727d-4e7e-b35b-c846d71dc18c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "ff1bf353-6a06-4da3-a7f6-f085fa4be141"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->10343088,ExpressionUUID->"6d964a1a-713a-4401-9b2a-5938c1678d79"],
+
+Cell["A line defined parametrically:", "ExampleText",
+ CellID->779296028,ExpressionUUID->"67ebe434-ab63-453c-a715-e88ad771cf5f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DistancePointLine", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"2", "+", 
+      RowBox[{"2", "t"}]}], ",", 
+     RowBox[{"1", "+", 
+      RowBox[{"6", "t"}]}]}], "}"}], ",", "t"}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->149621422,ExpressionUUID->"38f69504-a373-4703-aad1-f87a520a2528"],
+
+Cell[BoxData[
+ SqrtBox[
+  FractionBox["5", "2"]]], "Output",
+ ImageSize->{34, 54},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->229928048,ExpressionUUID->"474d5913-322c-40ee-a487-25d491e51617"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "591cac30-2f6d-4126-9206-55b7ff10cd2a"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341,ExpressionUUID->"4c33695a-ef76-438e-95ef-384723d9ce6c"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "PrintDisplay",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "d8456ecd-0a7b-40ae-8a49-63c49941b8e1"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783,ExpressionUUID->"f178124c-34e1-42da-86f9-e13141cf7687"],
+
+Cell["Print the point on the line closest to the given point.", "ExampleText",
+ CellID->642797445,ExpressionUUID->"ad3f8238-fd1b-4e26-a259-2f2451162d86"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DistancePointLine", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "4", ",", "6", ",", "8"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], "+", 
+    RowBox[{"t", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1", ",", 
+       RowBox[{"-", "1"}], ",", "1"}], "}"}]}]}], ",", "t", ",", 
+   RowBox[{"PrintDisplay", "->", "True"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->4310296,ExpressionUUID->"89e9b892-c18c-4710-a355-70f40f5994e8"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The point on the line nearest the point \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "4", ",", "6", ",", "8"}], "}"}], 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     FractionBox["5", "2"], ",", 
+     FractionBox["5", "2"], ",", 
+     FractionBox["9", "2"]}], "}"}]}],
+  SequenceForm[
+  "The point on the line nearest the point ", {2, 4, 6, 8}, " is ", {
+    Rational[1, 2], 
+    Rational[5, 2], 
+    Rational[5, 2], 
+    Rational[9, 2]}],
+  Editable->False]], "Print",
+ CellLabel->"During evaluation of In[29]:=",
+ CellID->577043403,ExpressionUUID->"db2f3d9d-e9d7-4db8-9960-f2d7fe04d2dc"],
+
+Cell[BoxData[
+ SqrtBox["29"]], "Output",
+ ImageSize->{34, 20},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->302865917,ExpressionUUID->"66410a7d-f3fb-4777-8b13-b328c7562265"]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"0c85d95d-e2b1-4349-be6f-d85d6e68f81e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"8c06c38e-f47d-49aa-96e6-0aa415428e8a"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"b487ab15-331e-4b1a-a648-49371243db47"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"e98b495f-3d76-4ab4-8640-164aeac1968c"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->192238635,ExpressionUUID->"28710a00-a463-4213-bb27-663604896328"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"866a36fe-a228-4091-adad-32713fa0b056"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"DistancePointLine",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 42, 8.7877365}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "DistancePointLine[{x0, y0}, ax + by == c, {x, y}] returns the distance \
+from the point {x0, y0} to the line a x + b y == c. DistancePointLine[pt, \
+paraeqns, t] returns the distance from the point pt to the line defined \
+parametrically by paraeqns with t as parameter in any dimensional space. \
+DistancePointLine[pt, {pt 1, pt2}] returns the distance from the point pt to \
+the line determined by the two points pt1 & pt2 in any dimensional space.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "DistancePointLine", 
+    "titlemodifier" -> "", "windowtitle" -> "DistancePointLine", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/DistancePointLine", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[10915, 289, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"3f19b6f2-9bce-4646-9684-75c996c45d97",
+   CellTags->"PrimaryExamplesSection",
+   CellID->914848328]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 22290, 649}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[589, 21, 3483, 77, 55, "AnchorBarGrid",ExpressionUUID->"8a58c209-6662-4b2a-a078-d4f59ee8fe56",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4097, 102, 402, 9, 52, "ObjectNameGrid",ExpressionUUID->"ce902d15-90ab-4a95-876c-c955220f1959"],
+Cell[4502, 113, 4438, 119, 303, "Usage",ExpressionUUID->"a1113be8-6340-42f1-965f-ccc8c3ac524e",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8977, 237, 867, 21, 37, "NotesSection",ExpressionUUID->"71a3e7e3-ed6d-4d92-a4af-7cc27603c571",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->145959656],
+Cell[9847, 260, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"e744c292-be07-4304-9b72-89017f3e6c86"],
+Cell[9936, 262, 100, 1, 70, "Notes",ExpressionUUID->"9b220929-cfb3-4340-bbf1-981576394fc3",
+ CellID->1067943069],
+Cell[10039, 265, 750, 17, 70, "3ColumnTableMod",ExpressionUUID->"65b9d98c-63fc-4d0a-a4d3-a749d6efdc6a",
+ CellID->132404131],
+Cell[10792, 284, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"5655aeb4-f54d-4bbe-8e89-129a07bddaf8"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10915, 289, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"3f19b6f2-9bce-4646-9684-75c996c45d97",
+ CellTags->"PrimaryExamplesSection",
+ CellID->914848328],
+Cell[CellGroupData[{
+Cell[11375, 304, 308, 7, 29, "ExampleSection",ExpressionUUID->"c9e88c9d-4b20-4070-bf9c-8fd65649d27f",
+ CellID->539892994],
+Cell[11686, 313, 121, 1, 38, "ExampleText",ExpressionUUID->"d8286884-dd92-46f5-8918-2da39c9ad48f",
+ CellID->564099569],
+Cell[CellGroupData[{
+Cell[11832, 318, 1102, 46, 26, "Input",ExpressionUUID->"7e8ca67c-ca52-46d9-8a66-e241eac65b78",
+ CellID->120682969],
+Cell[12937, 366, 678, 19, 47, "Print",ExpressionUUID->"466da1cb-72ce-4378-8fca-4960e6ff4726",
+ CellID->436872672],
+Cell[13618, 387, 212, 5, 35, "Output",ExpressionUUID->"5de3853b-6f05-455d-9695-5f2d4eb12b9e",
+ CellID->68612168]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13867, 397, 241, 5, 8, "ExampleDelimiter",ExpressionUUID->"7521c32d-3ad9-425f-838b-5ce3a7de95d4",
+ CellID->47664653],
+Cell[14111, 404, 140, 1, 38, "ExampleText",ExpressionUUID->"bf7ca3f4-11c2-4654-aebd-fbf2f36eb995",
+ CellID->938713471],
+Cell[CellGroupData[{
+Cell[14276, 409, 444, 13, 26, "Input",ExpressionUUID->"ae885404-c63c-40c9-bab6-75b94fd859d5",
+ CellID->531462626],
+Cell[14723, 424, 612, 16, 70, "Print",ExpressionUUID->"3fe96d19-1ba0-48bc-9806-08553abfe4d4",
+ CellID->695317553],
+Cell[15338, 442, 244, 7, 75, "Output",ExpressionUUID->"24b8a0b3-727d-4e7e-b35b-c846d71dc18c",
+ CellID->34596580]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15631, 455, 241, 5, 70, "ExampleDelimiter",ExpressionUUID->"6d964a1a-713a-4401-9b2a-5938c1678d79",
+ CellID->10343088],
+Cell[15875, 462, 128, 1, 70, "ExampleText",ExpressionUUID->"67ebe434-ab63-453c-a715-e88ad771cf5f",
+ CellID->779296028],
+Cell[CellGroupData[{
+Cell[16028, 467, 395, 12, 70, "Input",ExpressionUUID->"38f69504-a373-4703-aad1-f87a520a2528",
+ CellID->149621422],
+Cell[16426, 481, 245, 7, 75, "Output",ExpressionUUID->"474d5913-322c-40ee-a487-25d491e51617",
+ CellID->229928048]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16732, 495, 302, 7, 70, "ExampleSection",ExpressionUUID->"4c33695a-ef76-438e-95ef-384723d9ce6c",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[17059, 506, 313, 7, 70, "ExampleSubsection",ExpressionUUID->"f178124c-34e1-42da-86f9-e13141cf7687",
+ CellID->1757724783],
+Cell[17375, 515, 153, 1, 70, "ExampleText",ExpressionUUID->"ad3f8238-fd1b-4e26-a259-2f2451162d86",
+ CellID->642797445],
+Cell[CellGroupData[{
+Cell[17553, 520, 551, 15, 70, "Input",ExpressionUUID->"89e9b892-c18c-4710-a355-70f40f5994e8",
+ CellID->4310296],
+Cell[18107, 537, 749, 21, 70, "Print",ExpressionUUID->"db2f3d9d-e9d7-4db8-9960-f2d7fe04d2dc",
+ CellID->577043403],
+Cell[18859, 560, 225, 6, 41, "Output",ExpressionUUID->"66410a7d-f3fb-4777-8b13-b328c7562265",
+ CellID->302865917]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[19123, 571, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"0c85d95d-e2b1-4349-be6f-d85d6e68f81e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19246, 576, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"b487ab15-331e-4b1a-a648-49371243db47",
+ CellID->38303248],
+Cell[19515, 585, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"e98b495f-3d76-4ab4-8640-164aeac1968c"],
+Cell[19604, 587, 227, 5, 70, "MoreAbout",ExpressionUUID->"28710a00-a463-4213-bb27-663604896328",
+ CellID->192238635]
+}, Open  ]],
+Cell[19846, 595, 78, 0, 70, "FooterCell",ExpressionUUID->"866a36fe-a228-4091-adad-32713fa0b056"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

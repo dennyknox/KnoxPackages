@@ -1,0 +1,492 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17333,        482]
+NotebookOptionsPosition[     12251,        367]
+NotebookOutlinePosition[     14712,        428]
+CellTagsIndexPosition[     14627,        423]
+WindowTitle->DirectionalDerivative
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "0902704d-4863-44fa-abd0-1691dd120579"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"af29b5ff-22db-4c70-bca8-19b7859cceb4"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "a47e4c32-16dc-4962-bedc-bfd02e327dfc"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"2a7c5c11-d066-42a4-a8ad-3de56728b962"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"KnoxPackages/ref/DirectionalDerivative\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/DirectionalDerivative"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+DirectionalDerivative.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$54877], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/DirectionalDerivative", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "e0d8b0f1-1b2e-4115-9068-95fc92dd3462"]
+    }], "AnchorBar",ExpressionUUID->"57b336fb-2b1f-4773-99a0-9d61bbb28f42"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"d54f831a-afbd-4906-b0f8-816fec75c493"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["DirectionalDerivative", "ObjectName",ExpressionUUID->
+  "90621ac7-20ee-486a-88df-f0d7e36c88a9"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"92cf9dc6-72e7-4284-b3f5-e29595aac31a"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "d05825a5-7f0e-4363-9284-267a485a3246"]
+}], "ObjectNameGrid",ExpressionUUID->"0b7bd177-1c48-434d-8c56-45b7f6759c91"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"DirectionalDerivative", "[", 
+       RowBox[{
+        StyleBox["f", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["x", "TI"], ",", 
+          StyleBox["y", "TI"], ",", "\[Ellipsis]"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          SubscriptBox[
+           StyleBox["x", "TI"], 
+           StyleBox["0", "TR"]], ",", 
+          SubscriptBox[
+           StyleBox["y", "TI"], 
+           StyleBox["0", "TR"]], ",", "\[Ellipsis]"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["a", "TI"], ",", 
+          StyleBox["b", "TI"], ",", "\[Ellipsis]"}], "}"}]}], "]"}]], 
+      "InlineFormula",ExpressionUUID->"f9214717-7198-461f-bd63-8a4d9dc5cb09"],
+     " \[LineSeparator]finds the directional derivative of the function ",
+     Cell[BoxData[
+      RowBox[{
+       StyleBox["f", "TI"], 
+       StyleBox["[", "TI"], 
+       RowBox[{
+        StyleBox["x", "TI"], ",", 
+        StyleBox["y", "TI"], ",", "\[Ellipsis]"}], "]"}]], "InlineFormula",
+      ExpressionUUID->"cacfd549-23b8-49f8-a0b4-e4e31cde389d"],
+     " at the point ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        SubscriptBox[
+         StyleBox["x", "TI"], 
+         StyleBox["0", "TR"]], ",", 
+        SubscriptBox[
+         StyleBox["y", "TI"], 
+         StyleBox["0", "TR"]], ",", "\[Ellipsis]"}], "}"}]], "InlineFormula",
+      ExpressionUUID->"935119b3-aec6-4d60-96f3-930e4d2cfb6c"],
+     " in the direction of the vector ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        StyleBox["a", "TI"], ",", 
+        StyleBox["b", "TI"], ",", "\[Ellipsis]"}], "}"}]], "InlineFormula",
+      ExpressionUUID->"14c3ec4d-d7e4-49e3-af07-66835f4b7496"],
+     ".  The vector ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        StyleBox["a", "TI"], ",", 
+        StyleBox["b", "TI"], ",", "\[Ellipsis]"}], "}"}]], "InlineFormula",
+      ExpressionUUID->"7b9aa897-efa1-4897-8b60-eb08c9b0786e"],
+     " need not be a unit vector."
+    }],ExpressionUUID->"523d36a8-3c44-467b-bcca-9c129367a2f0"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"2e3019f9-7464-4d63-9b78-516b6b5d4f16"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"b8fd81e9-8d4e-4f01-8ba1-43994f68e9bb"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "6c7ce911-7623-4d43-bde3-05053c46bb24"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->557543705,ExpressionUUID->"1054e239-eb63-4355-889a-3dffb928695e"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "97584322-d597-4076-aa52-8160edce7104"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->219154560,ExpressionUUID->"880cdcf6-2db1-4fc3-a0f0-61e8d315a68c"],
+
+Cell["A basic example.", "ExampleText",
+ CellID->350509384,ExpressionUUID->"e5ffa5be-d710-403c-b18a-8b83b0decda0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DirectionalDerivative", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"x", " ", "y"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     FractionBox["\[Pi]", "4"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->500541219,ExpressionUUID->"0cd85a31-65a2-4473-ad7e-f91f49a4479d"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "2"], "+", 
+  FractionBox["\[Pi]", "8"]}]], "Output",
+ ImageSize->{41, 39},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->229752837,ExpressionUUID->"c5b1302a-c532-49c7-8231-d3874395ba8c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "fa6353d9-a901-455e-8716-926352ad6651"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341,ExpressionUUID->"62f8af96-f5eb-4601-9ee3-6260a07ca32f"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "UseLimit",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "f96acef1-68ae-4b73-88c2-22826ca3a2a3"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->60796095,ExpressionUUID->"827765d4-44ef-429e-b7e4-ed4480c0459e"],
+
+Cell["\<\
+Here we need the Limit definition of the partials for the calculation\
+\>", "ExampleText",
+ CellID->195394435,ExpressionUUID->"e05039b4-4a59-4332-ad9e-c0fff0d2ce94"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["x", "2"], " ", "y"}], 
+   RowBox[{
+    SuperscriptBox["x", "2"], "+", 
+    SuperscriptBox["y", "2"]}]]}], "\n", 
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"0", ",", "0"}], "]"}], ":=", "0"}], "\[IndentingNewLine]", 
+ RowBox[{"DirectionalDerivative", "[", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"x", ",", "y"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], ",", 
+   RowBox[{"UseLimit", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->56241489,ExpressionUUID->"3542c0e4-b68f-482d-a9e6-a07f3a9f7d0d"],
+
+Cell[BoxData[
+ FractionBox["1", 
+  RowBox[{"2", " ", 
+   SqrtBox["2"]}]]], "Output",
+ ImageSize->{42, 45},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->227649529,ExpressionUUID->"a9dee814-99fb-43a2-b51b-4707aecbc7c3"]
+}, Open  ]],
+
+Cell["\<\
+Compute the directional derivative using the limit definition.\
+\>", "ExampleText",
+ CellID->75109906,ExpressionUUID->"debf4bff-39eb-4156-a218-fb58199be3fd"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NewLimit", "[", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"f", "[", 
+     RowBox[{
+      RowBox[{"h", "/", 
+       SqrtBox["2"]}], ",", 
+      RowBox[{"h", "/", 
+       SqrtBox["2"]}]}], "]"}], "h"], ",", 
+   RowBox[{"h", "\[Rule]", "0"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->379288122,ExpressionUUID->"44451bda-513e-4b7b-872b-62fd9200184a"],
+
+Cell[BoxData[
+ FractionBox["1", 
+  RowBox[{"2", " ", 
+   SqrtBox["2"]}]]], "Output",
+ ImageSize->{42, 45},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->322937849,ExpressionUUID->"438c449d-e8be-4f95-b578-f664ad36481f"]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"c7c9b0de-8422-4165-9301-8de8e6d28e5c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"e82c28f6-8e88-474c-b550-795e1d7c5a85"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"276ebbc2-f7eb-45b5-8098-7cb949aa9387"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"7356774b-3827-405e-8421-55226e168452"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->180236054,ExpressionUUID->"5e460684-175f-4ea4-94da-d57cab363534"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"fcefc925-4fc8-448e-a137-a98e23a10a35"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"DirectionalDerivative",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 41, 33.8924445}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "DirectionalDerivative[f, {x, y, ...}, {x0, y0, ...}, {a, b, ...}] finds \
+the directional derivative of the function f[x, y, ...] at the point {x0, y0, \
+...} in the direction of the vector {a, b, ...}. The vector {a, b, ...} need \
+not be a unit vector.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "DirectionalDerivative", "titlemodifier" -> "", "windowtitle" -> 
+    "DirectionalDerivative", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/DirectionalDerivative", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6947, 184, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"1054e239-eb63-4355-889a-3dffb928695e",
+   CellTags->"PrimaryExamplesSection",
+   CellID->557543705]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 14429, 416}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[593, 21, 3523, 79, 55, "AnchorBarGrid",ExpressionUUID->"d54f831a-afbd-4906-b0f8-816fec75c493",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4141, 104, 406, 9, 52, "ObjectNameGrid",ExpressionUUID->"0b7bd177-1c48-434d-8c56-45b7f6759c91"],
+Cell[4550, 115, 2360, 64, 131, "Usage",ExpressionUUID->"2e3019f9-7464-4d63-9b78-516b6b5d4f16",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6947, 184, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"1054e239-eb63-4355-889a-3dffb928695e",
+ CellTags->"PrimaryExamplesSection",
+ CellID->557543705],
+Cell[CellGroupData[{
+Cell[7407, 199, 308, 7, 29, "ExampleSection",ExpressionUUID->"880cdcf6-2db1-4fc3-a0f0-61e8d315a68c",
+ CellID->219154560],
+Cell[7718, 208, 114, 1, 38, "ExampleText",ExpressionUUID->"e5ffa5be-d710-403c-b18a-8b83b0decda0",
+ CellID->350509384],
+Cell[CellGroupData[{
+Cell[7857, 213, 446, 13, 49, "Input",ExpressionUUID->"0cd85a31-65a2-4473-ad7e-f91f49a4479d",
+ CellID->500541219],
+Cell[8306, 228, 281, 8, 60, "Output",ExpressionUUID->"c5b1302a-c532-49c7-8231-d3874395ba8c",
+ CellID->229752837]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8636, 242, 302, 7, 29, "ExampleSection",ExpressionUUID->"62f8af96-f5eb-4601-9ee3-6260a07ca32f",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[8963, 253, 307, 7, 70, "ExampleSubsection",ExpressionUUID->"827765d4-44ef-429e-b7e4-ed4480c0459e",
+ CellID->60796095],
+Cell[9273, 262, 175, 3, 70, "ExampleText",ExpressionUUID->"e05039b4-4a59-4332-ad9e-c0fff0d2ce94",
+ CellID->195394435],
+Cell[CellGroupData[{
+Cell[9473, 269, 805, 25, 70, "Input",ExpressionUUID->"3542c0e4-b68f-482d-a9e6-a07f3a9f7d0d",
+ CellID->56241489],
+Cell[10281, 296, 269, 8, 66, "Output",ExpressionUUID->"a9dee814-99fb-43a2-b51b-4707aecbc7c3",
+ CellID->227649529]
+}, Open  ]],
+Cell[10565, 307, 167, 3, 70, "ExampleText",ExpressionUUID->"debf4bff-39eb-4156-a218-fb58199be3fd",
+ CellID->75109906],
+Cell[CellGroupData[{
+Cell[10757, 314, 378, 12, 70, "Input",ExpressionUUID->"44451bda-513e-4b7b-872b-62fd9200184a",
+ CellID->379288122],
+Cell[11138, 328, 269, 8, 66, "Output",ExpressionUUID->"438c449d-e8be-4f95-b578-f664ad36481f",
+ CellID->322937849]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[11446, 341, 86, 0, 29, "SectionFooterSpacer",ExpressionUUID->"c7c9b0de-8422-4165-9301-8de8e6d28e5c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11569, 346, 266, 7, 72, "MoreAboutSection",ExpressionUUID->"276ebbc2-f7eb-45b5-8098-7cb949aa9387",
+ CellID->38303248],
+Cell[11838, 355, 86, 0, 14, "SectionHeaderSpacer",ExpressionUUID->"7356774b-3827-405e-8421-55226e168452"],
+Cell[11927, 357, 227, 5, 24, "MoreAbout",ExpressionUUID->"5e460684-175f-4ea4-94da-d57cab363534",
+ CellID->180236054]
+}, Open  ]],
+Cell[12169, 365, 78, 0, 41, "FooterCell",ExpressionUUID->"fcefc925-4fc8-448e-a137-a98e23a10a35"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,853 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     27030,        844]
+NotebookOptionsPosition[     19175,        682]
+NotebookOutlinePosition[     21357,        739]
+CellTagsIndexPosition[     21272,        734]
+WindowTitle->SecantMethod
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"SecantMethod \"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/SecantMethod"], "\<\" \"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/SecantMethod"], "\<\"BisectionMethod \"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/BisectionMethod"], "\<\"FindRoot\"\>":>
+       Documentation`HelpLookup[
+       "paclet:ref/FindRoot"], "\<\"NewtonMethod\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/ref/NewtonMethod"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/SecantMethod\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/SecantMethod"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+SecantMethod.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$213201], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/SecantMethod", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["SecantMethod", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["SecantMethod"]],"paclet:KnoxPackages/ref/SecantMethod"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["f", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["x", "TI"], ",", 
+          StyleBox["xmin", "TI"], ",", 
+          StyleBox["xmax", "TI"]}], "}"}], ",", 
+        StyleBox["n", "TI"]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]returns the reult of applying the secant method ",
+     Cell[BoxData[
+      StyleBox["n", "TI"]], "InlineFormula"],
+     " times to a continuous function ",
+     Cell[BoxData[
+      StyleBox["f", "TI"]], "InlineFormula"],
+     " with ",
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         StyleBox["f", "TI"], "[", 
+         StyleBox["xmin", "TI"], "]"}], "*", 
+        RowBox[{
+         StyleBox["f", "TI"], "[", 
+         StyleBox["xmax", "TI"], "]"}]}], "<", "0"}]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ ButtonBox["SecantMethod",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/SecantMethod"],
+ " has the following options:"
+}], "Notes",
+ CellID->1067943069],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["PrintDisplay",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/PrintDisplay"], 
+    ButtonBox["False",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/False"], Cell[
+    "whether to print the intermediate results", "TableText"]},
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["WorkingPrecision",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/WorkingPrecision"], 
+    ButtonBox["MachinePrecision",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/MachinePrecision"], Cell["\<\
+determines how many digits should be maintained in internal computations\
+\>", "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True, True}}}},
+ CellID->566813511],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(4)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1],
+
+Cell["Here are two functions, one of which is constant", "ExampleText",
+ CellID->50821935],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", " ", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"4", "x"}], "]"}]}], ",", 
+     FractionBox["1", "3"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->355651690],
+
+Cell[TextData[{
+ ButtonBox["SecantMethod",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/SecantMethod"],
+ " ",
+ "can give us their intersection"
+}], "ExampleText",
+ CellID->30619203],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"SecantMethod", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", " ", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"4", "x"}], "]"}]}], "==", 
+    FractionBox["1", "3"]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", "10", ",", 
+   RowBox[{"PrintDisplay", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->494032365],
+
+Cell[TextData[{
+ "Here we use ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "'s FindRoot command to find the x-value of the same intersection"
+}], "ExampleText",
+ CellID->281072080],
+
+Cell[BoxData[
+ RowBox[{"NumberForm", "[", 
+  RowBox[{
+   RowBox[{"FindRoot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"4", "x"}], "]"}]}], "\[Equal]", 
+      RowBox[{"1", "/", "3"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "1", ",", "2"}], "}"}]}], "]"}], ",", "16"}], 
+  "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->96513504],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->14015],
+
+Cell["Here is another function", "ExampleText",
+ CellID->257978723],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "g", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"Sin", "[", 
+      SuperscriptBox["t", "2"], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "x"}], "}"}]}], "]"}], "-", 
+   RowBox[{"2", "/", "3"}]}]}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->761251],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"g", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->109216244],
+
+Cell["We can use the Secant Method to find its root", "ExampleText",
+ CellID->285397819],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"SecantMethod", "[", 
+  RowBox[{
+   RowBox[{"g", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", "15", ",", 
+   RowBox[{"PrintDisplay", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellLabel->"In[3]:=",
+ CellID->35603166],
+
+Cell[TextData[{
+ "And now we use ",
+ ButtonBox["FindRoot",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/FindRoot"],
+ " to verify our answer"
+}], "ExampleText",
+ CellID->281841562],
+
+Cell[BoxData[
+ RowBox[{"NumberForm", "[", 
+  RowBox[{
+   RowBox[{"FindRoot", "[", 
+    RowBox[{
+     RowBox[{"g", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "1", ",", "2"}], "}"}]}], "]"}], ",", "16"}], 
+  "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->392564395]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "PrintDisplay",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->71637097],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox[
+   RowBox[{
+    RowBox[{
+     TemplateBox[{Cell[
+        TextData[""]],"paclet:ref/"},
+      "RefLink",
+      BaseStyle->{"InlineFormula"}], " ", 
+     TemplateBox[{Cell[
+        TextData["PrintDisplay"]],"paclet:KnoxPackages/ref/PrintDisplay"},
+      "RefLink",
+      BaseStyle->{"InlineFormula"}]}], "->", 
+    TemplateBox[{Cell[
+       TextData[
+        RowBox[{" ", "True"}]]],"paclet:ref/True"},
+     "RefLink",
+     BaseStyle->{"InlineFormula"}], " "}],
+   FontFamily->"Courier New",
+   FontSize->11]], "InlineFormula",
+  ShowStringCharacters->False],
+ " makes ",
+ ButtonBox["SecantMethod",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/SecantMethod"],
+ " display all of the intermediate values it calculates."
+}], "ExampleText",
+ CellID->382413392],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"SecantMethod", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", " ", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"4", "x"}], "]"}]}], "==", 
+    FractionBox["1", "3"]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", "10", ",", 
+   RowBox[{"PrintDisplay", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->323787862],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"SecantMethod", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", " ", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"4", "x"}], "]"}]}], "==", 
+    FractionBox["1", "3"]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", "10", ",", 
+   RowBox[{"PrintDisplay", "\[Rule]", "False"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->177536473],
+
+Cell[TextData[{
+ ButtonBox["False",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/False"],
+ " is the default for ",
+ ButtonBox["PrintDisplay",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/PrintDisplay"]
+}], "ExampleText",
+ CellID->513972537],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"SecantMethod", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", " ", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"4", "x"}], "]"}]}], "==", 
+    FractionBox["1", "3"]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", "10"}], "]"}]}], "Input",
+ CellLabel->"In[3]:=",
+ CellID->75783254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "WorkingPrecision",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->547141156],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox[
+   RowBox[{"WorkingPrecision", "->", " ", "MachinePrecision"}],
+   FontFamily->"Courier New",
+   FontSize->11]], "InlineFormula",
+  ShowStringCharacters->False],
+ " changes the level of precision that ",
+ ButtonBox["SecantMethod",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/SecantMethod"],
+ ButtonBox[" ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/NewtonMethod"],
+ "uses to calculate its values."
+}], "ExampleText",
+ CellID->21280666],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "g", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"Sin", "[", 
+      SuperscriptBox["t", "2"], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "x"}], "}"}]}], "]"}], "-", 
+   RowBox[{"2", "/", "3"}]}]}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1549078],
+
+Cell[TextData[{
+ "This is the Secant method solution with ",
+ Cell[BoxData[
+  StyleBox[
+   RowBox[{"WorkingPrecision", "->", " ", "20"}],
+   FontFamily->"Courier New",
+   FontSize->11]], "InlineFormula",
+  ShowStringCharacters->False]
+}], "ExampleText",
+ CellID->310216120],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"a", "=", 
+  RowBox[{"SecantMethod", "[", 
+   RowBox[{
+    RowBox[{"g", "[", "x", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", "15", ",", 
+    RowBox[{"WorkingPrecision", " ", "\[Rule]", " ", "20"}]}], 
+   "]"}]}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->433319432],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "[", "x", "]"}], "/.", "a"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->34576753],
+
+Cell[TextData[{
+ "This is the Secant method solution with ",
+ Cell[BoxData[
+  StyleBox[
+   RowBox[{"WorkingPrecision", "->", " ", "10"}],
+   FontFamily->"Courier New",
+   FontSize->11]], "InlineFormula",
+  ShowStringCharacters->False]
+}], "ExampleText",
+ CellID->199494750],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"b", "=", 
+  RowBox[{"SecantMethod", "[", 
+   RowBox[{
+    RowBox[{"g", "[", "x", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", "15", ",", 
+    RowBox[{"WorkingPrecision", " ", "\[Rule]", " ", "10"}]}], 
+   "]"}]}]}], "Input",
+ CellLabel->"In[4]:=",
+ CellID->616449293],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "[", "x", "]"}], "/.", "b"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->92360416]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SectionFooterSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ StyleBox[ButtonBox["SecantMethod ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/SecantMethod"],
+  FontFamily->"Verdana",
+  FontSize->11],
+ "\[FilledSmallCircle]",
+ StyleBox[ButtonBox[" ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/SecantMethod"],
+  FontFamily->"Verdana",
+  FontSize->11],
+ StyleBox[ButtonBox["BisectionMethod ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/BisectionMethod"],
+  FontFamily->"Verdana",
+  FontSize->11],
+ "\[FilledSmallCircle] ",
+ StyleBox[" ",
+  FontSize->11],
+ StyleBox[ButtonBox["FindRoot",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/FindRoot"],
+  FontFamily->"Verdana",
+  FontSize->11],
+ " \[FilledSmallCircle] ",
+ StyleBox[ButtonBox["NewtonMethod",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/NewtonMethod"],
+  FontFamily->"Verdana",
+  FontSize->11],
+ StyleBox[" ",
+  FontSize->11]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"SecantMethod",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 56, 3.1158832}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "SecantMethod[f, {x, xmin, xmax}, n] returns the reult of applying the \
+secant method n times to a continuous function f with f[xmin]*f[xmax] < 0.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "SecantMethod", 
+    "titlemodifier" -> "", "windowtitle" -> "SecantMethod", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/SecantMethod"}},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", 
+  StyleDefinitions -> "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7847, 233, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"0344f9ac-5f76-4d14-ae82-60f7b8ad7211",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 21082, 727}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[584, 21, 3979, 97, 70, "AnchorBarGrid",ExpressionUUID->"82502a99-538e-45f1-8f25-ddb2e3f69130",
+ CellID->1],
+Cell[4566, 120, 169, 6, 70, "ObjectNameGrid",ExpressionUUID->"273bc624-9a1e-4404-b990-da03c409a476"],
+Cell[4738, 128, 1247, 39, 70, "Usage",ExpressionUUID->"ba0d46f0-d1d0-4672-b3e5-fdd2a1c6ea4b",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[6010, 171, 633, 19, 70, "NotesSection",ExpressionUUID->"7f21e89a-7999-466a-9e5b-ef0059a89497",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+Cell[6646, 192, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"6dee57d9-deb5-4724-b67f-14dab6978805"],
+Cell[6680, 194, 183, 6, 70, "Notes",ExpressionUUID->"d2231ddf-3e51-4a67-a736-f431506afcef",
+ CellID->1067943069],
+Cell[6866, 202, 910, 24, 70, "3ColumnTableMod",ExpressionUUID->"d788d764-bd95-41ac-88fd-8e2e8347513f",
+ CellID->566813511],
+Cell[7779, 228, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"84ca1aef-40ae-497f-9393-49d9dc33e0bb"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7847, 233, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"0344f9ac-5f76-4d14-ae82-60f7b8ad7211",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[8131, 247, 187, 6, 70, "ExampleSection",ExpressionUUID->"43f79a47-2fb8-4527-8f31-21b4e97bec62",
+ CellID->1],
+Cell[8321, 255, 90, 1, 70, "ExampleText",ExpressionUUID->"9fe4180f-1b5f-485a-a400-3876ccdeb2f4",
+ CellID->50821935],
+Cell[8414, 258, 338, 12, 70, "Input",ExpressionUUID->"6cc2107b-7086-4648-96ab-cdd7694e7346",
+ CellID->355651690],
+Cell[8755, 272, 196, 7, 70, "ExampleText",ExpressionUUID->"3095a3d4-3b4f-4f42-b2b0-c61fccef38ae",
+ CellID->30619203],
+Cell[8954, 281, 476, 14, 70, "Input",ExpressionUUID->"51767ee6-ed7a-4553-9122-3f7665ecab7f",
+ CellID->494032365],
+Cell[9433, 297, 188, 6, 70, "ExampleText",ExpressionUUID->"1cfec67e-13b8-49e3-b6ff-adf298e1b717",
+ CellID->281072080],
+Cell[9624, 305, 402, 14, 70, "Input",ExpressionUUID->"f8ce2351-8b2f-4feb-8773-33326deba596",
+ CellID->96513504],
+Cell[CellGroupData[{
+Cell[10051, 323, 121, 3, 70, "ExampleDelimiter",ExpressionUUID->"57d7a68f-3ab2-44a4-9d45-6975a1960ae6",
+ CellID->14015],
+Cell[10175, 328, 67, 1, 70, "ExampleText",ExpressionUUID->"b7db29b4-850b-4e0e-acae-c365564901ea",
+ CellID->257978723],
+Cell[10245, 331, 413, 13, 70, "Input",ExpressionUUID->"b2b4e528-a5eb-4332-9a54-8e50fde6a2ea",
+ CellID->761251],
+Cell[10661, 346, 211, 7, 70, "Input",ExpressionUUID->"210abc55-ba71-4f95-9815-f2c5cdeac5bc",
+ CellID->109216244],
+Cell[10875, 355, 88, 1, 70, "ExampleText",ExpressionUUID->"87e25454-f73e-43f6-829b-897b44c9439f",
+ CellID->285397819],
+Cell[10966, 358, 376, 10, 70, "Input",ExpressionUUID->"3fb64527-b4c1-450e-85f7-a728afa221aa",
+ CellID->35603166],
+Cell[11345, 370, 181, 7, 70, "ExampleText",ExpressionUUID->"1e3024a1-aa1f-4b67-a2e6-efe93dbbe6e5",
+ CellID->281841562],
+Cell[11529, 379, 288, 10, 70, "Input",ExpressionUUID->"41154c7e-4d68-4310-bc7b-8ad7bd451595",
+ CellID->392564395]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11866, 395, 189, 6, 70, "ExampleSection",ExpressionUUID->"e88bacc9-2c66-4b30-8722-646fccc5576c",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[12080, 405, 198, 6, 70, "ExampleSubsection",ExpressionUUID->"712699da-e1c8-4ba1-9de3-622e24ca7fa7",
+ CellID->71637097],
+Cell[12281, 413, 812, 27, 70, "ExampleText",ExpressionUUID->"c816d042-0028-458e-ab22-b3b344667430",
+ CellID->382413392],
+Cell[13096, 442, 476, 14, 70, "Input",ExpressionUUID->"b257c2b9-126f-4f3a-87ac-2a278b656826",
+ CellID->323787862],
+Cell[13575, 458, 477, 14, 70, "Input",ExpressionUUID->"eaa18bf0-dedf-414f-a5a1-46f241bc2b27",
+ CellID->177536473],
+Cell[14055, 474, 257, 9, 70, "ExampleText",ExpressionUUID->"ef54f706-e115-422b-afd7-cf84f7319c3e",
+ CellID->513972537],
+Cell[14315, 485, 421, 13, 70, "Input",ExpressionUUID->"60df93d8-0e44-4ebc-9b8a-bdd76db0d598",
+ CellID->75783254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[14773, 503, 203, 6, 70, "ExampleSubsection",ExpressionUUID->"cc46821f-61f7-40f2-a1cd-668642571881",
+ CellID->547141156],
+Cell[14979, 511, 512, 16, 70, "ExampleText",ExpressionUUID->"8f6cfd5a-55bb-499a-94f5-0d7d72f25cd1",
+ CellID->21280666],
+Cell[15494, 529, 414, 13, 70, "Input",ExpressionUUID->"ecb7773f-3ae3-4cc6-b5c7-5355375f47e9",
+ CellID->1549078],
+Cell[15911, 544, 273, 9, 70, "ExampleText",ExpressionUUID->"104f360e-7b58-4898-87b7-3e23265efe4c",
+ CellID->310216120],
+Cell[16187, 555, 421, 12, 70, "Input",ExpressionUUID->"09543451-0792-4b58-8282-29c9f3477fc3",
+ CellID->433319432],
+Cell[16611, 569, 120, 4, 70, "Input",ExpressionUUID->"ec884fca-4c9c-4c0a-863a-f5810d8f7de1",
+ CellID->34576753],
+Cell[16734, 575, 273, 9, 70, "ExampleText",ExpressionUUID->"17c8a07a-7094-4da0-a09c-48ce1a996bb5",
+ CellID->199494750],
+Cell[17010, 586, 421, 12, 70, "Input",ExpressionUUID->"c6ea23c0-6858-4de8-9160-4ab45f1faa8a",
+ CellID->616449293],
+Cell[17434, 600, 120, 4, 70, "Input",ExpressionUUID->"7e216dd3-1607-4856-9ad8-7fb0c2e060ea",
+ CellID->92360416]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17615, 611, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"553d7dbf-d444-40d6-b6bb-c7030b168d63"],
+Cell[17649, 613, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"f276edae-b7a2-45dd-9d62-7ee20f1a9560",
+ CellID->1255426704],
+Cell[17802, 622, 937, 34, 70, "SeeAlso",ExpressionUUID->"5afea697-763c-4594-9392-fe96f59b1fa3",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18776, 661, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"472e5d4e-3b0d-4ec3-8005-b56344c5f730",
+ CellID->38303248],
+Cell[18935, 670, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"fd4cdfa1-d091-42dc-87a6-9de577654bbb"],
+Cell[18969, 672, 164, 5, 70, "MoreAbout",ExpressionUUID->"e19da528-ecab-4d05-98b3-dec212ebf0a8",
+ CellID->1]
+}, Open  ]],
+Cell[19148, 680, 23, 0, 70, "FooterCell",ExpressionUUID->"0fa70aa7-a7bf-4361-95b0-8e3a23068a52"]
+}
+]
+*)
+
+(* End of internal cache information *)

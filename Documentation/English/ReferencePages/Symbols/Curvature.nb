@@ -1,0 +1,781 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28082,        771]
+NotebookOptionsPosition[     21974,        637]
+NotebookOutlinePosition[     24304,        696]
+CellTagsIndexPosition[     24219,        691]
+WindowTitle->Curvature
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "80d8e65e-b9e1-42cc-9c7e-2d554df4a1e8"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"91e1e4c3-e2fd-4dd4-99c8-0eda2282ab1c"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"PrincipalTangent\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/PrincipalTangent"], "\<\"PrincipalNormal\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/PrincipalNormal"], "\<\"Binormal\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/Binormal"], "\<\"TN\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/ref/TN"], "\<\"TNB\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/TNB"], "\<\"CenterOfCurvature\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/CenterOfCurvature"], "\<\"Torsion\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/Torsion"], "\<\"TNComponents\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/ref/TNComponents"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "c60ce818-b9f4-4142-a689-ae7f8d011c3e"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"a65229ef-48af-4a3e-b575-099cc60ce1d3"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "7ab71857-188f-4546-9e63-733268130111"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"909b0ce8-990c-448e-b3bc-0790a7428ef5"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/Curvature\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/Curvature"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+Curvature.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]},
+             Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$48554], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/Curvature", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "91876512-cdc4-430a-8222-89357d4736b8"]
+    }], "AnchorBar",ExpressionUUID->"637befc1-fe9a-4c07-88ea-3dc56c473c8f"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"5db6fb1b-db6a-426b-983d-5feb25bd62c9"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["Curvature", "ObjectName",ExpressionUUID->
+  "4ffa74d6-29c0-4810-b989-3efde21b8f0b"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"5fcccea8-3d51-4f39-bfc6-05cf2d4c1da8"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "9a23685e-2649-462c-b06d-a8054549399b"]
+}], "ObjectNameGrid",ExpressionUUID->"5b393be2-8d9e-4480-8a22-d6c6eade42dd"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["Curvature"]],"paclet:KnoxPackages/ref/Curvature"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["curve", "TI"], ",", 
+        StyleBox["t", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "e6095732-5f23-411e-9b27-9d0ca33ed8f4"],
+     " \[LineSeparator]returns the curvature of the curve defined by ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox[
+          StyleBox["f", "TI"], "1"], "[", 
+         StyleBox["t", "TI"], "]"}], ",", 
+        RowBox[{
+         SubscriptBox[
+          StyleBox["f", "TI"], "2"], "[", 
+         StyleBox["t", "TI"], "]"}]}], "}"}]], "InlineFormula",
+      ExpressionUUID->"a9ebbc58-f684-4f77-b7d1-529f36e5371a"],
+     " or ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox[
+          StyleBox["f", "TI"], "1"], "[", 
+         StyleBox["t", "TI"], "]"}], ",", 
+        RowBox[{
+         SubscriptBox[
+          StyleBox["f", "TI"], "2"], "[", 
+         StyleBox["t", "TI"], "]"}], ",", 
+        RowBox[{
+         SubscriptBox[
+          StyleBox["f", "TI"], "3"], "[", 
+         StyleBox["t", "TI"], "]"}]}], "}"}]], "InlineFormula",
+      ExpressionUUID->"d2cc6327-8ba9-4f0e-b209-b68714637482"],
+     "."
+    }],ExpressionUUID->"5e9d3ad4-b71a-46ad-b172-ed0076e655f3"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["Curvature"]],"paclet:KnoxPackages/ref/Curvature"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["curve", "TI"], ",", 
+        StyleBox["t", "TI"], ",", 
+        StyleBox["t0", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "23dfaefd-7c7d-4f61-82dc-a5e50160fed4"],
+     "\[LineSeparator]returns the curvature at the point ",
+     Cell[BoxData[
+      StyleBox["t0", "TI"]], "InlineFormula",ExpressionUUID->
+      "9b004fd4-e7bf-4ee5-abd0-ccb2fa4d2320"],
+     "."
+    }],ExpressionUUID->"567c66a7-4caf-4e80-8f8b-f91369a72fa7"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"5d6ad4b0-06e8-4a22-8c6a-829ab930a1f1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"bc3e602a-92e5-41ab-b32e-9b9a12fb2beb"],
+   "Details and Options"
+  }], "NotesFrameText",ExpressionUUID->"75e9ef74-d525-4f3c-9041-94197d94a53e"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"7ad3f5a6-0bea-4d0c-81a2-4d57e84cab7b"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->220750410,ExpressionUUID->"05b04f90-9e0f-43d7-9279-ecbb87a3ab9c"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"99b7a9c0-ae08-4e26-9f37-62053ffc444d"],
+
+Cell[TextData[{
+ ButtonBox["Curvature",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/Curvature"],
+ " has the following option:"
+}], "Notes",
+ CellID->1067943069,ExpressionUUID->"daecf4c8-56f2-4fd6-9837-beca511dd91b"],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "bfeefd52-9e1b-4599-b4e3-03aebf7919f3"], 
+    ButtonBox["Simplify",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/Simplify"], 
+    ButtonBox["True",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/True"], Cell[
+    "whether to simplify the output", "TableText",ExpressionUUID->
+     "b19dc012-82e7-4a44-a90d-1a7957928cc2"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True}}}},
+ CellID->290440189,ExpressionUUID->"f9cc9d55-10cf-4bc0-803a-4a3fda7e17e0"],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"53c245c6-39e9-42ce-815e-e151272c9d30"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"53c35905-b4d2-4107-9239-0443fba1689a"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "04c723a4-59b2-4175-ab7b-9098e2f21315"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->393542969,ExpressionUUID->"15668e95-30de-4b80-a5a2-a9f370e08878"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "9f44352c-58b8-4e2c-9ea9-1dd14e72de74"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->109609597,ExpressionUUID->"207542af-cbcf-4372-b121-eef4b6a629ca"],
+
+Cell["The curvature of a circle of radius a.", "ExampleText",
+ CellID->86039659,ExpressionUUID->"5df04f8e-3ebf-4475-bd8c-e5e30aa5f8fa"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Curvature", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"a", " ", 
+       RowBox[{"Cos", "[", "t", "]"}]}], ",", 
+      RowBox[{"a", " ", 
+       RowBox[{"Sin", "[", "t", "]"}]}]}], "}"}], ",", "t"}], "]"}], "//", 
+  "PowerExpand"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->51731174,ExpressionUUID->"85fe8793-d9cc-48c5-988b-79a122046fed"],
+
+Cell[BoxData[
+ FractionBox["1", "a"]], "Output",
+ ImageSize->{16, 39},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->14251362,ExpressionUUID->"40717a9c-401a-4f05-9d18-4f46e331d597"]
+}, Open  ]],
+
+Cell["General formula for the curvature of a curve in the plane.", \
+"ExampleText",
+ CellID->101700359,ExpressionUUID->"6e677ad1-554f-469a-8eef-e4184220560f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Curvature", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"f", "[", "t", "]"}], ",", 
+     RowBox[{"g", "[", "t", "]"}]}], "}"}], ",", "t"}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->39634079,ExpressionUUID->"43f2614e-80d6-4e9d-9c0b-07b600096bca"],
+
+Cell[BoxData[
+ SqrtBox[
+  FractionBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["g", "\[Prime]",
+         MultilineFunction->None], "[", "t", "]"}], " ", 
+       RowBox[{
+        SuperscriptBox["f", "\[Prime]\[Prime]",
+         MultilineFunction->None], "[", "t", "]"}]}], "-", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["f", "\[Prime]",
+         MultilineFunction->None], "[", "t", "]"}], " ", 
+       RowBox[{
+        SuperscriptBox["g", "\[Prime]\[Prime]",
+         MultilineFunction->None], "[", "t", "]"}]}]}], ")"}], "2"], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{
+        SuperscriptBox["f", "\[Prime]",
+         MultilineFunction->None], "[", "t", "]"}], "2"], "+", 
+      SuperscriptBox[
+       RowBox[{
+        SuperscriptBox["g", "\[Prime]",
+         MultilineFunction->None], "[", "t", "]"}], "2"]}], ")"}], 
+    "3"]]]], "Output",
+ ImageSize->{200, 53},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->227287259,ExpressionUUID->"5c49c58d-bf28-4430-955e-cdb91eb22987"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "1544aede-2268-40b5-97de-34b0df5071ac"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->47308791,ExpressionUUID->"ee9dc11d-7fba-4271-a486-b2d7fd6077df"],
+
+Cell["The curvature of an circular helix.", "ExampleText",
+ CellID->42565212,ExpressionUUID->"8197004f-9dec-4159-83ee-bd32402cab5c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Curvature", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"a", " ", 
+       RowBox[{"Cos", "[", "t", "]"}]}], ",", 
+      RowBox[{"a", " ", 
+       RowBox[{"Sin", "[", "t", "]"}]}], ",", 
+      RowBox[{"b", " ", "t"}]}], "}"}], ",", "t"}], "]"}], "//", 
+  "PowerExpand"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->774066000,ExpressionUUID->"195d63ec-f165-443f-8a73-c129fe24f61e"],
+
+Cell[BoxData[
+ FractionBox["a", 
+  RowBox[{
+   SuperscriptBox["a", "2"], "+", 
+   SuperscriptBox["b", "2"]}]]], "Output",
+ ImageSize->{48, 37},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->434245262,ExpressionUUID->"601e7db6-0f53-4b77-bede-2b7c1059d87d"]
+}, Open  ]],
+
+Cell["General formula for the curvature of a space curve.", "ExampleText",
+ CellID->450885621,ExpressionUUID->"47b772a2-448d-4303-a86f-a34e53a57b62"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Curvature", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"f", "[", "t", "]"}], ",", 
+     RowBox[{"g", "[", "t", "]"}], ",", 
+     RowBox[{"h", "[", "t", "]"}]}], "}"}], ",", "t"}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->906375356,ExpressionUUID->"5fb82e4c-092f-4579-bb9a-ecd0b51cf59d"],
+
+Cell[BoxData[
+ RowBox[{"\[Sqrt]", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["g", "\[Prime]",
+            MultilineFunction->None], "[", "t", "]"}], " ", 
+          RowBox[{
+           SuperscriptBox["f", "\[Prime]\[Prime]",
+            MultilineFunction->None], "[", "t", "]"}]}], "-", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["f", "\[Prime]",
+            MultilineFunction->None], "[", "t", "]"}], " ", 
+          RowBox[{
+           SuperscriptBox["g", "\[Prime]\[Prime]",
+            MultilineFunction->None], "[", "t", "]"}]}]}], ")"}], "2"], "+", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["h", "\[Prime]",
+            MultilineFunction->None], "[", "t", "]"}], " ", 
+          RowBox[{
+           SuperscriptBox["f", "\[Prime]\[Prime]",
+            MultilineFunction->None], "[", "t", "]"}]}], "-", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["f", "\[Prime]",
+            MultilineFunction->None], "[", "t", "]"}], " ", 
+          RowBox[{
+           SuperscriptBox["h", "\[Prime]\[Prime]",
+            MultilineFunction->None], "[", "t", "]"}]}]}], ")"}], "2"], "+", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["h", "\[Prime]",
+            MultilineFunction->None], "[", "t", "]"}], " ", 
+          RowBox[{
+           SuperscriptBox["g", "\[Prime]\[Prime]",
+            MultilineFunction->None], "[", "t", "]"}]}], "-", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["g", "\[Prime]",
+            MultilineFunction->None], "[", "t", "]"}], " ", 
+          RowBox[{
+           SuperscriptBox["h", "\[Prime]\[Prime]",
+            MultilineFunction->None], "[", "t", "]"}]}]}], ")"}], "2"]}], 
+     ")"}], "/", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{
+         SuperscriptBox["f", "\[Prime]",
+          MultilineFunction->None], "[", "t", "]"}], "2"], "+", 
+       SuperscriptBox[
+        RowBox[{
+         SuperscriptBox["g", "\[Prime]",
+          MultilineFunction->None], "[", "t", "]"}], "2"], "+", 
+       SuperscriptBox[
+        RowBox[{
+         SuperscriptBox["h", "\[Prime]",
+          MultilineFunction->None], "[", "t", "]"}], "2"]}], ")"}], "3"]}], 
+   ")"}]}]], "Output",
+ ImageSize->{401, 40},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->574132142,ExpressionUUID->"002e635d-a488-404d-a5ec-5ab1bb80e443"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"18e96f75-3fb9-49ec-90a1-c831b5ea58a7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"55ddca9f-f10e-4134-b9ed-d197244fd4b3"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"7363f656-2ebb-481e-a816-0ac25d1086b2"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PrincipalTangent"]],"paclet:KnoxPackages/ref/PrincipalTangent"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"9172815b-e1f9-4234-9dea-6f2c7fc6c1c2"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PrincipalNormal"]],"paclet:KnoxPackages/ref/PrincipalNormal"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"43388323-1ea5-45ef-9fb6-8572d4ba253b"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Binormal"]],"paclet:KnoxPackages/ref/Binormal"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"08ac5c4e-a3dd-4d19-99cc-dc7b49d7107e"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["TN"]],"paclet:KnoxPackages/ref/TN"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"87c3013e-566e-4d74-929c-511a2b57525f"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["TNB"]],"paclet:KnoxPackages/ref/TNB"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"5198ecb5-aca5-4f0f-bd13-e32d58090f15"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CenterOfCurvature"]],
+    "paclet:KnoxPackages/ref/CenterOfCurvature"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"ddc8bdb0-bda8-46d9-87d1-5f356fe833df"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Torsion"]],"paclet:KnoxPackages/ref/Torsion"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"e3ecb12b-e57a-4b02-80b4-1dfa97a35738"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["TNComponents"]],"paclet:KnoxPackages/ref/TNComponents"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"6713458b-9d1b-468a-b38c-8f596547365e"]
+}], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"bd48d08f-6806-4dce-b96a-d121dada51ea"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"8017f58b-5501-46d0-90e8-7ec40fd8d413"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"604ec110-1af0-44fb-b9e2-5dc4827d4a41"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"bee62bfd-e2ae-4a3c-b092-34d540a7e396"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->15351273,ExpressionUUID->"1c2288ea-ffe6-4091-9110-84567d376f60"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"c3dd8b7d-c55a-401b-99da-a7ed8dcc5b26"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Curvature",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 40, 56.3990906}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "Curvature[curve, t] returns the curvature of the curve defined by \
+{f1[t], f2[t]} or {f1[t], f2[t], f3[t]}. Curvature[curve, t, t0] returns the \
+curvature at the point t0.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "Curvature", "titlemodifier" -> "", "windowtitle" -> "Curvature", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/Curvature", "WorkflowDockedCell" -> 
+    ""}, "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[10251, 271, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"15668e95-30de-4b80-a5a2-a9f370e08878",
+   CellTags->"PrimaryExamplesSection",
+   CellID->393542969]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 24020, 684}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[581, 21, 4788, 106, 55, "AnchorBarGrid",ExpressionUUID->"5db6fb1b-db6a-426b-983d-5feb25bd62c9",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5394, 131, 394, 9, 52, "ObjectNameGrid",ExpressionUUID->"5b393be2-8d9e-4480-8a22-d6c6eade42dd"],
+Cell[5791, 142, 2406, 67, 186, "Usage",ExpressionUUID->"5d6ad4b0-06e8-4a22-8c6a-829ab930a1f1",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8234, 214, 867, 21, 37, "NotesSection",ExpressionUUID->"05b04f90-9e0f-43d7-9279-ecbb87a3ab9c",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->220750410],
+Cell[9104, 237, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"99b7a9c0-ae08-4e26-9f37-62053ffc444d"],
+Cell[9193, 239, 231, 6, 70, "Notes",ExpressionUUID->"daecf4c8-56f2-4fd6-9837-beca511dd91b",
+ CellID->1067943069],
+Cell[9427, 247, 698, 17, 70, "3ColumnTableMod",ExpressionUUID->"f9cc9d55-10cf-4bc0-803a-4a3fda7e17e0",
+ CellID->290440189],
+Cell[10128, 266, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"53c245c6-39e9-42ce-815e-e151272c9d30"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10251, 271, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"15668e95-30de-4b80-a5a2-a9f370e08878",
+ CellTags->"PrimaryExamplesSection",
+ CellID->393542969],
+Cell[CellGroupData[{
+Cell[10711, 286, 308, 7, 29, "ExampleSection",ExpressionUUID->"207542af-cbcf-4372-b121-eef4b6a629ca",
+ CellID->109609597],
+Cell[11022, 295, 135, 1, 38, "ExampleText",ExpressionUUID->"5df04f8e-3ebf-4475-bd8c-e5e30aa5f8fa",
+ CellID->86039659],
+Cell[CellGroupData[{
+Cell[11182, 300, 395, 12, 26, "Input",ExpressionUUID->"85fe8793-d9cc-48c5-988b-79a122046fed",
+ CellID->51731174],
+Cell[11580, 314, 232, 6, 60, "Output",ExpressionUUID->"40717a9c-401a-4f05-9d18-4f46e331d597",
+ CellID->14251362]
+}, Open  ]],
+Cell[11827, 323, 158, 2, 38, "ExampleText",ExpressionUUID->"6e677ad1-554f-469a-8eef-e4184220560f",
+ CellID->101700359],
+Cell[CellGroupData[{
+Cell[12010, 329, 293, 8, 26, "Input",ExpressionUUID->"43f2614e-80d6-4e9d-9c0b-07b600096bca",
+ CellID->39634079],
+Cell[12306, 339, 1153, 36, 74, "Output",ExpressionUUID->"5c49c58d-bf28-4430-955e-cdb91eb22987",
+ CellID->227287259]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13496, 380, 241, 5, 8, "ExampleDelimiter",ExpressionUUID->"ee9dc11d-7fba-4271-a486-b2d7fd6077df",
+ CellID->47308791],
+Cell[13740, 387, 132, 1, 38, "ExampleText",ExpressionUUID->"8197004f-9dec-4159-83ee-bd32402cab5c",
+ CellID->42565212],
+Cell[CellGroupData[{
+Cell[13897, 392, 433, 13, 26, "Input",ExpressionUUID->"195d63ec-f165-443f-8a73-c129fe24f61e",
+ CellID->774066000],
+Cell[14333, 407, 306, 9, 58, "Output",ExpressionUUID->"601e7db6-0f53-4b77-bede-2b7c1059d87d",
+ CellID->434245262]
+}, Open  ]],
+Cell[14654, 419, 149, 1, 70, "ExampleText",ExpressionUUID->"47b772a2-448d-4303-a86f-a34e53a57b62",
+ CellID->450885621],
+Cell[CellGroupData[{
+Cell[14828, 424, 335, 9, 70, "Input",ExpressionUUID->"5fb82e4c-092f-4579-bb9a-ecd0b51cf59d",
+ CellID->906375356],
+Cell[15166, 435, 2691, 78, 61, "Output",ExpressionUUID->"002e635d-a488-404d-a5ec-5ab1bb80e443",
+ CellID->574132142]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[17896, 518, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"18e96f75-3fb9-49ec-90a1-c831b5ea58a7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18019, 523, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"7363f656-2ebb-481e-a816-0ac25d1086b2",
+ CellID->1255426704],
+Cell[18282, 532, 2974, 79, 70, "SeeAlso",ExpressionUUID->"bd48d08f-6806-4dce-b96a-d121dada51ea",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21293, 616, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"604ec110-1af0-44fb-b9e2-5dc4827d4a41",
+ CellID->38303248],
+Cell[21562, 625, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"bee62bfd-e2ae-4a3c-b092-34d540a7e396"],
+Cell[21651, 627, 226, 5, 70, "MoreAbout",ExpressionUUID->"1c2288ea-ffe6-4091-9110-84567d376f60",
+ CellID->15351273]
+}, Open  ]],
+Cell[21892, 635, 78, 0, 70, "FooterCell",ExpressionUUID->"c3dd8b7d-c55a-401b-99da-a7ed8dcc5b26"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

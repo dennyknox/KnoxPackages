@@ -1,0 +1,708 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     26416,        698]
+NotebookOptionsPosition[     21140,        583]
+NotebookOutlinePosition[     23675,        645]
+CellTagsIndexPosition[     23590,        640]
+WindowTitle->RungeKutta5
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "0e510294-ed4a-4453-bb5c-a367b9a1c545"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"04480bb0-542a-4f2d-bb34-862357b44e12"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"EulerMethod\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/EulerMethod"], "\<\"RungeKutta\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/RungeKutta"], "\<\"PlotEuler\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/PlotEuler"], "\<\"PlotRungeKutta\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/PlotRungeKutta"], "\<\"PlotRungeKutta5\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/ref/PlotRungeKutta5"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "9970d71d-8f26-49c7-b88c-7df10b5404d4"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"831335a5-cfc9-4104-b5dd-4d4b98c6ec08"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "2017fe84-9416-4aeb-8fbe-96a340c2b9dd"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"68e83676-3fd6-4469-9d69-303059956404"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/RungeKutta5\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/RungeKutta5"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+RungeKutta5.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$206738], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/RungeKutta5", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "071e311b-1b99-4286-8a6f-e3ad69a4d7f7"]
+    }], "AnchorBar",ExpressionUUID->"b5b1d3e6-ecb7-4e9a-872c-c7db9342a402"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"b8e7784e-904e-4d68-8ebc-557feff78d09"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["RungeKutta5", "ObjectName",ExpressionUUID->
+  "d1d78e97-cfc8-4b2b-aa93-51aa2cb104c6"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"7f603100-972a-42fb-9847-47723c4e37a7"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "ba05f1b9-7abd-406f-94cb-5cda6b2a39ad"]
+}], "ObjectNameGrid",ExpressionUUID->"779d76f2-651b-4d92-bb8d-015d860a3342"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"RungeKutta5", "[", 
+       StyleBox[
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"eqn", ",", "initialvalue"}], "}"}], ",", 
+         RowBox[{"x", "[", "t", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", 
+           SubscriptBox["t", "min"], ",", 
+           SubscriptBox["t", "max"], ",", "dt"}], "}"}]}],
+        FontSlant->"Italic"], "]"}]], "InlineFormula",ExpressionUUID->
+      "ff80c9c7-4533-46a4-8a01-d12938081b17"],
+     " \[LineSeparator]returns the Runge\[Dash]Kutta\[Dash]Fehlberg is a 5th \
+order approximation with step size ",
+     Cell[BoxData[
+      StyleBox["dt",
+       FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
+      "203a89a1-9e97-4373-b71d-1c98620c349b"],
+     " to the solution ",
+     Cell[BoxData[
+      StyleBox[
+       RowBox[{"x", "[", "t", "]"}],
+       FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
+      "5029506f-5e8d-466d-bd77-d2a6e5c6add5"],
+     " of the differential equation ",
+     Cell[BoxData[
+      StyleBox["eqn",
+       FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
+      "5746cef4-1d6c-43ef-8151-3f635e2571b4"],
+     " with the given initial value. If ",
+     Cell[BoxData[
+      StyleBox["dt",
+       FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
+      "1ef06948-874a-4eb2-8f8a-b942569574a1"],
+     " is not given, then is is set to ",
+     Cell[BoxData[
+      StyleBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["t", "max"], "-", 
+          SubscriptBox["t", "min"]}], ")"}], "/", "20"}],
+       FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
+      "55c21b94-2b70-472b-87b8-6aed47c202e4"],
+     ".  If ",
+     Cell[BoxData[
+      RowBox[{"d", "\[VeryThinSpace]", "t"}]], "InlineFormula",
+      ExpressionUUID->"fea85107-dc55-44ef-bad0-29e9a1261dab"],
+     " is negative, the approximation proceeds backwards in time."
+    }],ExpressionUUID->"9f5bf9e5-03c7-4788-a0c2-3f64ee30bbb3"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"a7b29e1c-33da-493d-b63d-42c53c68ebb8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"463af366-8dfd-4953-82ef-1dae886821ff"],
+   "Details"
+  }], "NotesFrameText",ExpressionUUID->"6b61739d-11a7-49ef-9cb0-df22efa85f7f"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"b69d1434-0db1-455e-ac05-06c4787984aa"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->10347512,ExpressionUUID->"7e955290-b270-4d80-b476-7872b5e7de6d"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"e8dd3bc3-7416-40ef-a09d-e99b97bb432e"],
+
+Cell["Options", "Notes",
+ CellID->1067943069,ExpressionUUID->"92db81ff-6f9a-47f5-b6e9-f6e825b48af3"],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "e4d94b87-0343-4857-b303-030653ab3fda"], 
+    ButtonBox["WorkingPrecision",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/WorkingPrecision"], 
+    ButtonBox["MachinePrecision",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/MachinePrecision"], Cell[TextData[Cell[
+    "sets the precision of calculations", "TableText",ExpressionUUID->
+     "51f545ab-5487-45d9-b376-1e6165b3c727"]], "TableText",ExpressionUUID->
+     "caa53064-3fa4-44ac-8b03-77e993e6cba0"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True}}}},
+ CellID->1364435577,ExpressionUUID->"e4c6f474-f736-4bd8-a010-afd019fb3710"],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"e7c29c2f-092c-477d-a8a8-c3afcbb99d0c"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"e3af2442-5aa2-410d-b5bd-29bb2582b51b"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "3922f3a8-547b-4d58-a3c3-ab4625977ada"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->250811947,ExpressionUUID->"b43708e1-d7ed-42e5-8e37-54ced4c76c8d"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "6c7c2368-01c7-4218-aaa5-df8d79afdb3a"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->231128105,ExpressionUUID->"d11234ff-1a99-4c95-b412-50017f56bdbc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"RungeKutta5", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+      RowBox[{"t", " ", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"y", "[", "t", "]"}], "]"}]}]}], ",", 
+     RowBox[{
+      RowBox[{"y", "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}], ",", 
+   RowBox[{"y", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "2", ",", 
+     RowBox[{"1", "/", "10"}]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->33462083,ExpressionUUID->"cb32641d-a67b-4e6e-8a04-eb8acf59796d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.1`", ",", "0.`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.2`", ",", "0.010000000000000002`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.30000000000000004`", ",", "0.02999900000833331`"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{"0.4`", ",", "0.05998550192064546`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.5`", ",", "0.09991355828837428`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.6`", ",", "0.14966419785497465`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.7`", ",", "0.20899347008490043`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.7999999999999999`", ",", "0.2774702869122906`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.8999999999999999`", ",", "0.35441040394873097`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.9999999999999999`", ",", "0.4388170176853583`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.0999999999999999`", ",", "0.5293425085734305`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.2`", ",", "0.6242878280352724`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.3`", ",", "0.721653380477914`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.4000000000000001`", ",", "0.8192462639569805`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.5000000000000002`", ",", "0.9148343585742306`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.6000000000000003`", ",", "1.0063226358137278`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.7000000000000004`", ",", "1.091918032178319`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.8000000000000005`", ",", "1.1702513016824554`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.9000000000000006`", ",", "1.2404369531294792`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2.0000000000000004`", ",", "1.3020697212612469`"}], "}"}]}], 
+   "}"}], "}"}]], "Output",
+ ImageSize->{467, 79},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->122535552,ExpressionUUID->"f7e11d8d-8aab-4fe8-8f8a-27a29e5bdb22"]
+}, Open  ]],
+
+Cell["\<\
+Apply the Runge\[Dash]Kutta\[Dash]Fehlberg method to a differential equation \
+using 25-digit precision arithmetic:\
+\>", "ExampleText",
+ CellID->7376930,ExpressionUUID->"e1b4560c-349f-4d49-b4e5-20448d7e6210"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"RungeKutta5", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+      RowBox[{"t", " ", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"y", "[", "t", "]"}], "]"}]}]}], ",", 
+     RowBox[{
+      RowBox[{"y", "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}], ",", 
+   RowBox[{"y", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "2", ",", 
+     RowBox[{"1", "/", "10"}]}], "}"}], ",", 
+   RowBox[{"WorkingPrecision", "\[Rule]", "25"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->393891476,ExpressionUUID->"e3372397-26db-47de-8200-f3d62b9f7e24"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.1`25.", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.2`25.", ",", "0.01`24.69897000433602"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "0.3`25.", ",", 
+      "0.02999900000833330555560515867504413347`24.698941051853083"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "0.4`25.", ",", 
+      "0.05998550192064544526781475151667108203`24.698760124885123"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "0.50000000000000000000000000000000000001`25.", ",", 
+      "0.09991355828837426353817135254126359939`24.698219067545967"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "0.60000000000000000000000000000000000001`25.", ",", 
+      "0.14966419785497463983259080709892950345`24.697024139490075"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "0.70000000000000000000000000000000000001`25.", ",", 
+      "0.20899347008490043241728663413617295792`24.69479863166714"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "0.80000000000000000000000000000000000001`25.", ",", 
+      "0.27747028691229057362119478548044369277`24.691088267827435"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "0.90000000000000000000000000000000000001`25.", ",", 
+      "0.35441040394873096192115664379769435608`24.685370722971047"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "1.00000000000000000000000000000000000001`25.", ",", 
+      "0.43881701768535830510228765909297106804`24.67707049476679"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "1.10000000000000000000000000000000000001`25.", ",", 
+      "0.52934250857343046913988240447928687654`24.665579857965717"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "1.20000000000000000000000000000000000001`25.", ",", 
+      "0.62428782803527233617365073175306121165`24.650285612369963"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "1.30000000000000000000000000000000000002`25.", ",", 
+      "0.72165338047791402612651883856754987896`24.63059986807217"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "1.40000000000000000000000000000000000002`25.", ",", 
+      "0.81924626395698049719432231949420836666`24.6059915440514"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "1.50000000000000000000000000000000000002`25.", ",", 
+      "0.91483435857423054219043641998008253399`24.576014201509896"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "1.60000000000000000000000000000000000002`25.", ",", 
+      "1.00632263581372769194005875556118423459`24.54032592828089"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "1.70000000000000000000000000000000000002`25.", ",", 
+      "1.09191803217831887417309207332581777283`24.498698478548064"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "1.80000000000000000000000000000000000002`25.", ",", 
+      "1.17025130168245522214321649476905570973`24.45101530827156"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "1.90000000000000000000000000000000000002`25.", ",", 
+      "1.24043695312947902554902525190334809629`24.397260548960126"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "2.00000000000000000000000000000000000002`25.", ",", 
+      "1.302069721261246662791872565271521902`24.33750238603657"}], "}"}]}], 
+   "}"}], "}"}]], "Output",
+ ImageSize->{436, 319},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->82186558,ExpressionUUID->"19436556-ed8f-4259-8f46-ee7269f62471"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"87ec6908-755e-4030-8ca8-8626fdcd4f99"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"2efff64f-52d3-4b0a-8219-d48cfae2b2af"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"c48b9370-56fd-4523-aa68-8647902d4d92"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["EulerMethod"]],"paclet:KnoxPackages/ref/EulerMethod"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"4df7c133-6dbb-487d-bab5-d51e740502e6"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RungeKutta"]],"paclet:KnoxPackages/ref/RungeKutta"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"a7eb6aa2-6cf0-4262-8f13-e82964c7c32a"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PlotEuler"]],"paclet:KnoxPackages/ref/PlotEuler"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"9d20893c-90f1-494b-95f4-b049af2c75cc"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PlotRungeKutta"]],"paclet:KnoxPackages/ref/PlotRungeKutta"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"0c40decc-4e9b-452b-bdb4-fb8c727c4fa7"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PlotRungeKutta5"]],"paclet:KnoxPackages/ref/PlotRungeKutta5"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"08851ced-fe9a-4416-81ad-f2a464d3a101"]
+}], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"5447ba57-c28f-450f-aa25-e83d165982b2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"1dbe75bc-7326-4178-b809-489cef8636e7"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"973a0a4c-4045-4f46-a539-23df14a4d316"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"ad4ef21b-83da-46dc-96a5-e9f90d127d85"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->784078175,ExpressionUUID->"d31ba5ea-c8ff-4b6d-9e0e-bae995fd90bc"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"0b8a9b46-7e28-4a08-951f-b31683dd0fa4"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"RungeKutta5",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 55, 22.6168531}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "RungeKutta5[{eqn, initialvalue}, x[t], {t, tmin, tmax, dt}] returns the \
+Runge\\[Dash]Kutta\\[Dash]Fehlberg is a 5th order approximation with step \
+size dt to the solution x[t] of the differential equation eqn with the given \
+initial value. If dt is not given, then is is set to (tmax - tmin)/20. If d t \
+is negative, the approximation proceeds backwards in time.", "synonyms" -> {},
+     "tabletags" -> {}, "title" -> "RungeKutta5", "titlemodifier" -> "", 
+    "windowtitle" -> "RungeKutta5", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/RungeKutta5", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[9827, 253, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"b43708e1-d7ed-42e5-8e37-54ced4c76c8d",
+   CellTags->"PrimaryExamplesSection",
+   CellID->250811947]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 23392, 633}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[583, 21, 4519, 101, 55, "AnchorBarGrid",ExpressionUUID->"b8e7784e-904e-4d68-8ebc-557feff78d09",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5127, 126, 396, 9, 52, "ObjectNameGrid",ExpressionUUID->"779d76f2-651b-4d92-bb8d-015d860a3342"],
+Cell[5526, 137, 2256, 58, 151, "Usage",ExpressionUUID->"a7b29e1c-33da-493d-b63d-42c53c68ebb8",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7819, 200, 854, 21, 37, "NotesSection",ExpressionUUID->"7e955290-b270-4d80-b476-7872b5e7de6d",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->10347512],
+Cell[8676, 223, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"e8dd3bc3-7416-40ef-a09d-e99b97bb432e"],
+Cell[8765, 225, 100, 1, 70, "Notes",ExpressionUUID->"92db81ff-6f9a-47f5-b6e9-f6e825b48af3",
+ CellID->1067943069],
+Cell[8868, 228, 833, 18, 70, "3ColumnTableMod",ExpressionUUID->"e4c6f474-f736-4bd8-a010-afd019fb3710",
+ CellID->1364435577],
+Cell[9704, 248, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"e7c29c2f-092c-477d-a8a8-c3afcbb99d0c"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9827, 253, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"b43708e1-d7ed-42e5-8e37-54ced4c76c8d",
+ CellTags->"PrimaryExamplesSection",
+ CellID->250811947],
+Cell[CellGroupData[{
+Cell[10287, 268, 308, 7, 29, "ExampleSection",ExpressionUUID->"d11234ff-1a99-4c95-b412-50017f56bdbc",
+ CellID->231128105],
+Cell[CellGroupData[{
+Cell[10620, 279, 710, 20, 43, "Input",ExpressionUUID->"cb32641d-a67b-4e6e-8a04-eb8acf59796d",
+ CellID->33462083],
+Cell[11333, 301, 2144, 52, 100, "Output",ExpressionUUID->"f7e11d8d-8aab-4fe8-8f8a-27a29e5bdb22",
+ CellID->122535552]
+}, Open  ]],
+Cell[13492, 356, 219, 4, 57, "ExampleText",ExpressionUUID->"e1b4560c-349f-4d49-b4e5-20448d7e6210",
+ CellID->7376930],
+Cell[CellGroupData[{
+Cell[13736, 364, 767, 21, 59, "Input",ExpressionUUID->"e3372397-26db-47de-8200-f3d62b9f7e24",
+ CellID->393891476],
+Cell[14506, 387, 3634, 104, 340, "Output",ExpressionUUID->"19436556-ed8f-4259-8f46-ee7269f62471",
+ CellID->82186558]
+}, Open  ]]
+}, Open  ]],
+Cell[18167, 495, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"87ec6908-755e-4030-8ca8-8626fdcd4f99"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18290, 500, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"c48b9370-56fd-4523-aa68-8647902d4d92",
+ CellID->1255426704],
+Cell[18553, 509, 1868, 48, 70, "SeeAlso",ExpressionUUID->"5447ba57-c28f-450f-aa25-e83d165982b2",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20458, 562, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"973a0a4c-4045-4f46-a539-23df14a4d316",
+ CellID->38303248],
+Cell[20727, 571, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"ad4ef21b-83da-46dc-96a5-e9f90d127d85"],
+Cell[20816, 573, 227, 5, 70, "MoreAbout",ExpressionUUID->"d31ba5ea-c8ff-4b6d-9e0e-bae995fd90bc",
+ CellID->784078175]
+}, Open  ]],
+Cell[21058, 581, 78, 0, 70, "FooterCell",ExpressionUUID->"0b8a9b46-7e28-4a08-951f-b31683dd0fa4"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

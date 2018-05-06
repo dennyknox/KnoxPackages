@@ -1,0 +1,875 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     27970,        866]
+NotebookOptionsPosition[     19506,        692]
+NotebookOutlinePosition[     21682,        749]
+CellTagsIndexPosition[     21597,        744]
+WindowTitle->NewtonMethod
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"PlotNewton\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/PlotNewton"], "\<\"FindRoot \"\>":>
+       Documentation`HelpLookup["paclet:ref/FindRoot"], "\<\" \"\>":>
+       Documentation`HelpLookup[
+       "paclet:ref/FindRoot"], "\<\"SecantMethod \"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/SecantMethod"], "\<\" \"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/SecantMethod"], "\<\"BisectionMethod\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/ref/BisectionMethod"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/NewtonMethod\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/NewtonMethod"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+NewtonMethod.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$123193], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/NewtonMethod", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[TextData[{
+ Cell["NewtonMethod", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["NewtonMethod"]],"paclet:KnoxPackages/ref/NewtonMethod"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["f", "TI"], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["x", "TI"], ",", 
+          StyleBox["x0", "TI"]}], "}"}], ",", 
+        StyleBox["n", "TI"]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]returns the result of applying Newton's method ",
+     Cell[BoxData[
+      StyleBox["n", "TI"]], "InlineFormula"],
+     " times to a differentiable function ",
+     Cell[BoxData[
+      StyleBox["f", "TI"]], "InlineFormula"],
+     " with starting value ",
+     Cell[BoxData[
+      StyleBox["x0", "TI"]], "InlineFormula"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ ButtonBox["NewtonMethod",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/NewtonMethod"],
+ " has the following options:"
+}], "Notes",
+ CellID->1067943069],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["PrintDisplay",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/PrintDisplay"], 
+    ButtonBox["False",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/False"], Cell[
+    "whether to print the intermediate results", "TableText"]},
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["WorkingPrecision",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/WorkingPrecision"], 
+    ButtonBox["MachinePrecision",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/MachinePrecision"], Cell["\<\
+determines how many digits should be maintained in internal computations\
+\>", "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True, True}}}},
+ CellID->566813511],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(5)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1],
+
+Cell[TextData[{
+ "Here we use ",
+ ButtonBox["NewtonMethod",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/NewtonMethod"],
+ " to find a root"
+}], "ExampleText",
+ CellID->269342445],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"x", " ", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"4", "x"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->119300271],
+
+Cell[BoxData[
+ RowBox[{"NewtonMethod", "[", 
+  RowBox[{
+   RowBox[{"x", " ", 
+    RowBox[{"Sin", "[", 
+     RowBox[{"4", "x"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1"}], "}"}], ",", "10", ",", 
+   RowBox[{"PrintDisplay", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->208905642],
+
+Cell[BoxData[
+ RowBox[{"NumberForm", "[", 
+  RowBox[{
+   RowBox[{"NewtonMethod", "[", 
+    RowBox[{
+     RowBox[{"x", " ", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"4", "x"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "1"}], "}"}], ",", "10", ",", 
+     RowBox[{"PrintDisplay", "\[Rule]", "True"}]}], "]"}], ",", "16"}], 
+  "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->60509842],
+
+Cell[TextData[{
+ "Using the built in command to find the root, we see that ",
+ ButtonBox["NewtonMethod",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/NewtonMethod"],
+ " was fairly accurate"
+}], "ExampleText",
+ CellID->745382636],
+
+Cell[BoxData[
+ RowBox[{"NumberForm", "[", 
+  RowBox[{
+   RowBox[{"FindRoot", "[", 
+    RowBox[{
+     RowBox[{"x", " ", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"4", "x"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "1"}], "}"}]}], "]"}], ",", "16"}], "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->494098049],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->14015],
+
+Cell["Now we use a more complicated function. First we plot it", "ExampleText",
+ CellID->220760960],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"Sin", "[", 
+      SuperscriptBox["t", "2"], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "x"}], "}"}]}], "]"}], "-", 
+   RowBox[{"2", "/", "3"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"g", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->126564720],
+
+Cell["This is the Newton's method solution", "ExampleText",
+ CellID->89092392],
+
+Cell[BoxData[
+ RowBox[{"NMsoln", "=", 
+  RowBox[{"NewtonMethod", "[", 
+   RowBox[{
+    RowBox[{"g", "[", "x", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "1"}], "}"}], ",", "15", ",", 
+    RowBox[{"PrintDisplay", "\[Rule]", "True"}], ",", 
+    RowBox[{"WorkingPrecision", "\[Rule]", "20"}]}], "]"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->254240066],
+
+Cell["Let's see how close this got us", "ExampleText",
+ CellID->72466014],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "[", "x", "]"}], "/.", "NMsoln"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->73549011],
+
+Cell[TextData[{
+ "Using ",
+ ButtonBox["FindRoot",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/FindRoot"],
+ " we get a similar, but slightly more accurate answer"
+}], "ExampleText",
+ CellID->24110201],
+
+Cell[BoxData[
+ RowBox[{"FRsoln", "=", 
+  RowBox[{"FindRoot", "[", 
+   RowBox[{
+    RowBox[{"g", "[", "x", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "1", ",", "2"}], "}"}], ",", 
+    RowBox[{"WorkingPrecision", "->", "20"}]}], "]"}]}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->678806327],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "[", "x", "]"}], "/.", "FRsoln"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->53046771]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->442098],
+
+Cell["Another complicated function", "ExampleText",
+ CellID->141812228],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotNewton", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Tan", "[", "x", "]"}], "-", "x"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     FractionBox["\[Pi]", "2"], ",", 
+     RowBox[{"5", 
+      FractionBox["\[Pi]", "2"]}]}], "}"}], ",", "4.29", ",", 
+   RowBox[{"Asymptote", "->", 
+    RowBox[{
+     RowBox[{"Range", "[", 
+      RowBox[{"1", ",", "5", ",", "2"}], "]"}], 
+     FractionBox["\[Pi]", "2"]}]}], ",", 
+   RowBox[{"Iterations", "->", "10"}], ",", 
+   RowBox[{"PrintDisplay", "->", "True"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->49219897],
+
+Cell[BoxData[
+ RowBox[{"NewtonMethod", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Tan", "[", "x", "]"}], "-", "x"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "4.29"}], "}"}], ",", "10"}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->518991437]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "PrintDisplay",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->71637097],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox[
+   RowBox[{
+    RowBox[{
+     TemplateBox[{Cell[
+        TextData[""]],"paclet:ref/"},
+      "RefLink",
+      BaseStyle->{"InlineFormula"}], " ", "PrintDisplay"}], "->", " ", "True",
+     " "}],
+   FontFamily->"Courier New",
+   FontSize->11]], "InlineFormula",
+  ShowStringCharacters->False],
+ " makes ",
+ ButtonBox["NewtonMethod",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/NewtonMethod"],
+ " display all of the intermediate values it calculates."
+}], "ExampleText",
+ CellID->382413392],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"NewtonMethod", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Tan", "[", "x", "]"}], "-", "x"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "4.29"}], "}"}], ",", "10", ",", 
+   RowBox[{"PrintDisplay", "\[Rule]", "True"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->587778568],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"NewtonMethod", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Tan", "[", "x", "]"}], "-", "x"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "4.29"}], "}"}], ",", "10"}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->6008126]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "WorkingPrecision",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->547141156],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox[
+   RowBox[{"WorkingPrecision", "->", " ", "MachinePrecision"}],
+   FontFamily->"Courier New",
+   FontSize->11]], "InlineFormula",
+  ShowStringCharacters->False],
+ " changes the level of precision that ",
+ ButtonBox["NewtonMethod",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/NewtonMethod"],
+ " uses to calculate its values."
+}], "ExampleText",
+ CellID->21280666],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{"Sin", "[", 
+      SuperscriptBox["t", "2"], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "x"}], "}"}]}], "]"}], "-", 
+   RowBox[{"2", "/", "3"}]}]}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->551945304],
+
+Cell[TextData[{
+ "This is the Newton's method solution with ",
+ Cell[BoxData[
+  StyleBox[
+   RowBox[{"WorkingPrecision", "->", " ", "20"}],
+   FontFamily->"Courier New",
+   FontSize->11]], "InlineFormula",
+  ShowStringCharacters->False]
+}], "ExampleText",
+ CellID->310216120],
+
+Cell[BoxData[
+ RowBox[{"a", "=", 
+  RowBox[{"NewtonMethod", "[", 
+   RowBox[{
+    RowBox[{"g", "[", "x", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "1"}], "}"}], ",", "15", ",", 
+    RowBox[{"PrintDisplay", "\[Rule]", "True"}], ",", 
+    RowBox[{"WorkingPrecision", "\[Rule]", "20"}]}], "]"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->216479591],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "[", "x", "]"}], "/.", "a"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->34576753],
+
+Cell[TextData[{
+ "This is the Newton's method solution with ",
+ Cell[BoxData[
+  StyleBox[
+   RowBox[{"WorkingPrecision", "->", " ", "10"}],
+   FontFamily->"Courier New",
+   FontSize->11]], "InlineFormula",
+  ShowStringCharacters->False]
+}], "ExampleText",
+ CellID->199494750],
+
+Cell[BoxData[
+ RowBox[{"b", " ", "=", 
+  RowBox[{"NewtonMethod", "[", 
+   RowBox[{
+    RowBox[{"g", "[", "x", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "1"}], "}"}], ",", "15", ",", 
+    RowBox[{"PrintDisplay", "\[Rule]", "True"}], ",", 
+    RowBox[{"WorkingPrecision", "\[Rule]", "10"}]}], "]"}]}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->31842229],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "[", "x", "]"}], "/.", "b"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->92360416],
+
+Cell["There seems to be a loss in accuracy.", "ExampleText",
+ CellID->42021636]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SectionFooterSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ StyleBox[ButtonBox["PlotNewton",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/PlotNewton"],
+  FontFamily->"Verdana",
+  FontSize->11],
+ " ",
+ StyleBox["\[Bullet] ",
+  FontSize->11],
+ StyleBox[ButtonBox["FindRoot ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/FindRoot"],
+  FontFamily->"Verdana",
+  FontSize->11],
+ "\[FilledSmallCircle]",
+ StyleBox[ButtonBox[" ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/FindRoot"],
+  FontFamily->"Verdana",
+  FontSize->11],
+ StyleBox[ButtonBox["SecantMethod ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/SecantMethod"],
+  FontFamily->"Verdana",
+  FontSize->11],
+ "\[FilledSmallCircle]",
+ StyleBox[ButtonBox[" ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/SecantMethod"],
+  FontFamily->"Verdana",
+  FontSize->11],
+ StyleBox[ButtonBox["BisectionMethod",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/BisectionMethod"],
+  FontFamily->"Verdana",
+  FontSize->11]
+}], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"NewtonMethod",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 47, 21.3387735}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "NewtonMethod[f, {x, x0}, n] returns the result of applying Newton's \
+method n times to a differentiable function f with starting value x0.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "NewtonMethod", 
+    "titlemodifier" -> "", "windowtitle" -> "NewtonMethod", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/NewtonMethod"}},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", 
+  StyleDefinitions -> "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7672, 225, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"9ae6339d-5036-43f4-8d07-7868bbd02717",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 21407, 737}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[584, 21, 4037, 97, 70, "AnchorBarGrid",ExpressionUUID->"a1606ac8-cc28-4c63-bb73-fc995120ae71",
+ CellID->1],
+Cell[4624, 120, 169, 6, 70, "ObjectNameGrid",ExpressionUUID->"dadffbb0-64eb-4eed-af0e-5e76bb79d058"],
+Cell[4796, 128, 1014, 31, 70, "Usage",ExpressionUUID->"d56ab811-8750-4f66-8130-afd826c18068",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[5835, 163, 633, 19, 70, "NotesSection",ExpressionUUID->"ec67d8a2-1752-4556-9c6a-6e16145cc6bd",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+Cell[6471, 184, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"2d24d1b2-0478-47a2-b3c3-7c3bca0d90ab"],
+Cell[6505, 186, 183, 6, 70, "Notes",ExpressionUUID->"534f1445-6a27-4f8f-a43c-6ccad6298899",
+ CellID->1067943069],
+Cell[6691, 194, 910, 24, 70, "3ColumnTableMod",ExpressionUUID->"e9103702-6e7a-4975-8cd3-639be1afe8fa",
+ CellID->566813511],
+Cell[7604, 220, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"ad4fc421-5f24-4df2-b726-ee7f3ed929f5"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7672, 225, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"9ae6339d-5036-43f4-8d07-7868bbd02717",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[7956, 239, 187, 6, 70, "ExampleSection",ExpressionUUID->"eee27f04-53c9-43e8-88d1-abe3684f0304",
+ CellID->1],
+Cell[8146, 247, 193, 7, 70, "ExampleText",ExpressionUUID->"84478caf-33bc-4f9b-bf19-18f10712e34c",
+ CellID->269342445],
+Cell[8342, 256, 352, 11, 70, "Input",ExpressionUUID->"3e2fc8a8-4a52-46c4-9116-30baae487722",
+ CellID->119300271],
+Cell[8697, 269, 322, 10, 70, "Input",ExpressionUUID->"b71b3918-a4d8-45ca-9eb3-ad38a2e40e07",
+ CellID->208905642],
+Cell[9022, 281, 400, 13, 70, "Input",ExpressionUUID->"be2078a4-4abc-4f03-973b-82fc2be0f678",
+ CellID->60509842],
+Cell[9425, 296, 243, 7, 70, "ExampleText",ExpressionUUID->"e65fa182-5b5a-4a88-909f-ae84ff7020ae",
+ CellID->745382636],
+Cell[9671, 305, 327, 11, 70, "Input",ExpressionUUID->"b8299ffd-d946-4855-8fee-1996db29382e",
+ CellID->494098049],
+Cell[CellGroupData[{
+Cell[10023, 320, 121, 3, 70, "ExampleDelimiter",ExpressionUUID->"c8ffcab3-94bf-48d0-9734-6ba950510626",
+ CellID->14015],
+Cell[10147, 325, 99, 1, 70, "ExampleText",ExpressionUUID->"8017fb61-e351-432a-8d42-ce73146982c2",
+ CellID->220760960],
+Cell[10249, 328, 617, 19, 70, "Input",ExpressionUUID->"14b294e5-e1fe-4683-8eb7-9824902eeb80",
+ CellID->126564720],
+Cell[10869, 349, 78, 1, 70, "ExampleText",ExpressionUUID->"1e2bae2e-283a-4a77-b620-69297b525440",
+ CellID->89092392],
+Cell[10950, 352, 364, 10, 70, "Input",ExpressionUUID->"b608e247-76da-4412-8cb6-ad4627478fa5",
+ CellID->254240066],
+Cell[11317, 364, 73, 1, 70, "ExampleText",ExpressionUUID->"2f0a474a-0ada-4210-80fd-1014e83cb8fc",
+ CellID->72466014],
+Cell[11393, 367, 125, 4, 70, "Input",ExpressionUUID->"8d0f6102-e0bf-4d7d-91fd-12b54e666427",
+ CellID->73549011],
+Cell[11521, 373, 202, 7, 70, "ExampleText",ExpressionUUID->"82490752-753d-4631-a2e8-fcd630299244",
+ CellID->24110201],
+Cell[11726, 382, 299, 9, 70, "Input",ExpressionUUID->"70b3edd3-0bed-4b13-9680-d6c1996dcbf3",
+ CellID->678806327],
+Cell[12028, 393, 125, 4, 70, "Input",ExpressionUUID->"bb84dc84-6870-4c06-8576-b336b0e1408f",
+ CellID->53046771]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12190, 402, 122, 3, 70, "ExampleDelimiter",ExpressionUUID->"92fdc46f-38dd-413b-897f-9f8c31e2008f",
+ CellID->442098],
+Cell[12315, 407, 71, 1, 70, "ExampleText",ExpressionUUID->"03622018-5ff5-4e9a-bbd2-0a075a71295d",
+ CellID->141812228],
+Cell[12389, 410, 684, 20, 70, "Input",ExpressionUUID->"b4fee859-b091-4382-880f-1433476d4866",
+ CellID->49219897],
+Cell[13076, 432, 250, 8, 70, "Input",ExpressionUUID->"65185def-2481-4840-85d8-1deba378832d",
+ CellID->518991437]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13375, 446, 189, 6, 70, "ExampleSection",ExpressionUUID->"d9c578a5-9459-41b7-a6a5-64bf5aefb2a5",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[13589, 456, 198, 6, 70, "ExampleSubsection",ExpressionUUID->"e1eb7d4f-bf6c-4d94-bce9-0ca03f0040d1",
+ CellID->71637097],
+Cell[13790, 464, 547, 19, 70, "ExampleText",ExpressionUUID->"58bf94d9-69fb-492c-8660-edad7bee16da",
+ CellID->382413392],
+Cell[14340, 485, 397, 11, 70, "Input",ExpressionUUID->"4cb80f69-b90c-42c2-9ca9-9e10556c3ec2",
+ CellID->587778568],
+Cell[14740, 498, 341, 10, 70, "Input",ExpressionUUID->"f4d8014d-9577-487b-92f0-9331e52c0e8e",
+ CellID->6008126]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[15118, 513, 203, 6, 70, "ExampleSubsection",ExpressionUUID->"34f17a20-4ce5-404d-82ea-a8a4f963ccba",
+ CellID->547141156],
+Cell[15324, 521, 421, 13, 70, "ExampleText",ExpressionUUID->"58461fd9-e213-4757-8616-3798ef9be0a6",
+ CellID->21280666],
+Cell[15748, 536, 448, 14, 70, "Input",ExpressionUUID->"779cfcc0-c59a-421c-87ca-aea5a6155b55",
+ CellID->551945304],
+Cell[16199, 552, 275, 9, 70, "ExampleText",ExpressionUUID->"8e0c1974-d322-46f8-8c52-a4c05829d1b9",
+ CellID->310216120],
+Cell[16477, 563, 359, 10, 70, "Input",ExpressionUUID->"0cbdd9cd-9250-4d13-bfcc-0af80adf50b6",
+ CellID->216479591],
+Cell[16839, 575, 120, 4, 70, "Input",ExpressionUUID->"0566d7c7-e0d0-43b5-b12c-9eebdaac3d26",
+ CellID->34576753],
+Cell[16962, 581, 275, 9, 70, "ExampleText",ExpressionUUID->"1b39931a-faf3-416a-bc96-0dba9d5b7a9b",
+ CellID->199494750],
+Cell[17240, 592, 363, 10, 70, "Input",ExpressionUUID->"905e7410-ad0d-480a-a397-411969e5109e",
+ CellID->31842229],
+Cell[17606, 604, 120, 4, 70, "Input",ExpressionUUID->"d02ea430-6ced-47d2-8094-3fa494494d72",
+ CellID->92360416],
+Cell[17729, 610, 79, 1, 70, "ExampleText",ExpressionUUID->"7205a703-69c3-4172-b0a9-3f8068ef0f2a",
+ CellID->42021636]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17869, 618, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"7ca98559-fc87-4ae7-9ee2-180e129a283f"],
+Cell[17903, 620, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"a4b83de8-d524-42fb-a57f-27745c69f836",
+ CellID->1255426704],
+Cell[18056, 629, 1014, 37, 70, "SeeAlso",ExpressionUUID->"5be29081-13ae-4cdb-92af-2f73645860a9",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19107, 671, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"084f2659-f46d-4c01-94b3-6c8fd8d7eae8",
+ CellID->38303248],
+Cell[19266, 680, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"76481a18-0813-4a7e-9dd1-82a01ae26633"],
+Cell[19300, 682, 164, 5, 70, "MoreAbout",ExpressionUUID->"246d8618-e871-4f09-922f-825b46fe5969",
+ CellID->1]
+}, Open  ]],
+Cell[19479, 690, 23, 0, 70, "FooterCell",ExpressionUUID->"56a9d814-1f54-4d08-8a7b-a64407c1389a"]
+}
+]
+*)
+
+(* End of internal cache information *)

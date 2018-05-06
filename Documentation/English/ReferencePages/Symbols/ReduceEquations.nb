@@ -1,0 +1,796 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     27426,        786]
+NotebookOptionsPosition[     21450,        655]
+NotebookOutlinePosition[     23991,        717]
+CellTagsIndexPosition[     23906,        712]
+WindowTitle->ReduceEquations
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "ead25176-b186-4751-8f0e-877145345e1e"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"3ec989a2-f6c7-4b14-b97f-e257cdee54fc"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ReduceMatrix\"\>":>
+       Documentation`HelpLookup[
+       "paclet:ref/ReduceMatrix"], "\<\"SymbolicRowReduce\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/SymbolicRowReduce"], "\<\"ScaleRow\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/ScaleRow"], "\<\"Swap\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/Swap"], "\<\"ScaleEquation\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/ref/ScaleEquation"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "e11506b4-4a68-4457-864e-828983c72921"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"c0a161ac-c2a0-4df8-b308-21106ac40e0e"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"LinearAlgebra\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/guide/LinearAlgebra"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "e18c0186-9cdd-4ef3-886a-c68ac58bd034"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"926e09f3-3eef-41df-831e-c3b6381d15e4"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/ReduceEquations\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/ReduceEquations"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+ReduceEquations.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$199895], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/ReduceEquations", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "e8e72ae9-ccf5-4c99-a6e2-437fce52b7f1"]
+    }], "AnchorBar",ExpressionUUID->"80c8d82a-0d43-468d-9d5d-e43fbf53948b"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"ad680c9c-1055-4c3c-8dc2-602201ca0377"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["ReduceEquations", "ObjectName",ExpressionUUID->
+  "e7853b25-579b-4312-bfe3-54cbeff300b2"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"e035646b-ea07-4973-8f3e-92c5af646573"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "9d6c2d19-7ca2-45f4-8916-cd1df9e9f9a5"]
+}], "ObjectNameGrid",ExpressionUUID->"3c0f872c-1eb9-444d-9549-2cc31f105257"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["ReduceEquations"]],
+         "paclet:KnoxPackages/ref/ReduceEquations"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["eqns", "TI"], ",", 
+        StyleBox["pivoteqn", "TI"], ",", 
+        StyleBox["targeteqn", "TI"], ",", 
+        StyleBox["m", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "edc94647-5d4b-4a32-8381-5d1f0f072966"],
+     " \[LineSeparator]returns the system of equations that results from \
+replacing ",
+     Cell[BoxData[
+      StyleBox["targeteqn", "TI"]], "InlineFormula",ExpressionUUID->
+      "65b08917-29c5-4c4f-8552-b1771045b3a0"],
+     " by ",
+     Cell[BoxData[
+      RowBox[{
+       StyleBox["(", "TI"], 
+       RowBox[{
+        RowBox[{
+         StyleBox["m", "TI"], "*", 
+         StyleBox["pivoteqn", "TI"]}], "+", 
+        StyleBox["targeteqn", "TI"]}], 
+       StyleBox[")", "TI"]}]], "InlineFormula",ExpressionUUID->
+      "f445abc0-8e58-42d9-8344-88ef01ff7757"],
+     ". If ",
+     Cell[BoxData[
+      RowBox[{
+       StyleBox["targeteqn", "TI"], "=", 
+       RowBox[{"{", 
+        RowBox[{
+         SubscriptBox[
+          StyleBox["te", "TI"], 
+          StyleBox["1", "TR"]], ",", " ", 
+         SubscriptBox[
+          StyleBox["te", "TI"], 
+          StyleBox["2", "TR"]], ",", " ", "\[Ellipsis]"}], "}"}]}]], 
+      "InlineFormula",ExpressionUUID->"7f9a6dec-edf1-45dd-b383-c9fc198e9089"],
+     " and ",
+     Cell[BoxData[
+      RowBox[{
+       StyleBox["m", "TI"], "=", 
+       RowBox[{"{", 
+        RowBox[{
+         SubscriptBox[
+          StyleBox["m", "TI"], 
+          StyleBox["1", "TR"]], ",", 
+         SubscriptBox[
+          StyleBox["m", "TI"], 
+          StyleBox["2", "TR"]], ",", "\[Ellipsis]"}], "}"}]}]], 
+      "InlineFormula",ExpressionUUID->"1d23bd28-9387-4454-a922-f8d2db58afc5"],
+     ", then equations ",
+     Cell[BoxData[
+      RowBox[{
+       SubscriptBox[
+        StyleBox["te", "TI"], 
+        StyleBox["1", "TR"]], ",", 
+       SubscriptBox[
+        StyleBox["te", "TI"], 
+        StyleBox["2", "TR"]], ",", "\[Ellipsis]"}]], "InlineFormula",
+      ExpressionUUID->"8dc33984-f579-4ed1-a0f1-a8c2f0a2ef8c"],
+     " are replaced by ",
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{
+        StyleBox["(", "TI"], 
+        RowBox[{
+         RowBox[{
+          SubscriptBox[
+           StyleBox["m", "TI"], 
+           StyleBox["1", "TR"]], "*", 
+          StyleBox["pivoteqn", "TI"]}], "+", 
+         SubscriptBox[
+          StyleBox["te", "TI"], 
+          StyleBox["1", "TR"]]}], ")"}], ",", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox[
+           StyleBox["m", "TI"], 
+           StyleBox["2", "TR"]], "*", 
+          StyleBox["pivoteqn", "TI"]}], "+", 
+         SubscriptBox[
+          StyleBox["te", "TI"], 
+          StyleBox["2", "TR"]]}], ")"}], ",", "\[Ellipsis]"}]], 
+      "InlineFormula",ExpressionUUID->"9ad04ac1-21ae-44bd-8dd8-56af550a647c"],
+     "."
+    }],ExpressionUUID->"6ddd9a23-d3f3-401e-951e-82f4d03f3d02"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"80f1e901-62d7-4d57-a5bc-24b91100bf8d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"2ededba4-a1c4-41a2-b379-a9643770b975"],
+   "Details and Options"
+  }], "NotesFrameText",ExpressionUUID->"3c83f1c0-4a4b-4c9d-bf42-4405ae47fee4"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"f7c26d4e-8547-42ed-8c1e-b2351223a5fc"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->127792472,ExpressionUUID->"3cefb0e2-e1a1-48c6-8259-70d878701fe9"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"c0f8a042-4472-4bea-bcfb-27111690fafc"],
+
+Cell[TextData[{
+ "The option ",
+ Cell[BoxData[
+  RowBox[{"Variables", "->", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox[
+      StyleBox["x", "TI"], "1"], ",", 
+     SubscriptBox[
+      StyleBox["x", "TI"], "2"], ",", "\[Ellipsis]"}], "}"}]}]], 
+  "InlineFormula",ExpressionUUID->"a35203d7-3ae7-4b02-acfd-ce683275d009"],
+ " can be used to specify the variables when the equations contain all \
+symbolic terms."
+}], "Notes",
+ CellID->1067943069,ExpressionUUID->"bb6473cd-0361-4524-9959-00fdbda9d9f9"],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"1e4685c3-e775-4ebe-8065-fd75b7b60c6d"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"f9ff362b-7e34-4ba5-8a2b-9dec62cba896"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount",ExpressionUUID->
+  "9388fff5-cf58-407b-ab74-b3677fb1dc06"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->460663587,ExpressionUUID->"8d59fd74-cf1a-4282-84a7-4c21ad39d92f"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount",ExpressionUUID->
+  "47fcd95a-0a39-457f-90c2-09c0bc24a29f"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->108158029,ExpressionUUID->"db30d746-bea6-4806-a9eb-df98fac27cfd"],
+
+Cell["Here is a basic example of a one step reduction.", "ExampleText",
+ CellID->700542889,ExpressionUUID->"5ca95e4e-a796-4b2a-8bc9-e0931f7474a6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"ReduceEquations", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"2", 
+         SubscriptBox["x", "1"]}], "+", 
+        RowBox[{"3", 
+         SubscriptBox["x", "2"]}], "+", 
+        RowBox[{"5", 
+         SubscriptBox["x", "3"]}]}], "==", "5"}], ",", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["x", "1"], "+", 
+        RowBox[{"2", 
+         SubscriptBox["x", "2"]}], "-", 
+        SubscriptBox["x", "3"]}], "==", 
+       RowBox[{"-", "2"}]}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"4", 
+         SubscriptBox["x", "1"]}], "-", 
+        RowBox[{"2", 
+         SubscriptBox["x", "2"]}], "-", 
+        SubscriptBox["x", "3"]}], "==", "3"}]}], "}"}], ",", "1", ",", "2", 
+    ",", 
+    FractionBox[
+     RowBox[{"-", "1"}], "2"]}], "]"}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->50282824,ExpressionUUID->"34331e8e-ba17-412c-9a33-d24c55f5cee1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"2", " ", 
+      SubscriptBox["x", "1"]}], "+", 
+     RowBox[{"3", " ", 
+      SubscriptBox["x", "2"]}], "+", 
+     RowBox[{"5", " ", 
+      SubscriptBox["x", "3"]}]}], "\[Equal]", "5"}], ",", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      SubscriptBox["x", "2"], "2"], "-", 
+     FractionBox[
+      RowBox[{"7", " ", 
+       SubscriptBox["x", "3"]}], "2"]}], "\[Equal]", 
+    RowBox[{"-", 
+     FractionBox["9", "2"]}]}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"4", " ", 
+      SubscriptBox["x", "1"]}], "-", 
+     RowBox[{"2", " ", 
+      SubscriptBox["x", "2"]}], "-", 
+     SubscriptBox["x", "3"]}], "\[Equal]", "3"}]}], "}"}]], "Output",
+ ImageSize->{365, 39},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->1742285970,ExpressionUUID->"98c68eff-9269-4c1f-a30f-919f121409ea"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "f0b3b40b-b26e-4a91-830d-f55469c866ad"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->460022562,ExpressionUUID->"99f38715-f50d-4487-9847-76d82a5c8c38"],
+
+Cell["Here is an example of a multiple step reduction.", "ExampleText",
+ CellID->527036706,ExpressionUUID->"a300c513-a45a-4907-bf19-b55cd8783021"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`LinearAlgebra`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ReduceEquations", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", 
+        SubscriptBox["x", "1"]}], "+", 
+       RowBox[{"3", 
+        SubscriptBox["x", "2"]}], "+", 
+       RowBox[{"5", 
+        SubscriptBox["x", "3"]}]}], "==", "5"}], ",", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["x", "1"], "+", 
+       RowBox[{"2", 
+        SubscriptBox["x", "2"]}], "-", 
+       SubscriptBox["x", "3"]}], "==", 
+      RowBox[{"-", "2"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"4", 
+        SubscriptBox["x", "1"]}], "-", 
+       RowBox[{"2", 
+        SubscriptBox["x", "2"]}], "-", 
+       SubscriptBox["x", "3"]}], "==", "3"}]}], "}"}], ",", "1", ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"-", "1"}], "2"], ",", 
+     RowBox[{"-", "2"}]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->89483542,ExpressionUUID->"b8885d93-5122-46ec-8a27-786c4d339b8c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"2", " ", 
+      SubscriptBox["x", "1"]}], "+", 
+     RowBox[{"3", " ", 
+      SubscriptBox["x", "2"]}], "+", 
+     RowBox[{"5", " ", 
+      SubscriptBox["x", "3"]}]}], "\[Equal]", "5"}], ",", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      SubscriptBox["x", "2"], "2"], "-", 
+     FractionBox[
+      RowBox[{"7", " ", 
+       SubscriptBox["x", "3"]}], "2"]}], "\[Equal]", 
+    RowBox[{"-", 
+     FractionBox["9", "2"]}]}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "8"}], " ", 
+      SubscriptBox["x", "2"]}], "-", 
+     RowBox[{"11", " ", 
+      SubscriptBox["x", "3"]}]}], "\[Equal]", 
+    RowBox[{"-", "7"}]}]}], "}"}]], "Output",
+ ImageSize->{362, 39},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->844450669,ExpressionUUID->"0c49468b-562a-49c3-94e8-14a792c40f6b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "1bf6c978-90e6-446f-97d8-0f75624f90c0"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->140647725,ExpressionUUID->"d5d7b328-a691-402c-9951-534e1459e616"],
+
+Cell["Here is an example of a system with all symbolic entries.", \
+"ExampleText",
+ CellID->318723403,ExpressionUUID->"1ed7e55e-d8aa-4d59-afa7-f0d2a029af81"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`LinearAlgebra`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ReduceEquations", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SubscriptBox["a", "11"], 
+        SubscriptBox["x", "1"]}], "+", 
+       RowBox[{
+        SubscriptBox["a", "12"], 
+        SubscriptBox["x", "2"]}]}], "==", 
+      SubscriptBox["b", "1"]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SubscriptBox["a", "21"], 
+        SubscriptBox["x", "1"]}], "+", 
+       RowBox[{
+        SubscriptBox["a", "22"], 
+        SubscriptBox["x", "2"]}]}], "==", 
+      SubscriptBox["b", "2"]}]}], "}"}], ",", "1", ",", "2", ",", 
+   FractionBox[
+    RowBox[{"-", 
+     SubscriptBox["a", "21"]}], 
+    SubscriptBox["a", "11"]], ",", 
+   RowBox[{"Variables", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox["x", "1"], ",", 
+      SubscriptBox["x", "2"]}], "}"}]}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->36313,ExpressionUUID->"cb676c90-069f-4bc3-83a0-72da3ed6637b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SubscriptBox["a", "11"], " ", 
+      SubscriptBox["x", "1"]}], "+", 
+     RowBox[{
+      SubscriptBox["a", "12"], " ", 
+      SubscriptBox["x", "2"]}]}], "\[Equal]", 
+    SubscriptBox["b", "1"]}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox[
+         RowBox[{
+          SubscriptBox["a", "12"], " ", 
+          SubscriptBox["a", "21"]}], 
+         SubscriptBox["a", "11"]]}], "+", 
+       SubscriptBox["a", "22"]}], ")"}], " ", 
+     SubscriptBox["x", "2"]}], "\[Equal]", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        SubscriptBox["a", "21"], " ", 
+        SubscriptBox["b", "1"]}], 
+       SubscriptBox["a", "11"]]}], "+", 
+     SubscriptBox["b", "2"]}]}]}], "}"}]], "Output",
+ ImageSize->{344, 42},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->866442853,ExpressionUUID->"f90467c1-2872-4ccd-8f23-4f576b0a185e"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"e9a071e6-6253-446e-981f-830dc6e65652"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"357e99f9-06e5-42fd-baa8-2d5934e6a0d1"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"63fc3000-1184-46f4-abbe-6b790cbc574b"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ReduceMatrix"]],"paclet:ref/ReduceMatrix"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"1751f37a-5355-4bad-81ae-f3b069a7e1d0"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["SymbolicRowReduce"]],
+    "paclet:KnoxPackages/ref/SymbolicRowReduce"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"f73e0e2d-49fd-4662-af8e-870e06e0ed70"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ScaleRow"]],"paclet:KnoxPackages/ref/ScaleRow"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"062920b8-2479-451b-a59e-ae629dc2c38c"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Swap"]],"paclet:KnoxPackages/ref/Swap"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"c25e46a5-63ba-4df1-9762-f0d99c6ef1d8"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["ScaleEquation"]],"paclet:KnoxPackages/ref/ScaleEquation"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"a11eaba5-194c-4028-83fa-52e9b07c6822"]
+}], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"a6258b46-5f26-47d0-9500-36935a0c2fb1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"a5a34d4d-1fd7-42fb-a284-cf8bbfd3581d"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"c2a23002-4fff-49b4-ae02-0c561b6a96f6"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"866016c1-a1c9-404e-a537-bf20e46411c6"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["LinearAlgebra"]],"paclet:KnoxPackages/guide/LinearAlgebra"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->111676358,ExpressionUUID->"53942adb-c426-4ad6-b454-d47f597ce954"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"08b9d646-e5b7-44bb-8fbe-b04b69297dd9"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ReduceEquations",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 54, 51.3487661}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {"{Reduce Equations System Target Pivot ReduceEquations}"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Knox Packages Symbol", "language" -> "en", "paclet" -> 
+    "KnoxPackages", "status" -> "None", "summary" -> 
+    "ReduceEquations[eqns, pivoteqn, targeteqn, m] returns the system of \
+equations that results from replacing targeteqn by (m*pivoteqn + targeteqn). \
+If targeteqn = {te1, te2, ...} and m = {m1, m2, ...}, then equations te1, \
+te2, ... are replaced by (m1*pivoteqn + te1), (m2*pivoteqn + te2), ....", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "ReduceEquations", 
+    "titlemodifier" -> "", "windowtitle" -> "ReduceEquations", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/ReduceEquations", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[10509, 287, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"8d59fd74-cf1a-4282-84a7-4c21ad39d92f",
+   CellTags->"PrimaryExamplesSection",
+   CellID->460663587]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 23707, 705}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[587, 21, 4522, 101, 55, "AnchorBarGrid",ExpressionUUID->"ad680c9c-1055-4c3c-8dc2-602201ca0377",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5134, 126, 400, 9, 52, "ObjectNameGrid",ExpressionUUID->"3c0f872c-1eb9-444d-9549-2cc31f105257"],
+Cell[5537, 137, 3347, 99, 152, "Usage",ExpressionUUID->"80f1e901-62d7-4d57-a5bc-24b91100bf8d",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8921, 241, 867, 21, 37, "NotesSection",ExpressionUUID->"3cefb0e2-e1a1-48c6-8259-70d878701fe9",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->127792472],
+Cell[9791, 264, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"c0f8a042-4472-4bea-bcfb-27111690fafc"],
+Cell[9880, 266, 503, 14, 70, "Notes",ExpressionUUID->"bb6473cd-0361-4524-9959-00fdbda9d9f9",
+ CellID->1067943069],
+Cell[10386, 282, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"1e4685c3-e775-4ebe-8065-fd75b7b60c6d"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10509, 287, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"8d59fd74-cf1a-4282-84a7-4c21ad39d92f",
+ CellTags->"PrimaryExamplesSection",
+ CellID->460663587],
+Cell[CellGroupData[{
+Cell[10969, 302, 308, 7, 29, "ExampleSection",ExpressionUUID->"db30d746-bea6-4806-a9eb-df98fac27cfd",
+ CellID->108158029],
+Cell[11280, 311, 146, 1, 38, "ExampleText",ExpressionUUID->"5ca95e4e-a796-4b2a-8bc9-e0931f7474a6",
+ CellID->700542889],
+Cell[CellGroupData[{
+Cell[11451, 316, 978, 32, 65, "Input",ExpressionUUID->"34331e8e-ba17-412c-9a33-d24c55f5cee1",
+ CellID->50282824],
+Cell[12432, 350, 915, 31, 60, "Output",ExpressionUUID->"98c68eff-9269-4c1f-a30f-919f121409ea",
+ CellID->1742285970]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13384, 386, 242, 5, 8, "ExampleDelimiter",ExpressionUUID->"99f38715-f50d-4487-9847-76d82a5c8c38",
+ CellID->460022562],
+Cell[13629, 393, 146, 1, 38, "ExampleText",ExpressionUUID->"a300c513-a45a-4907-bf19-b55cd8783021",
+ CellID->527036706],
+Cell[CellGroupData[{
+Cell[13800, 398, 1131, 37, 91, "Input",ExpressionUUID->"b8885d93-5122-46ec-8a27-786c4d339b8c",
+ CellID->89483542],
+Cell[14934, 437, 922, 32, 60, "Output",ExpressionUUID->"0c49468b-562a-49c3-94e8-14a792c40f6b",
+ CellID->844450669]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15905, 475, 242, 5, 8, "ExampleDelimiter",ExpressionUUID->"d5d7b328-a691-402c-9951-534e1459e616",
+ CellID->140647725],
+Cell[16150, 482, 157, 2, 70, "ExampleText",ExpressionUUID->"1ed7e55e-d8aa-4d59-afa7-f0d2a029af81",
+ CellID->318723403],
+Cell[CellGroupData[{
+Cell[16332, 488, 1071, 35, 70, "Input",ExpressionUUID->"cb676c90-069f-4bc3-83a0-72da3ed6637b",
+ CellID->36313],
+Cell[17406, 525, 1040, 36, 63, "Output",ExpressionUUID->"f90467c1-2872-4ccd-8f23-4f576b0a185e",
+ CellID->866442853]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[18485, 566, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"e9a071e6-6253-446e-981f-830dc6e65652"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18608, 571, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"63fc3000-1184-46f4-abbe-6b790cbc574b",
+ CellID->1255426704],
+Cell[18871, 580, 1850, 49, 70, "SeeAlso",ExpressionUUID->"a6258b46-5f26-47d0-9500-36935a0c2fb1",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20758, 634, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"c2a23002-4fff-49b4-ae02-0c561b6a96f6",
+ CellID->38303248],
+Cell[21027, 643, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"866016c1-a1c9-404e-a537-bf20e46411c6"],
+Cell[21116, 645, 237, 5, 70, "MoreAbout",ExpressionUUID->"53942adb-c426-4ad6-b454-d47f597ce954",
+ CellID->111676358]
+}, Open  ]],
+Cell[21368, 653, 78, 0, 70, "FooterCell",ExpressionUUID->"08b9d646-e5b7-44bb-8fbe-b04b69297dd9"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,444 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15658,        434]
+NotebookOptionsPosition[     10611,        316]
+NotebookOutlinePosition[     12766,        373]
+CellTagsIndexPosition[     12681,        368]
+WindowTitle->SubspaceQ
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "a92c5279-9681-42f7-b99e-3fa74e825302"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"185fd392-b18d-4642-98c3-e3cca4c44a5e"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"LinearAlgebra\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/guide/LinearAlgebra"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "6ca11806-bed9-49bf-8dc6-275a47775916"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"ce20e5ac-b677-4721-8b68-fb4c047da113"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/SubspaceQ\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/SubspaceQ"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+SubspaceQ.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]},
+             Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$224716], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/SubspaceQ", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "9f791489-4327-49f2-84b6-007b6f371d3a"]
+    }], "AnchorBar",ExpressionUUID->"a454df36-b1b4-4229-bbcf-4a04492e6b21"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"24eb9e86-d5e2-4284-9b85-6417d929e97b"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"7bbac4b8-5f3c-4c6d-a869-3d0cbb6daa3e"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(4)", "ExampleCount",ExpressionUUID->
+  "7b21dca0-3d7f-4271-bedc-2e52f16a7873"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->290031237,ExpressionUUID->"6d0c8b4f-2e75-4ab5-8db4-a39c1289ecad"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(4)", "ExampleCount",ExpressionUUID->
+  "7c83014b-e480-40f2-b9be-988c236843ad"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->140759737,ExpressionUUID->"61cbbd46-10cc-40c3-9d82-fd8c0e65cb4c"],
+
+Cell[TextData[{
+ "An example of subspaces of ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[DoubleStruckCapitalR]", "4"], TraditionalForm]],
+  ExpressionUUID->"49b06172-c19c-469e-8c9f-665b583c913a"],
+ "."
+}], "ExampleText",
+ CellID->78182571,ExpressionUUID->"286fbaff-f31f-44bb-be49-43688416abfb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`LinearAlgebra`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"SubspaceQ", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "4", ",", "2"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2", ",", "4", ",", "7", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "2", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "0", ",", "2"}], "}"}]}], "}"}]}], 
+  "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->491818322,ExpressionUUID->"2b083de3-9fa3-4c70-ba4b-2753aaee0e7e"],
+
+Cell[BoxData["True"], "Output",
+ ImageSize->{32, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->400718104,ExpressionUUID->"87118f28-71ec-400b-b7b8-b2db14c23e61"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "d47dce93-8dbd-4858-9fd2-a23c4b06708a"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->408159767,ExpressionUUID->"e6a059c8-2755-40e6-aa4d-e7d2536dd056"],
+
+Cell[TextData[{
+ "Here is an example in ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[ScriptCapitalP]", "3"], TraditionalForm]],ExpressionUUID->
+  "5f6cab89-8aa7-400f-a6d0-e1dc92b72548"],
+ "."
+}], "ExampleText",
+ CellID->22649450,ExpressionUUID->"f9b839ea-6d7a-48a6-ab00-6ee47d7a35e8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`LinearAlgebra`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"SubspaceQ", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "x"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "+", "x"}], ",", 
+     RowBox[{"1", "-", "x"}], ",", 
+     SuperscriptBox["x", "3"]}], "}"}], ",", "x"}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->103905699,ExpressionUUID->"a2af1af2-d480-4317-b423-027c9e1172b0"],
+
+Cell[BoxData["True"], "Output",
+ ImageSize->{32, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->178385461,ExpressionUUID->"4cd3f068-e0a4-4b74-b88e-70e2cc01f7fd"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "52e7fcff-5088-49ae-91f6-a937c6e90d68"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->18763720,ExpressionUUID->"37371936-b2a1-401b-b093-9a168681b371"],
+
+Cell["Here is an example in spaces of matrices.", "ExampleText",
+ CellID->22226051,ExpressionUUID->"ddba854a-aab6-4c91-8374-6f29e75d9e18"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SubspaceQ", "[", 
+  RowBox[{
+   RowBox[{"StandardBasisSMatrices", "[", "3", "]"}], ",", 
+   RowBox[{"StandardBasisMatrices", "[", "3", "]"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->89231801,ExpressionUUID->"1b3ad4a0-728b-4a1c-bf77-69e52574217c"],
+
+Cell[BoxData["True"], "Output",
+ ImageSize->{32, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->106191912,ExpressionUUID->"fa93095f-7f41-4a6c-9e83-ec6d3d276b62"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "426107be-d6cc-424b-bec9-2417b5c4ddce"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->55131220,ExpressionUUID->"604e6536-9609-4e6d-89d9-9ffdd244de22"],
+
+Cell["Here is an example in a function space.", "ExampleText",
+ CellID->192701379,ExpressionUUID->"c7959bf0-4e54-4a03-ab88-0e46c7fb2a9d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`LinearAlgebra`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"SubspaceQ", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"Sinh", "[", "x", "]"}], ",", 
+     SuperscriptBox[
+      RowBox[{"Cos", "[", "x", "]"}], "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"Cos", "[", "x", "]"}], ",", 
+     RowBox[{"Cos", "[", 
+      RowBox[{"2", "x"}], "]"}], ",", 
+     RowBox[{"Exp", "[", "x", "]"}], ",", 
+     RowBox[{"Exp", "[", 
+      RowBox[{"-", "x"}], "]"}]}], "}"}], ",", "x"}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->487364355,ExpressionUUID->"32d2c10f-e2ac-4da9-bd67-4d0964634586"],
+
+Cell[BoxData["True"], "Output",
+ ImageSize->{32, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->15056633,ExpressionUUID->"0c980fa9-7b9a-4b62-b217-1ef513ce107c"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"e20d466b-2970-4dc6-88c2-0ace5c4325bf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"ce5642b9-de18-4bc5-8c0c-1dbd586a4af6"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"6321d4e1-f03f-43cb-9655-405d53344689"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"895463d5-6e80-488b-95a8-b4834104ce26"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["LinearAlgebra"]],"paclet:KnoxPackages/guide/LinearAlgebra"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->29887753,ExpressionUUID->"3bc7746e-3a65-4292-91e0-e379bbb12f76"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"65290d34-4bd5-4851-a74d-1f939adf16c3"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"SubspaceQ",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 57, 2.2625287}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> " ", "synonyms" -> {}, "tabletags" -> {},
+     "title" -> "SubspaceQ", "titlemodifier" -> "", "windowtitle" -> 
+    "SubspaceQ", "type" -> "Symbol", "uri" -> "KnoxPackages/ref/SubspaceQ", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[4066, 102, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"6d0c8b4f-2e75-4ab5-8db4-a39c1289ecad",
+   CellTags->"PrimaryExamplesSection",
+   CellID->290031237]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 12483, 361}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[581, 21, 3460, 77, 55, "AnchorBarGrid",ExpressionUUID->"24eb9e86-d5e2-4284-9b85-6417d929e97b",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4066, 102, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"6d0c8b4f-2e75-4ab5-8db4-a39c1289ecad",
+ CellTags->"PrimaryExamplesSection",
+ CellID->290031237],
+Cell[CellGroupData[{
+Cell[4526, 117, 308, 7, 29, "ExampleSection",ExpressionUUID->"61cbbd46-10cc-40c3-9d82-fd8c0e65cb4c",
+ CellID->140759737],
+Cell[4837, 126, 300, 8, 38, "ExampleText",ExpressionUUID->"286fbaff-f31f-44bb-be49-43688416abfb",
+ CellID->78182571],
+Cell[CellGroupData[{
+Cell[5162, 138, 757, 21, 43, "Input",ExpressionUUID->"2b083de3-9fa3-4c70-ba4b-2753aaee0e7e",
+ CellID->491818322],
+Cell[5922, 161, 216, 5, 35, "Output",ExpressionUUID->"87118f28-71ec-400b-b7b8-b2db14c23e61",
+ CellID->400718104]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6175, 171, 242, 5, 8, "ExampleDelimiter",ExpressionUUID->"e6a059c8-2755-40e6-aa4d-e7d2536dd056",
+ CellID->408159767],
+Cell[6420, 178, 287, 8, 38, "ExampleText",ExpressionUUID->"f9b839ea-6d7a-48a6-ab00-6ee47d7a35e8",
+ CellID->22649450],
+Cell[CellGroupData[{
+Cell[6732, 190, 478, 13, 47, "Input",ExpressionUUID->"a2af1af2-d480-4317-b423-027c9e1172b0",
+ CellID->103905699],
+Cell[7213, 205, 216, 5, 35, "Output",ExpressionUUID->"4cd3f068-e0a4-4b74-b88e-70e2cc01f7fd",
+ CellID->178385461]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7478, 216, 241, 5, 8, "ExampleDelimiter",ExpressionUUID->"37371936-b2a1-401b-b093-9a168681b371",
+ CellID->18763720],
+Cell[7722, 223, 138, 1, 38, "ExampleText",ExpressionUUID->"ddba854a-aab6-4c91-8374-6f29e75d9e18",
+ CellID->22226051],
+Cell[CellGroupData[{
+Cell[7885, 228, 281, 6, 26, "Input",ExpressionUUID->"1b3ad4a0-728b-4a1c-bf77-69e52574217c",
+ CellID->89231801],
+Cell[8169, 236, 216, 5, 35, "Output",ExpressionUUID->"fa93095f-7f41-4a6c-9e83-ec6d3d276b62",
+ CellID->106191912]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8434, 247, 241, 5, 8, "ExampleDelimiter",ExpressionUUID->"604e6536-9609-4e6d-89d9-9ffdd244de22",
+ CellID->55131220],
+Cell[8678, 254, 137, 1, 38, "ExampleText",ExpressionUUID->"c7959bf0-4e54-4a03-ab88-0e46c7fb2a9d",
+ CellID->192701379],
+Cell[CellGroupData[{
+Cell[8840, 259, 700, 19, 47, "Input",ExpressionUUID->"32d2c10f-e2ac-4da9-bd67-4d0964634586",
+ CellID->487364355],
+Cell[9543, 280, 215, 5, 35, "Output",ExpressionUUID->"0c980fa9-7b9a-4b62-b217-1ef513ce107c",
+ CellID->15056633]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[9797, 290, 86, 0, 29, "SectionFooterSpacer",ExpressionUUID->"e20d466b-2970-4dc6-88c2-0ace5c4325bf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9920, 295, 266, 7, 72, "MoreAboutSection",ExpressionUUID->"6321d4e1-f03f-43cb-9655-405d53344689",
+ CellID->38303248],
+Cell[10189, 304, 86, 0, 14, "SectionHeaderSpacer",ExpressionUUID->"895463d5-6e80-488b-95a8-b4834104ce26"],
+Cell[10278, 306, 236, 5, 24, "MoreAbout",ExpressionUUID->"3bc7746e-3a65-4292-91e0-e379bbb12f76",
+ CellID->29887753]
+}, Open  ]],
+Cell[10529, 314, 78, 0, 70, "FooterCell",ExpressionUUID->"65290d34-4bd5-4851-a74d-1f939adf16c3"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

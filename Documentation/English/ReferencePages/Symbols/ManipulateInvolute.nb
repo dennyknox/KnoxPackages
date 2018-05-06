@@ -1,0 +1,363 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14034,        353]
+NotebookOptionsPosition[     10601,        271]
+NotebookOutlinePosition[     13095,        333]
+CellTagsIndexPosition[     13010,        328]
+WindowTitle->ManipulateInvolute
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "82421e26-1984-48b6-a21b-9609b66caacd"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }],ExpressionUUID->"626a642b-c3f3-4153-bfbe-ae525d24e00b"],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"KnoxPackages/ref/ManipulateInvolute\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["KnoxPackages/ref/ManipulateInvolute"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/KnoxPackages/ref/\
+ManipulateInvolute.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$111586], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "KnoxPackages/ref/ManipulateInvolute", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "c440b24c-f9f8-469e-8a98-b241b412d4a8"]], "AnchorBar",ExpressionUUID->
+     "86b1c987-5386-48eb-bce0-283ca6063b0e"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"abac88fd-3635-4eb6-bce2-8e7e52d6a39b"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["ManipulateInvolute", "ObjectName",ExpressionUUID->
+  "d1fed453-9271-4486-af44-57eaecf786bc"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"3b7cee5a-c49f-430f-8141-7f59ddfbf393"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "cc6f905a-26a2-4826-a1ee-d2aa83ed4ff5"]
+}], "ObjectNameGrid",ExpressionUUID->"aeca0447-5245-4847-88ae-69ad511445f4"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"ManipulateInvolute", "[", 
+       RowBox[{"r", ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", 
+          SubscriptBox["t", "min"], ",", 
+          SubscriptBox["t", "max"]}], "}"}]}], "]"}]], "InlineFormula",
+      ExpressionUUID->"aec4751d-9b98-468a-bb4e-6506e5d9e807"],
+     " \[LineSeparator]produces an animation of the involute determined by \
+the circle of radius ",
+     Cell[BoxData[
+     "r"], "InlineFormula",ExpressionUUID->
+      "30bb2f63-3682-411e-bcac-c103abef7b03"],
+     " when ",
+     Cell[BoxData[
+     "t"], "InlineFormula",ExpressionUUID->
+      "09824a2a-9b73-4a0a-8914-2a542b561869"],
+     " is between ",
+     Cell[BoxData[
+      SubscriptBox["t", "min"]], "InlineFormula",ExpressionUUID->
+      "8492fd7d-ee96-4b48-945a-df1997b158ad"],
+     " and ",
+     Cell[BoxData[
+      SubscriptBox["t", "max"]], "InlineFormula",ExpressionUUID->
+      "98c12c10-8051-4f70-89fb-8878f39d0e9d"],
+     ". Styles for the disk, radius, point, and tangent can be set with ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["DiskStyle"]],"paclet:KnoxPackages/ref/DiskStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+      "3a462d5e-76ff-4862-a2c7-e73bff8c44f4"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["RadiusStyle"]],"paclet:KnoxPackages/ref/RadiusStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+      "372efc01-527d-42ea-baef-8a27229f8ddc"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["TangentStyle"]],"paclet:KnoxPackages/ref/TangentStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+      "eb9cb6ce-e854-4475-a28a-f9d480924545"],
+     ".  ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["PlotStyle"]],"paclet:ref/PlotStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",ExpressionUUID->
+      "230b0806-14d1-4a14-8a91-05eee3a51de3"],
+     " sets the style for the involute."
+    }],ExpressionUUID->"87ea2428-aa6f-4f1f-a2da-f40aa7ffba56"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"7c9499f5-d9bd-4714-b02e-64864da6f1b8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"63bdfd4e-c216-4edb-abed-cc0512a480c0"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "d4cf6f6f-8ccc-45f1-96a9-42e7b8d918ba"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->123289981,ExpressionUUID->"ce94e617-81e2-4753-aaec-166cfc43135d"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "47381cba-25de-4c46-9d27-1f6a5c1a30a1"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->104329684,ExpressionUUID->"32fdefb2-248b-4403-bd1b-2b84da9dfe3e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Manipulations`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ManipulateInvolute", "[", 
+  RowBox[{"1", ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"DiskStyle", "\[Rule]", "Purple"}], ",", 
+   RowBox[{"RadiusStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Thick", ",", "White"}], "}"}]}], ",", 
+   RowBox[{"TangentStyle", "\[Rule]", "Red"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"Darker", "[", "Green", "]"}]}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->550408172,ExpressionUUID->"03a24cb0-4585-4498-956d-c68f5006fe17"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 0.0001, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0.0001, 2 Pi}}, Typeset`size$$ = {
+    149., {105., 111.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$65868$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0.0001}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$65868$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[{
+         ParametricPlot[
+          Evaluate[
+           KnoxPackages`Manipulations`Private`involute$65844[
+           KnoxPackages`Manipulations`Private`s]], {
+          KnoxPackages`Manipulations`Private`s, 0, $CellContext`t$$}, 
+          PlotStyle -> KnoxPackages`Manipulations`Private`pltstyle$65844, 
+          AspectRatio -> Automatic], 
+         Graphics[{KnoxPackages`Manipulations`Private`circle$65844, 
+           Flatten[{KnoxPackages`Manipulations`Private`radstyle$65844, 
+             Line[{{0, 0}, 
+               
+               KnoxPackages`Manipulations`Private`c$65844[$CellContext`t$$]}]}\
+], 
+           Flatten[{KnoxPackages`Manipulations`Private`tanstyle$65844, 
+             Line[{
+               KnoxPackages`Manipulations`Private`c$65844[$CellContext`t$$], 
+               
+               KnoxPackages`Manipulations`Private`involute$65844[$CellContext`\
+t$$]}]}], 
+           Flatten[{KnoxPackages`Manipulations`Private`ptstyle$65844, 
+             Point[
+              
+              KnoxPackages`Manipulations`Private`involute$65844[$CellContext`\
+t$$]]}]}]}, AxesOrigin -> {0, 0}, PlotRange -> 
+        KnoxPackages`Manipulations`Private`pr$65844], 
+      "Specifications" :> {{$CellContext`t$$, 0.0001, 2 Pi}}, "Options" :> {},
+       "DefaultOptions" :> {}],
+     ImageSizeCache->{253., {151., 157.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ ImageSize->{257, 310},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->359899198,ExpressionUUID->"302340bc-af3f-45e0-b66d-226093a72b3b"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"9e7c30e7-178e-4da4-9412-2ff4f8e4f06c"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ManipulateInvolute",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 46, 23.9038611}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "ManipulateInvolute[r, {t, tmin, tmax}] produces an animation of the \
+involute determined by the circle of radius r when t is between tmin and \
+tmax. Styles for the disk, radius, point, and tangent can be set with \
+DiskStyle, RadiusStyle, TangentStyle. PlotStyle sets the style for the \
+involute.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "ManipulateInvolute", "titlemodifier" -> "", "windowtitle" -> 
+    "ManipulateInvolute", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/ManipulateInvolute", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6123, 159, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"ce94e617-81e2-4753-aaec-166cfc43135d",
+   CellTags->"PrimaryExamplesSection",
+   CellID->123289981]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 12812, 321}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[590, 21, 2627, 56, 55, "AnchorBarGrid",ExpressionUUID->"abac88fd-3635-4eb6-bce2-8e7e52d6a39b",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[3242, 81, 403, 9, 52, "ObjectNameGrid",ExpressionUUID->"aeca0447-5245-4847-88ae-69ad511445f4"],
+Cell[3648, 92, 2438, 62, 153, "Usage",ExpressionUUID->"7c9499f5-d9bd-4714-b02e-64864da6f1b8",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6123, 159, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"ce94e617-81e2-4753-aaec-166cfc43135d",
+ CellTags->"PrimaryExamplesSection",
+ CellID->123289981],
+Cell[CellGroupData[{
+Cell[6583, 174, 308, 7, 29, "ExampleSection",ExpressionUUID->"32fdefb2-248b-4403-bd1b-2b84da9dfe3e",
+ CellID->104329684],
+Cell[CellGroupData[{
+Cell[6916, 185, 681, 16, 59, "Input",ExpressionUUID->"03a24cb0-4585-4498-956d-c68f5006fe17",
+ CellID->550408172],
+Cell[7600, 203, 2880, 61, 331, "Output",ExpressionUUID->"302340bc-af3f-45e0-b66d-226093a72b3b",
+ CellID->359899198]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[10519, 269, 78, 0, 41, "FooterCell",ExpressionUUID->"9e7c30e7-178e-4da4-9412-2ff4f8e4f06c"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

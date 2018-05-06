@@ -1,0 +1,635 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23265,        625]
+NotebookOptionsPosition[     17905,        506]
+NotebookOutlinePosition[     20520,        569]
+CellTagsIndexPosition[     20435,        564]
+WindowTitle->RandomUnitaryMatrix
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "4bf1d6f4-4799-4c88-8ecb-095a731dad68"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"72cc4426-4568-42b1-85f3-7aaaf5606064"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"RandomOrthogonalMatrix\"\>":>
+       Documentation`HelpLookup[
+       "paclet:ref/RandomOrthogonalMatrix"], "\<\"RandomMatrix\"\>":>
+       Documentation`HelpLookup[
+       "paclet:ref/RandomMatrix"], "\<\"RandomComplexMatrix\"\>":>
+       Documentation`HelpLookup[
+       "paclet:ref/RandomComplexMatrix"], "\<\"RandomSymmetricMatrix\"\>":>
+       Documentation`HelpLookup[
+       "paclet:ref/RandomSymmetricMatrix"], "\<\"RandomHermitianMatrix\"\>":>
+       Documentation`HelpLookup["paclet:ref/RandomHermitianMatrix"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "01872b87-78d4-4a3f-9563-95e713b95778"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"b925b85b-bef9-4508-90b9-9af491c8deaa"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"LinearAlgebra\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/guide/LinearAlgebra"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "790f3be6-d028-435e-ba3c-61fd6dedd12b"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"58ad0b0b-e1f9-4e21-9e6b-989784c66bae"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/RandomUnitaryMatrix\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/RandomUnitaryMatrix"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+RandomUnitaryMatrix.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$197872], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/RandomUnitaryMatrix", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "8a0f60c1-ac6d-4b2c-899e-0dac5e2d6d57"]
+    }], "AnchorBar",ExpressionUUID->"b5f1711c-a82a-40d3-991a-93f091937f1c"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"0bebda9a-702a-431c-abad-90275246600c"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["RandomUnitaryMatrix", "ObjectName",ExpressionUUID->
+  "86c46030-e232-453f-a567-7a47714b9f2f"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"2b5a67e0-2479-41df-bf1f-ebe2d843e8b9"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "f0130709-bb3b-4746-8cc4-1abf952e0888"]
+}], "ObjectNameGrid",ExpressionUUID->"b8c69a5f-d12c-4a71-8a44-b01c7bee9dc3"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"RandomUnitaryMatrix", "[", 
+       StyleBox["n", "TI"], "]"}]], "InlineFormula",ExpressionUUID->
+      "a5f89c25-589a-49fd-a1a4-0ec4c4feed8d"],
+     "\[LineSeparator]returns an ",
+     Cell[BoxData[
+      RowBox[{
+       StyleBox["n", "TI"], "\[Cross]", 
+       StyleBox["n", "TI"]}]], "InlineFormula",ExpressionUUID->
+      "8ccb39bb-29eb-4123-8541-a99ad1da5497"],
+     " unitary matrix obtained by orthogonalizing a complex matrix with \
+entries whose real and imaginary parts are ",
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["Random"]],"paclet:ref/Random"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", "]"}]], "InlineFormula",
+      ExpressionUUID->"4d937031-ab03-4708-bc44-e468d4cf81f8"],
+     "."
+    }],ExpressionUUID->"1a9469bf-46b7-409d-b447-c34aef7a1bde"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["RandomUnitaryMatrix"]],
+         "paclet:KnoxPackages/ref/RandomUnitaryMatrix"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["n", "TI"], ",", 
+        StyleBox["type", "TI"], ",", 
+        StyleBox["range", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "2ac4958d-df84-45a6-88fa-1125b126d2cf"],
+     " \[LineSeparator]returns an ",
+     Cell[BoxData[
+      RowBox[{
+       StyleBox["n", "TI"], "\[Cross]", 
+       StyleBox["n", "TI"]}]], "InlineFormula",ExpressionUUID->
+      "4390acc2-6324-4c0d-a8a9-bc61ef597370"],
+     " unitary matrix obtained by orthogonalizing a complex matrix with \
+entries whose real and imaginary parts are ",
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["Random"]],"paclet:Random"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["type", "TI"], ",", 
+        StyleBox["range", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "14320906-e5a2-4875-941c-5f194bf9f9c3"],
+     ". "
+    }],ExpressionUUID->"a15a099d-1d0e-463b-9411-08f5a014e3b8"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"d808fad1-c557-4693-a8b8-9bb2da07f993"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"2011bf5b-6af3-4384-b6ec-39c31e2a4b8a"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "360bd640-a6d8-4e35-89d3-e45f6aab2f00"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1030603257,ExpressionUUID->"fb249943-fcec-4b5e-a5d3-050644cf8c9a"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "07fd614a-37f1-42a9-ad18-0778eb961e93"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->279891215,ExpressionUUID->"2188520e-7302-4d63-9a9a-1be52cfbdf6d"],
+
+Cell["\<\
+If type and range are omitted from the input, RandomUnitaryMatrix assumes \
+defaults of Real and {0,1).\
+\>", "ExampleText",
+ CellID->6247592,ExpressionUUID->"43861728-aec9-44ab-b0e2-253d46be5b77"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`LinearAlgebra`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RandomUnitaryMatrix", "[", "3", "]"}], "//", 
+  "MatrixForm"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->112400898,ExpressionUUID->"3b03b28d-d095-42cd-afa2-6abbe5b10a84"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"0.6144391353294116`", "\[VeryThinSpace]", "+", 
+       RowBox[{"0.197432661177676`", " ", "\[ImaginaryI]"}]}], 
+      RowBox[{"0.4028853305435672`", "\[VeryThinSpace]", "+", 
+       RowBox[{"0.5165070259207175`", " ", "\[ImaginaryI]"}]}], 
+      RowBox[{"0.39210240614590386`", "\[VeryThinSpace]", "+", 
+       RowBox[{"0.025386984418687336`", " ", "\[ImaginaryI]"}]}]},
+     {
+      RowBox[{"0.05181762563017374`", "\[VeryThinSpace]", "+", 
+       RowBox[{"0.2031431604149991`", " ", "\[ImaginaryI]"}]}], 
+      RowBox[{"0.5320460497590597`", "\[VeryThinSpace]", "-", 
+       RowBox[{"0.2610860577669381`", " ", "\[ImaginaryI]"}]}], 
+      RowBox[{
+       RowBox[{"-", "0.4282721048107032`"}], "+", 
+       RowBox[{"0.6491470293139812`", " ", "\[ImaginaryI]"}]}]},
+     {
+      RowBox[{"0.12400521577828601`", "\[VeryThinSpace]", "-", 
+       RowBox[{"0.7239857662871445`", " ", "\[ImaginaryI]"}]}], 
+      RowBox[{
+       RowBox[{"-", "0.2304183730833588`"}], "+", 
+       RowBox[{"0.4081327569902389`", " ", "\[ImaginaryI]"}]}], 
+      RowBox[{
+       RowBox[{"-", "0.16066625742911023`"}], "+", 
+       RowBox[{"0.4636687356446243`", " ", "\[ImaginaryI]"}]}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{469, 45},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//MatrixForm=",
+ CellID->520740902,ExpressionUUID->"cef8a8b8-57df-4574-ae7f-36b33e21d395"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "b1f4555b-dc6e-435e-b193-dd01f22acfc4"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->80959732,ExpressionUUID->"94fbad1e-6cb9-432a-8857-dbe8702fb03b"],
+
+Cell["\<\
+Note that when one specifies that type be Integer, the output will not in \
+general have integer entries.\
+\>", "ExampleText",
+ CellID->347213258,ExpressionUUID->"413c8ff0-4df4-4fba-b2b9-db9c54dde6fb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`LinearAlgebra`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"mat", "=", 
+    RowBox[{"RandomUnitaryMatrix", "[", 
+     RowBox[{"3", ",", "Integer", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "2"}], ",", "0"}], "}"}]}], "]"}]}], ")"}], "//", 
+  "MatrixForm"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->4803648,ExpressionUUID->"bcecd2f3-7582-4168-ae92-968f480f4908"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"1", "+", "\[ImaginaryI]"}], 
+        SqrtBox["11"]]}], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "\[ImaginaryI]"}]}], 
+        SqrtBox["11"]]}], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"2", " ", "\[ImaginaryI]"}], 
+        SqrtBox["11"]]}]},
+     {
+      FractionBox[
+       RowBox[{
+        FractionBox["7", "4"], "-", 
+        FractionBox[
+         RowBox[{"19", " ", "\[ImaginaryI]"}], "4"]}], 
+       SqrtBox["33"]], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         FractionBox["1", "2"], "-", 
+         RowBox[{"2", " ", "\[ImaginaryI]"}]}], 
+        SqrtBox["33"]]}], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{
+         FractionBox["7", "4"], "+", 
+         FractionBox["\[ImaginaryI]", "4"]}], 
+        SqrtBox["33"]]}]},
+     {
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"1", "-", 
+         FractionBox[
+          RowBox[{"5", " ", "\[ImaginaryI]"}], "2"]}], 
+        SqrtBox["174"]]}], 
+      FractionBox[
+       RowBox[{
+        FractionBox["13", "2"], "+", 
+        FractionBox[
+         RowBox[{"11", " ", "\[ImaginaryI]"}], "2"]}], 
+       SqrtBox["174"]], 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"2", "+", 
+         FractionBox[
+          RowBox[{"19", " ", "\[ImaginaryI]"}], "2"]}], 
+        SqrtBox["174"]]}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{167, 119},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//MatrixForm=",
+ CellID->1980760460,ExpressionUUID->"4fb1ac22-66b5-4f04-8ba4-eb60ed1e5810"]
+}, Open  ]],
+
+Cell["Check that this matrix is unitary: ", "ExampleText",
+ CellID->11043063,ExpressionUUID->"b98f8b0b-c99f-40f4-826c-9aa1a9d45749"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mat", ".", 
+  RowBox[{"ConjugateTranspose", "[", "mat", "]"}]}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->78250888,ExpressionUUID->"406bce90-3ff1-482d-b7d5-dfa2fb58766a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ ImageSize->{211, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->1698234755,ExpressionUUID->"d7f3cf62-058f-4262-9215-1ef3b3cd4c16"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"6ff91d20-ff5c-4e1d-9a1d-a105bc16e2da"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"847778c3-dd7c-4db6-b0d0-e2606773cf29"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"dd332e51-1967-4fd3-a28f-dfc56cbce846"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RandomOrthogonalMatrix"]],"paclet:ref/RandomOrthogonalMatrix"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"41053cba-611e-4e59-a727-79f90784a8f6"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RandomComplexMatrix"]],"paclet:ref/RandomComplexMatrix"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"230344d6-05c5-4136-8a89-7815917d15f4"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RandomSymmetricMatrix"]],"paclet:ref/RandomSymmetricMatrix"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"80acbcb8-830d-4889-b96a-3528c8f7ffe5"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RandomHermitianMatrix"]],"paclet:ref/RandomHermitianMatrix"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"a40d0744-8916-4e7f-9509-76d100afda32"]
+}], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"7be8f895-53b4-4f97-b01f-48007b518767"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"1f917609-9f8e-4f44-8313-80ea30fdf736"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"ae442f6e-3e41-4744-9b6e-6d0786eeba05"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"1d44601f-9e7b-4a90-8641-937a7471d31b"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["LinearAlgebra"]],"paclet:KnoxPackages/guide/LinearAlgebra"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->139090426,ExpressionUUID->"f2d75dc8-3bf0-44f5-b728-0f7c3fcaacbb"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"07bec8f3-1833-423d-8747-4793b9ea8c42"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"RandomUnitaryMatrix",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 54, 41.2288313}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {
+     "{Random Unitary Matrix Orthogonal Complex RandomUnitaryMatrix}"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Knox Packages Symbol", "language" -> "en", "paclet" -> 
+    "KnoxPackages", "status" -> "None", "summary" -> 
+    "RandomUnitaryMatrix[n] returns an n*n unitary matrix obtained by \
+orthogonalizing a complex matrix with entries whose real and imaginary parts \
+are Random[]. RandomUnitaryMatrix[n, type, range] returns an n*n unitary \
+matrix obtained by orthogonalizing a complex matrix with entries whose real \
+and imaginary parts are Random[type, range]. ", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "RandomUnitaryMatrix", "titlemodifier" -> 
+    "", "windowtitle" -> "RandomUnitaryMatrix", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/RandomUnitaryMatrix", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[8006, 204, 436, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"fb249943-fcec-4b5e-a5d3-050644cf8c9a",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1030603257]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 20236, 557}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[591, 21, 4582, 102, 55, "AnchorBarGrid",ExpressionUUID->"0bebda9a-702a-431c-abad-90275246600c",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5198, 127, 404, 9, 52, "ObjectNameGrid",ExpressionUUID->"b8c69a5f-d12c-4a71-8a44-b01c7bee9dc3"],
+Cell[5605, 138, 2364, 61, 228, "Usage",ExpressionUUID->"d808fad1-c557-4693-a8b8-9bb2da07f993",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8006, 204, 436, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"fb249943-fcec-4b5e-a5d3-050644cf8c9a",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1030603257],
+Cell[CellGroupData[{
+Cell[8467, 219, 308, 7, 29, "ExampleSection",ExpressionUUID->"2188520e-7302-4d63-9a9a-1be52cfbdf6d",
+ CellID->279891215],
+Cell[8778, 228, 207, 4, 57, "ExampleText",ExpressionUUID->"43861728-aec9-44ab-b0e2-253d46be5b77",
+ CellID->6247592],
+Cell[CellGroupData[{
+Cell[9010, 236, 304, 7, 43, "Input",ExpressionUUID->"3b03b28d-d095-42cd-afa2-6abbe5b10a84",
+ CellID->112400898],
+Cell[9317, 245, 1936, 44, 66, "Output",ExpressionUUID->"cef8a8b8-57df-4574-ae7f-36b33e21d395",
+ CellID->520740902]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11290, 294, 241, 5, 8, "ExampleDelimiter",ExpressionUUID->"94fbad1e-6cb9-432a-8857-dbe8702fb03b",
+ CellID->80959732],
+Cell[11534, 301, 211, 4, 57, "ExampleText",ExpressionUUID->"413c8ff0-4df4-4fba-b2b9-db9c54dde6fb",
+ CellID->347213258],
+Cell[CellGroupData[{
+Cell[11770, 309, 474, 13, 43, "Input",ExpressionUUID->"bcecd2f3-7582-4168-ae92-968f480f4908",
+ CellID->4803648],
+Cell[12247, 324, 2176, 72, 140, "Output",ExpressionUUID->"4fb1ac22-66b5-4f04-8ba4-eb60ed1e5810",
+ CellID->1980760460]
+}, Open  ]],
+Cell[14438, 399, 132, 1, 70, "ExampleText",ExpressionUUID->"b98f8b0b-c99f-40f4-826c-9aa1a9d45749",
+ CellID->11043063],
+Cell[CellGroupData[{
+Cell[14595, 404, 195, 4, 70, "Input",ExpressionUUID->"406bce90-3ff1-482d-b7d5-dfa2fb58766a",
+ CellID->78250888],
+Cell[14793, 410, 447, 13, 35, "Output",ExpressionUUID->"d7f3cf62-058f-4262-9215-1ef3b3cd4c16",
+ CellID->1698234755]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[15279, 428, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"6ff91d20-ff5c-4e1d-9a1d-a105bc16e2da"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15402, 433, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"dd332e51-1967-4fd3-a28f-dfc56cbce846",
+ CellID->1255426704],
+Cell[15665, 442, 1511, 38, 70, "SeeAlso",ExpressionUUID->"7be8f895-53b4-4f97-b01f-48007b518767",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17213, 485, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"ae442f6e-3e41-4744-9b6e-6d0786eeba05",
+ CellID->38303248],
+Cell[17482, 494, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"1d44601f-9e7b-4a90-8641-937a7471d31b"],
+Cell[17571, 496, 237, 5, 70, "MoreAbout",ExpressionUUID->"f2d75dc8-3bf0-44f5-b728-0f7c3fcaacbb",
+ CellID->139090426]
+}, Open  ]],
+Cell[17823, 504, 78, 0, 70, "FooterCell",ExpressionUUID->"07bec8f3-1833-423d-8747-4793b9ea8c42"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

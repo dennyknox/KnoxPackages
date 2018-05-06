@@ -1,0 +1,787 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     27965,        777]
+NotebookOptionsPosition[     20210,        600]
+NotebookOutlinePosition[     22410,        657]
+CellTagsIndexPosition[     22325,        652]
+WindowTitle->IntegralApprox
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "fefbd5ab-4d04-40e5-bacd-2439154a871b"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"37099f04-de65-4c44-b382-4671240b6554"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"PlotIntegralApprox\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/PlotIntegralApprox"], "\<\"DiscreteIntegral\"\
+\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/DiscreteIntegral"], "\<\"PlotDiscreteIntegral\
+\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/PlotDiscreteIntegral"], \
+"\<\"PlotIntegralApprox3D\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/PlotIntegralApprox3D"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "c5d09657-6776-44d3-84f5-e056b04d3dcd"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"412ba0eb-ae2d-4f8d-8d8c-106a40522270"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/IntegralApprox\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/IntegralApprox"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+IntegralApprox.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$91062], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/IntegralApprox", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "b0d58dd4-a6fb-4b6c-9959-32b504cd2c63"]
+    }], "AnchorBar",ExpressionUUID->"645dfed7-d709-41ce-9def-55c7acbaa0ab"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"b0873858-bcd5-41d3-9140-906e89caae35"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"7d8af57f-e92b-4c29-87e4-2498e8cb83c5"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(6)", "ExampleCount",ExpressionUUID->
+  "7e058bc9-d150-4cca-9ca5-5224841c2f54"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->146109085,ExpressionUUID->"ac4558f6-c948-4223-8887-85f0708acbdb"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(5)", "ExampleCount",ExpressionUUID->
+  "b13fbd5a-ad78-4e7e-8a59-b840782e261a"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->409645257,ExpressionUUID->"8cd45514-ea83-4305-901b-9450ac840ad9"],
+
+Cell["A midpoint approximation with regular subintervals:", "ExampleText",
+ CellID->788750621,ExpressionUUID->"17720428-cf0b-44e0-a589-ca203124328d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"IntegralApprox", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    SuperscriptBox["x", "2"], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "3"}], "}"}], ",", 
+   RowBox[{"ApproxType", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Midpoint", ",", 
+      RowBox[{"Regular", "[", "10", "]"}]}], "}"}]}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->146162238,ExpressionUUID->"a6a29aad-ac6a-44f3-8122-d22fe20d8ddf"],
+
+Cell[BoxData["0.7959711945274205`"], "Output",
+ ImageSize->{60, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->457272644,ExpressionUUID->"4eb05007-4f48-46c2-9f11-607b0a41368a"]
+}, Open  ]],
+
+Cell["\<\
+A midpoint approximation with regular subintervals using exact arithmetic. \
+\>", "ExampleText",
+ CellID->254038049,ExpressionUUID->"b9736e9c-f082-4c81-a4e7-8329c932a4e8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"IntegralApprox", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    SuperscriptBox["x", "2"], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "3"}], "}"}], ",", 
+   RowBox[{"ApproxType", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Midpoint", ",", 
+      RowBox[{"Regular", "[", "10", "]"}]}], "}"}]}], ",", 
+   RowBox[{"ExactSum", "\[Rule]", "True"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", "%", "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->81790284,ExpressionUUID->"84f4d66f-4a15-423a-b05f-d2998651a749"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["3", "10"], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Sin", "[", 
+     FractionBox["9", "400"], "]"}], "+", 
+    RowBox[{"Sin", "[", 
+     FractionBox["81", "400"], "]"}], "+", 
+    RowBox[{"Sin", "[", 
+     FractionBox["9", "16"], "]"}], "+", 
+    RowBox[{"Sin", "[", 
+     FractionBox["441", "400"], "]"}], "+", 
+    RowBox[{"Sin", "[", 
+     FractionBox["729", "400"], "]"}], "+", 
+    RowBox[{"Sin", "[", 
+     FractionBox["1089", "400"], "]"}], "+", 
+    RowBox[{"Sin", "[", 
+     FractionBox["1521", "400"], "]"}], "+", 
+    RowBox[{"Sin", "[", 
+     FractionBox["81", "16"], "]"}], "+", 
+    RowBox[{"Sin", "[", 
+     FractionBox["2601", "400"], "]"}], "+", 
+    RowBox[{"Sin", "[", 
+     FractionBox["3249", "400"], "]"}]}], ")"}]}]], "Output",
+ ImageSize->{481, 78},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->73537884,ExpressionUUID->"462e5bec-4799-4854-968e-e12777389e58"],
+
+Cell[BoxData["0.7959711945274203`"], "Output",
+ ImageSize->{60, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->135065564,ExpressionUUID->"3c3f5cc9-99fc-4367-82a5-6009a46be452"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "f1b873b4-679b-4031-ad0f-7fa5b7e1da06"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->937581737,ExpressionUUID->"c30abc81-6482-4f08-8385-1d27a67db615"],
+
+Cell["A left approximation with given partition points:", "ExampleText",
+ CellID->1623810941,ExpressionUUID->"5b86510b-2f9c-4b6e-bd26-20b4afd0857e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"IntegralApprox", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    SuperscriptBox["x", "2"], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "3"}], "}"}], ",", 
+   RowBox[{"ApproxType", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Left", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "0", ",", ".2", ",", ".5", ",", "1", ",", "1.6", ",", "2", ",", "2.2", 
+        ",", "2.6", ",", "3"}], "}"}]}], "}"}]}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1756671837,ExpressionUUID->"c20a8aaf-f3be-4490-bcee-3fa1d77cc934"],
+
+Cell[BoxData["0.4957961379039659`"], "Output",
+ ImageSize->{60, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->265610642,ExpressionUUID->"785b2be6-2eb1-4d35-9613-d7c8b8dd660d"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "0f68567a-cd33-425c-a71a-02f6d6070a01"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1797636983,ExpressionUUID->"c9bbe721-35cd-4cc7-9084-e055b2450167"],
+
+Cell["A Riemann approximation with regular subintervals:", "ExampleText",
+ CellID->724348896,ExpressionUUID->"c7ad445b-228f-4979-b639-69c332cb9efb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"IntegralApprox", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    SuperscriptBox["x", "2"], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "3"}], "}"}], ",", 
+   RowBox[{"ApproxType", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Riemann", ",", 
+      RowBox[{"Regular", "[", "20", "]"}]}], "}"}]}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->984079518,ExpressionUUID->"5f215a99-a5d8-4f86-b444-6ceb6f9b4b11"],
+
+Cell[BoxData["0.7506451411304231`"], "Output",
+ ImageSize->{60, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->879420445,ExpressionUUID->"4fa1eb40-bc77-4c98-87e5-9deb9a308677"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "82f1c3b1-3ed7-48bb-a4e5-562d52ff6f81"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1103180162,ExpressionUUID->"51eeedf4-66e0-427e-af0f-971da3a51afb"],
+
+Cell["\<\
+Simpson approximation (requires an even number of regular subintervals):\
+\>", "ExampleText",
+ CellID->432626415,ExpressionUUID->"00383e4a-3232-4fc5-8069-ae0b38695637"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"IntegralApprox", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    SuperscriptBox["x", "2"], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "3"}], "}"}], ",", 
+   RowBox[{"ApproxType", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Simpson", ",", 
+      RowBox[{"Regular", "[", "12", "]"}]}], "}"}]}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1701670018,ExpressionUUID->"9fb45dc3-b554-4231-9c75-395218fe9cb4"],
+
+Cell[BoxData["0.7782450461116684`"], "Output",
+ ImageSize->{60, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->214861573,ExpressionUUID->"549acf89-7774-4809-a4fe-554db8ace98e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "e2937d66-ea0d-4723-8e18-297c68d96d2d"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->9729099,ExpressionUUID->"353d4d31-f888-4d21-8f00-4c173f43fc08"],
+
+Cell["A midpoint approximation for a function of three variables:", "Notes",
+ CellID->135957390,ExpressionUUID->"4eadc5e0-a89b-4149-8f7f-f07b316088c3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"IntegralApprox", "[", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["x", "2"], 
+    RowBox[{"Sin", "[", 
+     RowBox[{"y", " ", "z"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", "0", ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "0", ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"ApproxType", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Midpoint", ",", 
+      RowBox[{"Regular", "[", 
+       RowBox[{"50", ",", "50", ",", "50"}], "]"}]}], "}"}]}]}], 
+  "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->7667669,ExpressionUUID->"86671ff5-4068-4dd2-862c-a25735229c5a"],
+
+Cell[BoxData["29.995716272584172`"], "Output",
+ ImageSize->{53, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->769980400,ExpressionUUID->"d1e513c5-99ca-48b8-a519-0a173ef5ae13"]
+}, Open  ]],
+
+Cell["Varying the number of partition points:", "Notes",
+ CellID->688102302,ExpressionUUID->"9bfd3fcc-834f-4484-a941-bfb6cff95492"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"IntegralApprox", "[", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["x", "2"], 
+    RowBox[{"Sin", "[", 
+     RowBox[{"y", " ", "z"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", "0", ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "0", ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"ApproxType", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Midpoint", ",", 
+      RowBox[{"Regular", "[", 
+       RowBox[{"15", ",", "30", ",", "45"}], "]"}]}], "}"}]}]}], 
+  "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->65451157,ExpressionUUID->"12cc42d4-ca24-42cc-8a08-b38968e425ef"],
+
+Cell[BoxData["29.98442326584752`"], "Output",
+ ImageSize->{53, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->130283950,ExpressionUUID->"ba4bb24b-f6cd-48cc-9787-7a9c1c1cba50"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "019b6339-9dbc-47e7-be03-c74dcd27c3da"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341,ExpressionUUID->"7539740b-e9b5-42d6-a44f-fb01a33964b4"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "ExactSum and WorkingPrecision",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "e7f6d662-9c8b-43b3-b52f-44b3ba0362e8"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783,ExpressionUUID->"9ae563d6-0106-4bd8-ae8f-214b445104c7"],
+
+Cell["Specify whether to use exact arithmetic", "ExampleText",
+ CellID->312423627,ExpressionUUID->"ea46e367-de47-4947-b14b-1fb15a5e0a59"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"esum", "=", 
+  RowBox[{"IntegralApprox", "[", 
+   RowBox[{
+    RowBox[{"Sin", "[", "x", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "\[Pi]"}], "}"}], ",", 
+    RowBox[{"ApproxType", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Left", ",", 
+       RowBox[{"Regular", "[", "6", "]"}]}], "}"}]}], ",", 
+    RowBox[{"ExactSum", "\[Rule]", "True"}]}], "]"}]}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1751518452,ExpressionUUID->"db9b6002-64b4-4bf3-8a06-f0e499fb1522"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "6"], " ", 
+  RowBox[{"(", 
+   RowBox[{"2", "+", 
+    SqrtBox["3"]}], ")"}], " ", "\[Pi]"}]], "Output",
+ ImageSize->{87, 39},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->409829043,ExpressionUUID->"8e8e4e81-a2d7-4a96-85b4-8557f00c81bc"]
+}, Open  ]],
+
+Cell["Set the option WorkingPrecision", "ExampleText",
+ CellID->203324136,ExpressionUUID->"0c20c2b2-ef2c-4bfb-b14d-650979b186c4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"asum", "=", 
+  RowBox[{"IntegralApprox", "[", 
+   RowBox[{
+    RowBox[{"Sin", "[", "x", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "\[Pi]"}], "}"}], ",", 
+    RowBox[{"ApproxType", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Left", ",", 
+       RowBox[{"Regular", "[", "6", "]"}]}], "}"}]}], ",", 
+    RowBox[{"WorkingPrecision", "\[Rule]", "30"}]}], "]"}]}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->612693310,ExpressionUUID->"d3fe341e-371e-437d-9d2d-6931946b9406"],
+
+Cell[BoxData["1.9540972333137066714512535899142454942077562571714055600822`29.\
+667581190928885"], "Output",
+ ImageSize->{221, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->475975072,ExpressionUUID->"15ef55a1-5a36-4af3-a085-d01b1d364799"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"N", "[", 
+   RowBox[{"esum", ",", "30"}], "]"}], "\[Equal]", "asum"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->170767266,ExpressionUUID->"42a82114-aa56-41c9-8e8c-7c286d0cc8b1"],
+
+Cell[BoxData["True"], "Output",
+ ImageSize->{32, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->164950905,ExpressionUUID->"d723a028-2e9d-4d0f-a4de-591f11fd6d35"]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"291920b7-62fa-40ee-910d-f1c3aecd2b6f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"5943c7c5-780e-4025-8f3f-217651b73dac"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"198a8914-1831-4452-b8ca-93bfb5382ac4"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PlotIntegralApprox"]],
+    "paclet:KnoxPackages/ref/PlotIntegralApprox"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"e9922226-c1c6-4564-95f2-bcb5ddbd46e0"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["DiscreteIntegral"]],"paclet:KnoxPackages/ref/DiscreteIntegral"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"b27f5552-8393-49c0-80ec-7aa872080b20"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PlotDiscreteIntegral"]],
+    "paclet:KnoxPackages/ref/PlotDiscreteIntegral"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"fbef1d04-c120-4fd3-ba1a-e7895b053dff"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PlotIntegralApprox3D"]],
+    "paclet:KnoxPackages/ref/PlotIntegralApprox3D"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"beccc066-7331-4086-baca-7663da89cab7"]
+}], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"e11c9265-0be3-491b-aecb-32b7ab7aabac"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"e87c6e35-4b1d-4b41-b72b-79d0590667b0"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"IntegralApprox",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 44, 30.7639478}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {"{IntegralApproximation}"}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> " ", "synonyms" -> {}, "tabletags" -> {},
+     "title" -> "IntegralApprox", "titlemodifier" -> "", "windowtitle" -> 
+    "IntegralApprox", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/IntegralApprox", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[4434, 109, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"ac4558f6-c948-4223-8887-85f0708acbdb",
+   CellTags->"PrimaryExamplesSection",
+   CellID->146109085]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 22127, 645}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[586, 21, 3823, 84, 55, "AnchorBarGrid",ExpressionUUID->"b0873858-bcd5-41d3-9140-906e89caae35",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4434, 109, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"ac4558f6-c948-4223-8887-85f0708acbdb",
+ CellTags->"PrimaryExamplesSection",
+ CellID->146109085],
+Cell[CellGroupData[{
+Cell[4894, 124, 308, 7, 29, "ExampleSection",ExpressionUUID->"8cd45514-ea83-4305-901b-9450ac840ad9",
+ CellID->409645257],
+Cell[5205, 133, 149, 1, 38, "ExampleText",ExpressionUUID->"17720428-cf0b-44e0-a589-ca203124328d",
+ CellID->788750621],
+Cell[CellGroupData[{
+Cell[5379, 138, 543, 14, 47, "Input",ExpressionUUID->"a6a29aad-ac6a-44f3-8122-d22fe20d8ddf",
+ CellID->146162238],
+Cell[5925, 154, 231, 5, 35, "Output",ExpressionUUID->"4eb05007-4f48-46c2-9f11-607b0a41368a",
+ CellID->457272644]
+}, Open  ]],
+Cell[6171, 162, 181, 3, 38, "ExampleText",ExpressionUUID->"b9736e9c-f082-4c81-a4e7-8329c932a4e8",
+ CellID->254038049],
+Cell[CellGroupData[{
+Cell[6377, 169, 647, 16, 99, "Input",ExpressionUUID->"84f4d66f-4a15-423a-b05f-d2998651a749",
+ CellID->81790284],
+Cell[7027, 187, 980, 29, 99, "Output",ExpressionUUID->"462e5bec-4799-4854-968e-e12777389e58",
+ CellID->73537884],
+Cell[8010, 218, 231, 5, 35, "Output",ExpressionUUID->"3c3f5cc9-99fc-4367-82a5-6009a46be452",
+ CellID->135065564]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8278, 228, 242, 5, 8, "ExampleDelimiter",ExpressionUUID->"c30abc81-6482-4f08-8385-1d27a67db615",
+ CellID->937581737],
+Cell[8523, 235, 148, 1, 38, "ExampleText",ExpressionUUID->"5b86510b-2f9c-4b6e-bd26-20b4afd0857e",
+ CellID->1623810941],
+Cell[CellGroupData[{
+Cell[8696, 240, 651, 17, 67, "Input",ExpressionUUID->"c20a8aaf-f3be-4490-bcee-3fa1d77cc934",
+ CellID->1756671837],
+Cell[9350, 259, 231, 5, 35, "Output",ExpressionUUID->"785b2be6-2eb1-4d35-9613-d7c8b8dd660d",
+ CellID->265610642]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9630, 270, 243, 5, 8, "ExampleDelimiter",ExpressionUUID->"c9bbe721-35cd-4cc7-9084-e055b2450167",
+ CellID->1797636983],
+Cell[9876, 277, 148, 1, 38, "ExampleText",ExpressionUUID->"c7ad445b-228f-4979-b639-69c332cb9efb",
+ CellID->724348896],
+Cell[CellGroupData[{
+Cell[10049, 282, 542, 14, 47, "Input",ExpressionUUID->"5f215a99-a5d8-4f86-b444-6ceb6f9b4b11",
+ CellID->984079518],
+Cell[10594, 298, 231, 5, 35, "Output",ExpressionUUID->"4fa1eb40-bc77-4c98-87e5-9deb9a308677",
+ CellID->879420445]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10874, 309, 243, 5, 70, "ExampleDelimiter",ExpressionUUID->"51eeedf4-66e0-427e-af0f-971da3a51afb",
+ CellID->1103180162],
+Cell[11120, 316, 178, 3, 70, "ExampleText",ExpressionUUID->"00383e4a-3232-4fc5-8069-ae0b38695637",
+ CellID->432626415],
+Cell[CellGroupData[{
+Cell[11323, 323, 543, 14, 70, "Input",ExpressionUUID->"9fb45dc3-b554-4231-9c75-395218fe9cb4",
+ CellID->1701670018],
+Cell[11869, 339, 231, 5, 35, "Output",ExpressionUUID->"549acf89-7774-4809-a4fe-554db8ace98e",
+ CellID->214861573]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12149, 350, 240, 5, 70, "ExampleDelimiter",ExpressionUUID->"353d4d31-f888-4d21-8f00-4c173f43fc08",
+ CellID->9729099],
+Cell[12392, 357, 151, 1, 70, "Notes",ExpressionUUID->"4eadc5e0-a89b-4149-8f7f-f07b316088c3",
+ CellID->135957390],
+Cell[CellGroupData[{
+Cell[12568, 362, 780, 22, 70, "Input",ExpressionUUID->"86671ff5-4068-4dd2-862c-a25735229c5a",
+ CellID->7667669],
+Cell[13351, 386, 231, 5, 35, "Output",ExpressionUUID->"d1e513c5-99ca-48b8-a519-0a173ef5ae13",
+ CellID->769980400]
+}, Open  ]],
+Cell[13597, 394, 131, 1, 70, "Notes",ExpressionUUID->"9bfd3fcc-834f-4484-a941-bfb6cff95492",
+ CellID->688102302],
+Cell[CellGroupData[{
+Cell[13753, 399, 781, 22, 70, "Input",ExpressionUUID->"12cc42d4-ca24-42cc-8a08-b38968e425ef",
+ CellID->65451157],
+Cell[14537, 423, 230, 5, 35, "Output",ExpressionUUID->"ba4bb24b-f6cd-48cc-9787-7a9c1c1cba50",
+ CellID->130283950]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14828, 435, 302, 7, 70, "ExampleSection",ExpressionUUID->"7539740b-e9b5-42d6-a44f-fb01a33964b4",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[15155, 446, 330, 7, 70, "ExampleSubsection",ExpressionUUID->"9ae563d6-0106-4bd8-ae8f-214b445104c7",
+ CellID->1757724783],
+Cell[15488, 455, 137, 1, 70, "ExampleText",ExpressionUUID->"ea46e367-de47-4947-b14b-1fb15a5e0a59",
+ CellID->312423627],
+Cell[CellGroupData[{
+Cell[15650, 460, 602, 15, 70, "Input",ExpressionUUID->"db9b6002-64b4-4bf3-8a06-f0e499fb1522",
+ CellID->1751518452],
+Cell[16255, 477, 331, 10, 60, "Output",ExpressionUUID->"8e8e4e81-a2d7-4a96-85b4-8557f00c81bc",
+ CellID->409829043]
+}, Open  ]],
+Cell[16601, 490, 129, 1, 70, "ExampleText",ExpressionUUID->"0c20c2b2-ef2c-4bfb-b14d-650979b186c4",
+ CellID->203324136],
+Cell[CellGroupData[{
+Cell[16755, 495, 607, 15, 70, "Input",ExpressionUUID->"d3fe341e-371e-437d-9d2d-6931946b9406",
+ CellID->612693310],
+Cell[17365, 512, 294, 6, 35, "Output",ExpressionUUID->"15ef55a1-5a36-4af3-a085-d01b1d364799",
+ CellID->475975072]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17696, 523, 213, 5, 70, "Input",ExpressionUUID->"42a82114-aa56-41c9-8e8c-7c286d0cc8b1",
+ CellID->170767266],
+Cell[17912, 530, 216, 5, 35, "Output",ExpressionUUID->"d723a028-2e9d-4d0f-a4de-591f11fd6d35",
+ CellID->164950905]
+}, Open  ]]
+}, Closed]]
+}, Closed]],
+Cell[18167, 540, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"291920b7-62fa-40ee-910d-f1c3aecd2b6f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18290, 545, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"198a8914-1831-4452-b8ca-93bfb5382ac4",
+ CellID->1255426704],
+Cell[18553, 554, 1560, 41, 70, "SeeAlso",ExpressionUUID->"e11c9265-0be3-491b-aecb-32b7ab7aabac",
+ CellID->929782353]
+}, Open  ]],
+Cell[20128, 598, 78, 0, 70, "FooterCell",ExpressionUUID->"e87c6e35-4b1d-4b41-b72b-79d0590667b0"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

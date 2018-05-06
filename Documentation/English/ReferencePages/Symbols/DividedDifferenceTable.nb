@@ -1,0 +1,604 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     25448,        594]
+NotebookOptionsPosition[     21338,        500]
+NotebookOutlinePosition[     23754,        560]
+CellTagsIndexPosition[     23669,        555]
+WindowTitle->DividedDifferenceTable
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "b4a93521-e8db-4474-b78e-e514d9e2f2a6"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"66b97a25-4ec5-4c9b-b254-f25b28e31b6f"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "4760302d-b915-44c0-9473-2337bfe17959"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"aaf5645b-070d-4a5d-9b24-6e266ca97f1a"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"KnoxPackages/ref/DividedDifferenceTable\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/DividedDifferenceTable"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+DividedDifferenceTable.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$62524], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/DividedDifferenceTable", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "f6ec7fdf-5e1c-45b5-81f4-d62b96815f5a"]
+    }], "AnchorBar",ExpressionUUID->"7476709a-cec5-40d4-9fb3-169f4c0dbd94"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"ca53a384-2c73-44b9-99df-bca2eefbf50a"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["DividedDifferenceTable", "ObjectName",ExpressionUUID->
+  "bb705d27-890b-4292-9a17-8951d63fcbdc"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"a3e90b45-1643-4126-948a-2a51f0f9a70f"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "54258b62-ee7b-431a-82df-a8e61eaded53"]
+}], "ObjectNameGrid",ExpressionUUID->"42dea58e-8e59-4778-8eaa-73d64d11e89a"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"DividedDifferenceTable", "[", "data", "]"}]], "InlineFormula",
+      ExpressionUUID->"dcff6c67-f75b-445d-8d3f-1e47f2503a41"],
+     " \[LineSeparator]returns a list of lists, with the ",
+     Cell[BoxData[
+      SuperscriptBox[
+       StyleBox["k", "TI"], 
+       StyleBox["th", "TI"]]], "InlineFormula",ExpressionUUID->
+      "ad0dd43c-de01-49b7-9abf-f297e2fb4627"],
+     " list being the divided difference of order ",
+     Cell[BoxData[
+      StyleBox["k", "TI"]], "InlineFormula",ExpressionUUID->
+      "97a11786-0c1c-499b-b7e7-0f2d21177196"],
+     "."
+    }],ExpressionUUID->"18eb1df6-b139-43bb-aaaf-256c71ee3c4d"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"DividedDifferenceTable", "[", 
+       RowBox[{"data", ",", 
+        StyleBox["m", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "491ffe5b-138f-4bda-bee2-ccde7dd97fe5"],
+     "\[LineSeparator]returns the divided differences of orders ",
+     Cell[BoxData[
+     "0"], "InlineFormula",ExpressionUUID->
+      "95e1b986-8e22-438a-921b-1ea6e189b3cd"],
+     " through ",
+     Cell[BoxData[
+      StyleBox["m", "TI"]], "InlineFormula",ExpressionUUID->
+      "3a2a5ced-9b74-4996-bd4d-6f4e0e229d0d"],
+     "."
+    }],ExpressionUUID->"b890c9bc-c9d6-401a-a8d0-7ea28ed3abae"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"de5408f3-0563-4bbb-858b-477eb18e2bfc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"e9f1bc31-c41c-44ef-9c22-f5e01d4a10f3"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "965d97c9-dd9a-4882-8c3a-d0de95697443"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->717892528,ExpressionUUID->"fa8475ee-c620-4736-9f9e-4f30e034cb62"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "868b36f8-238c-43e3-90e1-1c16804110dd"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->258301579,ExpressionUUID->"30194659-df76-4996-a767-147e269a34c8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "data1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data1", "=", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", ",", 
+        RowBox[{"Sin", "[", "x", "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "0", ",", "\[Pi]", ",", 
+        RowBox[{"\[Pi]", "/", "8"}]}], "}"}]}], "]"}], "//", "N"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DividedDifferenceTable", "[", "data1", "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->200992875,ExpressionUUID->"8e6e71a0-30d5-403c-8813-64e6ef187d58"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.3826834323650898`", ",", "0.7071067811865475`", ",", 
+     "0.9238795325112867`", ",", "1.`", ",", "0.9238795325112867`", ",", 
+     "0.7071067811865475`", ",", "0.3826834323650898`", ",", "0.`"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.9744953584044327`", ",", "0.8261372739097793`", ",", 
+     "0.5520072784153994`", ",", "0.19383917874071407`", ",", 
+     RowBox[{"-", "0.19383917874071407`"}], ",", 
+     RowBox[{"-", "0.5520072784153994`"}], ",", 
+     RowBox[{"-", "0.8261372739097793`"}], ",", 
+     RowBox[{"-", "0.9744953584044327`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.18889537995975328`"}], ",", 
+     RowBox[{"-", "0.34903315066151647`"}], ",", 
+     RowBox[{"-", "0.45603378816845475`"}], ",", 
+     RowBox[{"-", "0.49360741538332925`"}], ",", 
+     RowBox[{"-", "0.45603378816845475`"}], ",", 
+     RowBox[{"-", "0.34903315066151647`"}], ",", 
+     RowBox[{"-", "0.18889537995975328`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.13592916150881124`"}], ",", 
+     RowBox[{"-", "0.09082496199047085`"}], ",", 
+     RowBox[{"-", "0.03189348533941036`"}], ",", "0.03189348533941036`", ",", 
+     "0.09082496199047085`", ",", "0.13592916150881124`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.028714225230187827`", ",", "0.03751694325088357`", ",", 
+     "0.04060804675356843`", ",", "0.03751694325088357`", ",", 
+     "0.028714225230187827`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.004483187474041063`", ",", "0.001574286086595097`", ",", 
+     RowBox[{"-", "0.001574286086595097`"}], ",", 
+     RowBox[{"-", "0.004483187474041063`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.0012345760927437283`"}], ",", 
+     RowBox[{"-", "0.0013362955334528283`"}], ",", 
+     RowBox[{"-", "0.0012345760927437283`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.00003700377553690566`"}], ",", 
+     "0.00003700377553690566`"}], "}"}], ",", 
+   RowBox[{"{", "0.000023557335159045958`", "}"}]}], "}"}]], "Output",
+ ImageSize->{558, 127},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->139216010,ExpressionUUID->"bfed5371-af4a-41d0-ac55-0001becd9dc4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "data2", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data2", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"Sin", "[", "x", "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "0", ",", "2", ",", 
+         RowBox[{"\[Pi]", "/", "80"}]}], "}"}]}], "]"}], ",", "20"}], "]"}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DividedDifferenceTable", "[", 
+  RowBox[{"data2", ",", "5"}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->592988703,ExpressionUUID->"e0c5543a-c528-48ec-b825-88ebf11e4530"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "0.`", ",", "0.03925981575906861`", ",", "0.07845909572784494`", ",", 
+     "0.11753739745783764`", ",", "0.15643446504023087`", ",", 
+     "0.19509032201612828`", ",", "0.23344536385590542`", ",", 
+     "0.27144044986507426`", ",", "0.30901699437494745`", ",", 
+     "0.34611705707749296`", ",", "0.3826834323650898`", ",", 
+     "0.4186597375374281`", ",", "0.4539904997395468`", ",", 
+     "0.48862124149695496`", ",", "0.5224985647159489`", ",", 
+     "0.5555702330196022`", ",", "0.5877852522924731`", ",", 
+     "0.619093949309834`", ",", "0.6494480483301837`", ",", 
+     "0.6788007455329418`", ",", "0.7071067811865476`", ",", 
+     "0.7343225094356856`", ",", "0.7604059656000309`", ",", 
+     "0.785316930880745`", ",", "0.8090169943749475`", ",", 
+     "0.8314696123025452`", ",", "0.8526401643540922`", ",", 
+     "0.8724960070727971`", ",", "0.8910065241883679`", ",", 
+     "0.9081431738250813`", ",", "0.9238795325112867`", ",", 
+     "0.9381913359224842`", ",", "0.9510565162951535`", ",", 
+     "0.9624552364536473`", ",", "0.9723699203976766`", ",", 
+     "0.9807852804032304`", ",", "0.9876883405951378`", ",", 
+     "0.9930684569549263`", ",", "0.996917333733128`", ",", 
+     "0.9992290362407229`", ",", "1.`", ",", "0.9992290362407229`", ",", 
+     "0.996917333733128`", ",", "0.9930684569549263`", ",", 
+     "0.9876883405951378`", ",", "0.9807852804032304`", ",", 
+     "0.9723699203976766`", ",", "0.9624552364536473`", ",", 
+     "0.9510565162951535`", ",", "0.9381913359224842`", ",", 
+     "0.9238795325112867`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.9997429988692578`", ",", "0.9982014676278194`", ",", 
+     "0.9951207820743846`", ",", "0.9905056924027842`", ",", 
+     "0.9843633147467836`", ",", "0.9767031202075194`", ",", 
+     "0.9675369202497498`", ",", "0.9568788484894304`", ",", 
+     "0.9447453389007008`", ",", "0.9311551004758977`", ",", 
+     "0.916129088377626`", ",", "0.8996904716274389`", ",", 
+     "0.8818645973808671`", ",", "0.8626789518439563`", ",", 
+     "0.842163117891516`", ",", "0.8203487294524944`", ",", 
+     "0.7972694227327131`", ",", "0.7729607843503218`", ",", 
+     "0.7474602964637769`", ",", "0.7208072789770864`", ",", 
+     "0.693042828911367`", ",", "0.6642097570362137`", ",", 
+     "0.6343525218585951`", ",", "0.603517161071057`", ",", 
+     "0.5717512205649432`", ",", "0.5391036811180739`", ",", 
+     "0.5056248828699361`", ",", "0.47136644770083697`", ",", 
+     "0.43638119963469807`", ",", "0.40072308338827`", ",", 
+     "0.3644470811922431`", ",", "0.32760912801266606`", ",", 
+     "0.29026602530328205`", ",", "0.25247535342177735`", ",", 
+     "0.2142953828450782`", ",", "0.17578498432047054`", ",", 
+     "0.1370035380911868`", ",", "0.09801084233638471`", ",", 
+     "0.05886702096666624`", ",", "0.019632430917385663`", ",", 
+     RowBox[{"-", "0.019632430917385663`"}], ",", 
+     RowBox[{"-", "0.05886702096666624`"}], ",", 
+     RowBox[{"-", "0.09801084233638471`"}], ",", 
+     RowBox[{"-", "0.1370035380911868`"}], ",", 
+     RowBox[{"-", "0.17578498432047054`"}], ",", 
+     RowBox[{"-", "0.2142953828450782`"}], ",", 
+     RowBox[{"-", "0.25247535342177735`"}], ",", 
+     RowBox[{"-", "0.29026602530328205`"}], ",", 
+     RowBox[{"-", "0.32760912801266606`"}], ",", 
+     RowBox[{"-", "0.3644470811922431`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.019627385360440713`"}], ",", 
+     RowBox[{"-", "0.0392245067152748`"}], ",", 
+     RowBox[{"-", "0.058761146723804496`"}], ",", 
+     RowBox[{"-", "0.07820718130317594`"}], ",", 
+     RowBox[{"-", "0.09753262607755599`"}], ",", 
+     RowBox[{"-", "0.11670768261181998`"}], ",", 
+     RowBox[{"-", "0.1357027843586378`"}], ",", 
+     RowBox[{"-", "0.15448864224793818`"}], ",", 
+     RowBox[{"-", "0.17303628984838632`"}], ",", 
+     RowBox[{"-", "0.1913171280318851`"}], ",", 
+     RowBox[{"-", "0.2093029690708404`"}], ",", 
+     RowBox[{"-", "0.2269660801021132`"}], ",", 
+     RowBox[{"-", "0.24427922588866544`"}], ",", 
+     RowBox[{"-", "0.26121571081467254`"}], ",", 
+     RowBox[{"-", "0.2777494200477588`"}], ",", 
+     RowBox[{"-", "0.2938548598069754`"}], ",", 
+     RowBox[{"-", "0.30950719667127574`"}], ",", 
+     RowBox[{"-", "0.32468229587188974`"}], ",", 
+     RowBox[{"-", "0.33935675850572106`"}], ",", 
+     RowBox[{"-", "0.35350795761498693`"}], ",", 
+     RowBox[{"-", "0.3671140730763652`"}], ",", 
+     RowBox[{"-", "0.3801541252460168`"}], ",", 
+     RowBox[{"-", "0.39260800730869533`"}], ",", 
+     RowBox[{"-", "0.40445651628088614`"}], ",", 
+     RowBox[{"-", "0.41568138262055093`"}], ",", 
+     RowBox[{"-", "0.42626529839739363`"}], ",", 
+     RowBox[{"-", "0.436191943980429`"}], ",", 
+     RowBox[{"-", "0.44544601320177424`"}], ",", 
+     RowBox[{"-", "0.4540132369571558`"}], ",", 
+     RowBox[{"-", "0.46188040520881046`"}], ",", 
+     RowBox[{"-", "0.46903538735339934`"}], ",", 
+     RowBox[{"-", "0.47546715092694525`"}], ",", 
+     RowBox[{"-", "0.4811657786164296`"}], ",", 
+     RowBox[{"-", "0.48612248355078325`"}], ",", 
+     RowBox[{"-", "0.4903296228504115`"}], ",", 
+     RowBox[{"-", "0.4937807094114445`"}], ",", 
+     RowBox[{"-", "0.4964704219084091`"}], ",", 
+     RowBox[{"-", "0.49839461299974885`"}], ",", 
+     RowBox[{"-", "0.4995503157221675`"}], ",", 
+     RowBox[{"-", "0.49993574806593316`"}], ",", 
+     RowBox[{"-", "0.4995503157221675`"}], ",", 
+     RowBox[{"-", "0.49839461299974885`"}], ",", 
+     RowBox[{"-", "0.4964704219084091`"}], ",", 
+     RowBox[{"-", "0.4937807094114445`"}], ",", 
+     RowBox[{"-", "0.4903296228504115`"}], ",", 
+     RowBox[{"-", "0.48612248355078325`"}], ",", 
+     RowBox[{"-", "0.4811657786164296`"}], ",", 
+     RowBox[{"-", "0.47546715092694525`"}], ",", 
+     RowBox[{"-", "0.46903538735339934`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.1663455324796579`"}], ",", 
+     RowBox[{"-", "0.1658321508674341`"}], ",", 
+     RowBox[{"-", "0.16506306809828755`"}], ",", 
+     RowBox[{"-", "0.16403947004224115`"}], ",", 
+     RowBox[{"-", "0.1627629350130486`"}], ",", 
+     RowBox[{"-", "0.16123543133544285`"}], ",", 
+     RowBox[{"-", "0.15945931430954846`"}], ",", 
+     RowBox[{"-", "0.15743732257801876`"}], ",", 
+     RowBox[{"-", "0.15517257390756786`"}], ",", 
+     RowBox[{"-", "0.15266856037412288`"}], ",", 
+     RowBox[{"-", "0.14992914298709606`"}], ",", 
+     RowBox[{"-", "0.14695854572802183`"}], ",", 
+     RowBox[{"-", "0.14376134904402155`"}], ",", 
+     RowBox[{"-", "0.1403424827781222`"}], ",", 
+     RowBox[{"-", "0.13670721857856336`"}], ",", 
+     RowBox[{"-", "0.1328611617542878`"}], ",", 
+     RowBox[{"-", "0.12881024265000462`"}], ",", 
+     RowBox[{"-", "0.1245607074875503`"}], ",", 
+     RowBox[{"-", "0.1201191087422555`"}], ",", 
+     RowBox[{"-", "0.1154922950377286`"}], ",", 
+     RowBox[{"-", "0.11068740058540025`"}], ",", 
+     RowBox[{"-", "0.10571183418446788`"}], ",", 
+     RowBox[{"-", "0.10057326779695143`"}], ",", 
+     RowBox[{"-", "0.09527962472018571`"}], ",", 
+     RowBox[{"-", "0.08983906736815003`"}], ",", 
+     RowBox[{"-", "0.08425998468594165`"}], ",", 
+     RowBox[{"-", "0.07855097921555539`"}], ",", 
+     RowBox[{"-", "0.07272085382630848`"}], ",", 
+     RowBox[{"-", "0.06677859815394484`"}], ",", 
+     RowBox[{"-", "0.06073337472243036`"}], ",", 
+     RowBox[{"-", "0.054594504828172`"}], ",", 
+     RowBox[{"-", "0.04837145416649514`"}], ",", 
+     RowBox[{"-", "0.04207381822668632`"}], ",", 
+     RowBox[{"-", "0.03571130750997379`"}], ",", 
+     RowBox[{"-", "0.029293732545408548`"}], ",", 
+     RowBox[{"-", "0.022830988767358295`"}], ",", 
+     RowBox[{"-", "0.016333041260805717`"}], ",", 
+     RowBox[{"-", "0.009809909387610161`"}], ",", 
+     RowBox[{"-", "0.003271651346015852`"}], ",", "0.003271651346015852`", 
+     ",", "0.009809909387610161`", ",", "0.016333041260805717`", ",", 
+     "0.022830988767358295`", ",", "0.029293732545408548`", ",", 
+     "0.03571130750997379`", ",", "0.04207381822668632`", ",", 
+     "0.04837145416649514`", ",", "0.054594504828172`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.0032682888511160403`", ",", "0.004896132974259098`", ",", 
+     "0.006516427614361607`", ",", "0.008126674397038116`", ",", 
+     "0.009724390435280065`", ",", "0.011307112167230732`", ",", 
+     "0.012872399158555686`", ",", "0.014417837830522346`", ",", 
+     "0.015941045256670876`", ",", "0.017439672733488096`", ",", 
+     "0.01891140950867595`", ",", "0.020353986251826484`", ",", 
+     "0.021765178639520478`", ",", "0.023142810672191674`", ",", 
+     "0.024484758199830845`", ",", "0.025788951980482443`", ",", 
+     "0.027053381077897065`", ",", "0.028276095821777127`", ",", 
+     "0.02945521087363114`", ",", "0.030588908124915347`", ",", 
+     "0.03167543949561352`", ",", "0.03271312963916426`", ",", 
+     "0.03370037850525816`", ",", "0.03463566383005724`", ",", 
+     "0.035517543471674184`", ",", "0.036344657630025784`", ",", 
+     "0.03711573098176821`", ",", "0.03782957453490113`", ",", 
+     "0.03848508764881917`", ",", "0.03908125954676955`", ",", 
+     "0.039617170956686494`", ",", "0.040091995584549886`", ",", 
+     "0.04050500124159829`", ",", "0.04085555113093414`", ",", 
+     "0.04114310472852355`", ",", "0.041367218624779954`", ",", 
+     "0.04152754728237469`", ",", "0.04162384346120278`", ",", 
+     "0.04165595870333406`", ",", "0.04162384346120278`", ",", 
+     "0.04152754728237469`", ",", "0.041367218624779954`", ",", 
+     "0.04114310472852355`", ",", "0.04085555113093414`", ",", 
+     "0.04050500124159829`", ",", "0.040091995584549886`", ",", 
+     "0.039617170956686494`"}], "}"}]}], "}"}]], "Output",
+ ImageSize->{575, 575},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->6144315,ExpressionUUID->"2d678d22-864d-44bc-9080-dc7802bb62ef"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"b11da7d9-a533-4d1a-8ece-fd6c590bc885"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"839ee23f-0ab1-40a7-a3ad-86d0d23ecc49"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"1aa34e00-40bb-4f4f-b42e-caa7a0bf1528"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"3e2ef07c-a30b-430d-a15d-5944d132977e"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->148200754,ExpressionUUID->"6bb308e5-e90e-4a2a-8b23-004574d608da"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"03b6c283-aea5-4c66-a9cd-b9ce6e9abb4e"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"DividedDifferenceTable",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 42, 14.0272971}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "DividedDifferenceTable[data] returns a list of lists, with the k^th list \
+being the divided difference of order k. DividedDifferenceTable[data, m] \
+returns the divided differences of orders 0 through m.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "DividedDifferenceTable", "titlemodifier" -> 
+    "", "windowtitle" -> "DividedDifferenceTable", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/DividedDifferenceTable", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6160, 158, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"fa8475ee-c620-4736-9f9e-4f30e034cb62",
+   CellTags->"PrimaryExamplesSection",
+   CellID->717892528]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 23471, 548}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[594, 21, 3527, 79, 55, "AnchorBarGrid",ExpressionUUID->"ca53a384-2c73-44b9-99df-bca2eefbf50a",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4146, 104, 407, 9, 52, "ObjectNameGrid",ExpressionUUID->"42dea58e-8e59-4778-8eaa-73d64d11e89a"],
+Cell[4556, 115, 1567, 38, 183, "Usage",ExpressionUUID->"de5408f3-0563-4bbb-858b-477eb18e2bfc",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6160, 158, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"fa8475ee-c620-4736-9f9e-4f30e034cb62",
+ CellTags->"PrimaryExamplesSection",
+ CellID->717892528],
+Cell[CellGroupData[{
+Cell[6620, 173, 308, 7, 29, "ExampleSection",ExpressionUUID->"30194659-df76-4996-a767-147e269a34c8",
+ CellID->258301579],
+Cell[CellGroupData[{
+Cell[6953, 184, 605, 16, 59, "Input",ExpressionUUID->"8e6e71a0-30d5-403c-8813-64e6ef187d58",
+ CellID->200992875],
+Cell[7561, 202, 2321, 55, 148, "Output",ExpressionUUID->"bfed5371-af4a-41d0-ac55-0001becd9dc4",
+ CellID->139216010]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9919, 262, 663, 18, 59, "Input",ExpressionUUID->"e0c5543a-c528-48ec-b825-88ebf11e4530",
+ CellID->592988703],
+Cell[10585, 282, 9921, 188, 596, "Output",ExpressionUUID->"2d678d22-864d-44bc-9080-dc7802bb62ef",
+ CellID->6144315]
+}, Open  ]]
+}, Open  ]],
+Cell[20533, 474, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"b11da7d9-a533-4d1a-8ece-fd6c590bc885"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20656, 479, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"1aa34e00-40bb-4f4f-b42e-caa7a0bf1528",
+ CellID->38303248],
+Cell[20925, 488, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"3e2ef07c-a30b-430d-a15d-5944d132977e"],
+Cell[21014, 490, 227, 5, 70, "MoreAbout",ExpressionUUID->"6bb308e5-e90e-4a2a-8b23-004574d608da",
+ CellID->148200754]
+}, Open  ]],
+Cell[21256, 498, 78, 0, 70, "FooterCell",ExpressionUUID->"03b6c283-aea5-4c66-a9cd-b9ce6e9abb4e"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

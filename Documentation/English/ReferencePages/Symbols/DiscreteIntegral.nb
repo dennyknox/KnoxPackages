@@ -1,0 +1,475 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17172,        465]
+NotebookOptionsPosition[     12841,        364]
+NotebookOutlinePosition[     15062,        421]
+CellTagsIndexPosition[     14977,        416]
+WindowTitle->DiscreteIntegral
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "755c11f9-781d-4a28-8aae-764ffb09d945"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"53698cdb-a739-41d6-8f83-5cd5d7bfc5fd"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"PlotDiscreteIntegral\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/PlotDiscreteIntegral"], "\<\"IntegralApprox\"\
+\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/IntegralApprox"], \
+"\<\"PlotIntegralApprox\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/PlotIntegralApprox"], "\<\"PlotIntegralApprox\
+\"\>":>Documentation`HelpLookup["paclet:KnoxPackages/ref/PlotIntegralApprox"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "bb89a5ee-68ae-487a-872f-1753082a3338"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"545dd1e6-d2b6-43bd-9a7e-fbd1383f8b10"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/DiscreteIntegral\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/DiscreteIntegral"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+DiscreteIntegral.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$58574], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/DiscreteIntegral", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "1d33446e-8db3-4e54-b086-f22b2f89c789"]
+    }], "AnchorBar",ExpressionUUID->"4e902dec-0236-4f2a-8cbd-7a51204f5fb0"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"76bb3317-10f0-467b-a328-d7e9d84f31af"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"29685e4e-0fe3-4e23-8f57-b20bfef1514a"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "0bfbe270-7240-4852-9074-e487ff20f4b2"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->27469677,ExpressionUUID->"9f40457e-c3fd-4722-a70d-2a297752d419"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "3ab68d67-f574-4585-8585-26cc4a83966e"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->114262321,ExpressionUUID->"0466d63c-7432-4512-9849-cd81b1b5f662"],
+
+Cell["Here is a basic example with explicitly given data:", "ExampleText",
+ CellID->1746619052,ExpressionUUID->"0b0ad552-b6b4-4448-a7f3-6879b25d690e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0.8121"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1.3904"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "2.8374"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "3.1539"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "4.134"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "5.3356"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "6.7651"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"7", ",", "7.6077"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"8.", ",", "8.9556"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"9", ",", "9.3877"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"10", ",", "10.8627"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"11", ",", "11.8943"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"12", ",", "12.8101"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"13", ",", "13.6069"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"14", ",", "14.4239"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"15", ",", "15.1200"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"16", ",", "16.3355"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"17", ",", "17.0501"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"18", ",", "18.7869"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"19", ",", "19.2568"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"20", ",", "20.5573"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"21", ",", "21.0866"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"22", ",", "22.7888"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"23", ",", "23.3589"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"24", ",", "24.7452"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"25", ",", "25.6962"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"26", ",", "26.9515"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"27", ",", "27.2051"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"28", ",", "28.6112"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"29", ",", "29.3606"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"30", ",", "30.1864"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"31", ",", "31.5974"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"32", ",", "32.6556"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"33", ",", "33.9730"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"34", ",", "34.3237"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"35", ",", "35.4104"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"36", ",", "36.8455"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"37", ",", "37.3661"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"38", ",", "38.8999"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"39", ",", "39.2904"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"40", ",", "40.5100"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DiscreteIntegral", "[", 
+  RowBox[{"data", ",", 
+   RowBox[{"ApproxType", "\[Rule]", "Left"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1446131194,ExpressionUUID->"07abcad5-158c-417b-8481-62c8d3d950d6"],
+
+Cell[BoxData["801.4365`"], "Output",
+ ImageSize->{53, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->456462889,ExpressionUUID->"85b16b7a-bfe9-4636-9274-94a35ace9395"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "c2b1ed61-d283-4bb8-bbd2-0c321f88114f"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->615929351,ExpressionUUID->"121e5aea-1455-4a65-aa50-ff04dde7256b"],
+
+Cell["Data can also be given using a formula:", "ExampleText",
+ CellID->2025001338,ExpressionUUID->"7135dbc3-af3d-4f9b-a094-1978e5aa4925"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data1", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"Sin", "[", "x", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "\[Pi]", ",", 
+       RowBox[{"\[Pi]", "/", "12"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DiscreteIntegral", "[", 
+  RowBox[{"data1", ",", 
+   RowBox[{"ApproxType", "\[Rule]", "Midpoint"}], ",", 
+   RowBox[{"WorkingPrecision", "\[Rule]", "30"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2022355559,ExpressionUUID->"b376da93-705a-4797-9149-611b52878946"],
+
+Cell[BoxData["2.023030319854915`"], "Output",
+ ImageSize->{53, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->578126869,ExpressionUUID->"7e5d07c0-6ee1-426b-ad0b-f05594396a8b"]
+}, Open  ]],
+
+Cell["Compare with NIntegrate", "ExampleText",
+ CellID->491387590,ExpressionUUID->"c7c1d73c-2880-439e-87f5-3cc9c1c63916"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NIntegrate", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "\[Pi]"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->445865408,ExpressionUUID->"d4065edd-5830-48c3-83cb-cf7252f00c02"],
+
+Cell[BoxData["2.000000000000001`"], "Output",
+ ImageSize->{18, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->50864554,ExpressionUUID->"0a23032d-2afb-4b5d-8fbf-4e871b1193a0"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"1ae3fefe-26fe-40a7-b751-51f82e5bc36d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"f362bb87-f39e-4605-bf53-5a4b66703f13"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"52a43f2d-876c-42ac-9fc0-e50cb6a18068"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PlotDiscreteIntegral"]],
+    "paclet:KnoxPackages/ref/PlotDiscreteIntegral"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"2e39fa41-40a0-43ca-bb7f-2d1e5d04c02b"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["IntegralApprox"]],"paclet:KnoxPackages/ref/IntegralApprox"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"bdbfb561-8a50-46e2-b587-051c712e43bd"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PlotIntegralApprox"]],
+    "paclet:KnoxPackages/ref/PlotIntegralApprox"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"d034d7e6-d5d3-4106-96d7-57d943b5fb74"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PlotIntegralApprox"]],
+    "paclet:KnoxPackages/ref/PlotIntegralApprox"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"b321cbe5-5354-44de-b855-a04faf1f8d87"]
+}], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"743acab0-3196-4bce-9a30-831b08e62fed"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"9632c8f9-ead9-460c-9621-633a91bde8ff"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"DiscreteIntegral",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 41, 54.6341350}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {"{DiscreteIntegral Discrete Integral}"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Knox Packages Symbol", "language" -> "en", "paclet" -> 
+    "KnoxPackages", "status" -> "None", "summary" -> " ", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "DiscreteIntegral", "titlemodifier" -> "", 
+    "windowtitle" -> "DiscreteIntegral", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/DiscreteIntegral", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[4428, 108, 434, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"9f40457e-c3fd-4722-a70d-2a297752d419",
+   CellTags->"PrimaryExamplesSection",
+   CellID->27469677]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 14780, 409}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[588, 21, 3815, 83, 55, "AnchorBarGrid",ExpressionUUID->"76bb3317-10f0-467b-a328-d7e9d84f31af",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4428, 108, 434, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"9f40457e-c3fd-4722-a70d-2a297752d419",
+ CellTags->"PrimaryExamplesSection",
+ CellID->27469677],
+Cell[CellGroupData[{
+Cell[4887, 123, 308, 7, 29, "ExampleSection",ExpressionUUID->"0466d63c-7432-4512-9849-cd81b1b5f662",
+ CellID->114262321],
+Cell[5198, 132, 150, 1, 38, "ExampleText",ExpressionUUID->"0b0ad552-b6b4-4448-a7f3-6879b25d690e",
+ CellID->1746619052],
+Cell[CellGroupData[{
+Cell[5373, 137, 3191, 92, 155, "Input",ExpressionUUID->"07abcad5-158c-417b-8481-62c8d3d950d6",
+ CellID->1446131194],
+Cell[8567, 231, 221, 5, 35, "Output",ExpressionUUID->"85b16b7a-bfe9-4636-9274-94a35ace9395",
+ CellID->456462889]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8825, 241, 242, 5, 8, "ExampleDelimiter",ExpressionUUID->"121e5aea-1455-4a65-aa50-ff04dde7256b",
+ CellID->615929351],
+Cell[9070, 248, 138, 1, 38, "ExampleText",ExpressionUUID->"7135dbc3-af3d-4f9b-a094-1978e5aa4925",
+ CellID->2025001338],
+Cell[CellGroupData[{
+Cell[9233, 253, 630, 17, 43, "Input",ExpressionUUID->"b376da93-705a-4797-9149-611b52878946",
+ CellID->2022355559],
+Cell[9866, 272, 230, 5, 35, "Output",ExpressionUUID->"7e5d07c0-6ee1-426b-ad0b-f05594396a8b",
+ CellID->578126869]
+}, Open  ]],
+Cell[10111, 280, 121, 1, 38, "ExampleText",ExpressionUUID->"c7c1d73c-2880-439e-87f5-3cc9c1c63916",
+ CellID->491387590],
+Cell[CellGroupData[{
+Cell[10257, 285, 278, 7, 26, "Input",ExpressionUUID->"d4065edd-5830-48c3-83cb-cf7252f00c02",
+ CellID->445865408],
+Cell[10538, 294, 229, 5, 35, "Output",ExpressionUUID->"0a23032d-2afb-4b5d-8fbf-4e871b1193a0",
+ CellID->50864554]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[10806, 304, 86, 0, 29, "SectionFooterSpacer",ExpressionUUID->"1ae3fefe-26fe-40a7-b751-51f82e5bc36d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10929, 309, 260, 7, 72, "SeeAlsoSection",ExpressionUUID->"52a43f2d-876c-42ac-9fc0-e50cb6a18068",
+ CellID->1255426704],
+Cell[11192, 318, 1552, 41, 44, "SeeAlso",ExpressionUUID->"743acab0-3196-4bce-9a30-831b08e62fed",
+ CellID->929782353]
+}, Open  ]],
+Cell[12759, 362, 78, 0, 41, "FooterCell",ExpressionUUID->"9632c8f9-ead9-460c-9621-633a91bde8ff"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

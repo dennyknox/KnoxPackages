@@ -1,0 +1,347 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11918,        338]
+NotebookOptionsPosition[      8094,        253]
+NotebookOutlinePosition[     10689,        315]
+CellTagsIndexPosition[     10604,        310]
+WindowTitle->ManipulateHypotrochoid
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"DisplayHypotrochoid\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/DisplayHypotrochoid"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"KnoxPackages/ref/ManipulateHypotrochoid\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/ManipulateHypotrochoid"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+ManipulateHypotrochoid.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$110609], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/ManipulateHypotrochoid", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[TextData[{
+ Cell["ManipulateHypotrochoid", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{"ManipulateHypotrochoid", "[", 
+        RowBox[{"R", ",", "r", ",", "d", ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", 
+           SubscriptBox["t", "min"], ",", 
+           SubscriptBox["t", "max"], ",", 
+           RowBox[{"d", "\[VeryThinSpace]", 
+            RowBox[{"t", ":", 
+             RowBox[{".05", "|"}]}]}]}]}]}]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]produces an animation of the hypotrochoid determined \
+by a point on a spoke of a circle of radius ",
+     Cell[BoxData["r"], "InlineFormula"],
+     " that is ",
+     Cell[BoxData["d"], "InlineFormula"],
+     " units from the center rolling that is on the inside of a circle of \
+radius ",
+     Cell[BoxData["R"], "InlineFormula"],
+     " when ",
+     Cell[BoxData["t"], "InlineFormula"],
+     " is between ",
+     Cell[BoxData[
+      SubscriptBox["t", "min"]]],
+     " and ",
+     Cell[BoxData[
+      SubscriptBox["t", "max"]]],
+     " in steps of d\[VeryThinSpace]t (default value is .05).  Styles for the \
+fixed circle, rolling circle, point, and radius can be set with ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["FixedCircleStyle"]],
+        "paclet:KnoxPackages/ref/FixedCircleStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["RollingCircleStyle"]],
+        "paclet:KnoxPackages/ref/RollingCircleStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["PointStyle"]],"paclet:KnoxPackages/ref/PointStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["RadiusStyle"]],"paclet:KnoxPackages/ref/RadiusStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     ".  ",
+     Cell[BoxData[
+      TemplateBox[{Cell[
+         TextData["PlotStyle"]],"paclet:ref/PlotStyle"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula"],
+     " sets the style for the hypotrochoid."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Manipulations`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ManipulateHypotrochoid", "[", 
+  RowBox[{"5", ",", "2", ",", "1", ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"4", " ", "\[Pi]"}]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->180053557],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Manipulations`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ManipulateHypotrochoid", "[", 
+  RowBox[{"5", ",", "2", ",", "2.7", ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"4", " ", "\[Pi]"}]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->310517491]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SectionFooterSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["DisplayHypotrochoid"]],
+   "paclet:KnoxPackages/ref/DisplayHypotrochoid"},
+  "RefLink",
+  BaseStyle->{
+   "InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula"]], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ManipulateHypotrochoid",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 46, 20.0792505}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "ManipulateHypotrochoid[R, r, d, {t, tmin, tmax, d t : .05 |] produces an \
+animation of the hypotrochoid determined by a point on a spoke of a circle of \
+radius r that is d units from the center rolling that is on the inside of a \
+circle of radius R when t is between tmin and tmax in steps of d t (default \
+value is .05). Styles for the fixed circle, rolling circle, point, and radius \
+can be set with FixedCircleStyle, RollingCircleStyle, PointStyle, \
+RadiusStyle. PlotStyle sets the style for the hypotrochoid.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "ManipulateHypotrochoid", 
+    "titlemodifier" -> "", "windowtitle" -> "ManipulateHypotrochoid", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/ManipulateHypotrochoid"}},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", 
+  StyleDefinitions -> "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6379, 182, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"9e4803c4-73ce-4e5f-abe0-b5fe0e8f724d",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 10414, 303}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[594, 21, 3154, 78, 70, "AnchorBarGrid",ExpressionUUID->"dd484c07-6a18-43ea-8c75-87f320d89bc9",
+ CellID->1],
+Cell[3751, 101, 179, 6, 70, "ObjectNameGrid",ExpressionUUID->"967e01dc-71b2-401b-a773-dfdd1a2a1e04"],
+Cell[3933, 109, 2421, 69, 70, "Usage",ExpressionUUID->"5e2a3e37-868a-4800-9a25-6b3194776a9c",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[6379, 182, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"9e4803c4-73ce-4e5f-abe0-b5fe0e8f724d",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[6663, 196, 187, 6, 70, "ExampleSection",ExpressionUUID->"3480d5eb-8aa0-43f1-8578-49ff5556c566",
+ CellID->1],
+Cell[6853, 204, 348, 9, 70, "Input",ExpressionUUID->"b60aa0ec-01f3-435c-b2a4-1e2a7d10e976",
+ CellID->180053557],
+Cell[7204, 215, 350, 9, 70, "Input",ExpressionUUID->"c3b9e178-a48a-4f12-9869-73162339e052",
+ CellID->310517491]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7603, 230, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"cb6c883e-3b31-4736-9e8a-1fb44498926b"],
+Cell[7637, 232, 150, 7, 70, "SeeAlsoSection",ExpressionUUID->"676b4a7e-9391-4e15-aa2b-4336b5adda91",
+ CellID->1255426704],
+Cell[7790, 241, 262, 7, 70, "SeeAlso",ExpressionUUID->"3132b2bd-b324-4a07-b63a-b807f0844c5d",
+ CellID->929782353]
+}, Open  ]],
+Cell[8067, 251, 23, 0, 70, "FooterCell",ExpressionUUID->"9fd329d8-b1ac-4040-aae5-4df2122634db"]
+}
+]
+*)
+
+(* End of internal cache information *)

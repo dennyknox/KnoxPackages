@@ -1,0 +1,664 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23352,        656]
+NotebookOptionsPosition[     12338,        407]
+NotebookOutlinePosition[     22326,        647]
+CellTagsIndexPosition[     22283,        644]
+WindowTitle->KCPalette_v3.0
+WindowFrame->Palette*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["", "TopBorder",ExpressionUUID->"c5bbc30b-86c9-4ef0-8a4d-b67ae25dfb00"],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox[
+     TooltipBox["Chapter",
+      "Chapter",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteCellsButton",
+     ButtonData->{
+       Cell[
+        TextData[{"Chapter ", 
+          StyleBox[
+           CounterBox["BookChapterLabel"], "BookChapterNumber"]}], 
+        "BookChapterLabel"], 
+       Cell["Chapter Title", "BookChapterTitle"]},
+     ButtonNote->"Paste a styled cell into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["SectionN",
+      "SectionN",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"SectionNumbered",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["ProblemN",
+      "ProblemN",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"ProblemNumbered",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["Example",
+      "Example",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Example",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["Exercise",
+      "Exercise",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Exercise",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["Definition",
+      "Definition",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Definition",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["Theorem",
+      "Theorem",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Theorem",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["Proof",
+      "Proof",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteCellsButton",
+     ButtonData->Cell["Proof", "Proof"],
+     ButtonNote->"Paste a styled cell into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["QED",
+      "QED",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteCellsButton",
+     ButtonData->Cell["QED", "QED"],
+     ButtonNote->"Paste a styled cell into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["Commentary",
+      "Commentary",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Commentary",
+     ButtonNote->"Paste a style into a notebook"]}
+  },
+  BaseStyle->"1ButtonGrid"]], "FrameCell",ExpressionUUID->"cc949ba8-76b2-44d1-\
+b974-dc72cbcf2b8e"],
+
+Cell["", "BottomBorder",ExpressionUUID->"bbe51fdf-0952-46e6-8ec9-2f484df6e906"],
+
+Cell["", "TopBorder",ExpressionUUID->"b8142d91-4f11-46dc-8252-57b823a97ef4"],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox[
+     TooltipBox["B1",
+      "B1",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item1",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["B2",
+      "B2",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item2",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["B3",
+      "B3",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item3",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["N1",
+      "N1",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item1Numbered",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["N2",
+      "N2",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item2Numbered",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["N3",
+      "N3",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item3Numbered",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["P1",
+      "P1",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item1Paragraph",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["P2",
+      "P2",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item2Paragraph",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["P3",
+      "P3",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item3Paragraph",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["NN1",
+      "NN1",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item1NNumbered",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["NN2",
+      "NN2",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item2NNumbered",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["NN3",
+      "NN3",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item3NNumbered",
+     ButtonNote->"Paste a style into a notebook"]}
+  },
+  BaseStyle->"3ButtonGrid"]], "FrameCell",ExpressionUUID->"05de44c7-b8f2-45ea-\
+a53e-ead66d500382"],
+
+Cell["", "BottomBorder",ExpressionUUID->"cd37f7c3-cb3d-4d0b-9c31-79b8ce728fe8"],
+
+Cell["", "TopBorder",ExpressionUUID->"50564ee8-70fd-46b0-b517-ee8f03d6e3eb"],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox[
+     TooltipBox[
+      StyleBox["Grading",
+       FontColor->RGBColor[1, 0, 0]],
+      "Grading",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Grading",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox[
+      StyleBox["ST",
+       FontVariations->{"StrikeThrough"->True},
+       FontColor->RGBColor[1, 0, 0]],
+      "ST",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"StrikeThrough",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox[
+      StyleBox["Comment",
+       FontColor->RGBColor[0, 0, 1]],
+      "Comment",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Comment",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox[
+      StyleBox["UL",
+       FontVariations->{"Underline"->True},
+       FontColor->RGBColor[0, 0, 1]],
+      "UL",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Underline",
+     ButtonNote->"Paste a style into a notebook"]}
+  },
+  GridBoxItemSize->{"Columns" -> {
+      Scaled[0.6666], 
+      Scaled[0.3333]}, "Rows" -> {{Automatic}}},
+  GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}]], "FrameCell",Expres\
+sionUUID->"b9ad884b-27d8-441b-8980-34a3e1abbad6"],
+
+Cell["", "BottomBorder",ExpressionUUID->"7cef457a-6cee-4cd4-822c-469f73fed5bd"],
+
+Cell["", "TopBorder",ExpressionUUID->"42a044bf-30a5-44d8-9ac6-37f5d0039490"],
+
+Cell[BoxData[GridBox[{
+   {
+    StyleBox["Times",
+     FontFamily->"Times"]},
+   {GridBox[{
+      {
+       ButtonBox[
+        TooltipBox[
+         StyleBox["R",
+          FontWeight->Plain],
+         "R",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "TR"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""], 
+       ButtonBox[
+        TooltipBox[
+         StyleBox["B",
+          FontWeight->Bold],
+         "B",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "TB"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""], 
+       ButtonBox[
+        TooltipBox[
+         StyleBox["I",
+          FontSlant->Italic],
+         "I",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "TI"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""], 
+       ButtonBox[
+        TooltipBox[
+         StyleBox["BI",
+          FontWeight->Bold,
+          FontSlant->Italic],
+         "BI",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "TBI"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""]}
+     },
+     GridBoxItemSize->{"Columns" -> {{
+          Scaled[0.24]}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}]},
+   {
+    StyleBox["Courier",
+     FontFamily->"Courier"]},
+   {GridBox[{
+      {
+       ButtonBox[
+        TooltipBox[
+         StyleBox["R",
+          FontFamily->"Courier",
+          FontWeight->Plain],
+         "R",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "MR"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""], 
+       ButtonBox[
+        TooltipBox[
+         StyleBox["B",
+          FontFamily->"Courier",
+          FontWeight->Bold],
+         "B",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "MB"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""], 
+       ButtonBox[
+        TooltipBox[
+         StyleBox["I",
+          FontFamily->"Courier",
+          FontSlant->Italic],
+         "I",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "MO"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""], 
+       ButtonBox[
+        TooltipBox[
+         StyleBox["BI",
+          FontFamily->"Courier",
+          FontWeight->Bold,
+          FontSlant->Italic],
+         "BI",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "MBO"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""]}
+     },
+     GridBoxItemSize->{"Columns" -> {{
+          Scaled[0.24]}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}]}
+  },
+  GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {{
+       GrayLevel[0.6], Inherited}}},
+  GridBoxItemSize->{"Columns" -> {{
+       Scaled[1]}}, "Rows" -> {{Automatic}}},
+  GridBoxSpacings->{
+   "Columns" -> {{0}}, "Rows" -> {0, 0, 1, 0, 0}}]], "FrameCell",ExpressionUUI\
+D->"9433cfa0-41a6-4c92-890b-61f97e698f11"],
+
+Cell["", "BottomBorder",ExpressionUUID->"dd4872a3-675e-4615-bb2c-75b3ea7e048b"]
+},
+ClosingAutoSave->True,
+Editable->False,
+Saveable->True,
+WindowToolbars->{},
+(*NotebookDynamicExpression:>Refresh[
+  Needs["KnoxPackages`KCPalette`"], None],*)
+WindowSize->{145, 460},
+WindowMargins->{{Automatic, -200}, {16, Automatic}},
+WindowFrame->"Palette",
+WindowElements->{"VerticalScrollBar"},
+WindowFrameElements->{"CloseBox", "ResizeArea"},
+WindowClickSelect->False,
+WindowTitle->"KCPalette_v3.0",
+DockedCells->{
+  Cell[
+   BoxData[
+    TagBox[
+     GridBox[{{
+        ButtonBox[
+         DynamicBox[
+          ToBoxes[
+           Graphics[{
+             Directive[
+              EdgeForm[
+               GrayLevel[0.7]], 
+              Thickness[Large]], 
+             RGBColor[0, 0, 0.258824], 
+             Polygon[{{-1, 0}, {-0.9, 0.3}, {0.9, 0.3}, {1, 0}}], 
+             Text[
+              Style["Styles", 
+               If[CurrentValue[
+                  ButtonNotebook[], {TaggingRules, "TabValue"}] === 1, 
+                Apply[Sequence, {8.3, Bold, 
+                  GrayLevel[1]}], 
+                Apply[Sequence, {8, 
+                  GrayLevel[0.9]}]]], {0, 0.15}, BaseStyle -> "Control"]}, 
+            ImageMargins -> None, ImagePadding -> 0, 
+            ImageSize -> {70, Automatic}, PlotRangePadding -> None], 
+           StandardForm], TrackedSymbols :> {
+            CurrentValue[
+             ButtonNotebook[], {TaggingRules, "TabValue"}]}], 
+         ButtonFunction :> (CurrentValue[
+             ButtonNotebook[], {TaggingRules, "TabValue"}] = 1; SelectionMove[
+            ButtonNotebook[], All, Notebook, AutoScroll -> False]; 
+          NotebookWrite[
+            ButtonNotebook[], 
+            ReplaceAll[1, KnoxPackages`KCPalette`Private`$tabRules], 
+            AutoScroll -> False]; SelectionMove[
+            ButtonNotebook[], Previous, Cell, AutoScroll -> False]), 
+         Appearance -> None, Method -> "Preemptive", Evaluator -> Automatic], 
+        ButtonBox[
+         DynamicBox[
+          ToBoxes[
+           Graphics[{
+             Directive[
+              EdgeForm[
+               GrayLevel[0.7]], 
+              Thickness[Large]], 
+             RGBColor[0.0541238, 0.217197, 0.109926], 
+             Polygon[{{-1, 0}, {-0.9, 0.3}, {0.9, 0.3}, {1, 0}}], 
+             Text[
+              Style["Typesetting", 
+               If[CurrentValue[
+                  ButtonNotebook[], {TaggingRules, "TabValue"}] === 2, 
+                Apply[Sequence, {8.3, Bold, 
+                  GrayLevel[1]}], 
+                Apply[Sequence, {8, 
+                  GrayLevel[0.9]}]]], {0, 0.15}, BaseStyle -> "Control"]}, 
+            ImageMargins -> None, ImagePadding -> 0, 
+            ImageSize -> {70, Automatic}, PlotRangePadding -> None], 
+           StandardForm], TrackedSymbols :> {
+            CurrentValue[
+             ButtonNotebook[], {TaggingRules, "TabValue"}]}], 
+         ButtonFunction :> (CurrentValue[
+             ButtonNotebook[], {TaggingRules, "TabValue"}] = 2; SelectionMove[
+            ButtonNotebook[], All, Notebook, AutoScroll -> False]; 
+          NotebookWrite[
+            ButtonNotebook[], 
+            ReplaceAll[2, KnoxPackages`KCPalette`Private`$tabRules], 
+            AutoScroll -> False]; SelectionMove[
+            ButtonNotebook[], Previous, Cell, AutoScroll -> False]), 
+         Appearance -> None, Method -> "Preemptive", Evaluator -> 
+         Automatic]}}, AutoDelete -> False, 
+      GridBoxItemSize -> {
+       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+      GridBoxSpacings -> {"Columns" -> {{0}}, "Rows" -> {{0}}}], "Grid"]], 
+   "DockedCell", CellFrameMargins -> {{0, 0}, {-1, 0}}, 
+   CellSize -> {Automatic, 25}, Background -> GrayLevel[0]]},
+ScrollingOptions->{"VerticalScrollRange"->Fit},
+ShowCellBracket->False,
+ShowGroupOpener->False,
+CellMargins->0,
+Deployed->False,
+CellOpen->True,
+TaggingRules->{
+ "ColorToggler" -> False, "StylesheetStyleToggler" -> False, 
+  "GradingStyleToggler" -> False, "TypeStyleToggler" -> False, 
+  "NewUserToggler" -> False, "TabValue" -> 1},
+ShowCellLabel->False,
+ShowCellTags->False,
+ContextMenu->{},
+ComponentwiseContextMenu->{},
+ShowAutoStyles->False,
+ShowSyntaxStyles->False,
+ShowStringCharacters->False,
+ImageMargins->0,
+Background->Dynamic[
+  If[CurrentValue[
+     EvaluationNotebook[], {TaggingRules, "TabValue"}] === 1, 
+   RGBColor[0, 0, 0.258824], 
+   RGBColor[0.0541238, 0.217197, 0.109926]]],
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (September 10, 2017)",
+StyleDefinitions->Notebook[{
+   Cell[
+    CellGroupData[{
+      Cell["Parent", "Section"], 
+      Cell[
+       StyleData[StyleDefinitions -> "Default.nb"]]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell["Button Styles", "Section"], 
+      Cell[
+       StyleData["Button"], StyleMenuListing -> None, ButtonStyleMenuListing -> 
+       None, FontFamily -> "Times", FontSize -> 12, FontColor -> GrayLevel[0],
+        ButtonBoxOptions -> {
+        Appearance -> {Automatic, "FramedPalette"}, Evaluator -> None, Method -> 
+         "Preemptive"}], 
+      Cell[
+       StyleData["PasteCellsButton", StyleDefinitions -> StyleData["Button"]],
+        StyleMenuListing -> None, ButtonStyleMenuListing -> None, 
+       ButtonBoxOptions -> {ButtonFunction :> (FrontEnd`FrontEndExecute[{
+            FrontEnd`SelectionMove[
+             FrontEnd`InputNotebook[], After, Cell], 
+            FrontEnd`NotebookWrite[
+             FrontEnd`InputNotebook[], #], 
+            FrontEnd`SelectionMove[
+             FrontEnd`InputNotebook[], Previous, Cell], 
+            FrontEnd`SelectionMove[
+             FrontEnd`InputNotebook[], After, CellContents]}]& ), Evaluator -> 
+         None, Method -> "Preemptive"}], 
+      Cell[
+       StyleData["PasteExprButton", StyleDefinitions -> StyleData["Button"]], 
+       StyleMenuListing -> None, ButtonStyleMenuListing -> None, 
+       ButtonBoxOptions -> {ButtonFunction :> (FrontEnd`FrontEndExecute[{
+            FrontEnd`NotebookApply[
+             FrontEnd`InputNotebook[], #, Placeholder]}]& ), Evaluator -> 
+         None, Method -> "Preemptive"}], 
+      Cell[
+       StyleData["PasteStyleButton", StyleDefinitions -> StyleData["Button"]],
+        StyleMenuListing -> None, ButtonStyleMenuListing -> None, 
+       ButtonBoxOptions -> {ButtonFunction :> (FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", #]}]& ), Evaluator -> None, 
+         Method -> "Preemptive"}]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell["Button Grid Styles", "Section"], 
+      Cell[
+       StyleData["ButtonGrid"], CellFrameMargins -> {{0, 0}, {0, 0}}, 
+       StyleMenuListing -> None, 
+       GridBoxOptions -> {
+        ColumnsEqual -> True, GridBoxAlignment -> {"Columns" -> {{Center}}}, 
+         GridBoxSpacings -> {"Columns" -> {{0}}, "Rows" -> {{0}}}, RowsEqual -> 
+         True}], 
+      Cell[
+       StyleData["1ButtonGrid", StyleDefinitions -> StyleData["ButtonGrid"]], 
+       StyleMenuListing -> None, 
+       GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {{
+              Scaled[1]}}}}], 
+      Cell[
+       StyleData["2ButtonGrid", StyleDefinitions -> StyleData["ButtonGrid"]], 
+       StyleMenuListing -> None, 
+       GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {{
+              Scaled[0.5]}}}}], 
+      Cell[
+       StyleData["3ButtonGrid", StyleDefinitions -> StyleData["ButtonGrid"]], 
+       StyleMenuListing -> None, 
+       GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {{
+              Scaled[0.3333]}}}}], 
+      Cell[
+       StyleData["4ButtonGrid", StyleDefinitions -> StyleData["ButtonGrid"]], 
+       StyleMenuListing -> None, 
+       GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {{
+              Scaled[0.25]}}}}], 
+      Cell[
+       StyleData["5ButtonGrid", StyleDefinitions -> StyleData["ButtonGrid"]], 
+       StyleMenuListing -> None, 
+       GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {{
+              Scaled[0.2]}}}}]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell["Control Grid", "Section"], 
+      Cell[
+       StyleData["Control"], StyleMenuListing -> None, FontFamily -> 
+       "BitStreamCharter", FontSize -> 10, FontColor -> GrayLevel[0]]}, 
+     Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell["Cells", "Section"], 
+      Cell[
+       StyleData["Cell"], CellFrameColor -> RGBColor[0.827, 0.816, 0.784], 
+       StyleMenuListing -> None, Background -> GrayLevel[1]], 
+      Cell[
+       StyleData["TopBorder", StyleDefinitions -> StyleData["Cell"]], 
+       CellFrame -> {{1, 1}, {0, 1}}, CellMargins -> {{2, 2}, {0, 1}}, 
+       CellFrameMargins -> {{0, 0}, {-9, 0}}, CellSize -> {Automatic, 12}, 
+       StyleMenuListing -> None], 
+      Cell[
+       StyleData["BottomBorder", StyleDefinitions -> StyleData["Cell"]], 
+       CellFrame -> {{1, 1}, {2, 0}}, CellMargins -> {{2, 2}, {1, 0}}, 
+       CellFrameMargins -> {{0, 0}, {0, -9}}, CellSize -> {Automatic, 5}, 
+       StyleMenuListing -> None], 
+      Cell[
+       StyleData["FrameCell", StyleDefinitions -> StyleData["Cell"]], 
+       CellFrame -> {{1, 1}, {0, 0}}, CellMargins -> {{2, 2}, {0, 0}}, 
+       CellFrameMargins -> {{5, 1}, {1, 1}}, StyleMenuListing -> None], 
+      Cell[
+       StyleData["Group", StyleDefinitions -> StyleData["FrameCell"]], 
+       CellFrameMargins -> {{5, 1}, {5, 1}}, TextAlignment -> Center, 
+       StyleMenuListing -> None, FontFamily -> "Times", FontSize -> 14, 
+       FontWeight -> Bold, FontColor -> GrayLevel[0.3]], 
+      Cell[
+       StyleData["Spacer"], CellMargins -> {{5, 5}, {0, 2}}, 
+       CellFrameMargins -> {{0, 0}, {0, 0}}, CellSize -> {Automatic, 12}, 
+       StyleMenuListing -> None]}, Closed]]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.2 for Microsoft Windows (64-bit) (September 10, 2017)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+KnoxPackages`KCPalette`Private`WholeCellGroupOpener -> False
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[587, 21, 76, 0, 5, "TopBorder",ExpressionUUID->"c5bbc30b-86c9-4ef0-8a4d-b67ae25dfb00"],
+Cell[666, 23, 2559, 89, 194, "FrameCell",ExpressionUUID->"cc949ba8-76b2-44d1-b974-dc72cbcf2b8e"],
+Cell[3228, 114, 79, 0, 6, "BottomBorder",ExpressionUUID->"bbe51fdf-0952-46e6-8ec9-2f484df6e906"],
+Cell[3310, 116, 76, 0, 5, "TopBorder",ExpressionUUID->"b8142d91-4f11-46dc-8252-57b823a97ef4"],
+Cell[3389, 118, 2618, 91, 80, "FrameCell",ExpressionUUID->"05de44c7-b8f2-45ea-a53e-ead66d500382"],
+Cell[6010, 211, 79, 0, 6, "BottomBorder",ExpressionUUID->"cd37f7c3-cb3d-4d0b-9c31-79b8ce728fe8"],
+Cell[6092, 213, 76, 0, 5, "TopBorder",ExpressionUUID->"50564ee8-70fd-46b0-b517-ee8f03d6e3eb"],
+Cell[6171, 215, 1413, 46, 42, "FrameCell",ExpressionUUID->"b9ad884b-27d8-441b-8980-34a3e1abbad6"],
+Cell[7587, 263, 79, 0, 6, "BottomBorder",ExpressionUUID->"7cef457a-6cee-4cd4-822c-469f73fed5bd"],
+Cell[7669, 265, 76, 0, 5, "TopBorder",ExpressionUUID->"42a044bf-30a5-44d8-9ac6-37f5d0039490"],
+Cell[7748, 267, 4504, 136, 77, "FrameCell",ExpressionUUID->"9433cfa0-41a6-4c92-890b-61f97e698f11"],
+Cell[12255, 405, 79, 0, 6, "BottomBorder",ExpressionUUID->"dd4872a3-675e-4615-bb2c-75b3ea7e048b"]
+}
+]
+*)
+

@@ -1,0 +1,575 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     25077,        565]
+NotebookOptionsPosition[     20519,        461]
+NotebookOutlinePosition[     23225,        528]
+CellTagsIndexPosition[     23105,        522]
+WindowTitle->DisplayHypotrochoid
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "5072a9a0-faa8-454f-b5eb-69983f0e1977"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"940af795-a027-4ff4-942c-4ab953066695"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ManipulateHypotrochoid\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/ManipulateHypotrochoid"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "4284652b-f72a-4b25-a80c-872f570fa04f"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"07581794-7b8e-4976-81b8-d8c2c647a657"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Welcome\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Welcome"], "\<\"KnoxPackages\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/guide/KnoxPackages"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "e5f328fa-2270-4f34-9e2e-983b44847552"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"f3452358-c9b2-466d-b889-838b0cc69525"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/DisplayHypotrochoid\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/DisplayHypotrochoid"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+DisplayHypotrochoid.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$60939], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/DisplayHypotrochoid", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "eeee62a6-ffa5-4925-8861-9fd7d4c3527e"]
+    }], "AnchorBar",ExpressionUUID->"941b25fc-a208-4c93-bd46-21941d127103"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"c5c7e640-fa7f-47f4-8bd7-c047639edf17"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["DisplayHypotrochoid", "ObjectName",ExpressionUUID->
+  "63c76f67-4600-4448-bc7d-a3eaee9e0474"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"274cf98a-9e9d-4554-8aee-447a292b6035"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "fd6761b1-d44f-46da-876c-da140f2b5f8a"]
+}], "ObjectNameGrid",ExpressionUUID->"6327b876-3850-457e-9741-3cccbcc5c452"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"DisplayHypotrochoid", "[", 
+       RowBox[{"R", ",", "r", ",", "d", ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", 
+          SubscriptBox["t", "min"], ",", 
+          SubscriptBox["t", "max"]}], "}"}]}], "]"}]], "InlineFormula",
+      ExpressionUUID->"24b63367-b911-44cc-ad04-d02faae55058"],
+     " \[LineSeparator]produces a animation of the portion of the \
+hypotrochoid determined by a point on a spoke of a circle of radius ",
+     Cell[BoxData[
+     "r"], "InlineFormula",ExpressionUUID->
+      "77cbccd5-096e-4f5e-996d-17828b6debd5"],
+     " that is ",
+     Cell[BoxData[
+     "d"], "InlineFormula",ExpressionUUID->
+      "3e8ed0d4-bb57-4a24-9c0a-3444289eaa73"],
+     " units from the center of the circle rolling on the inside of a circle \
+of radius R when ",
+     Cell[BoxData[
+     "t"], "InlineFormula",ExpressionUUID->
+      "ede2d0e9-387f-4588-a266-df231e5b6606"],
+     " is between ",
+     Cell[BoxData[
+      SubscriptBox["t", "min"]],ExpressionUUID->
+      "4c12e0cf-6ebe-42ac-bc90-88c6223d1af4"],
+     " and ",
+     Cell[BoxData[
+      SubscriptBox["t", "max"]],ExpressionUUID->
+      "a88c76c1-903c-4f9f-b2b2-59459ae3a5ca"],
+     "."
+    }],ExpressionUUID->"f042a3a4-3b2f-4916-bebc-3837d6df865c"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"20d9e481-3f4c-44ac-a6e7-ba67206904a6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"2a980088-44e4-4280-9de1-886fecd78011"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "1fa64944-dfc4-4fed-8aa7-fc0a743d2687"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->46074166,ExpressionUUID->"dd3bb579-5006-4df3-95b8-537bf479748f"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "7d5fc408-7ce0-4921-a6ca-579653e04909"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->239924906,ExpressionUUID->"824b2fde-c584-4765-ab84-7476dcaf1648"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Manipulations`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"GraphicsRow", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"DisplayHypotrochoid", "[", 
+      RowBox[{"5", ",", "2", ",", "1", ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         FractionBox["\[Pi]", "4"]}], "}"}]}], "]"}], ",", 
+     RowBox[{"DisplayHypotrochoid", "[", 
+      RowBox[{"5", ",", "2", ",", "3", ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         FractionBox["\[Pi]", "4"]}], "}"}]}], "]"}]}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->67329536,ExpressionUUID->"a737b786-2c49-4d2c-bdf2-88b5a866b96d"],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1: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
+
+    "], {{0, 188}, {360, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{360, 188},
+  PlotRange->{{0, 360}, {0, 188}}]], "Output",
+ ImageSize->{364, 188},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[1]=",
+ CellID->886030259,ExpressionUUID->"88d50ee9-5484-4784-8f7a-60aad76f8683"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"72b181b8-5b3f-49f3-8ff1-439ff80a3be5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"3c689c5e-0e77-4094-a0f9-3d8dd7877c8c"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"354123af-058c-4bce-bc29-2edf95f153bd"],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["ManipulateHypotrochoid"]],
+   "paclet:KnoxPackages/ref/ManipulateHypotrochoid"},
+  "RefLink",
+  BaseStyle->{
+   "InlineFormula", FontFamily -> 
+    "Verdana"}]], \
+"InlineFormula",ExpressionUUID->"dbd08a4b-33f0-4c25-ae49-4de0702535d6"]], \
+"SeeAlso",
+ CellID->929782353,ExpressionUUID->"009a268b-7e8a-402f-9757-a418de38a8c6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"b4722742-e9e8-4ae8-97a9-c31b368d57fa"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"895540d2-0168-4177-8711-b799d74a8233"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"469f6361-9ee3-468e-9094-1fcf414d19cb"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Welcome"]],"paclet:KnoxPackages/guide/Welcome"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->555183571,ExpressionUUID->"c2f624b2-0a5c-473b-b3da-d2138ba87acf"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["KnoxPackages"]],"paclet:KnoxPackages/guide/KnoxPackages"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->84883671,ExpressionUUID->"c1e97549-3d02-4ad9-9230-67b6fe33288e"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"5794be2f-621f-4956-b850-61a7b7aa4d97"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"DisplayHypotrochoid",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 42, 6.1809642}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "DisplayHypotrochoid[R, r, d, {t, tmin, tmax}] produces a animation of \
+the portion of the hypotrochoid determined by a point on a spoke of a circle \
+of radius r that is d units from the center of the circle rolling on the \
+inside of a circle of radius R when t is between tmin and tmax.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "DisplayHypotrochoid", 
+    "titlemodifier" -> "", "windowtitle" -> "DisplayHypotrochoid", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/DisplayHypotrochoid", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6861, 176, 434, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"dd3bb579-5006-4df3-95b8-537bf479748f",
+   CellTags->"PrimaryExamplesSection",
+   CellID->46074166]},
+ "RasterizedOutput"->{
+  Cell[8420, 223, 10345, 177, 209, "Output",ExpressionUUID->"88d50ee9-5484-4784-8f7a-60aad76f8683",
+   CellTags->"RasterizedOutput",
+   CellID->886030259]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 22728, 511},
+ {"RasterizedOutput", 22925, 515}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[591, 21, 4268, 96, 55, "AnchorBarGrid",ExpressionUUID->"c5c7e640-fa7f-47f4-8bd7-c047639edf17",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4884, 121, 404, 9, 52, "ObjectNameGrid",ExpressionUUID->"6327b876-3850-457e-9741-3cccbcc5c452"],
+Cell[5291, 132, 1533, 39, 151, "Usage",ExpressionUUID->"20d9e481-3f4c-44ac-a6e7-ba67206904a6",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6861, 176, 434, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"dd3bb579-5006-4df3-95b8-537bf479748f",
+ CellTags->"PrimaryExamplesSection",
+ CellID->46074166],
+Cell[CellGroupData[{
+Cell[7320, 191, 308, 7, 29, "ExampleSection",ExpressionUUID->"824b2fde-c584-4765-ab84-7476dcaf1648",
+ CellID->239924906],
+Cell[CellGroupData[{
+Cell[7653, 202, 764, 19, 99, "Input",ExpressionUUID->"a737b786-2c49-4d2c-bdf2-88b5a866b96d",
+ CellID->67329536],
+Cell[8420, 223, 10345, 177, 209, "Output",ExpressionUUID->"88d50ee9-5484-4784-8f7a-60aad76f8683",
+ CellTags->"RasterizedOutput",
+ CellID->886030259]
+}, Open  ]]
+}, Open  ]],
+Cell[18792, 404, 86, 0, 29, "SectionFooterSpacer",ExpressionUUID->"72b181b8-5b3f-49f3-8ff1-439ff80a3be5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18915, 409, 260, 7, 72, "SeeAlsoSection",ExpressionUUID->"354123af-058c-4bce-bc29-2edf95f153bd",
+ CellID->1255426704],
+Cell[19178, 418, 387, 10, 70, "SeeAlso",ExpressionUUID->"009a268b-7e8a-402f-9757-a418de38a8c6",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19602, 433, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"895540d2-0168-4177-8711-b799d74a8233",
+ CellID->38303248],
+Cell[19871, 442, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"469f6361-9ee3-468e-9094-1fcf414d19cb"],
+Cell[19960, 444, 225, 5, 70, "MoreAbout",ExpressionUUID->"c2f624b2-0a5c-473b-b3da-d2138ba87acf",
+ CellID->555183571],
+Cell[20188, 451, 234, 5, 70, "MoreAbout",ExpressionUUID->"c1e97549-3d02-4ad9-9230-67b6fe33288e",
+ CellID->84883671]
+}, Open  ]],
+Cell[20437, 459, 78, 0, 70, "FooterCell",ExpressionUUID->"5794be2f-621f-4956-b850-61a7b7aa4d97"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

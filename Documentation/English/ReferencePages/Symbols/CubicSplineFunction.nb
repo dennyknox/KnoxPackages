@@ -1,0 +1,488 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19313,        478]
+NotebookOptionsPosition[     14135,        362]
+NotebookOutlinePosition[     16809,        428]
+CellTagsIndexPosition[     16689,        422]
+WindowTitle->CubicSplineFunction
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "ddccddd7-3ec3-4d96-98a8-3f31f795cd27"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"efb32d7a-a3eb-4739-88f5-5dc1df01b08d"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "86b8fc87-1d04-477c-a254-67ba8b2400cb"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"1e2b43d1-8cb9-4286-8890-4f1c884c4ed4"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/CubicSplineFunction\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/CubicSplineFunction"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+CubicSplineFunction.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$46918], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/CubicSplineFunction", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "5f2f4172-d524-4ec9-8b18-de2e4496c782"]
+    }], "AnchorBar",ExpressionUUID->"9afd0616-5a30-4a78-95c3-6db68388d848"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"79c7788e-99ea-416b-b12d-d6b35099cf7f"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["CubicSplineFunction", "ObjectName",ExpressionUUID->
+  "b31741b9-113b-4288-abda-404294fe6c89"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"933f529e-54da-4069-8b39-15cc59879854"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "91ef6ef8-0297-4f7e-acad-044d1fa769c3"]
+}], "ObjectNameGrid",ExpressionUUID->"7b01f45e-9e89-4811-a1ef-7c4ce3d9f993"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"CubicSplineFunction", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"xmin", ",", "xmax"}], "}"}], ",", "<>"}], "]"}]], 
+      "InlineFormula",ExpressionUUID->"8b28e9a5-f2e4-4d64-a159-198d1897fc45"],
+     " \[LineSeparator]is the data object representing the cubic spline \
+function determined by the data. {xmin,xmax} is the range of x-values."
+    }],ExpressionUUID->"dda2e6f3-a3af-4897-a181-9bb4b8c19eb9"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{"CubicSplineFunction", "[", 
+        RowBox[{"range", ",", "<>"}], "]"}], "[", "val", "]"}]], 
+      "InlineFormula",ExpressionUUID->"2cf4e452-ee53-410d-b5a2-e8c6b769d4d2"],
+     "\[LineSeparator]returns the value of the cubic spline fit to the data \
+at val."
+    }],ExpressionUUID->"20a13b18-2818-4087-a725-a2eafb8b2137"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"bbb369eb-a8be-4f29-8159-2b7e3fc97079"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"b15ac70d-680e-48ce-9d30-95993a67f79f"],
+   "Details"
+  }], "NotesFrameText",ExpressionUUID->"16d99fa5-06a8-4176-8dba-bbd96bd6a36f"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"ec12d484-4380-4cba-a3eb-3b9cd2f202c4"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->171081601,ExpressionUUID->"eb73bd0c-5f72-431c-88ba-0262d3ca6f1d"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"1e94e5d2-1b87-4c90-af40-b81ea58843ff"],
+
+Cell["CubicSplineFunction has no options.", "Notes",
+ CellID->1067943069,ExpressionUUID->"e6cdfe89-30ec-415e-9589-4b082ee5946a"],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"cfafa933-51e0-4446-a6a3-e7985c2d0e83"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"5e1fe31b-a80f-4df8-ac9e-267b54641640"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "7c092088-e773-4a72-8d4a-95f223e69b27"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->182867316,ExpressionUUID->"7a41c3f2-0615-4f2f-9ea9-e0af69cacf62"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "c9fb910c-b2f6-4652-b02e-c97b9463fa91"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->111816983,ExpressionUUID->"f2cb1ddd-290d-4d42-b362-a557b314630d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       SqrtBox["x"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", 
+       FractionBox["9", "4"], ",", 
+       FractionBox["1", "4"]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"cs", "=", 
+  RowBox[{"CubicSpline", "[", "data", "]"}]}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->5325104,ExpressionUUID->"2e87da96-9b83-4e2d-b271-a63245335d3d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"CubicSplineFunction[\"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "2.25`"}], "}"}], 
+   "\[InvisibleSpace]", "\<\" ,<>]\"\>"}],
+  SequenceForm["CubicSplineFunction[", {0., 2.25}, " ,<>]"],
+  Editable->False]], "Output",
+ ImageSize->{246, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->11467432,ExpressionUUID->"2f9bee32-331d-4adf-a4ed-bd3888f9ec1d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"cs", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "2.5"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->50913272,ExpressionUUID->"0263701d-80d1-4d1d-b19c-69d4e8fa9f2c"],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1: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
+AQAAAAAAAOHjfzTwI04=
+    "], {{0, 148}, {240, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{240, 148},
+  PlotRange->{{0, 240}, {0, 148}}]], "Output",
+ ImageSize->{244, 148},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[2]=",
+ CellID->183399575,ExpressionUUID->"868bc326-dc48-41fe-a414-60e85915b39c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cs", "[", "1.02", "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->338285135,ExpressionUUID->"687ff945-087b-4b1e-8f10-1fee9ff9d7de"],
+
+Cell[BoxData["1.00981462085182`"], "Output",
+ ImageSize->{53, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->44822026,ExpressionUUID->"8aa93e57-5116-4744-95a5-9e5272e3fa8c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"a5f5aae2-e25e-42fa-8e02-b68d38f23666"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"0b4ed846-d997-4ad1-9b35-25de76c6f51c"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"15127071-04dc-47af-bd69-d57b8f12880c"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"6bcd2f7e-e670-4a3b-9a3d-40ddd6312e89"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->212779488,ExpressionUUID->"2967e5d7-97ce-4963-8e0e-b2f1dfd1520a"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"cf34ef26-2514-4045-a60c-2f08049648a9"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"CubicSplineFunction",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 40, 46.5604373}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "CubicSplineFunction[{xmin, xmax}, <>] is the data object representing \
+the cubic spline function determined by the data. {xmin,xmax} is the range of \
+x-values. CubicSplineFunction[range, <>][val] returns the value of the cubic \
+spline fit to the data at val.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "CubicSplineFunction", "titlemodifier" -> "", "windowtitle" -> 
+    "CubicSplineFunction", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/CubicSplineFunction", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6903, 177, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"7a41c3f2-0615-4f2f-9ea9-e0af69cacf62",
+   CellTags->"PrimaryExamplesSection",
+   CellID->182867316]},
+ "RasterizedOutput"->{
+  Cell[8980, 246, 3899, 71, 169, "Output",ExpressionUUID->"868bc326-dc48-41fe-a414-60e85915b39c",
+   CellTags->"RasterizedOutput",
+   CellID->183399575]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 16313, 411},
+ {"RasterizedOutput", 16511, 415}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[591, 21, 3505, 78, 55, "AnchorBarGrid",ExpressionUUID->"79c7788e-99ea-416b-b12d-d6b35099cf7f",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4121, 103, 404, 9, 52, "ObjectNameGrid",ExpressionUUID->"7b01f45e-9e89-4811-a1ef-7c4ce3d9f993"],
+Cell[4528, 114, 1137, 25, 204, "Usage",ExpressionUUID->"bbb369eb-a8be-4f29-8159-2b7e3fc97079",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5702, 144, 855, 21, 37, "NotesSection",ExpressionUUID->"eb73bd0c-5f72-431c-88ba-0262d3ca6f1d",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->171081601],
+Cell[6560, 167, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"1e94e5d2-1b87-4c90-af40-b81ea58843ff"],
+Cell[6649, 169, 128, 1, 70, "Notes",ExpressionUUID->"e6cdfe89-30ec-415e-9589-4b082ee5946a",
+ CellID->1067943069],
+Cell[6780, 172, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"cfafa933-51e0-4446-a6a3-e7985c2d0e83"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6903, 177, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"7a41c3f2-0615-4f2f-9ea9-e0af69cacf62",
+ CellTags->"PrimaryExamplesSection",
+ CellID->182867316],
+Cell[CellGroupData[{
+Cell[7363, 192, 308, 7, 29, "ExampleSection",ExpressionUUID->"f2cb1ddd-290d-4d42-b362-a557b314630d",
+ CellID->111816983],
+Cell[CellGroupData[{
+Cell[7696, 203, 496, 15, 67, "Input",ExpressionUUID->"2e87da96-9b83-4e2d-b271-a63245335d3d",
+ CellID->5325104],
+Cell[8195, 220, 477, 12, 35, "Output",ExpressionUUID->"2f9bee32-331d-4adf-a4ed-bd3888f9ec1d",
+ CellID->11467432]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8709, 237, 268, 7, 26, "Input",ExpressionUUID->"0263701d-80d1-4d1d-b19c-69d4e8fa9f2c",
+ CellID->50913272],
+Cell[8980, 246, 3899, 71, 169, "Output",ExpressionUUID->"868bc326-dc48-41fe-a414-60e85915b39c",
+ CellTags->"RasterizedOutput",
+ CellID->183399575]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12916, 322, 156, 3, 26, "Input",ExpressionUUID->"687ff945-087b-4b1e-8f10-1fee9ff9d7de",
+ CellID->338285135],
+Cell[13075, 327, 228, 5, 35, "Output",ExpressionUUID->"8aa93e57-5116-4744-95a5-9e5272e3fa8c",
+ CellID->44822026]
+}, Open  ]]
+}, Open  ]],
+Cell[13330, 336, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"a5f5aae2-e25e-42fa-8e02-b68d38f23666"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13453, 341, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"15127071-04dc-47af-bd69-d57b8f12880c",
+ CellID->38303248],
+Cell[13722, 350, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"6bcd2f7e-e670-4a3b-9a3d-40ddd6312e89"],
+Cell[13811, 352, 227, 5, 70, "MoreAbout",ExpressionUUID->"2967e5d7-97ce-4963-8e0e-b2f1dfd1520a",
+ CellID->212779488]
+}, Open  ]],
+Cell[14053, 360, 78, 0, 70, "FooterCell",ExpressionUUID->"cf34ef26-2514-4045-a60c-2f08049648a9"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

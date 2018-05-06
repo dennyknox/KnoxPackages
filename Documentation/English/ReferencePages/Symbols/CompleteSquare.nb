@@ -1,0 +1,588 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     19974,        578]
+NotebookOptionsPosition[     14429,        447]
+NotebookOutlinePosition[     16638,        504]
+CellTagsIndexPosition[     16553,        499]
+WindowTitle->CompleteSquare
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "da2865e7-1991-433a-bf57-b3ee3c7c3378"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"ba1be06b-f4cc-4fc9-8193-cd745ba7df4b"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"LinearAlgebra\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/guide/LinearAlgebra"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "9cfc0c5a-9da6-497c-bce7-bb695a88178c"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"be671c70-fc57-42dc-ad73-3e7fff9c6de4"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/CompleteSquare\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/CompleteSquare"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+CompleteSquare.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$41220], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/CompleteSquare", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "f8c80a5d-c091-416e-8a07-bc0a88b2f3d8"]
+    }], "AnchorBar",ExpressionUUID->"d85e4d28-ab5c-40f7-a027-38f2a6c98185"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"a0a3dc6f-2720-4256-a2a0-fd1c52dffd8a"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"9b5b7c11-e1ee-4d38-960d-f2100a5ef257"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(4)", "ExampleCount",ExpressionUUID->
+  "c22bbd06-56b2-451e-84d6-7d20afc8368c"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->977314082,ExpressionUUID->"758e0356-82da-4ced-9447-310db6569798"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount",ExpressionUUID->
+  "feb0d1e1-583c-4641-b9a6-a35c5114d12d"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->266958567,ExpressionUUID->"09899c9d-23d2-4703-b530-d10e4b33d57d"],
+
+Cell[TextData[{
+ "Here we complete the square in ",
+ Cell[BoxData[
+  StyleBox["x", "TI"]], "InlineFormula",ExpressionUUID->
+  "7db8a95b-3f8c-4e55-a44b-62089c99312d"],
+ "."
+}], "ExampleText",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ CellID->8640851,ExpressionUUID->"50056160-df41-4844-b0a2-4219a18360bb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CompleteSquare", "[", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["x", "2"], "+", "x", "+", 
+    RowBox[{"2", " ", 
+     SuperscriptBox["y", "2"]}], "+", 
+    RowBox[{"7", " ", "y"}], "-", "14"}], ",", 
+   RowBox[{"{", "x", "}"}]}], "]"}]], "Input",
+ AspectRatioFixed->True,
+ CellLabel->"In[1]:=",
+ CellID->48187153,ExpressionUUID->"23d595e8-4945-4c89-baf9-c2a81a3087d0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox["57", "4"]}], "+", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox["1", "2"], "+", "x"}], ")"}], "2"], "+", 
+  RowBox[{"7", " ", "y"}], "+", 
+  RowBox[{"2", " ", 
+   SuperscriptBox["y", "2"]}]}]], "Output",
+ ImageSize->{161, 39},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->307163721,ExpressionUUID->"8be017a1-1d46-4a9f-a8d7-1a61ab35d7e7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "7f2dc6b7-2f2b-485f-9a8d-3fcd89ff64a3"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->6642067,ExpressionUUID->"4aad44f0-2420-46bd-8c50-e15380b2daa1"],
+
+Cell[TextData[{
+ "Here we complete the square in ",
+ Cell[BoxData[
+  StyleBox["x", "TI"]], "InlineFormula",ExpressionUUID->
+  "4ad34afa-b084-4e37-9488-b18f5b54a8d4"],
+ " and ",
+ Cell[BoxData[
+  StyleBox["y", "TI"]], "InlineFormula",ExpressionUUID->
+  "78ff383c-a0cc-48b5-adca-3716050c28c7"],
+ "."
+}], "ExampleText",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ CellID->32108121,ExpressionUUID->"e20f132f-333a-443d-b4b4-04d51acf3859"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CompleteSquare", "[", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["x", "2"], "+", "x", "+", 
+    RowBox[{"2", " ", 
+     SuperscriptBox["y", "2"]}], "+", 
+    RowBox[{"7", " ", "y"}], "-", "14"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ AspectRatioFixed->False,
+ CellLabel->"In[1]:=",
+ CellID->578653562,ExpressionUUID->"9d339668-2786-4c64-8cf3-199fc5955070"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox["163", "8"]}], "+", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox["1", "2"], "+", "x"}], ")"}], "2"], "+", 
+  RowBox[{"2", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["7", "4"], "+", "y"}], ")"}], "2"]}]}]], "Output",
+ ImageSize->{176, 39},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->301103391,ExpressionUUID->"98379b0b-5dce-4a48-85dd-7fc45430aca7"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "1edf48e3-bd82-4370-817e-641d8d11ace4"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->165131849,ExpressionUUID->"6719f912-21d3-47c4-9130-f4079cb9f28a"],
+
+Cell[TextData[{
+ Cell[BoxData[
+ "CompleteSquare"], "InlineFormula",ExpressionUUID->
+  "5544cede-9d4e-4439-9135-e1dd64bf5971"],
+ " will take symbolic coefficients."
+}], "ExampleText",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ CellID->87501205,ExpressionUUID->"6fb9ca33-f89d-46d2-9dce-b9ea56e1bf90"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CompleteSquare", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"a", "+", "b"}], ")"}], "2"], " ", 
+     SuperscriptBox["x", "2"]}], "+", 
+    RowBox[{"c", " ", "x"}], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"d", "+", "x"}], ")"}], "2"], "+", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"y", "+", "c", "+", "d"}], ")"}], "2"], "+", "y"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ PageBreakBelow->Automatic,
+ AspectRatioFixed->True,
+ CellLabel->"In[1]:=",
+ CellID->66175518,ExpressionUUID->"f983c515-fd20-40ee-bd01-d2bbc9092701"],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["c", "2"], "+", 
+  RowBox[{"2", " ", "c", " ", "d"}], "+", 
+  RowBox[{"2", " ", 
+   SuperscriptBox["d", "2"]}], "-", 
+  FractionBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"c", "+", 
+      RowBox[{"2", " ", "d"}]}], ")"}], "2"], 
+   RowBox[{"4", " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"a", "+", "b"}], ")"}], "2"]}], ")"}]}]], "-", 
+  RowBox[{
+   FractionBox["1", "4"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      RowBox[{"2", " ", "c"}], "+", 
+      RowBox[{"2", " ", "d"}]}], ")"}], "2"]}], "+", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"1", "+", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"a", "+", "b"}], ")"}], "2"]}], ")"}], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"c", "+", 
+        RowBox[{"2", " ", "d"}]}], 
+       RowBox[{"2", " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"a", "+", "b"}], ")"}], "2"]}], ")"}]}]], "+", "x"}], 
+     ")"}], "2"]}], "+", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        RowBox[{"2", " ", "c"}], "+", 
+        RowBox[{"2", " ", "d"}]}], ")"}]}], "+", "y"}], ")"}], 
+   "2"]}]], "Output",
+ ImageSize->{379, 89},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->46211296,ExpressionUUID->"b0d4d4f0-018c-4a92-a744-c4c94e545447"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Possible Issues",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "e9cf1035-459a-47f6-b934-51f4e2c8fb4c"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1305812373,ExpressionUUID->"9df4255f-232d-4017-99fb-e392599f1fe0"],
+
+Cell[TextData[{
+ "If the expression is not a degree-two polynomial in the given variables, ",
+ Cell[BoxData[
+ "CompleteSquare"], "InlineFormula",ExpressionUUID->
+  "9cc7beb6-7d74-4421-a6bb-b9ac2ab66048"],
+ " will return an error message."
+}], "ExampleText",
+ Evaluatable->False,
+ AspectRatioFixed->True,
+ CellID->187548271,ExpressionUUID->"9a7ae84c-bfb0-41ba-85d5-eae5cf8f9dc5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CompleteSquare", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Exp", "[", 
+     SuperscriptBox["x", "2"], "]"}], "+", 
+    RowBox[{"c", " ", "x"}], "+", 
+    SuperscriptBox["y", "2"], "+", "y", "+", "1"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ PageBreakBelow->Automatic,
+ AspectRatioFixed->True,
+ CellLabel->"In[1]:=",
+ CellID->45293833,ExpressionUUID->"bc2a950e-4a82-4f31-8df0-db88f5a604b9"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Poly","notpoly",
+   "\"The input expression \\!\\(\\*RowBox[{\\\"1\\\", \\\"+\\\", \
+SuperscriptBox[\\\"\[ExponentialE]\\\", SuperscriptBox[\\\"x\\\", \
+\\\"2\\\"]], \\\"+\\\", RowBox[{\\\"c\\\", \\\" \\\", \\\"x\\\"}], \\\"+\\\", \
+\\\"y\\\", \\\"+\\\", SuperscriptBox[\\\"y\\\", \\\"2\\\"]}]\\) is not a \
+polynomial in the specified variable(s) \\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{\\\"x\\\", \\\",\\\", \\\"y\\\"}], \\\"}\\\"}]\\).\"",2,17,3,
+   21539319463934997272,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->211404072,ExpressionUUID->"1bb8a334-7316-46ce-90f3-126f71cde446"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CompleteSquare", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"c", " ", "x"}], "+", 
+    SuperscriptBox["y", "3"], "+", "y", "+", "1"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ PageBreakBelow->Automatic,
+ AspectRatioFixed->True,
+ CellLabel->"In[2]:=",
+ CellID->680299484,ExpressionUUID->"73529e1d-7e0b-4516-b6de-a565b42fef94"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Poly","degree",
+   "\"The input polynomial \\!\\(\\*RowBox[{\\\"1\\\", \\\"+\\\", \
+RowBox[{\\\"c\\\", \\\" \\\", \\\"x\\\"}], \\\"+\\\", \\\"y\\\", \\\"+\\\", \
+SuperscriptBox[\\\"y\\\", \\\"3\\\"]}]\\) is not a polynomial of degree \
+\\!\\(\\*RowBox[{\\\"2\\\"}]\\) in the specified variable(s) \
+\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"x\\\", \\\",\\\", \\\"y\\\"}], \
+\\\"}\\\"}]\\).\"",2,18,4,21539319463934997272,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->"During evaluation of In[2]:=",
+ CellID->161000534,ExpressionUUID->"24ac6d1d-e6bf-44d1-803c-85e53f5273be"]
+}, Open  ]]
+}, Closed]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"b4080168-c72c-4034-b5b0-6a311d50735d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"151dce8d-2da0-4103-a02a-9da9f3525a91"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"d31ac77b-23d7-4a13-8286-bcda504fbebc"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"cd630163-c678-4786-aaea-e3eead83c073"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["LinearAlgebra"]],"paclet:KnoxPackages/guide/LinearAlgebra"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->8373116,ExpressionUUID->"39ff0d88-db60-4a95-a444-1005fb32c93a"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"4f61e162-7f28-43ac-9fa6-8b3cef928fd9"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"CompleteSquare",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 40, 3.4201206}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {"{Complete Square CompleteSquare}"}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "Knox Packages Symbol", "language" -> "en", "paclet" -> 
+    "KnoxPackages", "status" -> "None", "summary" -> " ", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "CompleteSquare", "titlemodifier" -> "", 
+    "windowtitle" -> "CompleteSquare", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/CompleteSquare", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[4092, 102, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"758e0356-82da-4ced-9447-310db6569798",
+   CellTags->"PrimaryExamplesSection",
+   CellID->977314082]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 16355, 492}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[586, 21, 3481, 77, 55, "AnchorBarGrid",ExpressionUUID->"a0a3dc6f-2720-4256-a2a0-fd1c52dffd8a",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4092, 102, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"758e0356-82da-4ced-9447-310db6569798",
+ CellTags->"PrimaryExamplesSection",
+ CellID->977314082],
+Cell[CellGroupData[{
+Cell[4552, 117, 308, 7, 29, "ExampleSection",ExpressionUUID->"09899c9d-23d2-4703-b530-d10e4b33d57d",
+ CellID->266958567],
+Cell[4863, 126, 309, 9, 38, "ExampleText",ExpressionUUID->"50056160-df41-4844-b0a2-4219a18360bb",
+ Evaluatable->False,
+ CellID->8640851],
+Cell[CellGroupData[{
+Cell[5197, 139, 394, 11, 32, "Input",ExpressionUUID->"23d595e8-4945-4c89-baf9-c2a81a3087d0",
+ CellID->48187153],
+Cell[5594, 152, 465, 15, 60, "Output",ExpressionUUID->"8be017a1-1d46-4a9f-a8d7-1a61ab35d7e7",
+ CellID->307163721]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6096, 172, 240, 5, 8, "ExampleDelimiter",ExpressionUUID->"4aad44f0-2420-46bd-8c50-e15380b2daa1",
+ CellID->6642067],
+Cell[6339, 179, 435, 13, 38, "ExampleText",ExpressionUUID->"e20f132f-333a-443d-b4b4-04d51acf3859",
+ Evaluatable->False,
+ CellID->32108121],
+Cell[CellGroupData[{
+Cell[6799, 196, 421, 12, 32, "Input",ExpressionUUID->"9d339668-2786-4c64-8cf3-199fc5955070",
+ CellID->578653562],
+Cell[7223, 210, 509, 17, 60, "Output",ExpressionUUID->"98379b0b-5dce-4a48-85dd-7fc45430aca7",
+ CellID->301103391]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7781, 233, 242, 5, 8, "ExampleDelimiter",ExpressionUUID->"6719f912-21d3-47c4-9130-f4079cb9f28a",
+ CellID->165131849],
+Cell[8026, 240, 302, 8, 38, "ExampleText",ExpressionUUID->"6fb9ca33-f89d-46d2-9dce-b9ea56e1bf90",
+ Evaluatable->False,
+ CellID->87501205],
+Cell[CellGroupData[{
+Cell[8353, 252, 670, 21, 32, "Input",ExpressionUUID->"f983c515-fd20-40ee-bd01-d2bbc9092701",
+ PageBreakBelow->Automatic,
+ CellID->66175518],
+Cell[9026, 275, 1612, 57, 110, "Output",ExpressionUUID->"b0d4d4f0-018c-4a92-a744-c4c94e545447",
+ CellID->46211296]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10699, 339, 310, 7, 29, "ExampleSection",ExpressionUUID->"9df4255f-232d-4017-99fb-e392599f1fe0",
+ CellID->1305812373],
+Cell[11012, 348, 378, 9, 70, "ExampleText",ExpressionUUID->"9a7ae84c-bfb0-41ba-85d5-eae5cf8f9dc5",
+ Evaluatable->False,
+ CellID->187548271],
+Cell[CellGroupData[{
+Cell[11415, 361, 453, 13, 70, "Input",ExpressionUUID->"bc2a950e-4a82-4f31-8df0-db88f5a604b9",
+ PageBreakBelow->Automatic,
+ CellID->45293833],
+Cell[11871, 376, 673, 12, 70, "Message",ExpressionUUID->"1bb8a334-7316-46ce-90f3-126f71cde446",
+ CellID->211404072]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12581, 393, 385, 11, 70, "Input",ExpressionUUID->"73529e1d-7e0b-4516-b6de-a565b42fef94",
+ PageBreakBelow->Automatic,
+ CellID->680299484],
+Cell[12969, 406, 620, 11, 70, "Message",ExpressionUUID->"24ac6d1d-e6bf-44d1-803c-85e53f5273be",
+ CellID->161000534]
+}, Open  ]]
+}, Closed]],
+Cell[13616, 421, 86, 0, 29, "SectionFooterSpacer",ExpressionUUID->"b4080168-c72c-4034-b5b0-6a311d50735d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13739, 426, 266, 7, 72, "MoreAboutSection",ExpressionUUID->"d31ac77b-23d7-4a13-8286-bcda504fbebc",
+ CellID->38303248],
+Cell[14008, 435, 86, 0, 14, "SectionHeaderSpacer",ExpressionUUID->"cd630163-c678-4786-aaea-e3eead83c073"],
+Cell[14097, 437, 235, 5, 24, "MoreAbout",ExpressionUUID->"39ff0d88-db60-4a95-a444-1005fb32c93a",
+ CellID->8373116]
+}, Open  ]],
+Cell[14347, 445, 78, 0, 70, "FooterCell",ExpressionUUID->"4f61e162-7f28-43ac-9fa6-8b3cef928fd9"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

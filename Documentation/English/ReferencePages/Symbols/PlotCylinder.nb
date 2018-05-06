@@ -1,0 +1,875 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28802,        866]
+NotebookOptionsPosition[     21641,        720]
+NotebookOutlinePosition[     24197,        777]
+CellTagsIndexPosition[     24112,        772]
+WindowTitle->PlotCylinder
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/PlotCylinder\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/PlotCylinder"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+PlotCylinder.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$144691], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/PlotCylinder", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[TextData[{
+ Cell["PlotCylinder", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["PlotCylinder"]],"paclet:KnoxPackages/ref/PlotCylinder"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        RowBox[{"{", 
+         StyleBox[
+          RowBox[{
+           RowBox[{
+            SubscriptBox["f", "x"], "[", "t", "]"}], ",", 
+           RowBox[{
+            SubscriptBox["f", "y"], "[", "t", "]"}], ",", "h"}], "TI"], "}"}],
+         ",", 
+        RowBox[{"{", 
+         StyleBox[
+          RowBox[{"t", ",", 
+           SubscriptBox["t", "min"], ",", 
+           SubscriptBox["t", "max"]}], "TI"], "}"}], ",", 
+        RowBox[{"{", 
+         StyleBox[
+          RowBox[{"h", ",", 
+           SubscriptBox["h", "min"], ",", 
+           SubscriptBox["h", "max"]}], "TI"], "}"}]}], "]"}]], 
+      "InlineFormula"],
+     " \[LineSeparator]plots a cylinder over the base curve ",
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{"{", 
+        StyleBox[
+         RowBox[{"x", ",", "y"}], "TI"], "}"}], "=", 
+       RowBox[{"{", 
+        StyleBox[
+         RowBox[{
+          RowBox[{
+           SubscriptBox["f", "x"], 
+           RowBox[{"(", "t", ")"}]}], ",", 
+          RowBox[{
+           SubscriptBox["f", "y"], 
+           RowBox[{"(", "t", ")"}]}]}], "TI"], "}"}]}]], "InlineFormula"],
+     " with height determined by ",
+     Cell[BoxData[
+      StyleBox[
+       SubscriptBox["h", "min"], "TI"]], "InlineFormula"],
+     " and ",
+     Cell[BoxData[
+      StyleBox[
+       SubscriptBox["h", "max"], "TI"]], "InlineFormula"],
+     ".  Several base curves can be given."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["PlotCylinder"]],"paclet:KnoxPackages/ref/PlotCylinder"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        RowBox[{"{", 
+         StyleBox[
+          RowBox[{
+           RowBox[{
+            SubscriptBox["f", "x"], "[", "t", "]"}], ",", "h", ",", 
+           RowBox[{
+            SubscriptBox[
+             StyleBox["f", "TI"], "z"], "[", "t", "]"}]}], "TI"], "}"}], ",", 
+        
+        RowBox[{"{", 
+         StyleBox[
+          RowBox[{"t", ",", 
+           SubscriptBox["t", "min"], ",", 
+           SubscriptBox["t", "max"]}], "TI"], "}"}], ",", 
+        RowBox[{"{", 
+         StyleBox[
+          RowBox[{"h", ",", 
+           SubscriptBox["h", "min"], ",", 
+           SubscriptBox["h", "max"]}], "TI"], "}"}]}], "]"}]], 
+      "InlineFormula"],
+     "\[LineSeparator]plots a cylinder over the base curve ",
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{"{", 
+        StyleBox[
+         RowBox[{"x", ",", "z"}], "TI"], "}"}], "=", 
+       RowBox[{"{", 
+        StyleBox[
+         RowBox[{
+          RowBox[{
+           SubscriptBox["f", "x"], 
+           RowBox[{"(", "t", ")"}]}], ",", 
+          RowBox[{
+           SubscriptBox["f", "z"], 
+           RowBox[{"(", "t", ")"}]}]}], "TI"], "}"}]}]], "InlineFormula"],
+     " with height determined by ",
+     Cell[BoxData[
+      StyleBox[
+       SubscriptBox["h", "min"], "TI"]], "InlineFormula"],
+     " and ",
+     Cell[BoxData[
+      StyleBox[
+       SubscriptBox["h", "max"], "TI"]], "InlineFormula"],
+     ".  Several base curves can be given."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["PlotCylinder"]],"paclet:KnoxPackages/ref/PlotCylinder"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        RowBox[{"{", 
+         StyleBox[
+          RowBox[{
+           RowBox[{
+            StyleBox["f", "TI"], 
+            StyleBox["[", "TI"], "t", "]"}], ",", 
+           RowBox[{"g", "[", "t", "]"}], ",", 
+           RowBox[{"h", "[", "t", "]"}]}], "TI"], "}"}], ",", 
+        RowBox[{"{", 
+         StyleBox[
+          RowBox[{"t", ",", 
+           SubscriptBox["t", "min"], ",", 
+           SubscriptBox["t", "max"]}], "TI"], "}"}]}], "]"}]], 
+      "InlineFormula"],
+     "\[LineSeparator]plots a cylinder over the base curve ",
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{"{", 
+        StyleBox[
+         RowBox[{"x", ",", "y"}], "TI"], "}"}], "=", 
+       RowBox[{"{", 
+        StyleBox[
+         RowBox[{
+          RowBox[{"f", 
+           RowBox[{"(", "t", ")"}]}], ",", 
+          RowBox[{"g", 
+           RowBox[{"(", "t", ")"}]}]}], "TI"], "}"}]}]], "InlineFormula"],
+     " with height determined by ",
+     Cell[BoxData[
+      RowBox[{
+       StyleBox["h", "TI"], 
+       RowBox[{"(", 
+        StyleBox["t", "TI"], ")"}]}]], "InlineFormula"],
+     ".  Several base curves can be given."
+    }]]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["PlotCylinder"]],"paclet:KnoxPackages/ref/PlotCylinder"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           SubscriptBox[
+            StyleBox["f", "TI"], 
+            StyleBox["1", "TR"]], 
+           StyleBox["[", "TI"], 
+           StyleBox["t", "TI"], 
+           StyleBox["]", "TI"]}], 
+          StyleBox[",", "TI"], 
+          RowBox[{
+           SubscriptBox[
+            StyleBox["g", "TI"], 
+            StyleBox["2", "TR"]], 
+           StyleBox["[", "TI"], 
+           StyleBox["t", "TI"], 
+           StyleBox["]", "TI"]}], 
+          StyleBox[",", "TI"], 
+          RowBox[{
+           SubscriptBox[
+            StyleBox["h", "TI"], 
+            StyleBox["3", "TR"]], 
+           StyleBox["[", "TI"], 
+           StyleBox["t", "TI"], 
+           StyleBox["]", "TI"]}]}], "}"}], ",", 
+        RowBox[{"{", 
+         StyleBox[
+          RowBox[{"t", ",", 
+           SubscriptBox["t", "min"], ",", 
+           SubscriptBox["t", "max"]}], "TI"], "}"}], ",", 
+        StyleBox[
+         RowBox[{"Base", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", "j"}], "}"}]}], "TI"]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]plots a cylinder over the base curve ",
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{"{", 
+        StyleBox[
+         RowBox[{"y", ",", "z"}], "TI"], "}"}], "=", 
+       RowBox[{"{", 
+        StyleBox[
+         RowBox[{
+          RowBox[{"g", 
+           RowBox[{"(", "t", ")"}]}], ",", 
+          RowBox[{"h", 
+           RowBox[{"(", "t", ")"}]}]}], "TI"], "}"}]}]], "InlineFormula"],
+     " with height determined by ",
+     Cell[BoxData[
+      RowBox[{
+       SubscriptBox[
+        StyleBox["f", "TI"], 
+        StyleBox["k", "TI"]], 
+       RowBox[{"(", 
+        StyleBox["t", "TI"], ")"}]}]], "InlineFormula"],
+     " , ",
+     Cell[BoxData[
+      StyleBox["k", "TI"]], "InlineFormula"],
+     " different from ",
+     Cell[BoxData[
+      StyleBox["i", "TI"]], "InlineFormula"],
+     " and ",
+     Cell[BoxData[
+      StyleBox["j", "TI"]], "InlineFormula"],
+     ".  Several base curves can be given."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, 
+   "Rows" -> {None, None, None, {None}}, "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ ButtonBox["PlotCylinder",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/PlotCylinder"],
+ " has the same options as ",
+ ButtonBox["ParametricPlot3D",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/ParametricPlot3D"],
+ ", with the following additions and changes:"
+}], "Notes",
+ CellID->1067943069],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["Base",
+     BaseStyle->"Link",
+     ButtonData->"paclet:KnoxPackages/ref/Base"], 
+    RowBox[{"{", 
+     RowBox[{"1", ",", " ", "2"}], "}"}], Cell[TextData[{
+     "determines the base plane ",
+     Cell[BoxData[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         StyleBox["x", "TI"], "=", "1"}], ",", 
+        RowBox[{
+         StyleBox["y", "TI"], "=", "2"}], ",", 
+        RowBox[{
+         StyleBox["z", "TI"], "=", "3"}]}], ")"}]], "InlineFormula"]
+    }], "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True}}}},
+ CellID->86599117],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(7)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(6)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1],
+
+Cell["Here is a simple plot of a vertical cylinder", "ExampleText",
+ CellID->5841652],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotCylinder", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", 
+     RowBox[{"Sin", "[", "\[Theta]", "]"}], ",", "h"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", "0", ",", 
+     RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"h", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->27068452],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->5577863],
+
+Cell["Here is another cylinder", "ExampleText",
+ CellID->704414595],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotCylinder", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"\[Pi]", " ", "\[Theta]"}], "]"}], ",", "h"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"h", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->678327092]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->7135827],
+
+Cell["We can plot multiple verticle cylinders", "ExampleText",
+ CellID->228525863],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotCylinder", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h", ",", " ", 
+       RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", " ", 
+       RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", " ", "\n", "   ", 
+       RowBox[{"Sin", "[", "\[Theta]", "]"}], ",", " ", "h"}], "}"}]}], "}"}],
+    ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", " ", "0", ",", " ", 
+     RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"h", ",", " ", 
+     RowBox[{"-", "2"}], ",", " ", "2"}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->793705671]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->42127878],
+
+Cell["Here we have three cylinders", "ExampleText",
+ CellID->350427624],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotCylinder", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h", ",", 
+       RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", 
+       RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", 
+       RowBox[{"Sin", "[", "\[Theta]", "]"}], ",", "h"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", "h", ",", 
+       RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", "0", ",", 
+     RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"h", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->72900776]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->20113306],
+
+Cell["This is a cylinder with varying height", "ExampleText",
+ CellID->1754036],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotCylinder", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Cos", "[", 
+      RowBox[{"\[Pi]", " ", "\[Theta]"}], "]"}], ",", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"\[Pi]", " ", "\[Theta]"}], "]"}], ",", 
+     RowBox[{"Cos", "[", 
+      RowBox[{"2", " ", "\[Pi]", " ", "\[Theta]"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->921519711]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->265746703],
+
+Cell["Here are two cylinders with varying height", "ExampleText",
+ CellID->102701013],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotCylinder", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", 
+       RowBox[{"Sin", "[", "\[Theta]", "]"}], ",", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"2", " ", "\[Theta]"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"2", " ", 
+        RowBox[{"Cos", "[", "\[Theta]", "]"}]}], ",", 
+       RowBox[{"Sin", "[", "\[Theta]", "]"}], ",", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"5", " ", "\[Theta]"}], "]"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", "0", ",", 
+     RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->236263214]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Base",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783],
+
+Cell[TextData[{
+ "Here is a cylinder with its base in the yz-plane (hence the {2,3}).  Note \
+that ",
+ ButtonBox["Base",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/Base"],
+ " only works with three functions of \[Theta]."
+}], "ExampleText",
+ CellID->26389469],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotCylinder", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"], ",", 
+     RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"2", " ", "\[Theta]"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", "0", ",", 
+     RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"Base", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "3"}], "}"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->517670584],
+
+Cell[BoxData[
+ RowBox[{"PlotCylinder", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"], ",", 
+     RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"2", " ", "\[Theta]"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", "0", ",", 
+     RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"Base", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "3"}], "}"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1863091994]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SectionFooterSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"PlotCylinder",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 49, 20.0448726}", 
+    "history" -> {"6.0.2", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "PlotCylinder[{fx[t], fy[t], h}, {t, tmin, tmax}, {h, hmin, hmax}] plots \
+a cylinder over the base curve {x, y} = {fx (t), fy (t)} with height \
+determined by hmin and hmax. Several base curves can be given. \
+PlotCylinder[{fx[t], h, f z[t]}, {t, tmin, tmax}, {h, hmin, hmax}] plots a \
+cylinder over the base curve {x, z} = {fx (t), fz (t)} with height determined \
+by hmin and hmax. Several base curves can be given. PlotCylinder[{f[t], g[t], \
+h[t]}, {t, tmin, tmax}] plots a cylinder over the base curve {x, y} = {f (t), \
+g (t)} with height determined by h (t). Several base curves can be given. \
+PlotCylinder[{f1[t], g2[t], h3[t]}, {t, tmin, tmax}, Base -> {i, j}] plots a \
+cylinder over the base curve {y, z} = {g (t), h (t)} with height determined \
+by fk (t) , k different from i and j. Several base curves can be given.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "PlotCylinder", 
+    "titlemodifier" -> "", "windowtitle" -> "PlotCylinder", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/PlotCylinder"}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[12849, 403, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"facf9171-1f21-438f-b403-0e7bf6dfe487",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 23921, 765}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[584, 21, 3059, 74, 70, "AnchorBarGrid",ExpressionUUID->"91b3b156-50c4-4c4f-9f4c-a59eecbec0a6",
+ CellID->1],
+Cell[3646, 97, 169, 6, 70, "ObjectNameGrid",ExpressionUUID->"a8f3df32-02bc-4eeb-b9a4-240349f9f110"],
+Cell[3818, 105, 7147, 228, 70, "Usage",ExpressionUUID->"6f0cb5ea-ef17-46f2-bc79-fffc2127691b",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[10990, 337, 633, 19, 70, "NotesSection",ExpressionUUID->"44fceed2-1c13-405d-9a07-91dff8e99f55",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+Cell[11626, 358, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"80762272-39ad-470e-8541-f49195fc36fb"],
+Cell[11660, 360, 327, 10, 70, "Notes",ExpressionUUID->"eda5d58f-e0ff-45b6-9660-4683467a0d28",
+ CellID->1067943069],
+Cell[11990, 372, 788, 24, 70, "3ColumnTableMod",ExpressionUUID->"06a8c06f-f27d-4681-b889-103cbeb58459",
+ CellID->86599117],
+Cell[12781, 398, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"219c7c22-8c90-4afa-8672-df41712812ff"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[12849, 403, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"facf9171-1f21-438f-b403-0e7bf6dfe487",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[13133, 417, 187, 6, 70, "ExampleSection",ExpressionUUID->"df6fc429-7d9f-4646-981b-326c7c958bd5",
+ CellID->1],
+Cell[13323, 425, 85, 1, 70, "ExampleText",ExpressionUUID->"fccf806c-d6de-4c8f-a765-a4a2864b83e3",
+ CellID->5841652],
+Cell[13411, 428, 580, 16, 70, "Input",ExpressionUUID->"d0977506-991c-4f24-afdd-91c4798f0907",
+ CellID->27068452],
+Cell[CellGroupData[{
+Cell[14016, 448, 123, 3, 70, "ExampleDelimiter",ExpressionUUID->"ecf2e1ef-4f91-497d-8183-603f4f06aa7a",
+ CellID->5577863],
+Cell[14142, 453, 67, 1, 70, "ExampleText",ExpressionUUID->"48b3b476-6b41-49e4-bdd9-be020f46df4a",
+ CellID->704414595],
+Cell[14212, 456, 549, 15, 70, "Input",ExpressionUUID->"794aec78-b7b0-4fde-a439-7a297b1f2450",
+ CellID->678327092]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14798, 476, 123, 3, 70, "ExampleDelimiter",ExpressionUUID->"26a7e491-5678-4f07-85f6-db86eee1e96d",
+ CellID->7135827],
+Cell[14924, 481, 82, 1, 70, "ExampleText",ExpressionUUID->"51baf35d-66ce-41e6-b815-b212b48e4fdf",
+ CellID->228525863],
+Cell[15009, 484, 878, 24, 70, "Input",ExpressionUUID->"3b5b3552-327c-4d62-b700-26e07dd19634",
+ CellID->793705671]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15924, 513, 124, 3, 70, "ExampleDelimiter",ExpressionUUID->"f27e6882-dc74-4314-9bb1-c59c7cca34c2",
+ CellID->42127878],
+Cell[16051, 518, 71, 1, 70, "ExampleText",ExpressionUUID->"eb05e30a-a434-462d-9136-6ab053318eba",
+ CellID->350427624],
+Cell[16125, 521, 962, 27, 70, "Input",ExpressionUUID->"392f62c8-b0f1-46d6-9835-4727c420e77b",
+ CellID->72900776]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17124, 553, 124, 3, 70, "ExampleDelimiter",ExpressionUUID->"7d5c66b2-37b2-40fb-9569-9e6989c5f06c",
+ CellID->20113306],
+Cell[17251, 558, 79, 1, 70, "ExampleText",ExpressionUUID->"faeaf9d6-5063-424f-a133-25426012645f",
+ CellID->1754036],
+Cell[17333, 561, 625, 17, 70, "Input",ExpressionUUID->"6918880e-7685-498d-b8d0-64b83565df1f",
+ CellID->921519711]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17995, 583, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"26d3955e-842a-49a8-9674-2d0bc193cc39",
+ CellID->265746703],
+Cell[18123, 588, 85, 1, 70, "ExampleText",ExpressionUUID->"153ab08d-1958-4fc1-bea9-8e4be06ffd82",
+ CellID->102701013],
+Cell[18211, 591, 887, 25, 70, "Input",ExpressionUUID->"0cce5d6e-f293-43aa-b450-53f50dfb510b",
+ CellID->236263214]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19147, 622, 189, 6, 70, "ExampleSection",ExpressionUUID->"485e6307-ef50-4d95-9844-2efea35ee57f",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[19361, 632, 192, 6, 70, "ExampleSubsection",ExpressionUUID->"ea56288f-45af-4cec-b5f9-157b9a658839",
+ CellID->1757724783],
+Cell[19556, 640, 275, 8, 70, "ExampleText",ExpressionUUID->"7715f63d-5a29-4b83-84a0-2444a51f86a7",
+ CellID->26389469],
+Cell[19834, 650, 701, 20, 70, "Input",ExpressionUUID->"ccf3d755-e406-437e-9519-6a79ffe94ddd",
+ CellID->517670584],
+Cell[20538, 672, 609, 18, 70, "Input",ExpressionUUID->"0ebaba5d-328e-437e-bc6d-1265d4e3662f",
+ CellID->1863091994]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21208, 697, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"a46b8866-2e16-4c72-902d-4a38fa4b2c90"],
+Cell[21242, 699, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"b4bf1939-82f9-4e70-852e-f789a57092a8",
+ CellID->38303248],
+Cell[21401, 708, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"b8ae2b00-c355-49ab-a2f2-2d59859fd4d1"],
+Cell[21435, 710, 164, 5, 70, "MoreAbout",ExpressionUUID->"7fa2cf3b-5a2e-4668-93f9-9e7d6524ba06",
+ CellID->1]
+}, Open  ]],
+Cell[21614, 718, 23, 0, 70, "FooterCell",ExpressionUUID->"7ab5ebeb-7943-4fa5-a158-e3e0a9ad4015"]
+}
+]
+*)
+
+(* End of internal cache information *)

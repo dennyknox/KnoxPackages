@@ -1,0 +1,610 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21389,        600]
+NotebookOptionsPosition[     15939,        482]
+NotebookOutlinePosition[     18002,        533]
+CellTagsIndexPosition[     17917,        528]
+WindowTitle->TableDerivatives
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "4750af0e-3083-4a66-b6cc-165cea4499c4"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"f8726687-22dc-44af-8fb3-491dbd863be1"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "db1b77a1-ba8d-4a10-9942-4337d8e27583"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"ac1c8ba6-f092-4003-9e61-034e0699e233"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/TableDerivatives\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/TableDerivatives"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+TableDerivatives.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$227940], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/TableDerivatives", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "f2761240-1543-4be5-8a2a-ef860ffe89e9"]
+    }], "AnchorBar",ExpressionUUID->"8143bb01-ef2e-4868-b8f5-268100206f58"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"f877659b-9e80-4cb0-bb1e-2f4bf7430de3"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["TableDerivatives", "ObjectName",ExpressionUUID->
+  "2a5094ca-0583-4f1a-9900-779acaa6b270"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"242b50f8-d4be-4267-b1f7-bfeb11e39108"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "10829d49-cb1f-4aa6-b660-7d866d7be154"]
+}], "ObjectNameGrid",ExpressionUUID->"d468d068-fcba-4f6f-aae8-a432519377f6"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["TableDerivatives"]],
+         "paclet:KnoxPackages/ref/TableDerivatives"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["f", "TI"], ",", 
+        StyleBox[
+         RowBox[{"{", 
+          RowBox[{"x", ",", "y", ",", "..."}], "}"}], "TI"], ",", 
+        StyleBox["n", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "af802f35-ee6e-4b2d-8288-53029a14be76"],
+     " \[LineSeparator]gives a table of the derivatives of the function ",
+     StyleBox["f", "TI"],
+     " of the variables ",
+     Cell[BoxData[
+      RowBox[{
+       StyleBox["x", "TI"], ",", 
+       StyleBox["y", "TI"], ",", "..."}]], "InlineFormula",ExpressionUUID->
+      "5963e6e1-b871-4b00-980c-788ded1f81d2"],
+     " of order ",
+     StyleBox["j", "TI"],
+     StyleBox[",", "TI",
+      FontSlant->"Plain"],
+     " ",
+     Cell[BoxData[
+      StyleBox[
+       RowBox[{"0", "\[LessEqual]", "j", "\[LessEqual]", "n"}], "TI"]], 
+      "InlineFormula",ExpressionUUID->"890a4ab3-d8cf-4dec-8df3-2398fe604851"],
+     "."
+    }],ExpressionUUID->"4cbd51bf-40b9-4608-afa2-f4a210767e3f"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["TableDerivatives"]],
+         "paclet:KnoxPackages/ref/TableDerivatives"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["f", "TI"], ",", 
+        StyleBox[
+         RowBox[{"{", 
+          RowBox[{"x", ",", "y", ",", "..."}], "}"}], "TI"], ",", 
+        RowBox[{"{", 
+         StyleBox["n", "TI"], "}"}]}], "]"}]], "InlineFormula",
+      ExpressionUUID->"3d9d2ca3-1b54-440a-9e03-b3bbc1b3482f"],
+     "\[LineSeparator]gives a table of the derivatives of the order ",
+     StyleBox["n", "TI"],
+     "."
+    }],ExpressionUUID->"8ea376b3-7696-44e4-969d-5bd1e94a10bc"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"9304e90f-c051-4c2f-8cd3-b40643a87e44"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"75ade1bc-0843-4a38-b459-0559b40ff574"],
+   "Details"
+  }], "NotesFrameText",ExpressionUUID->"5e58c746-34ed-4ee8-9816-89f1769cda87"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"5dd2e262-50bb-4268-8f9e-f3ec2d39e849"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->411916395,ExpressionUUID->"0e496fad-55c3-4443-93b4-bff0873a826f"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"489a8cd7-248b-42d7-86f0-ecb87f814ed8"],
+
+Cell[TextData[{
+ ButtonBox["TableDerivatives",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/TableDerivatives"],
+ " has no options."
+}], "Notes",
+ CellID->1067943069,ExpressionUUID->"41f5bc1f-c6e8-4c49-a201-97fa493082f1"],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"14c17cfa-c673-4ef0-91d3-1a2c8aff5170"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"6d5337d6-a395-4bbc-932d-e9af395ad9da"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "e997bb08-b551-45bc-8007-d2e034ec9897"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->161037379,ExpressionUUID->"e6aee3f2-e7f1-4bfa-80b8-d6027609bb21"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(2)", "ExampleCount",ExpressionUUID->
+  "4676568a-b4fc-4da3-a5bf-349915c28a2b"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->381752000,ExpressionUUID->"5417ca3f-4bb6-43e5-a62a-6833bb9904f1"],
+
+Cell["Here is a basic example in one variable:", "ExampleText",
+ CellID->1096681963,ExpressionUUID->"29724f4a-000c-471d-af61-13d4e9a7a3a9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"TableDerivatives", "[", 
+  RowBox[{
+   RowBox[{"Tan", "[", 
+    SuperscriptBox["x", "5"], "]"}], ",", "x", ",", "2"}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2145882289,ExpressionUUID->"df726f8d-877f-4005-828f-2c4774ab8508"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Tan", "[", 
+    SuperscriptBox["x", "5"], "]"}], ",", 
+   RowBox[{"5", " ", 
+    SuperscriptBox["x", "4"], " ", 
+    SuperscriptBox[
+     RowBox[{"Sec", "[", 
+      SuperscriptBox["x", "5"], "]"}], "2"]}], ",", 
+   RowBox[{
+    RowBox[{"20", " ", 
+     SuperscriptBox["x", "3"], " ", 
+     SuperscriptBox[
+      RowBox[{"Sec", "[", 
+       SuperscriptBox["x", "5"], "]"}], "2"]}], "+", 
+    RowBox[{"50", " ", 
+     SuperscriptBox["x", "8"], " ", 
+     SuperscriptBox[
+      RowBox[{"Sec", "[", 
+       SuperscriptBox["x", "5"], "]"}], "2"], " ", 
+     RowBox[{"Tan", "[", 
+      SuperscriptBox["x", "5"], "]"}]}]}]}], "}"}]], "Output",
+ ImageSize->{406, 20},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->490021933,ExpressionUUID->"c67f8096-c295-4bac-8de8-41c9e817d000"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "7fbf3fc0-0b23-4cc1-9ed9-7ed08a56a6db"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->1898300024,ExpressionUUID->"a2d0d7c2-ef2c-4283-8c1d-3a4208beb0b5"],
+
+Cell[TextData[{
+ "Here we table the derivatives of a general function ",
+ Cell[BoxData[
+  RowBox[{
+   StyleBox["f", "TI"], 
+   StyleBox["[", "TI"], 
+   RowBox[{
+    StyleBox["x", "TI"], ",", 
+    StyleBox["y", "TI"]}], 
+   StyleBox["]", "TI"]}]], "InlineFormula",ExpressionUUID->
+  "c18503d4-50dd-4a82-98be-3d9665fab83f"],
+ " for both variables:"
+}], "ExampleText",
+ CellID->957780492,ExpressionUUID->"3008045d-b8ed-4847-82c7-3f79d29c5a83"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Clear", "[", "f", "]"}], "\n", 
+ RowBox[{"\t", 
+  RowBox[{"TableDerivatives", "[", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"x", ",", "y"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}], ",", "2"}], "]"}]}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1802016993,ExpressionUUID->"681e1d46-9fe3-4c79-a474-86b0ce753f95"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"x", ",", "y"}], "]"}], ",", 
+   RowBox[{
+    SuperscriptBox["f", 
+     TagBox[
+      RowBox[{"(", 
+       RowBox[{"1", ",", "0"}], ")"}],
+      Derivative],
+     MultilineFunction->None], "[", 
+    RowBox[{"x", ",", "y"}], "]"}], ",", 
+   RowBox[{
+    SuperscriptBox["f", 
+     TagBox[
+      RowBox[{"(", 
+       RowBox[{"0", ",", "1"}], ")"}],
+      Derivative],
+     MultilineFunction->None], "[", 
+    RowBox[{"x", ",", "y"}], "]"}], ",", 
+   RowBox[{
+    SuperscriptBox["f", 
+     TagBox[
+      RowBox[{"(", 
+       RowBox[{"2", ",", "0"}], ")"}],
+      Derivative],
+     MultilineFunction->None], "[", 
+    RowBox[{"x", ",", "y"}], "]"}], ",", 
+   RowBox[{
+    SuperscriptBox["f", 
+     TagBox[
+      RowBox[{"(", 
+       RowBox[{"1", ",", "1"}], ")"}],
+      Derivative],
+     MultilineFunction->None], "[", 
+    RowBox[{"x", ",", "y"}], "]"}], ",", 
+   RowBox[{
+    SuperscriptBox["f", 
+     TagBox[
+      RowBox[{"(", 
+       RowBox[{"0", ",", "2"}], ")"}],
+      Derivative],
+     MultilineFunction->None], "[", 
+    RowBox[{"x", ",", "y"}], "]"}]}], "}"}]], "Output",
+ ImageSize->{479, 20},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->1963973657,ExpressionUUID->"2471ec9e-bdd0-47bd-a980-8998ed57c229"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Here are the derivatives of order ",
+ Cell[BoxData[
+  RowBox[{"\[LessEqual]", "2"}]], "InlineFormula",ExpressionUUID->
+  "5ff6a1a0-9916-48dc-b3dc-bb3d7e3d7a46"],
+ " for a specific function of two variables:"
+}], "ExampleText",
+ CellID->2081808690,ExpressionUUID->"b4dd3cef-f34f-43d1-aa02-03134741cebc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"TableDerivatives", "[", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["x", "5"], "+", 
+    SuperscriptBox["y", "3"], "-", "4"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}], ",", "2"}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1086757899,ExpressionUUID->"95c664a1-db3c-44a4-b664-adfdafb8db86"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "4"}], "+", 
+    SuperscriptBox["x", "5"], "+", 
+    SuperscriptBox["y", "3"]}], ",", 
+   RowBox[{"5", " ", 
+    SuperscriptBox["x", "4"]}], ",", 
+   RowBox[{"3", " ", 
+    SuperscriptBox["y", "2"]}], ",", 
+   RowBox[{"20", " ", 
+    SuperscriptBox["x", "3"]}], ",", "0", ",", 
+   RowBox[{"6", " ", "y"}]}], "}"}]], "Output",
+ ImageSize->{240, 20},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->85342129,ExpressionUUID->"e501cbb9-c138-4220-aec1-a6123d2d8827"]
+}, Open  ]],
+
+Cell["Here we only table the derivatives of order 2:", "ExampleText",
+ CellID->218494219,ExpressionUUID->"e45a620e-872b-44fc-8d9b-a40003b68fb2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"TableDerivatives", "[", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["x", "5"], "+", 
+    SuperscriptBox["y", "3"], "-", "4"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}], ",", 
+   RowBox[{"{", "2", "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[3]:=",
+ CellID->16057489,ExpressionUUID->"610fc700-80b2-4038-a67c-5d44fb3e684e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"20", " ", 
+    SuperscriptBox["x", "3"]}], ",", "0", ",", 
+   RowBox[{"6", " ", "y"}]}], "}"}]], "Output",
+ ImageSize->{94, 20},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->803015908,ExpressionUUID->"c6ddf0ab-926e-411e-8f8a-17dcc45e14cf"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"bad6ccd0-8fd1-417f-8dea-f2a6146ca3dc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"492015d1-bc09-4b4d-bd0f-5ea85ca8dd74"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"78944b83-d07b-45da-a640-5d3fa0caaf0e"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"e18e5760-db7a-4b52-b3f5-ee8a19330b00"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->268764255,ExpressionUUID->"8560f088-d1d8-4ee7-b8ce-63981869380b"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"572230d5-9c72-4e79-951c-febfc97b2cb2"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"TableDerivatives",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 57, 22.7628573}", 
+    "history" -> {"6.0.2", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "TableDerivatives[f, {x, y, ...}, n] gives a table of the derivatives of \
+the function f of the variables x, y, ... of order j, 0 <= j <= n. \
+TableDerivatives[f, {x, y, ...}, {n}] gives a table of the derivatives of the \
+order n.", "synonyms" -> {}, "tabletags" -> {}, "title" -> "TableDerivatives",
+     "titlemodifier" -> "", "windowtitle" -> "TableDerivatives", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/TableDerivatives", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[8027, 216, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"e6aee3f2-e7f1-4bfa-80b8-d6027609bb21",
+   CellTags->"PrimaryExamplesSection",
+   CellID->161037379]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 17719, 521}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[588, 21, 3480, 77, 55, "AnchorBarGrid",ExpressionUUID->"f877659b-9e80-4cb0-bb1e-2f4bf7430de3",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4093, 102, 401, 9, 52, "ObjectNameGrid",ExpressionUUID->"d468d068-fcba-4f6f-aae8-a432519377f6"],
+Cell[4497, 113, 2185, 60, 186, "Usage",ExpressionUUID->"9304e90f-c051-4c2f-8cd3-b40643a87e44",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6719, 178, 855, 21, 37, "NotesSection",ExpressionUUID->"0e496fad-55c3-4443-93b4-bff0873a826f",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->411916395],
+Cell[7577, 201, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"489a8cd7-248b-42d7-86f0-ecb87f814ed8"],
+Cell[7666, 203, 235, 6, 70, "Notes",ExpressionUUID->"41f5bc1f-c6e8-4c49-a201-97fa493082f1",
+ CellID->1067943069],
+Cell[7904, 211, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"14c17cfa-c673-4ef0-91d3-1a2c8aff5170"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8027, 216, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"e6aee3f2-e7f1-4bfa-80b8-d6027609bb21",
+ CellTags->"PrimaryExamplesSection",
+ CellID->161037379],
+Cell[CellGroupData[{
+Cell[8487, 231, 308, 7, 29, "ExampleSection",ExpressionUUID->"5417ca3f-4bb6-43e5-a62a-6833bb9904f1",
+ CellID->381752000],
+Cell[8798, 240, 139, 1, 38, "ExampleText",ExpressionUUID->"29724f4a-000c-471d-af61-13d4e9a7a3a9",
+ CellID->1096681963],
+Cell[CellGroupData[{
+Cell[8962, 245, 351, 8, 47, "Input",ExpressionUUID->"df726f8d-877f-4005-828f-2c4774ab8508",
+ CellID->2145882289],
+Cell[9316, 255, 874, 27, 41, "Output",ExpressionUUID->"c67f8096-c295-4bac-8de8-41c9e817d000",
+ CellID->490021933]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10227, 287, 243, 5, 8, "ExampleDelimiter",ExpressionUUID->"a2d0d7c2-ef2c-4283-8c1d-3a4208beb0b5",
+ CellID->1898300024],
+Cell[10473, 294, 440, 13, 38, "ExampleText",ExpressionUUID->"3008045d-b8ed-4847-82c7-3f79d29c5a83",
+ CellID->957780492],
+Cell[CellGroupData[{
+Cell[10938, 311, 463, 12, 59, "Input",ExpressionUUID->"681e1d46-9fe3-4c79-a474-86b0ce753f95",
+ CellID->1802016993],
+Cell[11404, 325, 1339, 49, 41, "Output",ExpressionUUID->"2471ec9e-bdd0-47bd-a980-8998ed57c229",
+ CellID->1963973657]
+}, Open  ]],
+Cell[12758, 377, 320, 7, 38, "ExampleText",ExpressionUUID->"b4dd3cef-f34f-43d1-aa02-03134741cebc",
+ CellID->2081808690],
+Cell[CellGroupData[{
+Cell[13103, 388, 429, 11, 47, "Input",ExpressionUUID->"95c664a1-db3c-44a4-b664-adfdafb8db86",
+ CellID->1086757899],
+Cell[13535, 401, 579, 18, 41, "Output",ExpressionUUID->"e501cbb9-c138-4220-aec1-a6123d2d8827",
+ CellID->85342129]
+}, Open  ]],
+Cell[14129, 422, 144, 1, 70, "ExampleText",ExpressionUUID->"e45a620e-872b-44fc-8d9b-a40003b68fb2",
+ CellID->218494219],
+Cell[CellGroupData[{
+Cell[14298, 427, 451, 12, 70, "Input",ExpressionUUID->"610fc700-80b2-4038-a67c-5d44fb3e684e",
+ CellID->16057489],
+Cell[14752, 441, 343, 10, 41, "Output",ExpressionUUID->"c6ddf0ab-926e-411e-8f8a-17dcc45e14cf",
+ CellID->803015908]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[15134, 456, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"bad6ccd0-8fd1-417f-8dea-f2a6146ca3dc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15257, 461, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"78944b83-d07b-45da-a640-5d3fa0caaf0e",
+ CellID->38303248],
+Cell[15526, 470, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"e18e5760-db7a-4b52-b3f5-ee8a19330b00"],
+Cell[15615, 472, 227, 5, 70, "MoreAbout",ExpressionUUID->"8560f088-d1d8-4ee7-b8ce-63981869380b",
+ CellID->268764255]
+}, Open  ]],
+Cell[15857, 480, 78, 0, 70, "FooterCell",ExpressionUUID->"572230d5-9c72-4e79-951c-febfc97b2cb2"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

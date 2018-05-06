@@ -1,0 +1,477 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18967,        467]
+NotebookOptionsPosition[     14808,        371]
+NotebookOutlinePosition[     17227,        432]
+CellTagsIndexPosition[     17142,        427]
+WindowTitle->DisplayHypocycloid
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "b7ffe262-1dde-479a-9e48-1caf42c9ce0f"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"f4104aba-a09f-4b21-9810-3974b2de54dc"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"ManipulateHypocycloid\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/ManipulateHypocycloid"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "341147a4-0d68-4014-ada3-29ba4343943c"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"97d44dcd-af02-4c1e-ad08-081e2dd11fba"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/DisplayHypocycloid\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/DisplayHypocycloid"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+DisplayHypocycloid.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$60454], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/DisplayHypocycloid", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "d0bc50ec-678e-406c-8fa7-47202cc6e12e"]
+    }], "AnchorBar",ExpressionUUID->"30ae2a7e-7a58-432b-b31c-8c72e30cd207"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"c6e808ef-7ad2-45da-94d2-806172f54a71"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["DisplayHypocycloid", "ObjectName",ExpressionUUID->
+  "f235acda-acf5-42d1-9b1a-c19253d9b88b"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"1cf2b2fe-329e-4f59-bc35-83241203325f"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "f7d1b88d-0281-47a1-ae1b-e4d302d04405"]
+}], "ObjectNameGrid",ExpressionUUID->"fdd7d573-5954-4d80-b4c0-d65985e99aa4"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"DisplayHypocycloid", "[", 
+       StyleBox[
+        RowBox[{"R", ",", "r", ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", 
+           SubscriptBox["t", "min"], ",", 
+           SubscriptBox["t", "max"]}], "}"}]}], "TI"], "]"}]], 
+      "InlineFormula",ExpressionUUID->"eacc4987-45db-4a8f-84b8-abda30ba1ab6"],
+     " \[LineSeparator]produces a picture of the portion of the hypocycloid \
+determined by a point on a circle of radius ",
+     Cell[BoxData[
+      StyleBox["r", "TI"]], "InlineFormula",ExpressionUUID->
+      "e06b4283-83aa-42ec-8a48-4cdf50bba139"],
+     " rolling on the inside of a circle of radius ",
+     Cell[BoxData[
+      StyleBox["R", "TI"]], "InlineFormula",ExpressionUUID->
+      "58471386-4df5-454a-a439-5470a3b3bf27"],
+     " when ",
+     Cell[BoxData[
+      StyleBox["t", "TI"]], "InlineFormula",ExpressionUUID->
+      "73f618e4-b230-4041-a326-5266ad262177"],
+     " is between ",
+     Cell[BoxData[
+      StyleBox[
+       SubscriptBox["t", "min"], "TI"]], "InlineFormula",ExpressionUUID->
+      "6330d94a-c87b-42a0-9442-2ab69a1f95ce"],
+     " and ",
+     Cell[BoxData[
+      StyleBox[
+       SubscriptBox["t", "max"], "TI"]], "InlineFormula",ExpressionUUID->
+      "ef6535b3-27c9-4fab-8a49-1f01dd0f0595"],
+     "."
+    }],ExpressionUUID->"40d646f3-cd3a-4eb4-aa4f-b97489f60c38"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"886bb168-3aa4-4478-b431-d61160a302ef"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"8ce7e27c-0f57-4527-9efe-66c0333734b9"],
+   "Details and Options"
+  }], "NotesFrameText",ExpressionUUID->"22cb6045-a0cb-4854-85df-e5e3be02b9d3"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"85a564aa-5e90-44e5-af2e-2aba56ee706b"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->777440118,ExpressionUUID->"79c42c2e-0fe6-4297-9153-f1884ecf5e6b"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"2940e827-e311-4d78-bbcf-f54dd1a8132b"],
+
+Cell["Options", "Notes",
+ CellID->1067943069,ExpressionUUID->"9d6ff4f0-fcf3-4ba5-ab8b-fe29f3eaccc6"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"22f3a28d-3890-4a9d-afd2-ece69673c1dc"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "2e89da52-9b43-4a0f-9e9c-53a35cd78f9c"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->338060473,ExpressionUUID->"190516bd-7b7b-497c-950b-8fdd6d8408f3"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "2036b281-31f9-4d62-80d1-c5ab65aedc29"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->267593894,ExpressionUUID->"f6a58e3f-eb66-4de1-a7ba-c5610b37c3ba"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Manipulations`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DisplayHypocycloid", "[", 
+  RowBox[{"5", ",", "2", ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     FractionBox["\[Pi]", "3"]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->99245227,ExpressionUUID->"f3ccfb19-a3ee-419e-ae92-4be1851f4d43"],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    TagBox[
+     {RGBColor[0.368417, 0.506779, 0.709798], Thickness[0.01], Opacity[1.], 
+      FaceForm[Opacity[0.3]], LineBox[CompressedData["
+1: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
+
+       "]]},
+     Annotation[#, "Charting`Private`Tag$76151#1"]& ]}, {
+    {GrayLevel[0.5], Dashing[{0.007, 0.007}], 
+     LineBox[{{1.5000000000000004`, 2.598076211353316}, {3.5000000000000004`, 
+      2.598076211353316}}]}, 
+    CircleBox[{0, 0}, 1.25, {0., 1.0471975511965976`}], 
+    CircleBox[{1.5000000000000004, 2.598076211353316}, 
+     0.6, {-1.5707963267948966`, 0}], 
+    LineBox[{{0, 0}, {1.5000000000000004`, 2.598076211353316}}], 
+    {GrayLevel[0.5], Dashing[{0.007, 0.007}], 
+     LineBox[{{1.5000000000000004`, 2.598076211353316}, {2.5000000000000004`, 
+      4.330127018922193}}]}, InsetBox[
+     StyleBox["\<\"t\"\>",
+      StripOnInput->False,
+      FontSize->Small,
+      FontSlant->
+       Italic], {1.0825317547305484, 0.6249999999999999}, \
+{-1.7320508075688774, -0.9999999999999999}], InsetBox[
+     StyleBox["\<\"P\"\>",
+      StripOnInput->False,
+      FontSize->
+       Small], {1.5000000000000007, 0.598076211353316}, \
+{-1.8369701987210297*^-16, 3.}]}, {
+    {RGBColor[0, 0, 1], Thickness[0.0075], CircleBox[{0, 0}, 5]}, 
+    {RGBColor[1, 0.5, 0], Thickness[0.0075], 
+     CircleBox[{1.5000000000000004, 2.598076211353316}, 2]}, 
+    {PointSize[0.02], PointBox[{5., 0.}]}, 
+    {GrayLevel[0.4], Thickness[0.0075], 
+     LineBox[{{1.5000000000000004`, 2.598076211353316}, {1.5000000000000007`, 
+      0.598076211353316}}]}, 
+    {PointSize[0.02], PointBox[{1.5000000000000007`, 0.598076211353316}]}, 
+    {PointSize[0.02], PointBox[{1.5000000000000004`, 2.598076211353316}]}}},
+  AspectRatio->Automatic,
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{"ScalingFunctions" -> None},
+  PlotRange->{{-5.5, 5.5}, {-5.5, 5.5}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.05], 
+     Scaled[0.05]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->None]], "Output",
+ ImageSize->{244, 240},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->240699763,ExpressionUUID->"ea3ef231-8b01-488c-b6da-e8b3a8eb01ca"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"e62df6bd-cf4d-4a08-bf89-a3cd6c252b30"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"ab5ec5a9-3b7d-4ab5-953c-569be828f05e"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"693c10df-913e-4806-9593-051f10cd439e"],
+
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["ManipulateHypocycloid"]],
+   "paclet:KnoxPackages/ref/ManipulateHypocycloid"},
+  "RefLink",
+  BaseStyle->{
+   "InlineFormula", FontFamily -> 
+    "Verdana"}]], \
+"InlineFormula",ExpressionUUID->"91726eea-da33-4b14-aa6f-ea0f8474867a"]], \
+"SeeAlso",
+ CellID->929782353,ExpressionUUID->"e131c80e-8875-4761-a611-bf32742b2412"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"205a1074-bbb1-4113-9f29-6268777c1046"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"DisplayHypocycloid",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 42, 3.7603190}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "DisplayHypocycloid[R, r, {t, tmin, tmax}] produces a picture of the \
+portion of the hypocycloid determined by a point on a circle of radius r \
+rolling on the inside of a circle of radius R when t is between tmin and \
+tmax.", "synonyms" -> {}, "tabletags" -> {}, "title" -> "DisplayHypocycloid", 
+    "titlemodifier" -> "", "windowtitle" -> "DisplayHypocycloid", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/DisplayHypocycloid", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7281, 191, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"190516bd-7b7b-497c-950b-8fdd6d8408f3",
+   CellTags->"PrimaryExamplesSection",
+   CellID->338060473]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 16944, 420}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[590, 21, 3505, 78, 55, "AnchorBarGrid",ExpressionUUID->"c6e808ef-7ad2-45da-94d2-806172f54a71",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4120, 103, 403, 9, 52, "ObjectNameGrid",ExpressionUUID->"fdd7d573-5954-4d80-b4c0-d65985e99aa4"],
+Cell[4526, 114, 1622, 41, 131, "Usage",ExpressionUUID->"886bb168-3aa4-4478-b431-d61160a302ef",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6185, 160, 867, 21, 37, "NotesSection",ExpressionUUID->"79c42c2e-0fe6-4297-9153-f1884ecf5e6b",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->777440118],
+Cell[7055, 183, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"2940e827-e311-4d78-bbcf-f54dd1a8132b"],
+Cell[7144, 185, 100, 1, 70, "Notes",ExpressionUUID->"9d6ff4f0-fcf3-4ba5-ab8b-fe29f3eaccc6",
+ CellID->1067943069]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7281, 191, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"190516bd-7b7b-497c-950b-8fdd6d8408f3",
+ CellTags->"PrimaryExamplesSection",
+ CellID->338060473],
+Cell[CellGroupData[{
+Cell[7741, 206, 308, 7, 29, "ExampleSection",ExpressionUUID->"f6a58e3f-eb66-4de1-a7ba-c5610b37c3ba",
+ CellID->267593894],
+Cell[CellGroupData[{
+Cell[8074, 217, 386, 9, 63, "Input",ExpressionUUID->"f3ccfb19-a3ee-419e-ae92-4be1851f4d43",
+ CellID->99245227],
+Cell[8463, 228, 5450, 110, 261, "Output",ExpressionUUID->"ea3ef231-8b01-488c-b6da-e8b3a8eb01ca",
+ CellID->240699763]
+}, Open  ]]
+}, Open  ]],
+Cell[13940, 342, 86, 0, 29, "SectionFooterSpacer",ExpressionUUID->"e62df6bd-cf4d-4a08-bf89-a3cd6c252b30"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14063, 347, 260, 7, 72, "SeeAlsoSection",ExpressionUUID->"693c10df-913e-4806-9593-051f10cd439e",
+ CellID->1255426704],
+Cell[14326, 356, 385, 10, 70, "SeeAlso",ExpressionUUID->"e131c80e-8875-4761-a611-bf32742b2412",
+ CellID->929782353]
+}, Open  ]],
+Cell[14726, 369, 78, 0, 70, "FooterCell",ExpressionUUID->"205a1074-bbb1-4113-9f29-6268777c1046"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

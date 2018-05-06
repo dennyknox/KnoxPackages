@@ -1,0 +1,1153 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     50874,       1143]
+NotebookOptionsPosition[     44383,       1002]
+NotebookOutlinePosition[     47172,       1070]
+CellTagsIndexPosition[     47050,       1064]
+WindowTitle->PlotOsculatingCircle3D
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "37542eab-7719-428b-9bc2-c8a90a2602af"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"f8439720-b025-4b4a-a35e-669ccd9530b5"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"PlotOsculatingCircle\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/PlotOsculatingCircle"], \
+"\<\"CenterOfCurvature\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/CenterOfCurvature"], \
+"\<\"OsculatingPlane\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/OsculatingPlane"], "\<\"Curvature\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/ref/Curvature"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "368c1e32-40f8-4bad-a5d2-945e4fcc4995"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"2ff973d1-df9e-439f-b6f8-183ecf9e8eae"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "077eff69-a2a7-4c06-b332-35e4b7de6015"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"0ad3d6e9-cf86-48c9-9039-be00aa3074bd"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->
+         False], {"\<\"KnoxPackages/ref/PlotOsculatingCircle3D\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/PlotOsculatingCircle3D"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+PlotOsculatingCircle3D.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$158268], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/PlotOsculatingCircle3D", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "b4c54ab1-03d1-43b6-8938-dcaa8ccb3e4d"]
+    }], "AnchorBar",ExpressionUUID->"e54c4f93-1145-46b9-be10-da540aeb8e40"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"dbe20633-1ad9-4310-a3c6-9dd5fca4af9b"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["PlotOsculatingCircle3D", "ObjectName",ExpressionUUID->
+  "43bc5713-d26a-4ef1-96f2-7adda3325f99"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"e0019e8f-1bdc-4b52-b1b9-fffc6be3e79c"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "5fd8e19e-d509-4c1c-a02d-ad7f9ce8b719"]
+}], "ObjectNameGrid",ExpressionUUID->"1ef4980c-07b9-4237-b0af-60f7a91e8e48"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["PlotOsculatingCircle3D"]],
+         "paclet:KnoxPackages/ref/PlotOsculatingCircle3D"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["f", "TI"], ",", 
+          StyleBox["g", "TI"], ",", 
+          StyleBox["h", "TI"]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["t", "TI"], ",", 
+          StyleBox["tmin", "TI"], ",", 
+          StyleBox["tmax", "TI"]}], "}"}], ",", 
+        StyleBox["t0", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "d659d0c7-671e-4e08-91e6-c85e308977c0"],
+     " \[LineSeparator]plots the curve ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        StyleBox["f", "TI"], ",", 
+        StyleBox["g", "TI"], ",", 
+        StyleBox["h", "TI"]}], "}"}]], "InlineFormula",ExpressionUUID->
+      "cd10f354-5da4-4bf2-8c75-69f77bcfa063"],
+     " together with its osculating circle at the point ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         StyleBox["f", "TI"], "[", 
+         StyleBox["t0", "TI"], "]"}], ",", 
+        RowBox[{
+         StyleBox["g", "TI"], "[", 
+         StyleBox["t0", "TI"], "]"}], ",", 
+        RowBox[{
+         StyleBox["h", "TI"], "[", 
+         StyleBox["t0", "TI"], "]"}]}], "}"}]], "InlineFormula",
+      ExpressionUUID->"ffe0a98d-b57d-47dc-86fd-a12c736ede9d"],
+     ". More than one point ",
+     Cell[BoxData[
+      StyleBox["t0", "TI"]], "InlineFormula",ExpressionUUID->
+      "b9933c23-68dd-401e-8f42-7a273444ffe6"],
+     " can be given as a list."
+    }],ExpressionUUID->"90208065-ca33-4f8a-8658-e6392bd11d08"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"203c3bfa-8caf-4411-b94b-bb64814f4c50"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"2300d61a-72db-49b9-9b61-6e2c027aa941"],
+   "Details and Options"
+  }], "NotesFrameText",ExpressionUUID->"39fc7412-cb52-482c-a93b-4c483fa6a339"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"6c13c097-52d2-4211-aed3-8a00cf0352aa"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->515368199,ExpressionUUID->"0d9739a5-2b0b-43a9-9712-7fcb6574e905"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"5ff05294-1bc3-4a23-a805-2fbb10791165"],
+
+Cell[TextData[{
+ "Options are those of ",
+ ButtonBox["ParametricPlot3D",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ParametricPlot3D"],
+ ", in addition to the following:"
+}], "Notes",
+ CellID->1067943069,ExpressionUUID->"ab555075-2f4c-491d-ace4-297c8f61e1b1"],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "585adc06-3e85-40a6-a7ca-2f6777dfb964"], 
+    ButtonBox["CircleStyle",
+     BaseStyle->"Link",
+     ButtonData->"paclet:KnoxPackages/ref/CircleStyle"], 
+    RowBox[{"RGBColor", "[", 
+     RowBox[{"1", ",", " ", "0", ",", " ", "0"}], "]"}], Cell[
+    "applies a style to the osculating circle", "TableText",ExpressionUUID->
+     "d505d32a-cc00-4fb0-ba12-13d531f9ece8"]},
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "f87c7cce-5ac0-41d5-a224-9471124a40b5"], 
+    ButtonBox["DrawPlane",
+     BaseStyle->"Link",
+     ButtonData->"paclet:KnoxPackages/ref/DrawPlane"], 
+    ButtonBox["False",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/False"], Cell[
+    "whether to draw the osculating plane", "TableText",ExpressionUUID->
+     "bb00c615-b6f9-49c4-9dfa-b84e993eba29"]},
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "9bf10b14-694b-4767-bd1d-4a0827804916"], 
+    ButtonBox["PlaneStyle",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/PlaneStyle"], 
+    RowBox[{"Opacity", "[", "0.8", "]"}], Cell[
+    "applies a style to the plane", "TableText",ExpressionUUID->
+     "ece40f47-e418-456b-b736-89eadd08a32f"]},
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "c51e920a-aa24-4742-a36f-b909446ff36b"], 
+    ButtonBox["PointStyle",
+     BaseStyle->"Link",
+     ButtonData->"paclet:KnoxPackages/ref/PointStyle"], 
+    RowBox[{"PointSize", "[", "0.017", "]"}], Cell[
+    "applies a style to the center of the osculating circle", "TableText",
+     ExpressionUUID->"a6206640-c43c-455f-86f1-e69f665b4bcb"]},
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "dbba19b9-eb04-41bc-b53d-544e399380bb"], 
+    ButtonBox["RadiusStyle",
+     BaseStyle->"Link",
+     ButtonData->"paclet:KnoxPackages/ref/RadiusStyle"], 
+    RowBox[{"Dashing", "[", 
+     RowBox[{"{", 
+      RowBox[{"0.01", ",", " ", "0.02"}], "}"}], "]"}], Cell[
+    "applies a style to the radius", "TableText",ExpressionUUID->
+     "365d7f9b-c7d3-484d-9109-fec690646d02"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, 
+   "Rows" -> {None, None, None, None, {None}}, "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True, True, True, True, True}}}},
+ CellID->140438347,ExpressionUUID->"37c23ae9-05af-4ef1-a9ae-40114796225f"],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"4f3aa62c-ad1f-452e-8c92-546a7f05fccd"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"b135850b-2bdd-43ad-ac13-e0bfc6a331c7"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "95d88109-6537-416b-930f-d1283d3e03fa"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->223893932,ExpressionUUID->"b0462839-1927-45c1-8ba0-e4521666b9fb"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "6ad75ba3-952f-4ebc-aa96-dea578731d0c"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->352920596,ExpressionUUID->"c2728506-4222-425e-a05a-1a64d92fd304"],
+
+Cell["Draw the osculating circle at a point.", "ExampleText",
+ CellID->91884940,ExpressionUUID->"43fd73fe-9a48-4e82-bf4e-a140f0825605"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotOsculatingCircle3D", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Cos", "[", 
+      RowBox[{"2", "t"}], "]"}], ",", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"2", "t"}], "]"}], ",", "t"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", "\[Pi]"}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->441983775,ExpressionUUID->"98ed7818-10cf-4335-b588-e9ccb4548b00"],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1: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
+    "], {{0, 240}, {140, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{140, 240},
+  PlotRange->{{0, 140}, {0, 240}}]], "Output",
+ ImageSize->{144, 240},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[1]=",
+ CellID->356163764,ExpressionUUID->"8adb2ba3-6e8b-43b8-b70b-9bd36bf0e4f8"]
+}, Open  ]],
+
+Cell["Draw the osculating circle and plane at two points.", "ExampleText",
+ CellID->124640013,ExpressionUUID->"1ab95938-e8ea-4547-81f6-9b75cc147f06"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotOsculatingCircle3D", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Cos", "[", 
+      RowBox[{"2", "t"}], "]"}], ",", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"2", "t"}], "]"}], ",", "t"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["\[Pi]", "3"], ",", 
+     RowBox[{"5", 
+      FractionBox["\[Pi]", "4"]}]}], "}"}], ",", 
+   RowBox[{"DrawPlane", "\[Rule]", "True"}], ",", " ", 
+   RowBox[{"PlaneStyle", "\[Rule]", 
+    RowBox[{"Opacity", "[", ".4", "]"}]}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->4964703,ExpressionUUID->"b7afc1f4-f27e-4369-9f09-788b023a4a83"],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1: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
+7XbbvQuy+n8l/AUu
+    "], {{0, 240}, {150, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  DefaultBaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{150, 240},
+  PlotRange->{{0, 150}, {0, 240}}]], "Output",
+ ImageSize->{154, 240},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellTags->"RasterizedOutput",
+ CellLabel->"Out[2]=",
+ CellID->401259549,ExpressionUUID->"dd8863af-e239-46e5-8e7c-030493def3f5"]
+}, Open  ]],
+
+Cell["Animate", "ExampleText",
+ CellID->344713160,ExpressionUUID->"a6bd64df-06df-4acf-8fe7-f88f8e09f40d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"PlotOsculatingCircle3D", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Cos", "[", 
+        RowBox[{"2", "t"}], "]"}], ",", " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"2", "t"}], "]"}], ",", 
+       RowBox[{"t", "/", "2"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", 
+       RowBox[{"3", " ", "\[Pi]"}]}], "}"}], ",", 
+     RowBox[{"k", " ", "\[Pi]"}], ",", 
+     RowBox[{"PlotRange", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1.2"}], ",", "1.2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1.2"}], ",", "1.2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", "5.2"}], "}"}]}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "3", ",", 
+     RowBox[{"1", "/", "12"}]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[3]:=",
+ CellID->431253694,ExpressionUUID->"63855562-a484-46b4-8a1b-101cfe8173b1"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`k$$ = Rational[5, 4], Typeset`show$$ = True,
+     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`k$$], 0, 3, 
+      Rational[1, 12]}}, Typeset`size$$ = {127., {105., 111.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`k$843$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`k$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`k$$, $CellContext`k$843$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      KnoxPackages`Calculus`PlotOsculatingCircle3D[{
+         Cos[2 $CellContext`t], 
+         Sin[2 $CellContext`t], $CellContext`t/2}, {$CellContext`t, 0, 3 
+         Pi}, $CellContext`k$$ Pi, 
+        PlotRange -> {{-1.2, 1.2}, {-1.2, 1.2}, {-1, 5.2}}], 
+      "Specifications" :> {{$CellContext`k$$, 0, 3, 
+         Rational[1, 12]}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{255., {151., 157.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ ImageSize->{259, 310},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->225893792,ExpressionUUID->"3f3c3fa4-9fa2-48bc-a3d1-98dcccfc2e14"]
+}, Open  ]],
+
+Cell["Include a plot of the center of curvature.", "ExampleText",
+ CellID->559218941,ExpressionUUID->"bf382c23-4ed1-4b99-87d2-8412ea9683ba"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"cofc", "[", "t_", "]"}], "=", 
+   RowBox[{"CenterOfCurvature", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Cos", "[", 
+        RowBox[{"2", "t"}], "]"}], ",", " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"2", "t"}], "]"}], ",", 
+       RowBox[{"t", "/", "2"}]}], "}"}], ",", "t", ",", "t"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"cofcplot", "=", 
+   RowBox[{"ParametricPlot3D", "[", 
+    RowBox[{
+     RowBox[{"cofc", "[", "t", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", 
+       RowBox[{"3", "\[Pi]"}]}], "}"}], ",", 
+     RowBox[{"PlotStyle", "->", "Blue"}], ",", 
+     RowBox[{"BoxRatios", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "5"}], "}"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"PlotOsculatingCircle3D", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Cos", "[", 
+          RowBox[{"2", "t"}], "]"}], ",", " ", 
+         RowBox[{"Sin", "[", 
+          RowBox[{"2", "t"}], "]"}], ",", 
+         RowBox[{"t", "/", "2"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"3", " ", "\[Pi]"}]}], "}"}], ",", 
+       RowBox[{"k", " ", "\[Pi]"}], ",", 
+       RowBox[{"PlotRange", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1.2"}], ",", "1.2"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1.2"}], ",", "1.2"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "5.2"}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"PointStyle", "\[Rule]", 
+        RowBox[{"PointSize", "[", "Large", "]"}]}]}], "]"}], ",", 
+     "cofcplot"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "3", ",", 
+     RowBox[{"1", "/", "12"}]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[4]:=",
+ CellID->844446576,ExpressionUUID->"f53a07fc-30db-4339-8e77-23372aa028aa"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`k$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`k$$], 0, 3, 
+      Rational[1, 12]}}, Typeset`size$$ = {127., {105., 111.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`k$1575$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`k$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`k$$, $CellContext`k$1575$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        KnoxPackages`Calculus`PlotOsculatingCircle3D[{
+          Cos[2 $CellContext`t], 
+          Sin[2 $CellContext`t], $CellContext`t/2}, {$CellContext`t, 0, 3 
+          Pi}, $CellContext`k$$ Pi, 
+         PlotRange -> {{-1.2, 1.2}, {-1.2, 1.2}, {-1, 5.2}}, 
+         KnoxPackages`Calculus`PointStyle -> 
+         PointSize[Large]], $CellContext`cofcplot], 
+      "Specifications" :> {{$CellContext`k$$, 0, 3, 
+         Rational[1, 12]}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{255., {151., 157.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ ImageSize->{259, 310},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[4]=",
+ CellID->105062637,ExpressionUUID->"4cebc612-d9b5-4be5-a55c-8077b8a69161"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"f17b51e9-03e5-4d0a-828f-84f3a983c7b7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"10dcb0cb-674a-4e1e-8bc5-0b1a44dc93a4"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"892aabe1-c80a-424c-be7d-ab36d957dbdc"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PlotOsculatingCircle"]],
+    "paclet:KnoxPackages/ref/PlotOsculatingCircle"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"78b79f45-7a9c-4a55-a794-7af2fe30fb3e"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CenterOfCurvature"]],
+    "paclet:KnoxPackages/ref/CenterOfCurvature"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"c29d8364-ca2f-41ca-90f6-9046358baaac"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["OsculatingPlane"]],"paclet:KnoxPackages/ref/OsculatingPlane"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"351ea2af-b099-42ca-90b3-ad40a27ce248"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Curvature"]],"paclet:KnoxPackages/ref/Curvature"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"b0311aab-bd5b-42e0-af52-af64d7c11201"]
+}], "SeeAlso",
+ CellID->237077582,ExpressionUUID->"f4005111-cfe6-46bd-bf5f-200bf716e7ad"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"df34ffd8-bd49-47aa-82dd-07ed9e9c0826"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"5f92c87c-74a8-4967-b2dc-ca68b3884685"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"25f74c54-9ccf-4e67-899d-f71e5f045a6e"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->269136611,ExpressionUUID->"ff193ae5-bed8-4bd7-ae0b-d6b392a474ed"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"acd4647f-ebf5-4065-98ed-74d021095e9d"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"PlotOsculatingCircle3D",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 50, 40.6502046}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "PlotOsculatingCircle3D[{f, g, h}, {t, tmin, tmax}, t0] plots the curve \
+{f, g, h} together with its osculating circle at the point {f[t0], g[t0], \
+h[t0]}. More than one point t0 can be given as a list.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "PlotOsculatingCircle3D", "titlemodifier" -> 
+    "", "windowtitle" -> "PlotOsculatingCircle3D", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/PlotOsculatingCircle3D", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[11285, 290, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"b0462839-1927-45c1-8ba0-e4521666b9fb",
+   CellTags->"PrimaryExamplesSection",
+   CellID->223893932]},
+ "RasterizedOutput"->{
+  Cell[12780, 336, 8437, 145, 261, "Output",ExpressionUUID->"8adb2ba3-6e8b-43b8-b70b-9bd36bf0e4f8",
+   CellTags->"RasterizedOutput",
+   CellID->356163764],
+  Cell[22233, 514, 11703, 199, 261, "Output",ExpressionUUID->"dd8863af-e239-46e5-8e7c-030493def3f5",
+   CellTags->"RasterizedOutput",
+   CellID->401259549]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 46514, 1050},
+ {"RasterizedOutput", 46713, 1054}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[594, 21, 4497, 101, 55, "AnchorBarGrid",ExpressionUUID->"dbe20633-1ad9-4310-a3c6-9dd5fca4af9b",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5116, 126, 407, 9, 52, "ObjectNameGrid",ExpressionUUID->"1ef4980c-07b9-4237-b0af-60f7a91e8e48"],
+Cell[5526, 137, 1997, 55, 132, "Usage",ExpressionUUID->"203c3bfa-8caf-4411-b94b-bb64814f4c50",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7560, 197, 867, 21, 37, "NotesSection",ExpressionUUID->"0d9739a5-2b0b-43a9-9712-7fcb6574e905",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->515368199],
+Cell[8430, 220, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"5ff05294-1bc3-4a23-a805-2fbb10791165"],
+Cell[8519, 222, 259, 7, 70, "Notes",ExpressionUUID->"ab555075-2f4c-491d-ace4-297c8f61e1b1",
+ CellID->1067943069],
+Cell[8781, 231, 2378, 52, 70, "3ColumnTableMod",ExpressionUUID->"37c23ae9-05af-4ef1-a9ae-40114796225f",
+ CellID->140438347],
+Cell[11162, 285, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"4f3aa62c-ad1f-452e-8c92-546a7f05fccd"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11285, 290, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"b0462839-1927-45c1-8ba0-e4521666b9fb",
+ CellTags->"PrimaryExamplesSection",
+ CellID->223893932],
+Cell[CellGroupData[{
+Cell[11745, 305, 308, 7, 29, "ExampleSection",ExpressionUUID->"c2728506-4222-425e-a05a-1a64d92fd304",
+ CellID->352920596],
+Cell[12056, 314, 135, 1, 38, "ExampleText",ExpressionUUID->"43fd73fe-9a48-4e82-bf4e-a140f0825605",
+ CellID->91884940],
+Cell[CellGroupData[{
+Cell[12216, 319, 561, 15, 43, "Input",ExpressionUUID->"98ed7818-10cf-4335-b588-e9ccb4548b00",
+ CellID->441983775],
+Cell[12780, 336, 8437, 145, 261, "Output",ExpressionUUID->"8adb2ba3-6e8b-43b8-b70b-9bd36bf0e4f8",
+ CellTags->"RasterizedOutput",
+ CellID->356163764]
+}, Open  ]],
+Cell[21232, 484, 149, 1, 38, "ExampleText",ExpressionUUID->"1ab95938-e8ea-4547-81f6-9b75cc147f06",
+ CellID->124640013],
+Cell[CellGroupData[{
+Cell[21406, 489, 824, 23, 89, "Input",ExpressionUUID->"b7afc1f4-f27e-4369-9f09-788b023a4a83",
+ CellID->4964703],
+Cell[22233, 514, 11703, 199, 261, "Output",ExpressionUUID->"dd8863af-e239-46e5-8e7c-030493def3f5",
+ CellTags->"RasterizedOutput",
+ CellID->401259549]
+}, Open  ]],
+Cell[33951, 716, 105, 1, 70, "ExampleText",ExpressionUUID->"a6bd64df-06df-4acf-8fe7-f88f8e09f40d",
+ CellID->344713160],
+Cell[CellGroupData[{
+Cell[34081, 721, 1172, 34, 70, "Input",ExpressionUUID->"63855562-a484-46b4-8a1b-101cfe8173b1",
+ CellID->431253694],
+Cell[35256, 757, 1981, 42, 70, "Output",ExpressionUUID->"3f3c3fa4-9fa2-48bc-a3d1-98dcccfc2e14",
+ CellID->225893792]
+}, Open  ]],
+Cell[37252, 802, 140, 1, 70, "ExampleText",ExpressionUUID->"bf382c23-4ed1-4b99-87d2-8412ea9683ba",
+ CellID->559218941],
+Cell[CellGroupData[{
+Cell[37417, 807, 2223, 65, 70, "Input",ExpressionUUID->"f53a07fc-30db-4339-8e77-23372aa028aa",
+ CellID->844446576],
+Cell[39643, 874, 2079, 44, 70, "Output",ExpressionUUID->"4cebc612-d9b5-4be5-a55c-8077b8a69161",
+ CellID->105062637]
+}, Open  ]]
+}, Open  ]],
+Cell[41749, 922, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"f17b51e9-03e5-4d0a-828f-84f3a983c7b7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41872, 927, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"892aabe1-c80a-424c-be7d-ab36d957dbdc",
+ CellID->1255426704],
+Cell[42135, 936, 1529, 40, 70, "SeeAlso",ExpressionUUID->"f4005111-cfe6-46bd-bf5f-200bf716e7ad",
+ CellID->237077582]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43701, 981, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"5f92c87c-74a8-4967-b2dc-ca68b3884685",
+ CellID->38303248],
+Cell[43970, 990, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"25f74c54-9ccf-4e67-899d-f71e5f045a6e"],
+Cell[44059, 992, 227, 5, 70, "MoreAbout",ExpressionUUID->"ff193ae5-bed8-4bd7-ae0b-d6b392a474ed",
+ CellID->269136611]
+}, Open  ]],
+Cell[44301, 1000, 78, 0, 70, "FooterCell",ExpressionUUID->"acd4647f-ebf5-4065-98ed-74d021095e9d"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

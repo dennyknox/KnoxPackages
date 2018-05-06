@@ -1,0 +1,610 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21876,        600]
+NotebookOptionsPosition[     16636,        485]
+NotebookOutlinePosition[     19017,        545]
+CellTagsIndexPosition[     18932,        540]
+WindowTitle->OsculatingPlane
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "8e92f66c-ac5a-405c-86bc-2661c710826d"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"2ac70e0f-372d-47a7-b811-b8325a44d5b7"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"PlotOsculatingCircle\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/PlotOsculatingCircle"], \
+"\<\"PlotOsculatingCircle3D\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/PlotOsculatingCircle3D"], \
+"\<\"CenterOfCurvature\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/CenterOfCurvature"], "\<\"Curvature\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/ref/Curvature"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "9983249d-e470-441e-a861-4f75199fbd99"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"28412c7e-717e-457a-98ef-41135ad8fde3"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "218fd664-9082-47c6-bba7-903f03fade22"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"cfa42181-ee8b-491b-ae54-7a31265713f0"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/OsculatingPlane\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/OsculatingPlane"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+OsculatingPlane.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$128101], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/OsculatingPlane", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "3fbef253-af1f-4eca-9101-33b9a3c6bde2"]
+    }], "AnchorBar",ExpressionUUID->"21df1002-06cf-4c08-852d-e1f9c06d64de"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"f7dda9be-d8cb-471e-9836-3a358459f665"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["OsculatingPlane", "ObjectName",ExpressionUUID->
+  "3fc6f1ed-a36f-4f51-8472-721dede8047b"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"b6d63fa9-4f7c-467d-89c4-8d966d3614f4"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "f6458a5f-aa8c-4897-bcca-e55d4c646d92"]
+}], "ObjectNameGrid",ExpressionUUID->"3c774b92-0136-40ef-ae4a-489aa4d06684"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["OsculatingPlane"]],
+         "paclet:KnoxPackages/ref/OsculatingPlane"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"f", "[", "t", "]"}], ",", 
+          RowBox[{"g", "[", "t", "]"}], ",", 
+          RowBox[{"h", "[", "t", "]"}]}], "}"}], ",", "t", ",", 
+        RowBox[{"{", 
+         RowBox[{"u", ",", "v"}], "}"}]}], "]"}]], "InlineFormula",
+      ExpressionUUID->"bf62a462-97f0-431c-a1db-865fd957ccc0"],
+     " \[LineSeparator]returns parametric equations of the osculating plane \
+to the curve ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         StyleBox["f", "TI"], "[", 
+         StyleBox["t", "TI"], "]"}], ",", 
+        RowBox[{
+         StyleBox["g", "TI"], "[", 
+         StyleBox["t", "TI"], "]"}], ",", 
+        RowBox[{
+         StyleBox["h", "TI"], "[", 
+         StyleBox["t", "TI"], "]"}]}], "}"}]], "InlineFormula",
+      ExpressionUUID->"d26fcd97-e3bf-4615-946e-9721e68cc34c"],
+     " at the point ",
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         StyleBox["f", "TI"], "[", 
+         StyleBox["t0", "TI"], "]"}], ",", 
+        RowBox[{
+         StyleBox["g", "TI"], "[", 
+         StyleBox["t0", "TI"], "]"}], ",", 
+        RowBox[{
+         StyleBox["h", "TI"], "[", 
+         StyleBox["t0", "TI"], "]"}]}], "}"}]], "InlineFormula",
+      ExpressionUUID->"8ce9e7c1-5007-4a59-b096-bc7271f2541d"],
+     " with ",
+     Cell[BoxData[
+      StyleBox["u", "TI"]], "InlineFormula",ExpressionUUID->
+      "3c9c7ffe-ba70-490c-a65c-6c8ab9a4b8ca"],
+     " and ",
+     Cell[BoxData[
+      StyleBox["v", "TI"]], "InlineFormula",ExpressionUUID->
+      "6e04c3cb-dec7-4e93-9778-60bbb4fdb985"],
+     " as parameters."
+    }],ExpressionUUID->"197a4338-3223-48f4-ac86-c2e44fb9c46a"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"44962b2b-06ff-452c-acc4-b0b024dedac4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"302e9c7c-7bad-4f5b-ba46-0f8076a0f6bf"],
+   "Details and Options"
+  }], "NotesFrameText",ExpressionUUID->"30c09ec5-6562-47ff-9ff5-c6b0f2ae5dec"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"b7c3b441-3ad6-4bcf-9c9a-7b6528940083"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->193132651,ExpressionUUID->"d3562790-83e6-40b8-9e43-444b038056f3"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"29a8a4be-b82e-45f8-97d8-02283e4a4f93"],
+
+Cell[TextData[{
+ ButtonBox["OsculatingPlane",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/OsculatingPlane"],
+ " has the following option:"
+}], "Notes",
+ CellID->1067943069,ExpressionUUID->"eff15e8d-5043-44ad-a281-4f5e96be1f20"],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "e3b4b9b7-bcbc-4cab-a46c-7318987cfcb8"], 
+    ButtonBox["Simplify",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/Simplify"], 
+    ButtonBox["True",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/True"], Cell[
+    "whether to simplify the output", "TableText",ExpressionUUID->
+     "516f094f-5ff3-467e-ad10-c8eecfb63657"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True}}}},
+ CellID->66705997,ExpressionUUID->"cebfc796-03f6-4fa2-9214-5bfcb5350a31"],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"826d8062-f286-45e7-8cf8-41b0e9a8fa68"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"b43878f3-fc33-4caf-b803-4b359394bae9"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "29c5391e-4d11-4451-9916-085697c8310b"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->255684752,ExpressionUUID->"7ca4fd44-cc50-4529-858a-4f273b7347db"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "cf703ab6-db90-4f4a-a6e8-40569301322c"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->149335262,ExpressionUUID->"a7f79328-c866-433b-a52a-d209ed7b6170"],
+
+Cell["\<\
+The equation of the osculating plane at a point on the curve.\
+\>", "ExampleText",
+ CellID->208847044,ExpressionUUID->"9285055e-8c2c-45ed-80e0-b7367ae4f170"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"OsculatingPlane", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox["t", "3"], "3"], ",", 
+     SuperscriptBox["t", "2"], ",", 
+     RowBox[{"2", " ", "t"}]}], "}"}], ",", "t", ",", 
+   RowBox[{"{", 
+    RowBox[{"u", ",", "v"}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->662409210,ExpressionUUID->"3e960a05-131e-41d4-ba9e-62f214e46b1b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     SuperscriptBox["t", "3"], "3"], "+", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["t", "2"], " ", "u"}], 
+     RowBox[{"2", "+", 
+      SuperscriptBox["t", "2"]}]], "+", 
+    FractionBox[
+     RowBox[{"2", " ", "t", " ", "v"}], 
+     RowBox[{"2", "+", 
+      SuperscriptBox["t", "2"]}]]}], ",", 
+   RowBox[{
+    SuperscriptBox["t", "2"], "+", 
+    FractionBox[
+     RowBox[{"2", " ", "t", " ", "u"}], 
+     RowBox[{"2", "+", 
+      SuperscriptBox["t", "2"]}]], "+", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"2", "-", 
+        SuperscriptBox["t", "2"]}], ")"}], " ", "v"}], 
+     RowBox[{"2", "+", 
+      SuperscriptBox["t", "2"]}]]}], ",", 
+   RowBox[{
+    RowBox[{"2", " ", "t"}], "+", 
+    FractionBox[
+     RowBox[{"2", " ", "u"}], 
+     RowBox[{"2", "+", 
+      SuperscriptBox["t", "2"]}]], "-", 
+    FractionBox[
+     RowBox[{"2", " ", "t", " ", "v"}], 
+     RowBox[{"2", "+", 
+      SuperscriptBox["t", "2"]}]]}]}], "}"}]], "Output",
+ ImageSize->{413, 42},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->983493647,ExpressionUUID->"7bafda2d-2836-4c6d-99f4-65a6a9b2b2d3"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The equation of the osculating plane at a point on the curve corresponding \
+to ",
+ Cell[BoxData[
+  RowBox[{"t", "=", "1"}]], "InlineFormula",ExpressionUUID->
+  "48367636-3a78-42b6-b51c-9585cc1a7a8e"],
+ "."
+}], "ExampleText",
+ CellID->173860272,ExpressionUUID->"92137889-bfbf-40ae-b931-4a01d2cdec26"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"OsculatingPlane", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox["t", "3"], "3"], ",", 
+     SuperscriptBox["t", "2"], ",", 
+     RowBox[{"2", " ", "t"}]}], "}"}], ",", "t", ",", 
+   RowBox[{"{", 
+    RowBox[{"u", ",", "v"}], "}"}], ",", "1"}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->136853887,ExpressionUUID->"c1bcbc87-dd88-44fa-9f6c-880a1aee12f9"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    FractionBox["1", "3"], "+", 
+    FractionBox["u", "3"], "+", 
+    FractionBox[
+     RowBox[{"2", " ", "v"}], "3"]}], ",", 
+   RowBox[{"1", "+", 
+    FractionBox[
+     RowBox[{"2", " ", "u"}], "3"], "+", 
+    FractionBox["v", "3"]}], ",", 
+   RowBox[{"2", "+", 
+    FractionBox[
+     RowBox[{"2", " ", "u"}], "3"], "-", 
+    FractionBox[
+     RowBox[{"2", " ", "v"}], "3"]}]}], "}"}]], "Output",
+ ImageSize->{251, 39},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->136221298,ExpressionUUID->"c6ce341b-2525-47d3-82c6-424beaaf1165"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"9b13ed8a-ee13-4393-a8c9-fcaaf11c07eb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"917ca86f-2de4-415e-b753-d1643c016b11"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"a7be874d-2d2f-47fc-bab4-dfb4e2e54207"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PlotOsculatingCircle"]],
+    "paclet:KnoxPackages/ref/PlotOsculatingCircle"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"f2d09d8c-bd1a-4a17-940f-1ba85cdc33f7"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PlotOsculatingCircle3D"]],
+    "paclet:KnoxPackages/ref/PlotOsculatingCircle3D"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"edfb24ed-c379-4d16-8a0b-06df1042473f"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["CenterOfCurvature"]],
+    "paclet:KnoxPackages/ref/CenterOfCurvature"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"ba2d9d11-ff9e-41f7-a822-2a28fd57ea04"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Curvature"]],"paclet:KnoxPackages/ref/Curvature"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"70bd2993-ac45-4164-881a-6e518c7876bf"]
+}], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"39f6b271-92de-4b98-8637-f9a1e2950387"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"709e8e9a-eb5c-4c10-ba77-7ecf490d3c8e"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"c9521b49-87a7-43ff-aa1a-c6c15b2adae9"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"0fa5a5cf-f254-4bc7-815e-2729a327b4bc"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->307854833,ExpressionUUID->"3e0888c2-df30-425f-98a9-9b39e6d1cea3"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"0245d8b7-7ada-43f6-b856-f8c757c063d7"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"OsculatingPlane",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 47, 42.6183816}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "OsculatingPlane[{f[t], g[t], h[t]}, t, {u, v}] returns parametric \
+equations of the osculating plane to the curve {f[t], g[t], h[t]} at the \
+point {f[t0], g[t0], h[t0]} with u and v as parameters.", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "OsculatingPlane", "titlemodifier" -> "", 
+    "windowtitle" -> "OsculatingPlane", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/OsculatingPlane", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[9740, 259, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"7ca4fd44-cc50-4529-858a-4f273b7347db",
+   CellTags->"PrimaryExamplesSection",
+   CellID->255684752]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 18734, 533}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[587, 21, 4459, 99, 55, "AnchorBarGrid",ExpressionUUID->"f7dda9be-d8cb-471e-9836-3a358459f665",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[5071, 124, 400, 9, 52, "ObjectNameGrid",ExpressionUUID->"3c774b92-0136-40ef-ae4a-489aa4d06684"],
+Cell[5474, 135, 2201, 62, 132, "Usage",ExpressionUUID->"44962b2b-06ff-452c-acc4-b0b024dedac4",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7712, 202, 867, 21, 37, "NotesSection",ExpressionUUID->"d3562790-83e6-40b8-9e43-444b038056f3",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->193132651],
+Cell[8582, 225, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"29a8a4be-b82e-45f8-97d8-02283e4a4f93"],
+Cell[8671, 227, 243, 6, 70, "Notes",ExpressionUUID->"eff15e8d-5043-44ad-a281-4f5e96be1f20",
+ CellID->1067943069],
+Cell[8917, 235, 697, 17, 70, "3ColumnTableMod",ExpressionUUID->"cebfc796-03f6-4fa2-9214-5bfcb5350a31",
+ CellID->66705997],
+Cell[9617, 254, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"826d8062-f286-45e7-8cf8-41b0e9a8fa68"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9740, 259, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"7ca4fd44-cc50-4529-858a-4f273b7347db",
+ CellTags->"PrimaryExamplesSection",
+ CellID->255684752],
+Cell[CellGroupData[{
+Cell[10200, 274, 308, 7, 29, "ExampleSection",ExpressionUUID->"a7f79328-c866-433b-a52a-d209ed7b6170",
+ CellID->149335262],
+Cell[10511, 283, 167, 3, 38, "ExampleText",ExpressionUUID->"9285055e-8c2c-45ed-80e0-b7367ae4f170",
+ CellID->208847044],
+Cell[CellGroupData[{
+Cell[10703, 290, 505, 14, 69, "Input",ExpressionUUID->"3e960a05-131e-41d4-ba9e-62f214e46b1b",
+ CellID->662409210],
+Cell[11211, 306, 1233, 42, 63, "Output",ExpressionUUID->"7bafda2d-2836-4c6d-99f4-65a6a9b2b2d3",
+ CellID->983493647]
+}, Open  ]],
+Cell[12459, 351, 318, 8, 38, "ExampleText",ExpressionUUID->"92137889-bfbf-40ae-b931-4a01d2cdec26",
+ CellID->173860272],
+Cell[CellGroupData[{
+Cell[12802, 363, 515, 14, 69, "Input",ExpressionUUID->"c1bcbc87-dd88-44fa-9f6c-880a1aee12f9",
+ CellID->136853887],
+Cell[13320, 379, 636, 21, 60, "Output",ExpressionUUID->"c6ce341b-2525-47d3-82c6-424beaaf1165",
+ CellID->136221298]
+}, Open  ]]
+}, Open  ]],
+Cell[13983, 404, 86, 0, 29, "SectionFooterSpacer",ExpressionUUID->"9b13ed8a-ee13-4393-a8c9-fcaaf11c07eb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14106, 409, 260, 7, 72, "SeeAlsoSection",ExpressionUUID->"a7be874d-2d2f-47fc-bab4-dfb4e2e54207",
+ CellID->1255426704],
+Cell[14369, 418, 1548, 41, 70, "SeeAlso",ExpressionUUID->"39f6b271-92de-4b98-8637-f9a1e2950387",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15954, 464, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"c9521b49-87a7-43ff-aa1a-c6c15b2adae9",
+ CellID->38303248],
+Cell[16223, 473, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"0fa5a5cf-f254-4bc7-815e-2729a327b4bc"],
+Cell[16312, 475, 227, 5, 70, "MoreAbout",ExpressionUUID->"3e0888c2-df30-425f-98a9-9b39e6d1cea3",
+ CellID->307854833]
+}, Open  ]],
+Cell[16554, 483, 78, 0, 70, "FooterCell",ExpressionUUID->"0245d8b7-7ada-43f6-b856-f8c757c063d7"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

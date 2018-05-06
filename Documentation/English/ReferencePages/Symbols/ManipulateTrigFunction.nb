@@ -1,0 +1,540 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21298,        530]
+NotebookOptionsPosition[     17393,        437]
+NotebookOutlinePosition[     19832,        498]
+CellTagsIndexPosition[     19747,        493]
+WindowTitle->ManipulateTrigFunction
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "b3d7ae6f-d5ff-4b33-8b6c-da450b031e91"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }],ExpressionUUID->"1a503454-89f1-497f-a674-c937ba227a95"],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->
+        False], {"\<\"KnoxPackages/ref/ManipulateTrigFunction\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["KnoxPackages/ref/ManipulateTrigFunction"]}, Visible -> 
+           False]]; SelectionMove[
+        DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/KnoxPackages/ref/\
+ManipulateTrigFunction.html"], StandardForm]], "Input", TextClipboardType -> 
+             "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$115520], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "KnoxPackages/ref/ManipulateTrigFunction", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "cf25384e-c4a3-479a-9a18-92efa5747ed2"]], "AnchorBar",ExpressionUUID->
+     "b90a13b7-afd2-4053-b016-681b469403ef"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"abeee222-b28c-4844-8609-51ac6d1f2a99"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["ManipulateTrigFunction", "ObjectName",ExpressionUUID->
+  "22fbdbdf-263b-4a6d-bb12-87cc207466ee"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"77612759-b1a9-4480-ad90-386f31bd35ce"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "e3c4b76c-095a-40a8-9020-c8c376e4ffa2"]
+}], "ObjectNameGrid",ExpressionUUID->"ce9b5b2c-9b78-4014-a65d-55965a4ba372"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"ManipulateTrigFunction", "[", 
+       RowBox[{"f", ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", 
+          SubscriptBox["t", "min"], ",", 
+          SubscriptBox["t", "max"]}], "}"}]}], "]"}]], "InlineFormula",
+      ExpressionUUID->"a2abccc6-52af-4c80-a130-bf26237c6f6f"],
+     " \[LineSeparator]produces an animation of the trig function ",
+     Cell[BoxData[
+     "f"], "InlineFormula",ExpressionUUID->
+      "a3c5b55d-40be-4ceb-8d06-9a67518c3c8a"],
+     " being traced out on the interval ",
+     Cell[BoxData[
+      RowBox[{"[", 
+       RowBox[{
+        SubscriptBox["t", "min"], ",", 
+        SubscriptBox["t", "max"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "d0d9bb68-c558-46f6-aaa2-725df9d83869"],
+     " as the ray making an angle ",
+     Cell[BoxData[
+     "t"], "InlineFormula",ExpressionUUID->
+      "20d920ba-d8d6-4a41-bc9a-4b9aaf0ef5c1"],
+     " with the ",
+     Cell[BoxData[
+     "x"], "InlineFormula",ExpressionUUID->
+      "5a6d1eab-b43c-4101-8288-6259f2bcd352"],
+     "-axis moves across the interval ",
+     Cell[BoxData[
+      RowBox[{"[", 
+       RowBox[{
+        SubscriptBox["t", "min"], ",", 
+        SubscriptBox["t", "max"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "a2a9444f-641a-4f34-8adf-d29784d9b81d"],
+     ". "
+    }],ExpressionUUID->"7c0350e9-5bc1-43dd-a953-31c00cb61091"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"3fdd811d-bf26-4dc0-9fe6-83d9545094e8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"bd3fda9e-8ead-4985-b027-ce195ffd5898"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "a02e46d8-f6de-4348-baa8-24e62a2735fd"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->326014259,ExpressionUUID->"c28efb64-6f75-40c3-9e20-787659821135"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "4bef8fdf-dbd5-4580-98ba-9870c70c7a32"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->170186411,ExpressionUUID->"88117581-c68b-4be1-80ac-ffe16e38a818"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Manipulations`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ManipulateTrigFunction", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", 
+     RowBox[{"2", " ", "\[Pi]"}]}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Small"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->109854358,ExpressionUUID->"7fc81b8b-7187-4076-9ee4-96c69394a704"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`x$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`x$$], 0, 2 Pi}}, Typeset`size$$ = {396., {37., 41.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`x$153067$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`x$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`x$$, $CellContext`x$153067$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        GraphicsRow[{
+          Graphics[{
+            Circle[{0, 0}, 1, {0, $CellContext`x$$}], 
+            Line[{{0, 0}, {
+               Cos[$CellContext`x$$], 
+               Sin[$CellContext`x$$]}}], 
+            KnoxPackages`Manipulations`Private`line$153066}, AspectRatio -> 
+           Automatic, Axes -> Automatic, 
+           PlotRange -> {{-1.02, 1.02}, {-1.02, 1.02}}], 
+          Quiet[
+           KnoxPackages`Calculus`PlotJump[
+            KnoxPackages`Manipulations`Private`f$153066[
+            KnoxPackages`Manipulations`Private`t], {
+            KnoxPackages`Manipulations`Private`t, 0 + 
+             0.00001, $CellContext`x$$}, PlotRange -> 
+            KnoxPackages`Manipulations`Private`prange$153066, AspectRatio -> 
+            KnoxPackages`Manipulations`Private`aratio$153066, 
+            Evaluate[
+             Apply[Sequence, 
+              FilterRules[{ImageSize -> Small}, 
+               Flatten[{
+                 Options[KnoxPackages`Calculus`PlotJump], 
+                 Options[Plot]}]]]]]]}, GraphicsSpacing -> 0.1]], 
+      "Specifications" :> {{$CellContext`x$$, 0, 2 Pi}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{445., {82., 88.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ ImageSize->{449, 172},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->167088926,ExpressionUUID->"9512f212-e87c-416c-94f7-09b26670c9de"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Manipulations`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ManipulateTrigFunction", "[", 
+  RowBox[{
+   RowBox[{"Tan", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", 
+      FractionBox["\[Pi]", "2"]}], ",", 
+     FractionBox["\[Pi]", "2"]}], "}"}], ",", 
+   RowBox[{"Asymptote", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"-", "\[Pi]"}], "2"], ",", 
+      FractionBox["\[Pi]", "2"]}], "}"}]}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "10"}], ",", "10"}], "}"}]}], ",", 
+   RowBox[{"AspectRatio", "\[Rule]", 
+    RowBox[{"1", "/", "GoldenRatio"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Small"}]}], "]"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->24841432,ExpressionUUID->"0ca7b797-3f25-45d0-be11-3a04f71e4759"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`x$$ = Rational[-1, 2] Pi, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`x$$], Rational[-1, 2] Pi, Rational[1, 2] Pi}}, 
+    Typeset`size$$ = {396., {62., 67.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`x$152857$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`x$$ = Rational[-1, 2] Pi}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`x$$, $CellContext`x$152857$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        GraphicsRow[{
+          Graphics[{
+            Circle[{0, 0}, 1, {Rational[-1, 2] Pi, $CellContext`x$$}], 
+            Line[{{0, 0}, {
+               Cos[$CellContext`x$$], 
+               Sin[$CellContext`x$$]}}], 
+            KnoxPackages`Manipulations`Private`line$152856}, AspectRatio -> 
+           Automatic, Axes -> Automatic, 
+           PlotRange -> {{-1.02, 1.02}, {-1.02, 1.02}}], 
+          Quiet[
+           KnoxPackages`Calculus`PlotJump[
+            KnoxPackages`Manipulations`Private`f$152856[
+            KnoxPackages`Manipulations`Private`t], {
+            KnoxPackages`Manipulations`Private`t, Rational[-1, 2] Pi + 
+             0.00001, $CellContext`x$$}, PlotRange -> 
+            KnoxPackages`Manipulations`Private`prange$152856, AspectRatio -> 
+            KnoxPackages`Manipulations`Private`aratio$152856, 
+            Evaluate[
+             Apply[Sequence, 
+              
+              FilterRules[{
+               KnoxPackages`Calculus`Asymptote -> {
+                 Rational[-1, 2] Pi, Rational[1, 2] Pi}, 
+                PlotRange -> {-10, 10}, AspectRatio -> GoldenRatio^(-1), 
+                ImageSize -> Small}, 
+               Flatten[{
+                 Options[KnoxPackages`Calculus`PlotJump], 
+                 Options[Plot]}]]]]]]}, GraphicsSpacing -> 0.1]], 
+      "Specifications" :> {{$CellContext`x$$, Rational[-1, 2] Pi, 
+         Rational[1, 2] Pi}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{445., {107., 113.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ ImageSize->{449, 222},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->66717113,ExpressionUUID->"44a32439-5b46-4e74-9911-e7e3539d46c5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Manipulations`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ManipulateTrigFunction", "[", 
+  RowBox[{
+   RowBox[{"Sec", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", 
+      FractionBox["\[Pi]", "2"]}], ",", 
+     FractionBox["\[Pi]", "2"]}], "}"}], ",", 
+   RowBox[{"Asymptote", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"-", "\[Pi]"}], "2"], ",", 
+      FractionBox["\[Pi]", "2"]}], "}"}]}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "4"}], "}"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Small"}]}], "]"}]}], "Input",
+ CellLabel->"In[3]:=",
+ CellID->72789988,ExpressionUUID->"cace21be-9406-4529-8b0b-0a7206b7a5a5"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`x$$ = Rational[-1, 2] Pi, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`x$$], Rational[-1, 2] Pi, Rational[1, 2] Pi}}, 
+    Typeset`size$$ = {314., {98., 103.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`x$158584$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`x$$ = Rational[-1, 2] Pi}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`x$$, $CellContext`x$158584$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Show[
+        GraphicsRow[{
+          Graphics[{
+            Circle[{0, 0}, 1, {Rational[-1, 2] Pi, $CellContext`x$$}], 
+            Line[{{0, 0}, {
+               Cos[$CellContext`x$$], 
+               Sin[$CellContext`x$$]}}], 
+            KnoxPackages`Manipulations`Private`line$158583}, AspectRatio -> 
+           Automatic, Axes -> Automatic, 
+           PlotRange -> {{-1.02, 1.02}, {-1.02, 1.02}}], 
+          Quiet[
+           KnoxPackages`Calculus`PlotJump[
+            KnoxPackages`Manipulations`Private`f$158583[
+            KnoxPackages`Manipulations`Private`t], {
+            KnoxPackages`Manipulations`Private`t, Rational[-1, 2] Pi + 
+             0.00001, $CellContext`x$$}, PlotRange -> 
+            KnoxPackages`Manipulations`Private`prange$158583, AspectRatio -> 
+            KnoxPackages`Manipulations`Private`aratio$158583, 
+            Evaluate[
+             Apply[Sequence, 
+              
+              FilterRules[{
+               KnoxPackages`Calculus`Asymptote -> {
+                 Rational[-1, 2] Pi, Rational[1, 2] Pi}, PlotRange -> {0, 4}, 
+                ImageSize -> Small}, 
+               Flatten[{
+                 Options[KnoxPackages`Calculus`PlotJump], 
+                 Options[Plot]}]]]]]]}, GraphicsSpacing -> 0.1]], 
+      "Specifications" :> {{$CellContext`x$$, Rational[-1, 2] Pi, 
+         Rational[1, 2] Pi}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{363., {143., 149.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ ImageSize->{367, 294},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->371388122,ExpressionUUID->"4ad10e05-bf2b-4474-8965-3dd97472e3d8"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"6991fa06-be34-4687-8cab-788d582febe5"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ManipulateTrigFunction",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 46, 43.0600255}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "ManipulateTrigFunction[f, {t, tmin, tmax}] produces an animation of the \
+trig function f being traced out on the interval [tmin, tmax] as the ray \
+making an angle t with the x-axis moves across the interval [tmin, tmax]. ", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "ManipulateTrigFunction", 
+    "titlemodifier" -> "", "windowtitle" -> "ManipulateTrigFunction", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/ManipulateTrigFunction", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5374, 142, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"c28efb64-6f75-40c3-9e20-787659821135",
+   CellTags->"PrimaryExamplesSection",
+   CellID->326014259]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 19549, 486}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[594, 21, 2665, 58, 55, "AnchorBarGrid",ExpressionUUID->"abeee222-b28c-4844-8609-51ac6d1f2a99",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[3284, 83, 407, 9, 52, "ObjectNameGrid",ExpressionUUID->"ce9b5b2c-9b78-4014-a65d-55965a4ba372"],
+Cell[3694, 94, 1643, 43, 131, "Usage",ExpressionUUID->"3fdd811d-bf26-4dc0-9fe6-83d9545094e8",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5374, 142, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"c28efb64-6f75-40c3-9e20-787659821135",
+ CellTags->"PrimaryExamplesSection",
+ CellID->326014259],
+Cell[CellGroupData[{
+Cell[5834, 157, 308, 7, 29, "ExampleSection",ExpressionUUID->"88117581-c68b-4be1-80ac-ffe16e38a818",
+ CellID->170186411],
+Cell[CellGroupData[{
+Cell[6167, 168, 466, 11, 43, "Input",ExpressionUUID->"7fc81b8b-7187-4076-9ee4-96c69394a704",
+ CellID->109854358],
+Cell[6636, 181, 2736, 59, 193, "Output",ExpressionUUID->"9512f212-e87c-416c-94f7-09b26670c9de",
+ CellID->167088926]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9409, 245, 901, 25, 88, "Input",ExpressionUUID->"0ca7b797-3f25-45d0-be11-3a04f71e4759",
+ CellID->24841432],
+Cell[10313, 272, 3089, 65, 243, "Output",ExpressionUUID->"44a32439-5b46-4e74-9911-e7e3539d46c5",
+ CellID->66717113]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13439, 342, 792, 22, 70, "Input",ExpressionUUID->"cace21be-9406-4529-8b0b-0a7206b7a5a5",
+ CellID->72789988],
+Cell[14234, 366, 3038, 64, 70, "Output",ExpressionUUID->"4ad10e05-bf2b-4474-8965-3dd97472e3d8",
+ CellID->371388122]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[17311, 435, 78, 0, 70, "FooterCell",ExpressionUUID->"6991fa06-be34-4687-8cab-788d582febe5"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

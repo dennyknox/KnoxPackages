@@ -1,0 +1,789 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     25345,        780]
+NotebookOptionsPosition[     17831,        621]
+NotebookOutlinePosition[     19700,        669]
+CellTagsIndexPosition[     19615,        664]
+WindowTitle->PlotWeb
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/PlotWeb\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/PlotWeb"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+PlotWeb.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, 
+            Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$179142], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/PlotWeb", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[TextData[{
+ Cell["PlotWeb", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["PlotWeb"]],"paclet:KnoxPackages/ref/PlotWeb"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["f", "TI"], ",", 
+        RowBox[{"{", 
+         StyleBox[
+          RowBox[{"x", ",", 
+           SubscriptBox["x", "0"], ",", 
+           SubscriptBox["x", "1"]}], "TI"], "}"}], ",", 
+        StyleBox["initialpt", "TI"], ",", 
+        StyleBox["iters", "TI"], ",", 
+        StyleBox["dropiters", "TI"]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]returns a list of fixed point iterations ",
+     Cell[BoxData[
+      RowBox[{"x", "=", 
+       RowBox[{"f", 
+        RowBox[{"(", "x", ")"}]}]}]], "InlineFormula"],
+     " and a web plot with the first dropiters supressed in the plot."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]]],
+   "Details and Options"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell["The defualt value of dropiters is 0.", "Notes",
+ CellID->596996964],
+
+Cell[TextData[{
+ "If ",
+ StyleBox["initialpt", "TI"],
+ " is an exact number, numerical approximations are not used."
+}], "Notes",
+ CellID->123194247],
+
+Cell[TextData[{
+ ButtonBox["PlotWeb",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/PlotWeb"],
+ " has the same options as ",
+ ButtonBox["PlotVector",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/PlotVector"],
+ " and ",
+ ButtonBox["Plot",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/Plot"],
+ ", with the following additions and changes:"
+}], "Notes",
+ CellID->1067943069],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["ArrowSize",
+     BaseStyle->"Link",
+     ButtonData->"paclet:KnoxPackages/ref/ArrowSize"], "1", Cell[
+    "determines the size of the arrowheads", "TableText"]},
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["PointStyle",
+     BaseStyle->"Link",
+     ButtonData->"paclet:KnoxPackages/ref/PointStyle"], 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"PointSize", "[", "0.03", "]"}], ",", " ", 
+       RowBox[{"RGBColor", "[", 
+        RowBox[{"1", ",", " ", "0", ",", " ", "0"}], "]"}]}], "}"}], "}"}], 
+    Cell["\<\
+graphics directive to specify the style for the initial point\
+\>", "TableText"]},
+   {Cell["      ", "TableRowIcon"], 
+    ButtonBox["PrintDisplay",
+     BaseStyle->"Link",
+     ButtonData->"paclet:KnoxPackages/ref/PrintDisplay"], 
+    ButtonBox["True",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/True"], Cell[
+    "whether to print the iterations", "TableText"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, 
+   "Rows" -> {None, None, {None}}, "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True, True, True}}}},
+ CellID->307561345],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(9)", "ExampleCount"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1],
+
+Cell[TextData[{
+ "The fixed iteration ",
+ Cell[BoxData[
+  RowBox[{
+   SuperscriptBox["x", "2"], "=", "x"}]], "InlineFormula"],
+ ", starting at ",
+ Cell[BoxData[
+  RowBox[{"x", "=", "0.9"}]], "InlineFormula"],
+ " and interating 4 times."
+}], "ExampleText",
+ CellID->185645171],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"PlotWeb", "[", 
+    RowBox[{
+     SuperscriptBox["x", "2"], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", 
+        FractionBox["1", "2"]}], ",", "1.2"}], "}"}], ",", ".9", ",", "4", 
+     ",", 
+     RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}]}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->236646723],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->788478804],
+
+Cell["\<\
+Here we give the input as an exact value, forcing the command to use exact \
+numbers.\
+\>", "ExampleText",
+ CellID->394149818],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotWeb", "[", 
+  RowBox[{
+   SuperscriptBox["x", "2"], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", 
+      FractionBox["1", "2"]}], ",", "1.2"}], "}"}], ",", 
+   RowBox[{"9", "/", "10"}], ",", "4", ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->769908704]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->36274623],
+
+Cell[TextData[{
+ "The fixed point iteration ",
+ Cell[BoxData[
+  RowBox[{"x", "=", 
+   SuperscriptBox["x", "2"]}]], "InlineFormula"],
+ ", starting at ",
+ Cell[BoxData[
+  RowBox[{"x", "=", "1.05"}]], "InlineFormula"],
+ " and iterating 4 times."
+}], "ExampleText",
+ CellID->196546397],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotWeb", "[", 
+  RowBox[{
+   SuperscriptBox["x", "2"], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "2"}], "}"}], ",", "1.05", ",", "4", ",", 
+   RowBox[{"ArrowSize", "->", "3"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->10646703]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Options",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2061341341],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "ArrowSize",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1757724783],
+
+Cell["We can set the size for the arrows", "ExampleText",
+ CellID->596629690],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotWeb", "[", 
+  RowBox[{
+   SuperscriptBox["x", "2"], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", 
+      FractionBox["1", "2"]}], ",", "1.2"}], "}"}], ",", 
+   RowBox[{"9", "/", "10"}], ",", "4", ",", 
+   RowBox[{"ArrowSize", "->", 
+    RowBox[{"1", "/", "2"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->591622995],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["9", "10"], ",", 
+   FractionBox["81", "100"], ",", 
+   FractionBox["6561", "10000"], ",", 
+   FractionBox["43046721", "100000000"], ",", 
+   FractionBox["1853020188851841", "10000000000000000"]}], "}"}]], "Print",
+ CellLabel->"During evaluation of In[1]:=",
+ CellID->233076297]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "PointStyle",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->1295379749],
+
+Cell["We can alter the style for the point.", "ExampleText",
+ CellID->14294769],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotWeb", "[", 
+  RowBox[{
+   SuperscriptBox["x", "2"], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", 
+      FractionBox["1", "2"]}], ",", "1.2"}], "}"}], ",", 
+   RowBox[{"9", "/", "10"}], ",", "4", ",", 
+   RowBox[{"PointStyle", "\[Rule]", "Green"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->50752265]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "PrintDisplay",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSubsection", "ExampleSubsection",
+ WholeCellGroupOpener->True,
+ CellID->251642035],
+
+Cell["Here we suppress the printing of the points", "ExampleText",
+ CellID->573020726],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotWeb", "[", 
+  RowBox[{
+   SuperscriptBox["x", "2"], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", 
+      FractionBox["1", "2"]}], ",", "1.2"}], "}"}], ",", ".9", ",", "4", ",", 
+   
+   RowBox[{"PrintDisplay", "\[Rule]", "False"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->44470645]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Neat Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->589267740],
+
+Cell[TextData[{
+ "The fixed point iteration ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"2", " ", "Sin", 
+    RowBox[{"(", "x", ")"}]}], "=", "x"}]], "InlineFormula"],
+ " starting at ",
+ Cell[BoxData[
+  RowBox[{"x", "=", "1.6"}]], "InlineFormula"],
+ " and iterating 5 times."
+}], "ExampleText",
+ CellID->250908919],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotWeb", "[", 
+  RowBox[{
+   RowBox[{"2", " ", 
+    RowBox[{"Sin", "[", "x", "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     FractionBox["\[Pi]", "3"], ",", 
+     FractionBox[
+      RowBox[{"2", " ", "\[Pi]"}], "3"]}], "}"}], ",", "1.6", ",", "5", ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->85490224],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->374591232],
+
+Cell["Here we apply a style to the vectors and the initial point.", \
+"ExampleText",
+ CellID->96624390],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PlotWeb", "[", 
+  RowBox[{
+   RowBox[{"2", " ", 
+    RowBox[{"Sin", "[", "x", "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     FractionBox["\[Pi]", "3"], ",", 
+     FractionBox[
+      RowBox[{"2", " ", "\[Pi]"}], "3"]}], "}"}], ",", "1.7", ",", "5", ",", 
+   RowBox[{"VectorStyle", "\[Rule]", 
+    RowBox[{"RGBColor", "[", 
+     RowBox[{"1", ",", "0", ",", "1"}], "]"}]}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"Thickness", "[", ".01", "]"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->457594246]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell["\t", "ExampleDelimiter"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->446503260],
+
+Cell[TextData[{
+ "The fixed point iteration ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    RowBox[{"3.5", "x"}], "-", 
+    RowBox[{"1.4", 
+     SuperscriptBox["x", "2"]}]}], "=", "x"}]], "InlineFormula"],
+ ", starting at ",
+ Cell[BoxData[
+  RowBox[{"x", "=", "2.3"}]], "InlineFormula"],
+ " a",
+ "nd iterating 6 times.  A style has been set for each iteration and the size \
+of the arrowheads increased."
+}], "ExampleText",
+ CellID->98671883],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"GraphicsGrid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"PlotWeb", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"3.5", " ", "x"}], "-", 
+         RowBox[{"1.4", " ", 
+          SuperscriptBox["x", "2"]}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "1.5", ",", "2.5"}], "}"}], ",", "2.3", ",", "6", 
+        ",", 
+        RowBox[{"VectorStyle", "\[Rule]", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"Hue", "[", "j", "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"j", ",", "0", ",", "1", ",", 
+             FractionBox["1", "12"]}], "}"}]}], "]"}]}], ",", 
+        RowBox[{"ArrowSize", "\[Rule]", "2"}], ",", 
+        RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}], ",", 
+      RowBox[{"PlotWeb", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"3.5", " ", "x"}], "-", 
+         RowBox[{"1.4", " ", 
+          SuperscriptBox["x", "2"]}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "1.5", ",", "2.5"}], "}"}], ",", "2.3", ",", 
+        "16"}], "]"}]}], "}"}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->6040992]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SectionFooterSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"PlotWeb",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 53, 12.4303392}", 
+    "history" -> {"6.0.2", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "PlotWeb[f, {x, x0, x1}, initialpt, iters, dropiters] returns a list of \
+fixed point iterations x = f (x) and a web plot with the first dropiters \
+supressed in the plot.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "PlotWeb", "titlemodifier" -> "", "windowtitle" -> "PlotWeb", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/PlotWeb"}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7474, 228, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"2cf14ee5-34d1-4d86-b050-8999c0a1c249",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 19425, 657}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[579, 21, 3037, 74, 70, "AnchorBarGrid",ExpressionUUID->"4f315505-9cf1-43a6-8113-e30828cd53b0",
+ CellID->1],
+Cell[3619, 97, 164, 6, 70, "ObjectNameGrid",ExpressionUUID->"ea52ba4b-adc3-4ca4-9152-fe7769412cc5"],
+Cell[3786, 105, 1044, 30, 70, "Usage",ExpressionUUID->"08642ea9-c17f-4f12-863c-d2ba7609e3e3",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[4855, 139, 633, 19, 70, "NotesSection",ExpressionUUID->"6009aa3e-a66a-4586-ac7d-5de1fc455dcd",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+Cell[5491, 160, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"e2698d50-85bb-4019-90a0-4b8be0744b55"],
+Cell[5525, 162, 73, 1, 70, "Notes",ExpressionUUID->"5bc07db2-834c-4c0e-8a65-23a3ccd67103",
+ CellID->596996964],
+Cell[5601, 165, 149, 5, 70, "Notes",ExpressionUUID->"f9ff0043-0b56-4d18-8336-753d4e735846",
+ CellID->123194247],
+Cell[5753, 172, 402, 14, 70, "Notes",ExpressionUUID->"1b669f78-a652-48b9-bf10-46f40d968229",
+ CellID->1067943069],
+Cell[6158, 188, 1245, 33, 70, "3ColumnTableMod",ExpressionUUID->"5ae9d8ac-9428-483b-8999-9fd91994bc00",
+ CellID->307561345],
+Cell[7406, 223, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"46681994-2665-4c8b-9815-46d947ff0df4"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7474, 228, 259, 10, 70, "PrimaryExamplesSection",ExpressionUUID->"2cf14ee5-34d1-4d86-b050-8999c0a1c249",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[7758, 242, 187, 6, 70, "ExampleSection",ExpressionUUID->"3678d41e-0a84-490e-a84a-f9ee26ea5897",
+ CellID->1],
+Cell[7948, 250, 275, 10, 70, "ExampleText",ExpressionUUID->"9586fe8a-009f-4ccf-97a4-2f81b1166ad9",
+ CellID->185645171],
+Cell[8226, 262, 496, 15, 70, "Input",ExpressionUUID->"ce08364c-bbdb-4217-9bf4-6de312ca40d8",
+ CellID->236646723],
+Cell[CellGroupData[{
+Cell[8747, 281, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"4d8db619-67fe-40fb-b747-a7ba5a602edb",
+ CellID->788478804],
+Cell[8875, 286, 136, 4, 70, "ExampleText",ExpressionUUID->"4c87510a-9a6f-4f31-b0b0-1e3dc9887b9d",
+ CellID->394149818],
+Cell[9014, 292, 449, 13, 70, "Input",ExpressionUUID->"1e044f64-83e0-4af7-902a-c99f29d50dc1",
+ CellID->769908704]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9500, 310, 124, 3, 70, "ExampleDelimiter",ExpressionUUID->"dd417332-16a0-4f6a-9138-ab540afbaece",
+ CellID->36274623],
+Cell[9627, 315, 281, 10, 70, "ExampleText",ExpressionUUID->"7dba5019-cb70-4ae6-b493-494811e74454",
+ CellID->196546397],
+Cell[9911, 327, 421, 11, 70, "Input",ExpressionUUID->"4b8e747c-bab5-4913-8a83-d9d38a711e95",
+ CellID->10646703]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10381, 344, 189, 6, 70, "ExampleSection",ExpressionUUID->"18e96329-b2f2-497b-8a87-462bcd21cf7b",
+ CellID->2061341341],
+Cell[CellGroupData[{
+Cell[10595, 354, 197, 6, 70, "ExampleSubsection",ExpressionUUID->"cac1eed6-8443-4c72-98cd-12dfc7577e13",
+ CellID->1757724783],
+Cell[10795, 362, 77, 1, 70, "ExampleText",ExpressionUUID->"537d9d3a-8f4e-4e5f-aa8c-1d0ee5085356",
+ CellID->596629690],
+Cell[CellGroupData[{
+Cell[10897, 367, 517, 15, 70, "Input",ExpressionUUID->"88c824fd-3917-4aa5-84b6-1d4c711e4ef5",
+ CellID->591622995],
+Cell[11417, 384, 333, 9, 70, "Print",ExpressionUUID->"67e07457-40b2-419b-a23e-b6b49e50d13f",
+ CellID->233076297]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[11799, 399, 198, 6, 70, "ExampleSubsection",ExpressionUUID->"4dad3017-e272-4e16-9c18-6cb89942f306",
+ CellID->1295379749],
+Cell[12000, 407, 79, 1, 70, "ExampleText",ExpressionUUID->"98f046d0-91aa-401d-b499-652f2d4a6779",
+ CellID->14294769],
+Cell[12082, 410, 501, 14, 70, "Input",ExpressionUUID->"5eb350c9-ec6b-471c-9466-efa915bc4a8b",
+ CellID->50752265]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[12620, 429, 199, 6, 70, "ExampleSubsection",ExpressionUUID->"5811378c-b5ac-465f-bcc3-5726f6a6b0d4",
+ CellID->251642035],
+Cell[12822, 437, 86, 1, 70, "ExampleText",ExpressionUUID->"e22d880b-6b0e-4f39-a2ac-74af8d9475e2",
+ CellID->573020726],
+Cell[12911, 440, 483, 14, 70, "Input",ExpressionUUID->"67058693-5c36-40cb-af09-258a122eabc1",
+ CellID->44470645]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[13443, 460, 194, 6, 70, "ExampleSection",ExpressionUUID->"7df1e189-f4f6-495d-b394-4adeedff2001",
+ CellID->589267740],
+Cell[13640, 468, 310, 11, 70, "ExampleText",ExpressionUUID->"e022f914-ff48-404f-b7a8-1704d021034b",
+ CellID->250908919],
+Cell[13953, 481, 491, 14, 70, "Input",ExpressionUUID->"710a2b73-f500-465b-a095-7564430acc92",
+ CellID->85490224],
+Cell[CellGroupData[{
+Cell[14469, 499, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"643e1d7a-46a4-4a01-acdc-25e0fbfc3ad0",
+ CellID->374591232],
+Cell[14597, 504, 103, 2, 70, "ExampleText",ExpressionUUID->"55fb9d10-f309-42af-a327-faa41055e2ef",
+ CellID->96624390],
+Cell[14703, 508, 703, 19, 70, "Input",ExpressionUUID->"05e8b9aa-71ee-403e-9641-16eb26c8a17b",
+ CellID->457594246]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15443, 532, 125, 3, 70, "ExampleDelimiter",ExpressionUUID->"35dca386-aef2-4a34-8d1a-ec1788369f80",
+ CellID->446503260],
+Cell[15571, 537, 439, 15, 70, "ExampleText",ExpressionUUID->"8db94030-0be2-4b41-9396-1504b1964523",
+ CellID->98671883],
+Cell[16013, 554, 1324, 37, 70, "Input",ExpressionUUID->"b33c60ba-c195-4ee0-9a2a-b130efe2634d",
+ CellID->6040992]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17398, 598, 31, 0, 70, "SectionFooterSpacer",ExpressionUUID->"0ae6fc19-c31e-4383-a0e2-33674e81640d"],
+Cell[17432, 600, 156, 7, 70, "MoreAboutSection",ExpressionUUID->"cea9afbf-d8f4-46ad-aca0-b8a0a259b191",
+ CellID->38303248],
+Cell[17591, 609, 31, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"d4fec6d8-9877-462c-a6ad-05a5ac95829a"],
+Cell[17625, 611, 164, 5, 70, "MoreAbout",ExpressionUUID->"e8ffadcc-4b0a-4b8e-ba1c-01d011e5266d",
+ CellID->1]
+}, Open  ]],
+Cell[17804, 619, 23, 0, 70, "FooterCell",ExpressionUUID->"ee2038f3-91b8-4bf4-af62-1593334e2c94"]
+}
+]
+*)
+
+(* End of internal cache information *)

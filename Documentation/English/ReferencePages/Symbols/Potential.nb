@@ -1,0 +1,690 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24107,        680]
+NotebookOptionsPosition[     17661,        539]
+NotebookOutlinePosition[     20073,        599]
+CellTagsIndexPosition[     19988,        594]
+WindowTitle->Potential
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "5864c3ee-9d5c-4da6-9908-9f30fabe81f4"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"4a194b66-a8f6-478c-9d38-4fb5f77287d0"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Grad\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/Grad"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "51fe638c-c945-4737-a248-654429bd8dc8"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"b476597f-63f8-4446-a1db-8d7f9d98331a"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "ebbea768-44c5-460d-b36f-bebb2338f65e"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"813cc477-76a6-46d2-a734-87e5ea1d9d77"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/Potential\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/Potential"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+Potential.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]},
+             Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$185186], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/Potential", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "cdfd420c-c759-4180-a603-cb6999689cb6"]
+    }], "AnchorBar",ExpressionUUID->"34b3108f-7da8-4b62-9fd1-e9f59e767f68"]}
+  }]], "AnchorBarGrid",
+ CellID->1,ExpressionUUID->"f3fc6ecb-f1db-48eb-a234-6928713e8351"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["Potential", "ObjectName",ExpressionUUID->
+  "f4b07baa-1196-4174-9474-28f0ccc1b8a4"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"1be1ab47-a2ed-445e-a32e-8aa4ae8715e2"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "eac976ca-edd2-4cc3-b86f-ccff7846002f"]
+}], "ObjectNameGrid",ExpressionUUID->"6bb4ff48-7bdc-4d33-aeb3-ca7a40ab6d89"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["Potential"]],"paclet:KnoxPackages/ref/Potential"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          SubscriptBox["f", "x"], ",", 
+          SubscriptBox["f", "y"]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "InlineFormula",
+      ExpressionUUID->"0ecd9366-2775-4490-a252-30b456989858"],
+     " \[LineSeparator]returns the potential function ",
+     Cell[BoxData[
+      RowBox[{
+       StyleBox["f", "TI"], "[", 
+       RowBox[{
+        StyleBox["x", "TI"], ",", 
+        StyleBox["y", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "d4398c8e-a64a-48da-be62-e6e8dbb8acb7"],
+     " for the vector field ",
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox[
+           StyleBox["f", "TI"], "x"], "[", 
+          RowBox[{
+           StyleBox["x", "TI"], ",", 
+           StyleBox["y", "TI"]}], "]"}], ",", 
+         RowBox[{
+          SubscriptBox[
+           StyleBox["f", "TI"], "y"], "[", 
+          RowBox[{
+           StyleBox["x", "TI"], ",", 
+           StyleBox["y", "TI"]}], "]"}]}], "}"}], "}"}]], "InlineFormula",
+      ExpressionUUID->"42c2e428-ffd3-4289-9a64-d59badd9e609"],
+     "."
+    }],ExpressionUUID->"1d5baf92-ac1f-41a7-a37f-eae87474fee0"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["Potential"]],"paclet:KnoxPackages/ref/Potential"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          SubscriptBox["f", "x"], ",", 
+          SubscriptBox["f", "y"], ",", 
+          SubscriptBox["f", "z"]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "InlineFormula",
+      ExpressionUUID->"9dde95ae-dc67-4207-a249-39c2a02eaee8"],
+     "\[LineSeparator]returns the potential function ",
+     Cell[BoxData[
+      RowBox[{
+       StyleBox["f", "TI"], "[", 
+       RowBox[{
+        StyleBox["x", "TI"], ",", 
+        StyleBox["y", "TI"], ",", 
+        StyleBox["z", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "cfb0150c-d153-4c04-81e3-f5ad3282c9de"],
+     " for the vector field ",
+     Cell[BoxData[
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          StyleBox[
+           SubscriptBox["f", "x"], "TI"], "[", 
+          RowBox[{
+           StyleBox["x", "TI"], ",", 
+           StyleBox["y", "TI"], ",", 
+           StyleBox["z", "TI"]}], "]"}], ",", 
+         RowBox[{
+          StyleBox[
+           SubscriptBox["f", "y"], "TI"], "[", 
+          RowBox[{
+           StyleBox["x", "TI"], ",", 
+           StyleBox["y", "TI"], ",", 
+           StyleBox["z", "TI"]}], "]"}], ",", 
+         RowBox[{
+          StyleBox[
+           SubscriptBox["f", "z"], "TI"], "[", 
+          RowBox[{
+           StyleBox["x", "TI"], ",", 
+           StyleBox["y", "TI"], ",", 
+           StyleBox["z", "TI"]}], "]"}]}], "}"}], "}"}]], "InlineFormula",
+      ExpressionUUID->"483216c3-cb39-4ddd-a132-d8af8cc4b7e8"],
+     "."
+    }],ExpressionUUID->"4da7bf3f-9787-4a69-8436-8cf72188475d"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"fdd7aeb5-ae1e-4302-9332-4a09f3686ae0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"a2235d13-f5b1-4de0-8951-e2bf4186e204"],
+   "Details"
+  }], "NotesFrameText",ExpressionUUID->"e7997f8d-9fa1-4b21-8134-005dfaa835e1"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"27c7ecf2-48c3-472b-9ba9-ccf80cefcb1a"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->285752698,ExpressionUUID->"13c41030-4cb6-4a4a-9e37-6e60c818754b"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"d7789493-58cb-42ed-b2df-21148825bb64"],
+
+Cell[TextData[{
+ ButtonBox["Potential",
+  BaseStyle->"Link",
+  ButtonData->"paclet:KnoxPackages/ref/Potential"],
+ " has no options."
+}], "Notes",
+ CellID->1067943069,ExpressionUUID->"b36fe663-bd8b-4fe7-8be5-bcfe5753bc1d"],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"b786b895-f5f1-432a-9ed7-b564bf302b9f"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"b6d07623-3e8f-4baa-bda1-c42d55c3f67e"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount",ExpressionUUID->
+  "a6c9407b-8fea-4ff8-8478-a8ac6c0532bc"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->96760934,ExpressionUUID->"4bc99e04-d719-46cc-9ec9-9d28a6c095ad"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount",ExpressionUUID->
+  "a4ec4e24-e183-4366-b0fd-e101aade8659"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->6544146,ExpressionUUID->"8d416fba-ff1d-4b9b-951c-9999aa301877"],
+
+Cell["Here is a basic example", "ExampleText",
+ CellID->901797326,ExpressionUUID->"be3214bc-523a-4af6-b3d6-1aef110ca840"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Potential", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"y", ",", "x"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->204736016,ExpressionUUID->"cec8d886-580f-4c34-aef2-319d908cfa7f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", " ", "y"}], "+", 
+  RowBox[{"C", "[", "1", "]"}]}]], "Output",
+ ImageSize->{62, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->92278343,ExpressionUUID->"d859db60-7081-49ce-8de7-1e151744038a"]
+}, Open  ]],
+
+Cell["\<\
+Note that any potential function will have an additive constant.\
+\>", "ExampleText",
+ CellID->984979503,ExpressionUUID->"938f1489-4fac-47b8-b850-9ea9df938530"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "96a32066-a229-4cb1-ae3a-8693676c809c"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->477483238,ExpressionUUID->"b1327161-0697-476f-8858-6f6a85552bcd"],
+
+Cell["Here are a few more examples", "ExampleText",
+ CellID->368888709,ExpressionUUID->"6bde7ee7-effa-445e-9596-8c914a5d7c60"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Potential", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"y", " ", ",", 
+     RowBox[{
+      RowBox[{"z", " ", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"y", " ", "z"}], "]"}]}], "+", "x"}], " ", ",", 
+     RowBox[{"y", " ", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"y", " ", "z"}], "]"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->155017882,ExpressionUUID->"263627f9-cba7-4216-9bef-6f522096d2a7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", " ", "y"}], "+", 
+  RowBox[{"C", "[", "1", "]"}], "+", 
+  RowBox[{"Sin", "[", 
+   RowBox[{"y", " ", "z"}], "]"}]}]], "Output",
+ ImageSize->{127, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->464086123,ExpressionUUID->"65e0cacd-5ac0-4a4e-8b46-7e20fff31c79"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Potential", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y", ",", "z"}], "}"}], "/", 
+    SuperscriptBox[
+     RowBox[{"Norm", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y", ",", "z"}], "}"}], ",", "Reals"}], "]"}], 
+     "3"]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->245775764,ExpressionUUID->"3e6b9c1c-a8bf-4922-b34d-6c66aa81c653"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox["1", 
+    SqrtBox[
+     RowBox[{
+      SuperscriptBox["x", "2"], "+", 
+      SuperscriptBox["y", "2"], "+", 
+      SuperscriptBox["z", "2"]}]]]}], "+", 
+  RowBox[{"C", "[", "1", "]"}]}]], "Output",
+ ImageSize->{140, 52},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]=",
+ CellID->650895567,ExpressionUUID->"986742d7-612b-4f97-98a0-1a2b2f657233"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Potential", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"t", "-", 
+      RowBox[{"2", "t", " ", "y"}], "+", 
+      RowBox[{"Exp", "[", "y", "]"}]}], ",", 
+     RowBox[{"y", "-", 
+      SuperscriptBox["t", "2"], "+", 
+      RowBox[{"t", " ", 
+       RowBox[{"Exp", "[", "y", "]"}]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->131334375,ExpressionUUID->"57d08d6c-60a7-45dd-8118-da3612e36470"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", "y"], " ", "t"}], "+", 
+  FractionBox[
+   SuperscriptBox["t", "2"], "2"], "-", 
+  RowBox[{
+   SuperscriptBox["t", "2"], " ", "y"}], "+", 
+  FractionBox[
+   SuperscriptBox["y", "2"], "2"], "+", 
+  RowBox[{"C", "[", "1", "]"}]}]], "Output",
+ ImageSize->{165, 42},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[3]=",
+ CellID->207203334,ExpressionUUID->"91829672-cfde-4b3c-9562-125541e782dd"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "39e4e3e2-ee9e-420e-ab8f-79d12ed74deb"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->16953950,ExpressionUUID->"8a395eec-9b89-4aff-84aa-0916fdaf3369"],
+
+Cell["\<\
+Potential will test to see if the vector field is conservative. If it isn't, \
+a message will appear saying so\
+\>", "ExampleText",
+ CellID->59082911,ExpressionUUID->"755c8d79-144f-4519-a323-c62b4bce5d53"],
+
+Cell[BoxData[
+ RowBox[{"Potential", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"y", ",", 
+     RowBox[{"x", " ", "y"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->429338111,ExpressionUUID->"07909bf0-117c-4f7c-b757-e190aba87fa1"],
+
+Cell[BoxData[
+ RowBox[{"Potential", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"y", " ", ",", 
+     RowBox[{
+      RowBox[{"z", " ", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"y", " ", "z"}], "]"}]}], "+", 
+      RowBox[{"x", " ", "y"}]}], ",", 
+     RowBox[{"y", " ", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"y", " ", "z"}], "]"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->31888948,ExpressionUUID->"db0c46df-c9e4-45bc-af5f-b281cf911e1d"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"e0b682c1-270f-4399-9937-1e828068fdd6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"1b0bfa15-0ead-4bcc-bb57-8e538caa0005"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"c3af19dc-c5ee-4021-8f39-476dec75699f"],
+
+Cell[TextData[StyleBox[ButtonBox["Grad",
+ BaseStyle->"Link",
+ ButtonData->"paclet:KnoxPackages/ref/Grad"],
+ FontFamily->"Verdana",
+ FontSize->11]], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"eadefdb5-e958-418b-beec-6df9a5346141"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"e74f6e17-9c19-4ef4-b227-3e250ae41770"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"c2913adb-0106-4207-ba0e-246ac63dca2c"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"ce4bb84d-060f-479e-b176-3ac7ce4fdc63"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->571507,ExpressionUUID->"5462e7d8-43da-4938-bb4b-5f448c187498"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"ef588757-138f-4ee6-b5ad-8e0b086ff522"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Potential",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 53, 41.6515610}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "Potential[{fx, fy}, {x, y}] returns the potential function f[x, y] for \
+the vector field {fx[x, y], fy[x, y]}}. Potential[{fx, fy, fz}, {x, y, z}] \
+returns the potential function f[x, y, z] for the vector field {fx[x, y, z], \
+fy[x, y, z], fz[x, y, z]}}.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "Potential", "titlemodifier" -> "", "windowtitle" -> "Potential", "type" -> 
+    "Symbol", "uri" -> "KnoxPackages/ref/Potential", "WorkflowDockedCell" -> 
+    ""}, "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[9968, 275, 434, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"4bc99e04-d719-46cc-9ec9-9d28a6c095ad",
+   CellTags->"PrimaryExamplesSection",
+   CellID->96760934]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 19791, 587}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[581, 21, 4071, 93, 55, "AnchorBarGrid",ExpressionUUID->"f3fc6ecb-f1db-48eb-a234-6928713e8351",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4677, 118, 394, 9, 52, "ObjectNameGrid",ExpressionUUID->"6bb4ff48-7bdc-4d33-aeb3-ca7a40ab6d89"],
+Cell[5074, 129, 3563, 103, 215, "Usage",ExpressionUUID->"fdd7aeb5-ae1e-4302-9332-4a09f3686ae0",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8674, 237, 855, 21, 37, "NotesSection",ExpressionUUID->"13c41030-4cb6-4a4a-9e37-6e60c818754b",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->285752698],
+Cell[9532, 260, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"d7789493-58cb-42ed-b2df-21148825bb64"],
+Cell[9621, 262, 221, 6, 70, "Notes",ExpressionUUID->"b36fe663-bd8b-4fe7-8be5-bcfe5753bc1d",
+ CellID->1067943069],
+Cell[9845, 270, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"b786b895-f5f1-432a-9ed7-b564bf302b9f"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9968, 275, 434, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"4bc99e04-d719-46cc-9ec9-9d28a6c095ad",
+ CellTags->"PrimaryExamplesSection",
+ CellID->96760934],
+Cell[CellGroupData[{
+Cell[10427, 290, 306, 7, 29, "ExampleSection",ExpressionUUID->"8d416fba-ff1d-4b9b-951c-9999aa301877",
+ CellID->6544146],
+Cell[10736, 299, 121, 1, 38, "ExampleText",ExpressionUUID->"be3214bc-523a-4af6-b3d6-1aef110ca840",
+ CellID->901797326],
+Cell[CellGroupData[{
+Cell[10882, 304, 281, 8, 26, "Input",ExpressionUUID->"cec8d886-580f-4c34-aef2-319d908cfa7f",
+ CellID->204736016],
+Cell[11166, 314, 285, 8, 35, "Output",ExpressionUUID->"d859db60-7081-49ce-8de7-1e151744038a",
+ CellID->92278343]
+}, Open  ]],
+Cell[11466, 325, 170, 3, 38, "ExampleText",ExpressionUUID->"938f1489-4fac-47b8-b850-9ea9df938530",
+ CellID->984979503],
+Cell[CellGroupData[{
+Cell[11661, 332, 242, 5, 8, "ExampleDelimiter",ExpressionUUID->"b1327161-0697-476f-8858-6f6a85552bcd",
+ CellID->477483238],
+Cell[11906, 339, 126, 1, 38, "ExampleText",ExpressionUUID->"6bde7ee7-effa-445e-9596-8c914a5d7c60",
+ CellID->368888709],
+Cell[CellGroupData[{
+Cell[12057, 344, 516, 15, 26, "Input",ExpressionUUID->"263627f9-cba7-4216-9bef-6f522096d2a7",
+ CellID->155017882],
+Cell[12576, 361, 351, 10, 35, "Output",ExpressionUUID->"65e0cacd-5ac0-4a4e-8b46-7e20fff31c79",
+ CellID->464086123]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12964, 376, 491, 15, 32, "Input",ExpressionUUID->"3e6b9c1c-a8bf-4922-b34d-6c66aa81c653",
+ CellID->245775764],
+Cell[13458, 393, 438, 14, 73, "Output",ExpressionUUID->"986742d7-612b-4f97-98a0-1a2b2f657233",
+ CellID->650895567]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13933, 412, 509, 15, 70, "Input",ExpressionUUID->"57d08d6c-60a7-45dd-8118-da3612e36470",
+ CellID->131334375],
+Cell[14445, 429, 496, 15, 63, "Output",ExpressionUUID->"91829672-cfde-4b3c-9562-125541e782dd",
+ CellID->207203334]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14990, 450, 241, 5, 70, "ExampleDelimiter",ExpressionUUID->"8a395eec-9b89-4aff-84aa-0916fdaf3369",
+ CellID->16953950],
+Cell[15234, 457, 215, 4, 70, "ExampleText",ExpressionUUID->"755c8d79-144f-4519-a323-c62b4bce5d53",
+ CellID->59082911],
+Cell[15452, 463, 307, 9, 70, "Input",ExpressionUUID->"07909bf0-117c-4f7c-b757-e190aba87fa1",
+ CellID->429338111],
+Cell[15762, 474, 537, 16, 70, "Input",ExpressionUUID->"db0c46df-c9e4-45bc-af5f-b281cf911e1d",
+ CellID->31888948]
+}, Open  ]]
+}, Open  ]],
+Cell[16326, 494, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"e0b682c1-270f-4399-9937-1e828068fdd6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16449, 499, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"c3af19dc-c5ee-4021-8f39-476dec75699f",
+ CellID->1255426704],
+Cell[16712, 508, 233, 5, 70, "SeeAlso",ExpressionUUID->"eadefdb5-e958-418b-beec-6df9a5346141",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16982, 518, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"c2913adb-0106-4207-ba0e-246ac63dca2c",
+ CellID->38303248],
+Cell[17251, 527, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"ce4bb84d-060f-479e-b176-3ac7ce4fdc63"],
+Cell[17340, 529, 224, 5, 70, "MoreAbout",ExpressionUUID->"5462e7d8-43da-4938-bb4b-5f448c187498",
+ CellID->571507]
+}, Open  ]],
+Cell[17579, 537, 78, 0, 70, "FooterCell",ExpressionUUID->"ef588757-138f-4ee6-b5ad-8e0b086ff522"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

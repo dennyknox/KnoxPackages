@@ -1,0 +1,834 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28969,        824]
+NotebookOptionsPosition[     22451,        681]
+NotebookOutlinePosition[     24809,        741]
+CellTagsIndexPosition[     24724,        736]
+WindowTitle->HessianMatrix
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "1053c008-8feb-4d05-a26d-4bea851500b3"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"89ae8907-bcbc-438d-a433-617558eecd01"],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Calculus\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/guide/Calculus"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "c70f2fa3-7ebb-47cb-94f2-7809108abda6"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"4beb3907-84bd-4a4f-9910-c398c0da7ac8"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/HessianMatrix\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/HessianMatrix"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+HessianMatrix.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$85466], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/HessianMatrix", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "3cf8bfa4-5c18-4e5d-ba3d-9852d77b4060"]
+    }], "AnchorBar",ExpressionUUID->"690a3d92-11d8-4399-b35c-1ca5c72048aa"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"4f6ff07a-96da-4de7-9ba6-a8f7c80126d0"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["HessianMatrix", "ObjectName",ExpressionUUID->
+  "aa73b944-b320-425f-9091-fb5a4ee3ba47"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"219fbfd0-e253-416a-a900-38b008bcdc3d"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "d9b032c2-8955-45b3-9d2d-8d9cd752052a"]
+}], "ObjectNameGrid",ExpressionUUID->"ba8d807e-0d45-401e-8d8c-1f8d38dfcad8"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"HessianMatrix", "[", 
+       RowBox[{
+        StyleBox["f", "TI"], ",", 
+        RowBox[{"{", 
+         StyleBox["vars", "TI"], "}"}]}], "]"}]], "InlineFormula",
+      ExpressionUUID->"15cb1695-d515-4009-8005-cbda0b03af63"],
+     " \[LineSeparator]computes the Hessian matrix of the function ",
+     Cell[BoxData[
+      StyleBox["f", "TI"]], "InlineFormula",ExpressionUUID->
+      "ba97c6b8-4290-46fd-9959-221b3a2afa61"],
+     " with respect to the variables ",
+     Cell[BoxData[
+      StyleBox["vars", "TI"]], "InlineFormula",ExpressionUUID->
+      "6e6f7a65-fb71-43a8-a0e2-20b6ba1b4c8f"],
+     "."
+    }],ExpressionUUID->"4c13a136-f970-42f6-b4d7-28de1afb53a2"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       TemplateBox[{Cell[
+          TextData["HessianMatrix"]],"paclet:KnoxPackages/ref/HessianMatrix"},
+        "RefLink",
+        BaseStyle->{"InlineFormula"}], "[", 
+       RowBox[{
+        StyleBox["f", "TI"], ",", 
+        RowBox[{"{", 
+         StyleBox["vars", "TI"], "}"}], ",", 
+        StyleBox["pt", "TI"]}], "]"}]], "InlineFormula",ExpressionUUID->
+      "898e4547-8cf0-46eb-9165-63b9b07dc2fc"],
+     "\[LineSeparator]computes the Hessian matrix at the point ",
+     Cell[BoxData[
+      StyleBox["pt", "TI"]], "InlineFormula",ExpressionUUID->
+      "5d4dead8-c98f-4be3-b499-9b438a9dc1aa"],
+     "."
+    }],ExpressionUUID->"f7204c7d-a3e5-4443-8b13-758f51afd588"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"b299994c-e783-44a1-b6d7-d0493e6dca0d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"c6421f22-af87-4a1a-9431-8b748ca30476"],
+   "Details and Options"
+  }], "NotesFrameText",ExpressionUUID->"44de1f5c-c782-4e86-9874-1ddf65ba99f8"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"4e4e2596-fc88-4ccb-bbbb-a8e9a171aee1"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->613160353,ExpressionUUID->"170b3ac3-d921-41d8-87e6-8c5bbade28dc"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"4125594e-500c-4c17-83bf-7564937d2899"],
+
+Cell["Options", "Notes",
+ CellID->1067943069,ExpressionUUID->"d174d399-46b8-411c-84a7-09a160baeb85"],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "e7928377-dc72-46d7-b4e5-a1a0a0e80b2e"], 
+    ButtonBox["UseLimit",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/UseLimit"], 
+    ButtonBox["False",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/False"], Cell[TextData[Cell[TextData[Cell[
+    BoxData[Cell["\<\
+whether to use the limit definition to calculate the partial derivatives\
+\>", "TableText",ExpressionUUID->"4186abab-8883-4201-b11a-6454d4b22242"]], 
+     "3ColumnTableMod",
+     GridBoxOptions->{
+     GridBoxBackground->{
+      "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {}, 
+       "RowsIndexed" -> {}},
+     GridBoxDividers->{"Rows" -> {{True}}}},ExpressionUUID->
+     "a1c2dd12-eb96-48f0-9e06-dc8cdd929290"]], "TableText",ExpressionUUID->
+     "ebe95032-3c36-407d-ac44-99c14c71c681"]], "TableText",ExpressionUUID->
+     "8885c536-b115-47fe-931e-099c7d6c9dbc"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True}}}},
+ CellID->592697762,ExpressionUUID->"80f95c7a-c123-40a8-aa85-e4d3aa223bec"],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"085a313d-cd3e-40d1-a07a-eda2478b666a"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"2a9de5c9-717b-4bdc-be34-a858126c4aac"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount",ExpressionUUID->
+  "acb6c871-45a9-455a-9773-1b3be5963ad4"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->104056493,ExpressionUUID->"7abb5723-d1d4-442e-8fbc-83c80df3c3df"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(3)", "ExampleCount",ExpressionUUID->
+  "545c963e-ecfd-49f7-920a-e4f86a097c1a"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->75248837,ExpressionUUID->"4c5b5653-11c4-4ce8-afb4-b9bc01dc8e88"],
+
+Cell["Here is a basic example", "ExampleText",
+ CellID->4060975,ExpressionUUID->"ca6e6dbf-34d9-4606-be1a-d738279091b5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"HessianMatrix", "[", 
+   RowBox[{
+    RowBox[{"Sin", "[", 
+     RowBox[{"x", " ", "y"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}]}], "]"}], "//", "MatrixForm"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->171796700,ExpressionUUID->"a1734773-5884-4ab3-9e76-b1557c2574ac"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["y", "2"]}], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"x", " ", "y"}], "]"}]}], 
+      RowBox[{
+       RowBox[{"Cos", "[", 
+        RowBox[{"x", " ", "y"}], "]"}], "-", 
+       RowBox[{"x", " ", "y", " ", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"x", " ", "y"}], "]"}]}]}]},
+     {
+      RowBox[{
+       RowBox[{"Cos", "[", 
+        RowBox[{"x", " ", "y"}], "]"}], "-", 
+       RowBox[{"x", " ", "y", " ", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"x", " ", "y"}], "]"}]}]}], 
+      RowBox[{
+       RowBox[{"-", 
+        SuperscriptBox["x", "2"]}], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"x", " ", "y"}], "]"}]}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{306, 35},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//MatrixForm=",
+ CellID->343509173,ExpressionUUID->"47691865-4754-4b92-904f-69a9e8ee09bc"]
+}, Open  ]],
+
+Cell["Evaluate the Hessian at a point", "ExampleText",
+ CellID->113665652,ExpressionUUID->"f8186e16-3ef0-41da-a70c-01db6b516efd"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"HessianMatrix", "[", 
+   RowBox[{
+    RowBox[{"Sin", "[", 
+     RowBox[{"x", " ", "y"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0"}], "}"}]}], "]"}], "//", "MatrixForm"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->132164049,ExpressionUUID->"b8f9eb67-bf21-466c-b0ce-1e082e08c6ba"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "1"},
+     {"1", "0"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{46, 27},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]//MatrixForm=",
+ CellID->466318694,ExpressionUUID->"c9c315dd-9219-49a7-a212-2c92760ee01b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "ecc736de-a383-4264-ac26-9a7df32fc005"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->182780227,ExpressionUUID->"c32751b2-9de9-4975-8401-ab7cab703df2"],
+
+Cell[TextData[{
+ ButtonBox["PowerBehavior",
+  BaseStyle->"Link",
+  ButtonData->"paclet:ref/PowerBehavior"],
+ " is required to avoid complex roots"
+}], "ExampleText",
+ CellID->12157195,ExpressionUUID->"85767a9e-f9bb-4c97-b09c-28ffdce0facf"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"HessianMatrix", "[", 
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"x", " ", "y"}], ")"}], 
+      RowBox[{"4", "/", "3"}]], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "]"}], "//", "Simplify"}], "//",
+   "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"HessianMatrix", "[", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"x", " ", "y"}], ")"}], 
+     RowBox[{"4", "/", "3"}]], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+    RowBox[{"PowerBehavior", "->", "Real"}]}], "]"}], "//", 
+  "MatrixForm"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->92630303,ExpressionUUID->"ec26dde4-0110-4b96-9fc8-05b832af1f17"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["4", "9"]}], " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], 
+        RowBox[{"1", "/", "3"}]]}], 
+      RowBox[{
+       FractionBox["16", "9"], " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], 
+        RowBox[{"1", "/", "3"}]]}]},
+     {
+      RowBox[{
+       FractionBox["16", "9"], " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], 
+        RowBox[{"1", "/", "3"}]]}], 
+      RowBox[{
+       RowBox[{"-", 
+        FractionBox["4", "9"]}], " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], 
+        RowBox[{"1", "/", "3"}]]}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{164, 55},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//MatrixForm=",
+ CellID->165357364,ExpressionUUID->"d5485db1-9a0f-4192-b833-2d96ffed60fb"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      FractionBox["4", "9"], 
+      RowBox[{"-", 
+       FractionBox["16", "9"]}]},
+     {
+      RowBox[{"-", 
+       FractionBox["16", "9"]}], 
+      FractionBox["4", "9"]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{78, 55},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//MatrixForm=",
+ CellID->4347044,ExpressionUUID->"65d2af5c-0bca-4ed4-b994-a4b59fd9f110"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "d94e5f1c-7269-4443-9b3a-c59372408786"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->550424739,ExpressionUUID->"7132855a-e607-4803-a3fd-319c9612a3e9"],
+
+Cell[TextData[{
+ "Here we have a plot of a piecewise function and its Hessian matrix using \
+the ",
+ Cell[BoxData[
+ "Limit"], "InlineFormula",ExpressionUUID->
+  "64140add-df31-4ce9-a084-58041e621637"],
+ " definition for the partials. This is the classic example of a \"nice\" \
+function whose mixed partials are not equal."
+}], "ExampleText",
+ CellID->183836018,ExpressionUUID->"7cf99067-d1d9-4a9d-a859-e17e2c5d5e50"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{"\[Piecewise]", GridBox[{
+     {
+      FractionBox[
+       RowBox[{"x", " ", "y", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["x", "2"], "-", 
+          SuperscriptBox["y", "2"]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["x", "2"], "+", 
+        SuperscriptBox["y", "2"]}]], 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y"}], "}"}], "!=", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}]},
+     {"0", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y"}], "}"}], "==", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}]}
+    }]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"HessianMatrix", "[", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"x", ",", "y"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0"}], "}"}], ",", 
+    RowBox[{"UseLimit", "->", "True"}]}], "]"}], "//", 
+  "MatrixForm"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->663765339,ExpressionUUID->"81b86861-1fc9-43e6-9286-23e3234fee8f"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", 
+      RowBox[{"-", "1"}]},
+     {"1", "0"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{54, 27},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]//MatrixForm=",
+ CellID->26627061,ExpressionUUID->"fdfe3b46-5743-4c19-8e40-e6d2cba88e4c"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Without setting the option ",
+ Cell[BoxData[
+  RowBox[{"UseLimit", "\[Rule]", "True"}]], "InlineFormula",ExpressionUUID->
+  "f6d67134-2514-42a6-9785-03a0e551ddb1"],
+ ", ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " returns the wrong answer."
+}], "ExampleText",
+ CellID->237422541,ExpressionUUID->"9672eb78-d3d7-4a9d-99ba-7e53d4d0ff47"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{"\[Piecewise]", GridBox[{
+     {
+      FractionBox[
+       RowBox[{"x", " ", "y", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["x", "2"], "-", 
+          SuperscriptBox["y", "2"]}], ")"}]}], 
+       RowBox[{
+        SuperscriptBox["x", "2"], "+", 
+        SuperscriptBox["y", "2"]}]], 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y"}], "}"}], "!=", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}]},
+     {"0", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y"}], "}"}], "==", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}]}
+    }]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"HessianMatrix", "[", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"x", ",", "y"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0"}], "}"}]}], "]"}], "//", "MatrixForm"}]}], "Input",
+ CellLabel->"In[2]:=",
+ CellID->119421750,ExpressionUUID->"edc2c2ca-d8a4-4a5d-bf66-ac9acf050745"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "0"},
+     {"0", "0"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ ImageSize->{46, 27},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[2]//MatrixForm=",
+ CellID->192332331,ExpressionUUID->"9609daae-a3de-4625-a956-75a4b8a1865f"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"c16c553d-eb1a-46ac-9eaf-6a98eeb8cdd8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"6e3af319-7f22-4d39-b4ec-44044d7614bc"],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248,ExpressionUUID->"b2891c1f-da9a-473b-8b96-95c1110d3342"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"db21d5dd-fe6f-4d42-bd3b-8f88e7ce5e03"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Calculus"]],"paclet:KnoxPackages/guide/Calculus"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->171051556,ExpressionUUID->"b33b8a2c-3b00-4de9-ba74-f5e6df9c3c9c"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"6ba9a4b9-08f2-4d59-a266-af0e560a485d"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"HessianMatrix",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 44, 1.6947377}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "HessianMatrix[f, {vars}] computes the Hessian matrix of the function f \
+with respect to the variables vars. HessianMatrix[f, {vars}, pt] computes the \
+Hessian matrix at the point pt.", "synonyms" -> {}, "tabletags" -> {}, 
+    "title" -> "HessianMatrix", "titlemodifier" -> "", "windowtitle" -> 
+    "HessianMatrix", "type" -> "Symbol", "uri" -> 
+    "KnoxPackages/ref/HessianMatrix", "WorkflowDockedCell" -> ""}, 
+  "SearchTextTranslated" -> "", "NewStyles" -> False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[8632, 223, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"7abb5723-d1d4-442e-8fbc-83c80df3c3df",
+   CellTags->"PrimaryExamplesSection",
+   CellID->104056493]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 24526, 729}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[585, 21, 3467, 77, 55, "AnchorBarGrid",ExpressionUUID->"4f6ff07a-96da-4de7-9ba6-a8f7c80126d0",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4077, 102, 398, 9, 52, "ObjectNameGrid",ExpressionUUID->"ba8d807e-0d45-401e-8d8c-1f8d38dfcad8"],
+Cell[4478, 113, 1713, 43, 185, "Usage",ExpressionUUID->"b299994c-e783-44a1-b6d7-d0493e6dca0d",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6228, 161, 867, 21, 37, "NotesSection",ExpressionUUID->"170b3ac3-d921-41d8-87e6-8c5bbade28dc",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->613160353],
+Cell[7098, 184, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"4125594e-500c-4c17-83bf-7564937d2899"],
+Cell[7187, 186, 100, 1, 70, "Notes",ExpressionUUID->"d174d399-46b8-411c-84a7-09a160baeb85",
+ CellID->1067943069],
+Cell[7290, 189, 1216, 27, 70, "3ColumnTableMod",ExpressionUUID->"80f95c7a-c123-40a8-aa85-e4d3aa223bec",
+ CellID->592697762],
+Cell[8509, 218, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"085a313d-cd3e-40d1-a07a-eda2478b666a"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[8632, 223, 435, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"7abb5723-d1d4-442e-8fbc-83c80df3c3df",
+ CellTags->"PrimaryExamplesSection",
+ CellID->104056493],
+Cell[CellGroupData[{
+Cell[9092, 238, 307, 7, 29, "ExampleSection",ExpressionUUID->"4c5b5653-11c4-4ce8-afb4-b9bc01dc8e88",
+ CellID->75248837],
+Cell[9402, 247, 119, 1, 38, "ExampleText",ExpressionUUID->"ca6e6dbf-34d9-4606-be1a-d738279091b5",
+ CellID->4060975],
+Cell[CellGroupData[{
+Cell[9546, 252, 330, 9, 26, "Input",ExpressionUUID->"a1734773-5884-4ab3-9e76-b1557c2574ac",
+ CellID->171796700],
+Cell[9879, 263, 1461, 44, 56, "Output",ExpressionUUID->"47691865-4754-4b92-904f-69a9e8ee09bc",
+ CellID->343509173]
+}, Open  ]],
+Cell[11355, 310, 129, 1, 38, "ExampleText",ExpressionUUID->"f8186e16-3ef0-41da-a70c-01db6b516efd",
+ CellID->113665652],
+Cell[CellGroupData[{
+Cell[11509, 315, 391, 11, 26, "Input",ExpressionUUID->"b8f9eb67-bf21-466c-b0ce-1e082e08c6ba",
+ CellID->132164049],
+Cell[11903, 328, 782, 22, 48, "Output",ExpressionUUID->"c9c315dd-9219-49a7-a212-2c92760ee01b",
+ CellID->466318694]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12722, 355, 242, 5, 8, "ExampleDelimiter",ExpressionUUID->"c32751b2-9de9-4975-8401-ab7cab703df2",
+ CellID->182780227],
+Cell[12967, 362, 239, 6, 38, "ExampleText",ExpressionUUID->"85767a9e-f9bb-4c97-b09c-28ffdce0facf",
+ CellID->12157195],
+Cell[CellGroupData[{
+Cell[13231, 372, 923, 30, 52, "Input",ExpressionUUID->"ec26dde4-0110-4b96-9fc8-05b832af1f17",
+ CellID->92630303],
+Cell[14157, 404, 1493, 48, 76, "Output",ExpressionUUID->"d5485db1-9a0f-4192-b833-2d96ffed60fb",
+ CellID->165357364],
+Cell[15653, 454, 928, 28, 76, "Output",ExpressionUUID->"65d2af5c-0bca-4ed4-b994-a4b59fd9f110",
+ CellID->4347044]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16630, 488, 242, 5, 70, "ExampleDelimiter",ExpressionUUID->"7132855a-e607-4803-a3fd-319c9612a3e9",
+ CellID->550424739],
+Cell[16875, 495, 417, 9, 70, "ExampleText",ExpressionUUID->"7cf99067-d1d9-4a9d-a859-e17e2c5d5e50",
+ CellID->183836018],
+Cell[CellGroupData[{
+Cell[17317, 508, 1173, 39, 70, "Input",ExpressionUUID->"81b86861-1fc9-43e6-9286-23e3234fee8f",
+ CellID->663765339],
+Cell[18493, 549, 803, 23, 48, "Output",ExpressionUUID->"fdfe3b46-5743-4c19-8e40-e6d2cba88e4c",
+ CellID->26627061]
+}, Open  ]],
+Cell[19311, 575, 362, 10, 70, "ExampleText",ExpressionUUID->"9672eb78-d3d7-4a9d-99ba-7e53d4d0ff47",
+ CellID->237422541],
+Cell[CellGroupData[{
+Cell[19698, 589, 1124, 37, 70, "Input",ExpressionUUID->"edc2c2ca-d8a4-4a5d-bf66-ac9acf050745",
+ CellID->119421750],
+Cell[20825, 628, 782, 22, 48, "Output",ExpressionUUID->"9609daae-a3de-4625-a956-75a4b8a1865f",
+ CellID->192332331]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[21646, 655, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"c16c553d-eb1a-46ac-9eaf-6a98eeb8cdd8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21769, 660, 266, 7, 70, "MoreAboutSection",ExpressionUUID->"b2891c1f-da9a-473b-8b96-95c1110d3342",
+ CellID->38303248],
+Cell[22038, 669, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"db21d5dd-fe6f-4d42-bd3b-8f88e7ce5e03"],
+Cell[22127, 671, 227, 5, 70, "MoreAbout",ExpressionUUID->"b33b8a2c-3b00-4de9-ba74-f5e6df9c3c9c",
+ CellID->171051556]
+}, Open  ]],
+Cell[22369, 679, 78, 0, 70, "FooterCell",ExpressionUUID->"6ba9a4b9-08f2-4d59-a266-af0e560a485d"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

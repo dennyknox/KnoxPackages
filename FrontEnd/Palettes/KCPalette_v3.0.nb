@@ -1,0 +1,2835 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    139691,       2825]
+NotebookOptionsPosition[     12344,        407]
+NotebookOutlinePosition[    138665,       2816]
+CellTagsIndexPosition[    138622,       2813]
+WindowTitle->KCPalette_v3.0
+WindowFrame->Palette*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["", "TopBorder",ExpressionUUID->"23091927-4f38-4adc-8acb-98f0b5dcd7ef"],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox[
+     TooltipBox["Chapter",
+      "Chapter",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteCellsButton",
+     ButtonData->{
+       Cell[
+        TextData[{"Chapter ", 
+          StyleBox[
+           CounterBox["BookChapterLabel"], "BookChapterNumber"]}], 
+        "BookChapterLabel"], 
+       Cell["Chapter Title", "BookChapterTitle"]},
+     ButtonNote->"Paste a styled cell into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["SectionN",
+      "SectionN",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"SectionNumbered",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["ProblemN",
+      "ProblemN",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"ProblemNumbered",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["Example",
+      "Example",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Example",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["Exercise",
+      "Exercise",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Exercise",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["Definition",
+      "Definition",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Definition",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["Theorem",
+      "Theorem",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Theorem",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["Proof",
+      "Proof",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteCellsButton",
+     ButtonData->Cell["Proof", "Proof"],
+     ButtonNote->"Paste a styled cell into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["QED",
+      "QED",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteCellsButton",
+     ButtonData->Cell["QED", "QED"],
+     ButtonNote->"Paste a styled cell into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["Commentary",
+      "Commentary",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Commentary",
+     ButtonNote->"Paste a style into a notebook"]}
+  },
+  BaseStyle->"1ButtonGrid"]], "FrameCell",ExpressionUUID->"3d1557a3-94e0-4ead-\
+a726-db85ae00ee24"],
+
+Cell["", "BottomBorder",ExpressionUUID->"77325e52-6ef6-4adc-a89b-f457a2e52a3b"],
+
+Cell["", "TopBorder",ExpressionUUID->"1450c646-03cc-409d-ad25-e5ed1b1d953e"],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox[
+     TooltipBox["B1",
+      "B1",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item1",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["B2",
+      "B2",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item2",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["B3",
+      "B3",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item3",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["N1",
+      "N1",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item1Numbered",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["N2",
+      "N2",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item2Numbered",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["N3",
+      "N3",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item3Numbered",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["P1",
+      "P1",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item1Paragraph",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["P2",
+      "P2",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item2Paragraph",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["P3",
+      "P3",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item3Paragraph",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox["NN1",
+      "NN1",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item1NNumbered",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["NN2",
+      "NN2",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item2NNumbered",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox["NN3",
+      "NN3",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Item3NNumbered",
+     ButtonNote->"Paste a style into a notebook"]}
+  },
+  BaseStyle->"3ButtonGrid"]], "FrameCell",ExpressionUUID->"b92ec0c0-48e7-4ee1-\
+b9fe-7915df4e0c21"],
+
+Cell["", "BottomBorder",ExpressionUUID->"169f9c0f-5b47-4b06-96f0-57af77c294e9"],
+
+Cell["", "TopBorder",ExpressionUUID->"dff2f08e-271b-4a85-83f7-8a38cb8c993d"],
+
+Cell[BoxData[GridBox[{
+   {
+    ButtonBox[
+     TooltipBox[
+      StyleBox["Grading",
+       FontColor->RGBColor[1, 0, 0]],
+      "Grading",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Grading",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox[
+      StyleBox["ST",
+       FontVariations->{"StrikeThrough"->True},
+       FontColor->RGBColor[1, 0, 0]],
+      "ST",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"StrikeThrough",
+     ButtonNote->"Paste a style into a notebook"]},
+   {
+    ButtonBox[
+     TooltipBox[
+      StyleBox["Comment",
+       FontColor->RGBColor[0, 0, 1]],
+      "Comment",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Comment",
+     ButtonNote->"Paste a style into a notebook"], 
+    ButtonBox[
+     TooltipBox[
+      StyleBox["UL",
+       FontVariations->{"Underline"->True},
+       FontColor->RGBColor[0, 0, 1]],
+      "UL",
+      TooltipStyle->"TextStyling"],
+     BaseStyle->"PasteStyleButton",
+     ButtonData->"Underline",
+     ButtonNote->"Paste a style into a notebook"]}
+  },
+  GridBoxItemSize->{"Columns" -> {
+      Scaled[0.6666], 
+      Scaled[0.3333]}, "Rows" -> {{Automatic}}},
+  GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}]], "FrameCell",Expres\
+sionUUID->"54c044b6-062c-433c-a59c-887cc86322ed"],
+
+Cell["", "BottomBorder",ExpressionUUID->"11b8f49c-6681-401a-a7d1-d60285f66d98"],
+
+Cell["", "TopBorder",ExpressionUUID->"fce51623-e31f-444f-af23-a029f6cb156e"],
+
+Cell[BoxData[GridBox[{
+   {
+    StyleBox["Times",
+     FontFamily->"Times"]},
+   {GridBox[{
+      {
+       ButtonBox[
+        TooltipBox[
+         StyleBox["R",
+          FontWeight->Plain],
+         "R",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "TR"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""], 
+       ButtonBox[
+        TooltipBox[
+         StyleBox["B",
+          FontWeight->Bold],
+         "B",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "TB"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""], 
+       ButtonBox[
+        TooltipBox[
+         StyleBox["I",
+          FontSlant->Italic],
+         "I",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "TI"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""], 
+       ButtonBox[
+        TooltipBox[
+         StyleBox["BI",
+          FontWeight->Bold,
+          FontSlant->Italic],
+         "BI",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "TBI"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""]}
+     },
+     GridBoxItemSize->{"Columns" -> {{
+          Scaled[0.24]}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}]},
+   {
+    StyleBox["Consolas",
+     FontFamily->"Consolas"]},
+   {GridBox[{
+      {
+       ButtonBox[
+        TooltipBox[
+         StyleBox["R",
+          FontFamily->"Consolas",
+          FontWeight->Plain],
+         "R",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "MR"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""], 
+       ButtonBox[
+        TooltipBox[
+         StyleBox["B",
+          FontFamily->"Consolas",
+          FontWeight->Bold],
+         "B",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "MB"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""], 
+       ButtonBox[
+        TooltipBox[
+         StyleBox["I",
+          FontFamily->"Consolas",
+          FontSlant->Italic],
+         "I",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "MO"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""], 
+       ButtonBox[
+        TooltipBox[
+         StyleBox["BI",
+          FontFamily->"Consolas",
+          FontWeight->Bold,
+          FontSlant->Italic],
+         "BI",
+         TooltipStyle->"TextStyling"],
+        BaseStyle->"Button",
+        ButtonFunction:>(FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", "MBO"]}]; 
+         FrontEnd`SelectionMove[
+           FrontEnd`InputNotebook[], After, Character]),
+        ButtonNote->""]}
+     },
+     GridBoxItemSize->{"Columns" -> {{
+          Scaled[0.24]}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}]}
+  },
+  GridBoxBackground->{"Columns" -> {{Automatic}}, "Rows" -> {{
+       GrayLevel[0.6], Inherited}}},
+  GridBoxItemSize->{"Columns" -> {{
+       Scaled[1]}}, "Rows" -> {{Automatic}}},
+  GridBoxSpacings->{
+   "Columns" -> {{0}}, "Rows" -> {0, 0, 1, 0, 0}}]], "FrameCell",ExpressionUUI\
+D->"fc8321df-ba90-4b9f-87d0-54c2ae770f18"],
+
+Cell["", "BottomBorder",ExpressionUUID->"9febd711-1093-45c1-af2e-9b227098f000"]
+},
+ClosingAutoSave->True,
+Editable->False,
+Saveable->True,
+WindowToolbars->{},
+WindowSize->{139, 460},
+WindowMargins->{{Automatic, -148}, {-72, Automatic}},
+WindowFrame->"Palette",
+WindowElements->{"VerticalScrollBar"},
+WindowFrameElements->{"CloseBox", "ResizeArea"},
+WindowClickSelect->False,
+WindowTitle->"KCPalette_v3.0",
+DockedCells->{
+  Cell[
+   BoxData[
+    TagBox[
+     GridBox[{{
+        ButtonBox[
+         DynamicBox[
+          ToBoxes[
+           Graphics[{
+             Directive[
+              EdgeForm[
+               GrayLevel[0.7]], 
+              Thickness[Large]], 
+             RGBColor[0, 0, 0.258824], 
+             Polygon[{{-1, 0}, {-0.9, 0.3}, {0.9, 0.3}, {1, 0}}], 
+             Text[
+              Style["Styles", 
+               If[CurrentValue[
+                  ButtonNotebook[], {TaggingRules, "TabValue"}] === 1, 
+                Apply[Sequence, {8.3, Bold, 
+                  GrayLevel[1]}], 
+                Apply[Sequence, {8, 
+                  GrayLevel[0.9]}]]], {0, 0.15}, BaseStyle -> "Control"]}, 
+            ImageMargins -> None, ImagePadding -> 0, 
+            ImageSize -> {70, Automatic}, PlotRangePadding -> None], 
+           StandardForm], TrackedSymbols :> {
+            CurrentValue[
+             ButtonNotebook[], {TaggingRules, "TabValue"}]}], 
+         ButtonFunction :> (CurrentValue[
+             ButtonNotebook[], {TaggingRules, "TabValue"}] = 1; 
+          SelectionMove[
+            ButtonNotebook[], All, Notebook, AutoScroll -> False]; 
+          NotebookWrite[
+            ButtonNotebook[], 
+            ReplaceAll[1, {1 -> {
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Chapter"], "Chapter", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> {
+                    Cell[
+                    TextData[{"Chapter ", 
+                    StyleBox[
+                    CounterBox["BookChapterLabel"], "BookChapterNumber"]}], 
+                    "BookChapterLabel"], 
+                    Cell["Chapter Title", "BookChapterTitle"]}, BaseStyle -> 
+                    "PasteCellsButton", ButtonNote -> 
+                    "Paste a styled cell into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["SectionN"], "SectionN", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "SectionNumbered", 
+                    BaseStyle -> "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["ProblemN"], "ProblemN", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "ProblemNumbered", 
+                    BaseStyle -> "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Example"], "Example", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "Example", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Exercise"], "Exercise", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "Exercise", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Definition"], "Definition", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "Definition", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Theorem"], "Theorem", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "Theorem", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Proof"], "Proof", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> Cell["Proof", "Proof"], 
+                    BaseStyle -> "PasteCellsButton", ButtonNote -> 
+                    "Paste a styled cell into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["QED"], "QED", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> Cell["QED", "QED"], BaseStyle -> 
+                    "PasteCellsButton", ButtonNote -> 
+                    "Paste a styled cell into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Commentary"], "Commentary", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "Commentary", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}}, BaseStyle -> 
+                   "1ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["B1"], "B1", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item1", BaseStyle -> "PasteStyleButton", 
+                    ButtonNote -> "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["B2"], "B2", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item2", BaseStyle -> "PasteStyleButton", 
+                    ButtonNote -> "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["B3"], "B3", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item3", BaseStyle -> "PasteStyleButton", 
+                    ButtonNote -> "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["N1"], "N1", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item1Numbered", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["N2"], "N2", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item2Numbered", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["N3"], "N3", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item3Numbered", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["P1"], "P1", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item1Paragraph", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["P2"], "P2", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item2Paragraph", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["P3"], "P3", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item3Paragraph", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["NN1"], "NN1", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item1NNumbered", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["NN2"], "NN2", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item2NNumbered", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["NN3"], "NN3", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item3NNumbered", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}}, BaseStyle -> 
+                   "3ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Grading", FontColor -> RGBColor[1, 0, 0]], 
+                    "Grading", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "Grading", BaseStyle -> "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "ST", FontColor -> RGBColor[1, 0, 0], 
+                    FontVariations -> {"StrikeThrough" -> True}], "ST", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "StrikeThrough", BaseStyle -> "PasteStyleButton", 
+                    ButtonNote -> "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Comment", FontColor -> RGBColor[0, 0, 1]], 
+                    "Comment", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "Comment", BaseStyle -> "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "UL", FontColor -> RGBColor[0, 0, 1], 
+                    FontVariations -> {"Underline" -> True}], "UL", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> "Underline",
+                     BaseStyle -> "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}}, 
+                   GridBoxItemSize -> {"Columns" -> {
+                    Scaled[0.6666], 
+                    Scaled[0.3333]}, "Rows" -> {{Automatic}}}, 
+                   GridBoxSpacings -> {"Columns" -> {{0}}, "Rows" -> {{0}}}]],
+                  "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    StyleBox["Times", FontFamily -> "Times"]}, {
+                    GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["R", FontWeight -> Plain], "R", TooltipStyle -> 
+                    "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "TR"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["B", FontWeight -> Bold], "B", TooltipStyle -> 
+                    "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "TB"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["I", FontSlant -> Italic], "I", TooltipStyle -> 
+                    "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "TI"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["BI", FontWeight -> Bold, FontSlant -> Italic], 
+                    "BI", TooltipStyle -> "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "TBI"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""]}}, 
+                    GridBoxItemSize -> {"Columns" -> {{
+                    Scaled[0.24]}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0}}, "Rows" -> {{0}}}]}, {
+                    StyleBox["Consolas", FontFamily -> "Consolas"]}, {
+                    GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "R", FontFamily -> "Consolas", FontWeight -> Plain], "R", 
+                    TooltipStyle -> "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "MR"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "B", FontFamily -> "Consolas", FontWeight -> Bold], "B", 
+                    TooltipStyle -> "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "MB"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "I", FontFamily -> "Consolas", FontSlant -> Italic], "I", 
+                    TooltipStyle -> "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "MO"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "BI", FontFamily -> "Consolas", FontWeight -> Bold, 
+                    FontSlant -> Italic], "BI", TooltipStyle -> 
+                    "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "MBO"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""]}}, 
+                    GridBoxItemSize -> {"Columns" -> {{
+                    Scaled[0.24]}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0}}, "Rows" -> {{0}}}]}}, 
+                   GridBoxItemSize -> {"Columns" -> {{
+                    Scaled[1]}}, "Rows" -> {{Automatic}}}, 
+                   GridBoxSpacings -> {
+                    "Columns" -> {{0}}, "Rows" -> {0, 0, 1, 0, 0}}, 
+                   GridBoxBackground -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{
+                    GrayLevel[0.6], Inherited}}}]], "FrameCell"], 
+                Cell["", "BottomBorder"]}, 2 -> {
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*FractionBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)"], 
+                    "\!\(\*FractionBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*FractionBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*SuperscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)"], 
+                    "\!\(\*SuperscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*SuperscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*SubscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)"], 
+                    "\!\(\*SubscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*SubscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*SubsuperscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\), \(\[Placeholder]\)]\)"], 
+                    "\!\(\*SubsuperscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\), \(\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> 
+                    "\!\(\*SubsuperscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\), \(\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*SubscriptBox[\(\[InvisiblePrefixScriptBase]\), \(\
+\[Placeholder]\)]\)\[SelectionPlaceholder]"], 
+                    "\!\(\*SubscriptBox[\(\[InvisiblePrefixScriptBase]\), \(\
+\[Placeholder]\)]\)\[SelectionPlaceholder]", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> 
+                    "\!\(\*SubscriptBox[\(\[InvisiblePrefixScriptBase]\), \(\
+\[Placeholder]\)]\)\[SelectionPlaceholder]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*UnderscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)"], 
+                    "\!\(\*UnderscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*UnderscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*UnderoverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\), \(\[Placeholder]\)]\)"], 
+                    "\!\(\*UnderoverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\), \(\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> 
+                    "\!\(\*UnderoverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\), \(\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)"], 
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}}, 
+                   BaseStyle -> "4ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\[LeftBracketingBar]\[SelectionPlaceholder]\
+\[RightBracketingBar]"], 
+                    "\[LeftBracketingBar]\[SelectionPlaceholder]\
+\[RightBracketingBar]", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[LeftBracketingBar]\[SelectionPlaceholder]\
+\[RightBracketingBar]", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\[LeftDoubleBracketingBar]\[SelectionPlaceholder]\
+\[RightDoubleBracketingBar]"], 
+                    "\[LeftDoubleBracketingBar]\[SelectionPlaceholder]\
+\[RightDoubleBracketingBar]", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[LeftDoubleBracketingBar]\[SelectionPlaceholder]\
+\[RightDoubleBracketingBar]", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\[LeftDoubleBracketingBar]\!\(\*OverscriptBox[\(\
+\[SelectionPlaceholder]\), \(\[RightVector]\)]\)\[RightDoubleBracketingBar]"],
+                     "\[LeftDoubleBracketingBar]\!\(\*OverscriptBox[\(\
+\[SelectionPlaceholder]\), \(\[RightVector]\)]\)\[RightDoubleBracketingBar]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[LeftDoubleBracketingBar]\!\(\*OverscriptBox[\(\
+\[SelectionPlaceholder]\), \(\[RightVector]\)]\)\[RightDoubleBracketingBar]", 
+                    BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\[LeftAngleBracket]\[SelectionPlaceholder]\
+\[RightAngleBracket]"], 
+                    "\[LeftAngleBracket]\[SelectionPlaceholder]\
+\[RightAngleBracket]", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[LeftAngleBracket]\[SelectionPlaceholder]\
+\[RightAngleBracket]", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\[LeftAngleBracket]\!\(\*OverscriptBox[\(\
+\[SelectionPlaceholder]\), \(\[RightVector]\)]\),\!\(\*OverscriptBox[\(\
+\[Placeholder]\), \(\[RightVector]\)]\)\[RightAngleBracket]"], 
+                    "\[LeftAngleBracket]\!\(\*OverscriptBox[\(\
+\[SelectionPlaceholder]\), \(\[RightVector]\)]\),\!\(\*OverscriptBox[\(\
+\[Placeholder]\), \(\[RightVector]\)]\)\[RightAngleBracket]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> 
+                    "\[LeftAngleBracket]\!\(\*OverscriptBox[\(\
+\[SelectionPlaceholder]\), \(\[RightVector]\)]\),\!\(\*OverscriptBox[\(\
+\[Placeholder]\), \(\[RightVector]\)]\)\[RightAngleBracket]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[RightVector]\)]\)"], 
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[RightVector]\)]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[RightVector]\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \
+\(_\)]\)"], "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \(_\)]\)", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \
+\(_\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*TagBox[OverscriptBox[\"\[SelectionPlaceholder]\", \
+\"^\"],\n DisplayForm]\)"], 
+                    "\!\(\*TagBox[OverscriptBox[\"\[SelectionPlaceholder]\", \
+\"^\"],\n DisplayForm]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*TagBox[OverscriptBox[\"\[SelectionPlaceholder]\", \
+\"^\"],\n DisplayForm]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*TagBox[OverscriptBox[\"\[SelectionPlaceholder]\", \
+\"\[DoubleDot]\"],\n DisplayForm]\)"], 
+                    "\!\(\*TagBox[OverscriptBox[\"\[SelectionPlaceholder]\", \
+\"\[DoubleDot]\"],\n DisplayForm]\)", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> 
+                    "\!\(\*TagBox[OverscriptBox[\"\[SelectionPlaceholder]\", \
+\"\[DoubleDot]\"],\n DisplayForm]\)", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}}, 
+                   BaseStyle -> "3ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\!\(\*SqrtBox[\(\[SelectionPlaceholder]\)]\)"], 
+                    "\!\(\*SqrtBox[\(\[SelectionPlaceholder]\)]\)", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*SqrtBox[\(\[SelectionPlaceholder]\)]\)", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*RadicalBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)"], 
+                    "\!\(\*RadicalBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*RadicalBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\[Integral]\[SelectionPlaceholder]\[DifferentialD]\
+\[Placeholder]"], 
+                    "\[Integral]\[SelectionPlaceholder]\[DifferentialD]\
+\[Placeholder]", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[Integral]\[SelectionPlaceholder]\[DifferentialD]\
+\[Placeholder]", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*SubsuperscriptBox[\(\[Integral]\), \
+\(\[Placeholder]\), \(\[Placeholder]\)]\)\[SelectionPlaceholder]\
+\[DifferentialD]\[Placeholder]"], 
+                    "\!\(\*SubsuperscriptBox[\(\[Integral]\), \
+\(\[Placeholder]\), \(\[Placeholder]\)]\)\[SelectionPlaceholder]\
+\[DifferentialD]\[Placeholder]", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*SubsuperscriptBox[\(\[Integral]\), \
+\(\[Placeholder]\), \(\[Placeholder]\)]\)\[SelectionPlaceholder]\
+\[DifferentialD]\[Placeholder]", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*SubscriptBox[\(\[PartialD]\), \
+\(\[Placeholder]\)]\)\[SelectionPlaceholder]"], 
+                    "\!\(\*SubscriptBox[\(\[PartialD]\), \
+\(\[Placeholder]\)]\)\[SelectionPlaceholder]", TooltipStyle -> "TextStyling"],
+                     ButtonData -> 
+                    "\!\(\*SubscriptBox[\(\[PartialD]\), \
+\(\[Placeholder]\)]\)\[SelectionPlaceholder]", BaseStyle -> "PasteExprButton",
+                     ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*SubscriptBox[\(\[PartialD]\), \(\[Placeholder], \
+\[Placeholder]\)]\)\[SelectionPlaceholder]"], 
+                    "\!\(\*SubscriptBox[\(\[PartialD]\), \(\[Placeholder], \
+\[Placeholder]\)]\)\[SelectionPlaceholder]", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> 
+                    "\!\(\*SubscriptBox[\(\[PartialD]\), \(\[Placeholder], \
+\[Placeholder]\)]\)\[SelectionPlaceholder]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*UnderoverscriptBox[\(\[Sum]\), \(\[Placeholder] = \
+\[Placeholder]\), \(\[Placeholder]\)]\)\[SelectionPlaceholder]"], 
+                    "\!\(\*UnderoverscriptBox[\(\[Sum]\), \(\[Placeholder] = \
+\[Placeholder]\), \(\[Placeholder]\)]\)\[SelectionPlaceholder]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> 
+                    "\!\(\*UnderoverscriptBox[\(\[Sum]\), \(\[Placeholder] = \
+\[Placeholder]\), \(\[Placeholder]\)]\)\[SelectionPlaceholder]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*UnderoverscriptBox[\(\[Product]\), \
+\(\[Placeholder] = \[Placeholder]\), \(\[Placeholder]\)]\)\
+\[SelectionPlaceholder]"], 
+                    "\!\(\*UnderoverscriptBox[\(\[Product]\), \
+\(\[Placeholder] = \[Placeholder]\), \(\[Placeholder]\)]\)\
+\[SelectionPlaceholder]", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*UnderoverscriptBox[\(\[Product]\), \
+\(\[Placeholder] = \[Placeholder]\), \(\[Placeholder]\)]\)\
+\[SelectionPlaceholder]", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}}, 
+                   BaseStyle -> "2ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    RowBox[{"(", 
+                    
+                    GridBox[{{"\[SelectionPlaceholder]", "\[Placeholder]"}, {
+                    "\[Placeholder]", "\[Placeholder]"}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Right}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    ColumnsEqual -> False, RowsEqual -> False], ")"}], 
+                    FontSize -> 8], 
+                    RowBox[{"(", 
+                    
+                    GridBox[{{"\[SelectionPlaceholder]", "\[Placeholder]"}, {
+                    "\[Placeholder]", "\[Placeholder]"}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Right}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    ColumnsEqual -> False, RowsEqual -> False], ")"}], 
+                    TooltipStyle -> "TextStyling"], ButtonData -> RowBox[{"(", 
+                    
+                    GridBox[{{"\[SelectionPlaceholder]", "\[Placeholder]"}, {
+                    "\[Placeholder]", "\[Placeholder]"}}, ColumnAlignments -> 
+                    Right], ")"}], BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    RowBox[{"\[SelectionPlaceholder]", ":=", 
+                    RowBox[{"\[Piecewise]", 
+                    
+                    GridBox[{{"\[Placeholder]", "\[Placeholder]"}, {
+                    "\[Placeholder]", "\[Placeholder]"}}, 
+                    GridBoxSpacings -> {"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[1.4]}, 
+                    Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}, "RowsIndexed" -> {}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    ColumnsEqual -> False, RowsEqual -> False]}]}], FontSize -> 
+                    8], 
+                    RowBox[{"\[SelectionPlaceholder]", ":=", 
+                    RowBox[{"\[Piecewise]", 
+                    
+                    GridBox[{{"\[Placeholder]", "\[Placeholder]"}, {
+                    "\[Placeholder]", "\[Placeholder]"}}, 
+                    GridBoxSpacings -> {"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[1.4]}, 
+                    Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}, "RowsIndexed" -> {}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    ColumnsEqual -> False, RowsEqual -> False]}]}], 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    RowBox[{"\[SelectionPlaceholder]", ":=", 
+                    RowBox[{"\[Piecewise]", 
+                    
+                    GridBox[{{"\[Placeholder]", "\[Placeholder]"}, {
+                    "\[Placeholder]", "\[Placeholder]"}}, ColumnSpacings -> 
+                    2]}]}], BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    
+                    GridBox[{{
+                    "\[SelectionPlaceholder]", "=", "\[Placeholder]"}, {
+                    "\[InvisibleSpace]", "=", "\[Placeholder]"}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {Right, Center, {Left, Center}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    ColumnsEqual -> False, RowsEqual -> False], FontSize -> 
+                    8], 
+                    
+                    GridBox[{{
+                    "\[SelectionPlaceholder]", "=", "\[Placeholder]"}, {
+                    "\[InvisibleSpace]", "=", "\[Placeholder]"}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {Right, Center, {Left, Center}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    ColumnsEqual -> False, RowsEqual -> False], TooltipStyle -> 
+                    "TextStyling"], ButtonData -> 
+                    GridBox[{{
+                    "\[SelectionPlaceholder]", "=", "\[Placeholder]"}, {
+                    "\[InvisibleSpace]", "=", "\[Placeholder]"}}, 
+                    ColumnAlignments -> {Right, Center, {Left, Center}}], 
+                    BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    RowBox[{"\[InvisibleSpace]", 
+                    RowBox[{"=", "\[Placeholder]"}]}]], 
+                    RowBox[{"\[InvisibleSpace]", 
+                    RowBox[{"=", "\[Placeholder]"}]}], TooltipStyle -> 
+                    "TextStyling"], ButtonFunction :> 
+                    FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "NewRow"], 
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "SelectNext"], 
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "SelectNext"], 
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    
+                    GridBox[{{
+                    "\[InvisibleSpace]\[InvisibleSpace]", "=", 
+                    "\[Placeholder]"}}]]}], BaseStyle -> "Button", ButtonNote -> 
+                    ""]}}, BaseStyle -> "2ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Alpha]"], "\[Alpha]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Alpha]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Beta]"], "\[Beta]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Beta]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Gamma]"], "\[Gamma]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Gamma]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Delta]"], "\[Delta]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Delta]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CurlyEpsilon]"], "\[CurlyEpsilon]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[CurlyEpsilon]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Zeta]"], "\[Zeta]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Zeta]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Eta]"], "\[Eta]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Eta]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Theta]"], "\[Theta]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Theta]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Iota]"], "\[Iota]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Iota]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Kappa]"], "\[Kappa]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Kappa]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Lambda]"], "\[Lambda]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Lambda]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Mu]"], "\[Mu]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Mu]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Nu]"], "\[Nu]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Nu]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Xi]"], "\[Xi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Xi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Omicron]"], "\[Omicron]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Omicron]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Pi]"], "\[Pi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Pi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Rho]"], "\[Rho]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Rho]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[FinalSigma]"], "\[FinalSigma]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[FinalSigma]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Sigma]"], "\[Sigma]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Sigma]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Tau]"], "\[Tau]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Tau]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Upsilon]"], "\[Upsilon]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Upsilon]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CurlyPhi]"], "\[CurlyPhi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[CurlyPhi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Chi]"], "\[Chi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Chi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Psi]"], "\[Psi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Psi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Omega]"], "\[Omega]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Omega]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}}, 
+                   BaseStyle -> "5ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalGamma]"], "\[CapitalGamma]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[CapitalGamma]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalDelta]"], "\[CapitalDelta]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[CapitalDelta]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalTheta]"], "\[CapitalTheta]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[CapitalTheta]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalLambda]"], "\[CapitalLambda]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[CapitalLambda]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalXi]"], "\[CapitalXi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[CapitalXi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalPhi]"], "\[CapitalPhi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[CapitalPhi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalPsi]"], "\[CapitalPsi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[CapitalPsi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalOmega]"], "\[CapitalOmega]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[CapitalOmega]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}}, 
+                   BaseStyle -> "4ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Pi]"], "\[Pi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Pi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[ExponentialE]"], "\[ExponentialE]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[ExponentialE]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[ImaginaryI]"], "\[ImaginaryI]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[ImaginaryI]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Infinity]"], "\[Infinity]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Infinity]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Degree]"], "\[Degree]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Degree]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Times]"], "\[Times]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Times]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Divide]"], "\[Divide]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Divide]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Rule]"], "\[Rule]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Rule]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[RuleDelayed]"], "\[RuleDelayed]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[RuleDelayed]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Equal]"], "\[Equal]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Equal]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[NotEqual]"], "\[NotEqual]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[NotEqual]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[LessEqual]"], "\[LessEqual]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[LessEqual]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[GreaterEqual]"], "\[GreaterEqual]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[GreaterEqual]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Element]"], "\[Element]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Element]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[SuchThat]"], "\[SuchThat]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[SuchThat]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Not]"], "\[Not]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Not]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[And]"], "\[And]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[And]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Or]"], "\[Or]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Or]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Union]"], "\[Union]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Union]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Intersection]"], "\[Intersection]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[Intersection]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}}, 
+                   BaseStyle -> "5ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"]}}], AutoScroll -> False]; 
+          SelectionMove[
+            ButtonNotebook[], Previous, Cell, AutoScroll -> False]), 
+         Appearance -> None, Method -> "Preemptive", Evaluator -> Automatic], 
+        
+        ButtonBox[
+         DynamicBox[
+          ToBoxes[
+           Graphics[{
+             Directive[
+              EdgeForm[
+               GrayLevel[0.7]], 
+              Thickness[Large]], 
+             RGBColor[0.0541238, 0.217197, 0.109926], 
+             Polygon[{{-1, 0}, {-0.9, 0.3}, {0.9, 0.3}, {1, 0}}], 
+             Text[
+              Style["Typesetting", 
+               If[CurrentValue[
+                  ButtonNotebook[], {TaggingRules, "TabValue"}] === 2, 
+                Apply[Sequence, {8.3, Bold, 
+                  GrayLevel[1]}], 
+                Apply[Sequence, {8, 
+                  GrayLevel[0.9]}]]], {0, 0.15}, BaseStyle -> "Control"]}, 
+            ImageMargins -> None, ImagePadding -> 0, 
+            ImageSize -> {70, Automatic}, PlotRangePadding -> None], 
+           StandardForm], TrackedSymbols :> {
+            CurrentValue[
+             ButtonNotebook[], {TaggingRules, "TabValue"}]}], 
+         ButtonFunction :> (CurrentValue[
+             ButtonNotebook[], {TaggingRules, "TabValue"}] = 2; 
+          SelectionMove[
+            ButtonNotebook[], All, Notebook, AutoScroll -> False]; 
+          NotebookWrite[
+            ButtonNotebook[], 
+            ReplaceAll[2, {1 -> {
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Chapter"], "Chapter", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> {
+                    Cell[
+                    TextData[{"Chapter ", 
+                    StyleBox[
+                    CounterBox["BookChapterLabel"], "BookChapterNumber"]}], 
+                    "BookChapterLabel"], 
+                    Cell["Chapter Title", "BookChapterTitle"]}, BaseStyle -> 
+                    "PasteCellsButton", ButtonNote -> 
+                    "Paste a styled cell into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["SectionN"], "SectionN", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "SectionNumbered", 
+                    BaseStyle -> "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["ProblemN"], "ProblemN", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "ProblemNumbered", 
+                    BaseStyle -> "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Example"], "Example", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "Example", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Exercise"], "Exercise", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "Exercise", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Definition"], "Definition", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "Definition", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Theorem"], "Theorem", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "Theorem", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Proof"], "Proof", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> Cell["Proof", "Proof"], 
+                    BaseStyle -> "PasteCellsButton", ButtonNote -> 
+                    "Paste a styled cell into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["QED"], "QED", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> Cell["QED", "QED"], BaseStyle -> 
+                    "PasteCellsButton", ButtonNote -> 
+                    "Paste a styled cell into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Commentary"], "Commentary", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "Commentary", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}}, BaseStyle -> 
+                   "1ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["B1"], "B1", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item1", BaseStyle -> "PasteStyleButton", 
+                    ButtonNote -> "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["B2"], "B2", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item2", BaseStyle -> "PasteStyleButton", 
+                    ButtonNote -> "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["B3"], "B3", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item3", BaseStyle -> "PasteStyleButton", 
+                    ButtonNote -> "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["N1"], "N1", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item1Numbered", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["N2"], "N2", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item2Numbered", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["N3"], "N3", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item3Numbered", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["P1"], "P1", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item1Paragraph", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["P2"], "P2", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item2Paragraph", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["P3"], "P3", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item3Paragraph", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["NN1"], "NN1", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item1NNumbered", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["NN2"], "NN2", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item2NNumbered", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["NN3"], "NN3", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> "Item3NNumbered", BaseStyle -> 
+                    "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}}, BaseStyle -> 
+                   "3ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Grading", FontColor -> RGBColor[1, 0, 0]], 
+                    "Grading", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "Grading", BaseStyle -> "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "ST", FontColor -> RGBColor[1, 0, 0], 
+                    FontVariations -> {"StrikeThrough" -> True}], "ST", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "StrikeThrough", BaseStyle -> "PasteStyleButton", 
+                    ButtonNote -> "Paste a style into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["Comment", FontColor -> RGBColor[0, 0, 1]], 
+                    "Comment", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "Comment", BaseStyle -> "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "UL", FontColor -> RGBColor[0, 0, 1], 
+                    FontVariations -> {"Underline" -> True}], "UL", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> "Underline",
+                     BaseStyle -> "PasteStyleButton", ButtonNote -> 
+                    "Paste a style into a notebook"]}}, 
+                   GridBoxItemSize -> {"Columns" -> {
+                    Scaled[0.6666], 
+                    Scaled[0.3333]}, "Rows" -> {{Automatic}}}, 
+                   GridBoxSpacings -> {"Columns" -> {{0}}, "Rows" -> {{0}}}]],
+                  "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    StyleBox["Times", FontFamily -> "Times"]}, {
+                    GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["R", FontWeight -> Plain], "R", TooltipStyle -> 
+                    "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "TR"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["B", FontWeight -> Bold], "B", TooltipStyle -> 
+                    "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "TB"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["I", FontSlant -> Italic], "I", TooltipStyle -> 
+                    "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "TI"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["BI", FontWeight -> Bold, FontSlant -> Italic], 
+                    "BI", TooltipStyle -> "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "TBI"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""]}}, 
+                    GridBoxItemSize -> {"Columns" -> {{
+                    Scaled[0.24]}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0}}, "Rows" -> {{0}}}]}, {
+                    StyleBox["Consolas", FontFamily -> "Consolas"]}, {
+                    GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "R", FontFamily -> "Consolas", FontWeight -> Plain], "R", 
+                    TooltipStyle -> "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "MR"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "B", FontFamily -> "Consolas", FontWeight -> Bold], "B", 
+                    TooltipStyle -> "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "MB"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "I", FontFamily -> "Consolas", FontSlant -> Italic], "I", 
+                    TooltipStyle -> "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "MO"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "BI", FontFamily -> "Consolas", FontWeight -> Bold, 
+                    FontSlant -> Italic], "BI", TooltipStyle -> 
+                    "TextStyling"], 
+                    ButtonFunction :> (FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "Style", "MBO"]}]; 
+                    FrontEnd`SelectionMove[
+                    FrontEnd`InputNotebook[], After, Character]), BaseStyle -> 
+                    "Button", ButtonNote -> ""]}}, 
+                    GridBoxItemSize -> {"Columns" -> {{
+                    Scaled[0.24]}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0}}, "Rows" -> {{0}}}]}}, 
+                   GridBoxItemSize -> {"Columns" -> {{
+                    Scaled[1]}}, "Rows" -> {{Automatic}}}, 
+                   GridBoxSpacings -> {
+                    "Columns" -> {{0}}, "Rows" -> {0, 0, 1, 0, 0}}, 
+                   GridBoxBackground -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{
+                    GrayLevel[0.6], Inherited}}}]], "FrameCell"], 
+                Cell["", "BottomBorder"]}, 2 -> {
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*FractionBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)"], 
+                    "\!\(\*FractionBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*FractionBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*SuperscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)"], 
+                    "\!\(\*SuperscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*SuperscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*SubscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)"], 
+                    "\!\(\*SubscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*SubscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*SubsuperscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\), \(\[Placeholder]\)]\)"], 
+                    "\!\(\*SubsuperscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\), \(\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> 
+                    "\!\(\*SubsuperscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\), \(\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*SubscriptBox[\(\[InvisiblePrefixScriptBase]\), \(\
+\[Placeholder]\)]\)\[SelectionPlaceholder]"], 
+                    "\!\(\*SubscriptBox[\(\[InvisiblePrefixScriptBase]\), \(\
+\[Placeholder]\)]\)\[SelectionPlaceholder]", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> 
+                    "\!\(\*SubscriptBox[\(\[InvisiblePrefixScriptBase]\), \(\
+\[Placeholder]\)]\)\[SelectionPlaceholder]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*UnderscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)"], 
+                    "\!\(\*UnderscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*UnderscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*UnderoverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\), \(\[Placeholder]\)]\)"], 
+                    "\!\(\*UnderoverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\), \(\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> 
+                    "\!\(\*UnderoverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\), \(\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)"], 
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}}, 
+                   BaseStyle -> "4ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\[LeftBracketingBar]\[SelectionPlaceholder]\
+\[RightBracketingBar]"], 
+                    "\[LeftBracketingBar]\[SelectionPlaceholder]\
+\[RightBracketingBar]", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[LeftBracketingBar]\[SelectionPlaceholder]\
+\[RightBracketingBar]", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\[LeftDoubleBracketingBar]\[SelectionPlaceholder]\
+\[RightDoubleBracketingBar]"], 
+                    "\[LeftDoubleBracketingBar]\[SelectionPlaceholder]\
+\[RightDoubleBracketingBar]", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[LeftDoubleBracketingBar]\[SelectionPlaceholder]\
+\[RightDoubleBracketingBar]", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\[LeftDoubleBracketingBar]\!\(\*OverscriptBox[\(\
+\[SelectionPlaceholder]\), \(\[RightVector]\)]\)\[RightDoubleBracketingBar]"],
+                     "\[LeftDoubleBracketingBar]\!\(\*OverscriptBox[\(\
+\[SelectionPlaceholder]\), \(\[RightVector]\)]\)\[RightDoubleBracketingBar]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[LeftDoubleBracketingBar]\!\(\*OverscriptBox[\(\
+\[SelectionPlaceholder]\), \(\[RightVector]\)]\)\[RightDoubleBracketingBar]", 
+                    BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\[LeftAngleBracket]\[SelectionPlaceholder]\
+\[RightAngleBracket]"], 
+                    "\[LeftAngleBracket]\[SelectionPlaceholder]\
+\[RightAngleBracket]", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[LeftAngleBracket]\[SelectionPlaceholder]\
+\[RightAngleBracket]", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\[LeftAngleBracket]\!\(\*OverscriptBox[\(\
+\[SelectionPlaceholder]\), \(\[RightVector]\)]\),\!\(\*OverscriptBox[\(\
+\[Placeholder]\), \(\[RightVector]\)]\)\[RightAngleBracket]"], 
+                    "\[LeftAngleBracket]\!\(\*OverscriptBox[\(\
+\[SelectionPlaceholder]\), \(\[RightVector]\)]\),\!\(\*OverscriptBox[\(\
+\[Placeholder]\), \(\[RightVector]\)]\)\[RightAngleBracket]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> 
+                    "\[LeftAngleBracket]\!\(\*OverscriptBox[\(\
+\[SelectionPlaceholder]\), \(\[RightVector]\)]\),\!\(\*OverscriptBox[\(\
+\[Placeholder]\), \(\[RightVector]\)]\)\[RightAngleBracket]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[RightVector]\)]\)"], 
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[RightVector]\)]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \(\
+\[RightVector]\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \
+\(_\)]\)"], "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \(_\)]\)", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*OverscriptBox[\(\[SelectionPlaceholder]\), \
+\(_\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*TagBox[OverscriptBox[\"\[SelectionPlaceholder]\", \
+\"^\"],\n DisplayForm]\)"], 
+                    "\!\(\*TagBox[OverscriptBox[\"\[SelectionPlaceholder]\", \
+\"^\"],\n DisplayForm]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*TagBox[OverscriptBox[\"\[SelectionPlaceholder]\", \
+\"^\"],\n DisplayForm]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*TagBox[OverscriptBox[\"\[SelectionPlaceholder]\", \
+\"\[DoubleDot]\"],\n DisplayForm]\)"], 
+                    "\!\(\*TagBox[OverscriptBox[\"\[SelectionPlaceholder]\", \
+\"\[DoubleDot]\"],\n DisplayForm]\)", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> 
+                    "\!\(\*TagBox[OverscriptBox[\"\[SelectionPlaceholder]\", \
+\"\[DoubleDot]\"],\n DisplayForm]\)", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}}, 
+                   BaseStyle -> "3ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\!\(\*SqrtBox[\(\[SelectionPlaceholder]\)]\)"], 
+                    "\!\(\*SqrtBox[\(\[SelectionPlaceholder]\)]\)", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*SqrtBox[\(\[SelectionPlaceholder]\)]\)", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*RadicalBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)"], 
+                    "\!\(\*RadicalBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*RadicalBox[\(\[SelectionPlaceholder]\), \(\
+\[Placeholder]\)]\)", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\[Integral]\[SelectionPlaceholder]\[DifferentialD]\
+\[Placeholder]"], 
+                    "\[Integral]\[SelectionPlaceholder]\[DifferentialD]\
+\[Placeholder]", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[Integral]\[SelectionPlaceholder]\[DifferentialD]\
+\[Placeholder]", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*SubsuperscriptBox[\(\[Integral]\), \
+\(\[Placeholder]\), \(\[Placeholder]\)]\)\[SelectionPlaceholder]\
+\[DifferentialD]\[Placeholder]"], 
+                    "\!\(\*SubsuperscriptBox[\(\[Integral]\), \
+\(\[Placeholder]\), \(\[Placeholder]\)]\)\[SelectionPlaceholder]\
+\[DifferentialD]\[Placeholder]", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*SubsuperscriptBox[\(\[Integral]\), \
+\(\[Placeholder]\), \(\[Placeholder]\)]\)\[SelectionPlaceholder]\
+\[DifferentialD]\[Placeholder]", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*SubscriptBox[\(\[PartialD]\), \
+\(\[Placeholder]\)]\)\[SelectionPlaceholder]"], 
+                    "\!\(\*SubscriptBox[\(\[PartialD]\), \
+\(\[Placeholder]\)]\)\[SelectionPlaceholder]", TooltipStyle -> "TextStyling"],
+                     ButtonData -> 
+                    "\!\(\*SubscriptBox[\(\[PartialD]\), \
+\(\[Placeholder]\)]\)\[SelectionPlaceholder]", BaseStyle -> "PasteExprButton",
+                     ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*SubscriptBox[\(\[PartialD]\), \(\[Placeholder], \
+\[Placeholder]\)]\)\[SelectionPlaceholder]"], 
+                    "\!\(\*SubscriptBox[\(\[PartialD]\), \(\[Placeholder], \
+\[Placeholder]\)]\)\[SelectionPlaceholder]", TooltipStyle -> "TextStyling"], 
+                    ButtonData -> 
+                    "\!\(\*SubscriptBox[\(\[PartialD]\), \(\[Placeholder], \
+\[Placeholder]\)]\)\[SelectionPlaceholder]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*UnderoverscriptBox[\(\[Sum]\), \(\[Placeholder] = \
+\[Placeholder]\), \(\[Placeholder]\)]\)\[SelectionPlaceholder]"], 
+                    "\!\(\*UnderoverscriptBox[\(\[Sum]\), \(\[Placeholder] = \
+\[Placeholder]\), \(\[Placeholder]\)]\)\[SelectionPlaceholder]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> 
+                    "\!\(\*UnderoverscriptBox[\(\[Sum]\), \(\[Placeholder] = \
+\[Placeholder]\), \(\[Placeholder]\)]\)\[SelectionPlaceholder]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    "\!\(\*UnderoverscriptBox[\(\[Product]\), \
+\(\[Placeholder] = \[Placeholder]\), \(\[Placeholder]\)]\)\
+\[SelectionPlaceholder]"], 
+                    "\!\(\*UnderoverscriptBox[\(\[Product]\), \
+\(\[Placeholder] = \[Placeholder]\), \(\[Placeholder]\)]\)\
+\[SelectionPlaceholder]", TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\!\(\*UnderoverscriptBox[\(\[Product]\), \
+\(\[Placeholder] = \[Placeholder]\), \(\[Placeholder]\)]\)\
+\[SelectionPlaceholder]", BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}}, 
+                   BaseStyle -> "2ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    RowBox[{"(", 
+                    
+                    GridBox[{{"\[SelectionPlaceholder]", "\[Placeholder]"}, {
+                    "\[Placeholder]", "\[Placeholder]"}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Right}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    ColumnsEqual -> False, RowsEqual -> False], ")"}], 
+                    FontSize -> 8], 
+                    RowBox[{"(", 
+                    
+                    GridBox[{{"\[SelectionPlaceholder]", "\[Placeholder]"}, {
+                    "\[Placeholder]", "\[Placeholder]"}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Right}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    ColumnsEqual -> False, RowsEqual -> False], ")"}], 
+                    TooltipStyle -> "TextStyling"], ButtonData -> RowBox[{"(", 
+                    
+                    GridBox[{{"\[SelectionPlaceholder]", "\[Placeholder]"}, {
+                    "\[Placeholder]", "\[Placeholder]"}}, ColumnAlignments -> 
+                    Right], ")"}], BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    RowBox[{"\[SelectionPlaceholder]", ":=", 
+                    RowBox[{"\[Piecewise]", 
+                    
+                    GridBox[{{"\[Placeholder]", "\[Placeholder]"}, {
+                    "\[Placeholder]", "\[Placeholder]"}}, 
+                    GridBoxSpacings -> {"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[1.4]}, 
+                    Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}, "RowsIndexed" -> {}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    ColumnsEqual -> False, RowsEqual -> False]}]}], FontSize -> 
+                    8], 
+                    RowBox[{"\[SelectionPlaceholder]", ":=", 
+                    RowBox[{"\[Piecewise]", 
+                    
+                    GridBox[{{"\[Placeholder]", "\[Placeholder]"}, {
+                    "\[Placeholder]", "\[Placeholder]"}}, 
+                    GridBoxSpacings -> {"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[1.4]}, 
+                    Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.4]}, 
+                    Offset[0.2]}, "RowsIndexed" -> {}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    ColumnsEqual -> False, RowsEqual -> False]}]}], 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    RowBox[{"\[SelectionPlaceholder]", ":=", 
+                    RowBox[{"\[Piecewise]", 
+                    
+                    GridBox[{{"\[Placeholder]", "\[Placeholder]"}, {
+                    "\[Placeholder]", "\[Placeholder]"}}, ColumnSpacings -> 
+                    2]}]}], BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    
+                    GridBox[{{
+                    "\[SelectionPlaceholder]", "=", "\[Placeholder]"}, {
+                    "\[InvisibleSpace]", "=", "\[Placeholder]"}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {Right, Center, {Left, Center}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    ColumnsEqual -> False, RowsEqual -> False], FontSize -> 
+                    8], 
+                    
+                    GridBox[{{
+                    "\[SelectionPlaceholder]", "=", "\[Placeholder]"}, {
+                    "\[InvisibleSpace]", "=", "\[Placeholder]"}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {Right, Center, {Left, Center}}, 
+                    "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    ColumnsEqual -> False, RowsEqual -> False], TooltipStyle -> 
+                    "TextStyling"], ButtonData -> 
+                    GridBox[{{
+                    "\[SelectionPlaceholder]", "=", "\[Placeholder]"}, {
+                    "\[InvisibleSpace]", "=", "\[Placeholder]"}}, 
+                    ColumnAlignments -> {Right, Center, {Left, Center}}], 
+                    BaseStyle -> "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox[
+                    RowBox[{"\[InvisibleSpace]", 
+                    RowBox[{"=", "\[Placeholder]"}]}]], 
+                    RowBox[{"\[InvisibleSpace]", 
+                    RowBox[{"=", "\[Placeholder]"}]}], TooltipStyle -> 
+                    "TextStyling"], ButtonFunction :> 
+                    FrontEnd`FrontEndExecute[{
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "NewRow"], 
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "SelectNext"], 
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`InputNotebook[], "SelectNext"], 
+                    FrontEnd`NotebookWrite[
+                    FrontEnd`InputNotebook[], 
+                    
+                    GridBox[{{
+                    "\[InvisibleSpace]\[InvisibleSpace]", "=", 
+                    "\[Placeholder]"}}]]}], BaseStyle -> "Button", ButtonNote -> 
+                    ""]}}, BaseStyle -> "2ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Alpha]"], "\[Alpha]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Alpha]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Beta]"], "\[Beta]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Beta]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Gamma]"], "\[Gamma]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Gamma]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Delta]"], "\[Delta]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Delta]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CurlyEpsilon]"], "\[CurlyEpsilon]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[CurlyEpsilon]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Zeta]"], "\[Zeta]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Zeta]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Eta]"], "\[Eta]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Eta]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Theta]"], "\[Theta]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Theta]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Iota]"], "\[Iota]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Iota]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Kappa]"], "\[Kappa]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Kappa]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Lambda]"], "\[Lambda]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Lambda]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Mu]"], "\[Mu]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Mu]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Nu]"], "\[Nu]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Nu]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Xi]"], "\[Xi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Xi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Omicron]"], "\[Omicron]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Omicron]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Pi]"], "\[Pi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Pi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Rho]"], "\[Rho]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Rho]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[FinalSigma]"], "\[FinalSigma]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[FinalSigma]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Sigma]"], "\[Sigma]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Sigma]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Tau]"], "\[Tau]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Tau]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Upsilon]"], "\[Upsilon]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Upsilon]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CurlyPhi]"], "\[CurlyPhi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[CurlyPhi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Chi]"], "\[Chi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Chi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Psi]"], "\[Psi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Psi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Omega]"], "\[Omega]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Omega]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}}, 
+                   BaseStyle -> "5ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalGamma]"], "\[CapitalGamma]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[CapitalGamma]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalDelta]"], "\[CapitalDelta]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[CapitalDelta]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalTheta]"], "\[CapitalTheta]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[CapitalTheta]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalLambda]"], "\[CapitalLambda]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[CapitalLambda]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalXi]"], "\[CapitalXi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[CapitalXi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalPhi]"], "\[CapitalPhi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[CapitalPhi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalPsi]"], "\[CapitalPsi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[CapitalPsi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[CapitalOmega]"], "\[CapitalOmega]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[CapitalOmega]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}}, 
+                   BaseStyle -> "4ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"], 
+                Cell["", "TopBorder"], 
+                Cell[
+                 BoxData[
+                  GridBox[{{
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Pi]"], "\[Pi]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Pi]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[ExponentialE]"], "\[ExponentialE]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[ExponentialE]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[ImaginaryI]"], "\[ImaginaryI]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[ImaginaryI]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Infinity]"], "\[Infinity]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Infinity]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Degree]"], "\[Degree]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Degree]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Times]"], "\[Times]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Times]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Divide]"], "\[Divide]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Divide]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Rule]"], "\[Rule]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Rule]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[RuleDelayed]"], "\[RuleDelayed]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[RuleDelayed]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Equal]"], "\[Equal]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Equal]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[NotEqual]"], "\[NotEqual]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[NotEqual]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[LessEqual]"], "\[LessEqual]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[LessEqual]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[GreaterEqual]"], "\[GreaterEqual]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[GreaterEqual]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Element]"], "\[Element]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Element]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[SuchThat]"], "\[SuchThat]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[SuchThat]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}, {
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Not]"], "\[Not]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Not]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[And]"], "\[And]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[And]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Or]"], "\[Or]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Or]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Union]"], "\[Union]", TooltipStyle -> 
+                    "TextStyling"], ButtonData -> "\[Union]", BaseStyle -> 
+                    "PasteExprButton", ButtonNote -> 
+                    "Paste a mathematical template into a notebook"], 
+                    ButtonBox[
+                    TooltipBox[
+                    StyleBox["\[Intersection]"], "\[Intersection]", 
+                    TooltipStyle -> "TextStyling"], ButtonData -> 
+                    "\[Intersection]", BaseStyle -> "PasteExprButton", 
+                    ButtonNote -> 
+                    "Paste a mathematical template into a notebook"]}}, 
+                   BaseStyle -> "5ButtonGrid"]], "FrameCell"], 
+                Cell["", "BottomBorder"]}}], AutoScroll -> False]; 
+          SelectionMove[
+            ButtonNotebook[], Previous, Cell, AutoScroll -> False]), 
+         Appearance -> None, Method -> "Preemptive", Evaluator -> 
+         Automatic]}}, AutoDelete -> False, 
+      GridBoxItemSize -> {
+       "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+      GridBoxSpacings -> {"Columns" -> {{0}}, "Rows" -> {{0}}}], "Grid"]], 
+   "DockedCell", CellFrameMargins -> {{0, 0}, {-1, 0}}, 
+   CellSize -> {Automatic, 25}, Background -> GrayLevel[0]]},
+ScrollingOptions->{"VerticalScrollRange"->Fit},
+ShowCellBracket->False,
+ShowGroupOpener->False,
+CellMargins->0,
+Deployed->False,
+CellOpen->True,
+TaggingRules->{
+ "ColorToggler" -> False, "StylesheetStyleToggler" -> False, 
+  "GradingStyleToggler" -> True, "TypeStyleToggler" -> True, "NewUserToggler" -> 
+  False, "TabValue" -> 1},
+ShowCellLabel->False,
+ShowCellTags->False,
+ContextMenu->{},
+ComponentwiseContextMenu->{},
+ShowAutoStyles->False,
+ShowSyntaxStyles->False,
+ShowStringCharacters->False,
+ImageMargins->0,
+Background->Dynamic[
+  If[CurrentValue[
+     EvaluationNotebook[], {TaggingRules, "TabValue"}] === 1, 
+   RGBColor[0, 0, 0.258824], 
+   RGBColor[0.0541238, 0.217197, 0.109926]]],
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (September 10, 2017)",
+StyleDefinitions->Notebook[{
+   Cell[
+    CellGroupData[{
+      Cell["Parent", "Section"], 
+      Cell[
+       StyleData[StyleDefinitions -> "Default.nb"]]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell["Button Styles", "Section"], 
+      Cell[
+       StyleData["Button"], StyleMenuListing -> None, ButtonStyleMenuListing -> 
+       None, FontFamily -> "Times", FontSize -> 12, FontColor -> GrayLevel[0],
+        ButtonBoxOptions -> {
+        Appearance -> {Automatic, "FramedPalette"}, Evaluator -> None, Method -> 
+         "Preemptive"}], 
+      Cell[
+       StyleData["PasteCellsButton", StyleDefinitions -> StyleData["Button"]],
+        StyleMenuListing -> None, ButtonStyleMenuListing -> None, 
+       ButtonBoxOptions -> {ButtonFunction :> (FrontEnd`FrontEndExecute[{
+            FrontEnd`SelectionMove[
+             FrontEnd`InputNotebook[], After, Cell], 
+            FrontEnd`NotebookWrite[
+             FrontEnd`InputNotebook[], #], 
+            FrontEnd`SelectionMove[
+             FrontEnd`InputNotebook[], Previous, Cell], 
+            FrontEnd`SelectionMove[
+             FrontEnd`InputNotebook[], After, CellContents]}]& ), Evaluator -> 
+         None, Method -> "Preemptive"}], 
+      Cell[
+       StyleData["PasteExprButton", StyleDefinitions -> StyleData["Button"]], 
+       StyleMenuListing -> None, ButtonStyleMenuListing -> None, 
+       ButtonBoxOptions -> {ButtonFunction :> (FrontEnd`FrontEndExecute[{
+            FrontEnd`NotebookApply[
+             FrontEnd`InputNotebook[], #, Placeholder]}]& ), Evaluator -> 
+         None, Method -> "Preemptive"}], 
+      Cell[
+       StyleData["PasteStyleButton", StyleDefinitions -> StyleData["Button"]],
+        StyleMenuListing -> None, ButtonStyleMenuListing -> None, 
+       ButtonBoxOptions -> {ButtonFunction :> (FrontEnd`FrontEndExecute[{
+            FrontEnd`FrontEndToken[
+             FrontEnd`InputNotebook[], "Style", #]}]& ), Evaluator -> None, 
+         Method -> "Preemptive"}]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell["Button Grid Styles", "Section"], 
+      Cell[
+       StyleData["ButtonGrid"], CellFrameMargins -> {{0, 0}, {0, 0}}, 
+       StyleMenuListing -> None, 
+       GridBoxOptions -> {
+        ColumnsEqual -> True, GridBoxAlignment -> {"Columns" -> {{Center}}}, 
+         GridBoxSpacings -> {"Columns" -> {{0}}, "Rows" -> {{0}}}, RowsEqual -> 
+         True}], 
+      Cell[
+       StyleData["1ButtonGrid", StyleDefinitions -> StyleData["ButtonGrid"]], 
+       StyleMenuListing -> None, 
+       GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {{
+              Scaled[1]}}}}], 
+      Cell[
+       StyleData["2ButtonGrid", StyleDefinitions -> StyleData["ButtonGrid"]], 
+       StyleMenuListing -> None, 
+       GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {{
+              Scaled[0.5]}}}}], 
+      Cell[
+       StyleData["3ButtonGrid", StyleDefinitions -> StyleData["ButtonGrid"]], 
+       StyleMenuListing -> None, 
+       GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {{
+              Scaled[0.3333]}}}}], 
+      Cell[
+       StyleData["4ButtonGrid", StyleDefinitions -> StyleData["ButtonGrid"]], 
+       StyleMenuListing -> None, 
+       GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {{
+              Scaled[0.25]}}}}], 
+      Cell[
+       StyleData["5ButtonGrid", StyleDefinitions -> StyleData["ButtonGrid"]], 
+       StyleMenuListing -> None, 
+       GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {{
+              Scaled[0.2]}}}}]}, Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell["Control Grid", "Section"], 
+      Cell[
+       StyleData["Control"], StyleMenuListing -> None, FontFamily -> 
+       "BitStreamCharter", FontSize -> 10, FontColor -> GrayLevel[0]]}, 
+     Closed]], 
+   Cell[
+    CellGroupData[{
+      Cell["Cells", "Section"], 
+      Cell[
+       StyleData["Cell"], CellFrameColor -> RGBColor[0.827, 0.816, 0.784], 
+       StyleMenuListing -> None, Background -> GrayLevel[1]], 
+      Cell[
+       StyleData["TopBorder", StyleDefinitions -> StyleData["Cell"]], 
+       CellFrame -> {{1, 1}, {0, 1}}, CellMargins -> {{2, 2}, {0, 1}}, 
+       CellFrameMargins -> {{0, 0}, {-9, 0}}, CellSize -> {Automatic, 12}, 
+       StyleMenuListing -> None], 
+      Cell[
+       StyleData["BottomBorder", StyleDefinitions -> StyleData["Cell"]], 
+       CellFrame -> {{1, 1}, {2, 0}}, CellMargins -> {{2, 2}, {1, 0}}, 
+       CellFrameMargins -> {{0, 0}, {0, -9}}, CellSize -> {Automatic, 5}, 
+       StyleMenuListing -> None], 
+      Cell[
+       StyleData["FrameCell", StyleDefinitions -> StyleData["Cell"]], 
+       CellFrame -> {{1, 1}, {0, 0}}, CellMargins -> {{2, 2}, {0, 0}}, 
+       CellFrameMargins -> {{5, 1}, {1, 1}}, StyleMenuListing -> None], 
+      Cell[
+       StyleData["Group", StyleDefinitions -> StyleData["FrameCell"]], 
+       CellFrameMargins -> {{5, 1}, {5, 1}}, TextAlignment -> Center, 
+       StyleMenuListing -> None, FontFamily -> "Times", FontSize -> 14, 
+       FontWeight -> Bold, FontColor -> GrayLevel[0.3]], 
+      Cell[
+       StyleData["Spacer"], CellMargins -> {{5, 5}, {0, 2}}, 
+       CellFrameMargins -> {{0, 0}, {0, 0}}, CellSize -> {Automatic, 12}, 
+       StyleMenuListing -> None]}, Closed]]}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.2 for Microsoft Windows (64-bit) (September 10, 2017)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+KnoxPackages`KCPalette`Private`WholeCellGroupOpener -> False
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[587, 21, 76, 0, 5, "TopBorder",ExpressionUUID->"23091927-4f38-4adc-8acb-98f0b5dcd7ef"],
+Cell[666, 23, 2559, 89, 194, "FrameCell",ExpressionUUID->"3d1557a3-94e0-4ead-a726-db85ae00ee24"],
+Cell[3228, 114, 79, 0, 6, "BottomBorder",ExpressionUUID->"77325e52-6ef6-4adc-a89b-f457a2e52a3b"],
+Cell[3310, 116, 76, 0, 5, "TopBorder",ExpressionUUID->"1450c646-03cc-409d-ad25-e5ed1b1d953e"],
+Cell[3389, 118, 2618, 91, 80, "FrameCell",ExpressionUUID->"b92ec0c0-48e7-4ee1-b9fe-7915df4e0c21"],
+Cell[6010, 211, 79, 0, 6, "BottomBorder",ExpressionUUID->"169f9c0f-5b47-4b06-96f0-57af77c294e9"],
+Cell[6092, 213, 76, 0, 5, "TopBorder",ExpressionUUID->"dff2f08e-271b-4a85-83f7-8a38cb8c993d"],
+Cell[6171, 215, 1413, 46, 42, "FrameCell",ExpressionUUID->"54c044b6-062c-433c-a59c-887cc86322ed"],
+Cell[7587, 263, 79, 0, 6, "BottomBorder",ExpressionUUID->"11b8f49c-6681-401a-a7d1-d60285f66d98"],
+Cell[7669, 265, 76, 0, 5, "TopBorder",ExpressionUUID->"fce51623-e31f-444f-af23-a029f6cb156e"],
+Cell[7748, 267, 4510, 136, 75, "FrameCell",ExpressionUUID->"fc8321df-ba90-4b9f-87d0-54c2ae770f18"],
+Cell[12261, 405, 79, 0, 6, "BottomBorder",ExpressionUUID->"9febd711-1093-45c1-af2e-9b227098f000"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

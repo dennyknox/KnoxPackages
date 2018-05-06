@@ -1,0 +1,936 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     35909,        926]
+NotebookOptionsPosition[     29795,        792]
+NotebookOutlinePosition[     32508,        857]
+CellTagsIndexPosition[     32423,        852]
+WindowTitle->EulerMethod
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["KNOX PACKAGES SYMBOL", "PacletNameCell",ExpressionUUID->
+     "b033370c-bbff-4d40-add5-422252e7d9d4"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "See Also",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"d4bf910a-6512-4068-92e4-4c3e48f51690"],
+         TextCell[
+          Row[{"See Also", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"RungeKutta\"\>":>Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/RungeKutta"], "\<\"PlotEuler\"\>":>
+       Documentation`HelpLookup[
+       "paclet:KnoxPackages/ref/PlotEuler"], "\<\"PlotRungeKutta\"\>":>
+       Documentation`HelpLookup["paclet:KnoxPackages/ref/PlotRungeKutta"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"SeeAlso"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "cd04ceab-a547-42fd-917e-1aa05ad76899"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }],ExpressionUUID->"4cd65884-0f67-46c9-84b8-1c21284521f3"],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KnoxPackages/ref/EulerMethod\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["KnoxPackages/ref/EulerMethod"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/KnoxPackages/ref/\
+EulerMethod.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$76322], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "KnoxPackages/ref/EulerMethod", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "c323dab3-8819-45ac-beea-044b26d4bafa"]
+    }], "AnchorBar",ExpressionUUID->"202a718f-c532-42a0-ba7e-17738ef27241"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"8e81cf74-9c9f-481f-87a2-fd88549b0e55"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell["EulerMethod", "ObjectName",ExpressionUUID->
+  "6c40842f-cc8b-4eac-9dd4-99490c6eb020"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]],ExpressionUUID->"770c1c8a-faef-437f-947d-c5a9832fb13b"],
+ Cell[BoxData[
+ ""], "ObjectNameTranslation",ExpressionUUID->
+  "f74a0a77-6868-4e2d-bbc0-81459c982ea5"]
+}], "ObjectNameGrid",ExpressionUUID->"22bc1d12-f865-44de-b358-f565d750552b"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"EulerMethod", "[", 
+       StyleBox[
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"eqn", ",", "initialvalue"}], "}"}], ",", 
+         RowBox[{"x", "[", "t", "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", 
+           SubscriptBox["t", "min"], ",", 
+           SubscriptBox["t", "max"], ",", "dt"}], "}"}]}],
+        FontSlant->"Italic"], "]"}]], "InlineFormula",ExpressionUUID->
+      "6b9b6e0f-8dbe-4092-93ce-d37b27609119"],
+     " \[LineSeparator]returns the Euler approximation with step size ",
+     Cell[BoxData[
+      StyleBox["dt",
+       FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
+      "a844c33b-0e08-439b-83cd-048c0b039009"],
+     " to the solution ",
+     Cell[BoxData[
+      StyleBox[
+       RowBox[{"x", "[", "t", "]"}],
+       FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
+      "f09b3c8f-2a06-41c9-8a3c-3d125aa2bffb"],
+     " of the differential equation ",
+     Cell[BoxData[
+      StyleBox["eqn",
+       FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
+      "420182ba-086e-4bbe-84a1-ee7734876562"],
+     " with the given initial value. If ",
+     Cell[BoxData[
+      StyleBox["dt",
+       FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
+      "90fcac2f-a762-49cf-9523-31fe550941a2"],
+     " is not given, then is is set to ",
+     Cell[BoxData[
+      StyleBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SubscriptBox["t", "max"], "-", 
+          SubscriptBox["t", "min"]}], ")"}], "/", "20"}],
+       FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
+      "c3d64e02-9474-4d52-baf5-8cd339f00c2e"],
+     ". If ",
+     Cell[BoxData[
+      RowBox[{"d", "\[VeryThinSpace]", "t"}]], "InlineFormula",
+      ExpressionUUID->"e64874d8-357f-4174-a5f0-6afff5891a60"],
+     " is negative, the approximation proceeds backwards in time."
+    }],ExpressionUUID->"c3ec365b-610c-446d-af93-811e8cd0ac8e"]},
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"EulerMethod", "[", 
+       StyleBox[
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"eqns", ",", "initialvalue"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"x", "[", "t", "]"}], ",", 
+           RowBox[{"y", "[", "t", "]"}], ",", "\[Ellipsis]"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", 
+           SubscriptBox["t", "min"], ",", 
+           SubscriptBox["t", "max"], ",", "dt"}], "}"}]}],
+        FontSlant->"Italic"], "]"}]], "InlineFormula",ExpressionUUID->
+      "425d08e3-744c-4048-bb25-5c2172478a4b"],
+     "\[LineSeparator]returns the Euler approximation to the solutions ",
+     Cell[BoxData[
+      StyleBox[
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"x", "[", "t", "]"}], ",", 
+         RowBox[{"y", "[", "t", "]"}], ",", "\[Ellipsis]"}], "}"}],
+       FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
+      "c5e8342d-1c9b-4e66-919e-6c648d6fb2a1"],
+     " of the system of differential equations ",
+     Cell[BoxData[
+      StyleBox["eqns",
+       FontSlant->"Italic"]], "InlineFormula",ExpressionUUID->
+      "dd04a625-a65a-41b8-a3b6-9120bb363bd9"],
+     " with the given initial values."
+    }],ExpressionUUID->"c6d72213-be82-49c8-8e00-d23ae66db623"]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {None, {None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436,ExpressionUUID->"2f5e4141-f111-47a9-8cb4-6f85602a56aa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    TemplateBox[{6},
+     "Spacer1"]],ExpressionUUID->"00bdd342-994e-41bc-81f5-74324129a4ae"],
+   "Details and Options"
+  }], "NotesFrameText",ExpressionUUID->"88056c5c-fbd3-486f-8262-1e9b99ba1f94"],
+  Appearance->{Automatic, None, "Normal", Automatic},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"46b2a0a0-6354-4fcc-b7df-c2a7635c0f8c"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->14803006,ExpressionUUID->"0da0a192-b0cb-4068-985e-da0637634486"],
+
+Cell["", "SectionHeaderSpacer",ExpressionUUID->"fc5a6de8-834d-4f34-baa7-517d3673337b"],
+
+Cell["Options", "Notes",
+ CellID->1067943069,ExpressionUUID->"f8e4b11d-5c09-468b-bf15-00d4ddffd3b1"],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon",ExpressionUUID->
+     "dc6bc962-8531-4525-bd43-aedf18bc5df2"], 
+    ButtonBox["WorkingPrecision",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/WorkingPrecision"], 
+    ButtonBox["MachinePrecision",
+     BaseStyle->"Link",
+     ButtonData->"paclet:ref/MachinePrecision"], Cell[TextData[Cell[
+    "sets the precision of calculations", "TableText",ExpressionUUID->
+     "035b7fde-fda5-4d2d-8811-40e16f8dd658"]], "TableText",ExpressionUUID->
+     "04ab6e39-57d6-4c61-b22f-1cdbd425f885"]}
+  }]], "3ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True}}}},
+ CellID->1364435577,ExpressionUUID->"e0284b2e-e165-4dfb-82d5-7b30f72ed114"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"af3a7b6c-dd65-4a73-89a2-7304bc16963c"],
+ "Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "684037ff-960d-46db-99c0-2e14c41015bd"]
+}], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->37961233,ExpressionUUID->"647b77f5-3dfa-4713-a9da-c047c4d81552"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount",ExpressionUUID->
+  "1f0c37c0-060a-43f6-83e3-72164f02ff76"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->534891887,ExpressionUUID->"e7c3cce2-4511-4ac8-9aa0-a51bfe844faa"],
+
+Cell["A basic example", "ExampleText",
+ CellID->783355006,ExpressionUUID->"17a3a6dd-0ee3-426a-bda9-b453a98125aa"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", "]"}], "\n", 
+ RowBox[{"EulerMethod", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+      RowBox[{"t", " ", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"y", "[", "t", "]"}], "]"}]}]}], ",", 
+     RowBox[{
+      RowBox[{"y", "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}], ",", 
+   RowBox[{"y", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "2", ",", 
+     RowBox[{"1", "/", "10"}]}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[8]:=",
+ CellID->33462083,ExpressionUUID->"e3d3811e-40a6-4db6-9c59-af007e1174b8"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.1`", ",", "0.`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.2`", ",", "0.010000000000000002`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.30000000000000004`", ",", "0.02999900000833331`"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{"0.4`", ",", "0.05998550192064546`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.5`", ",", "0.09991355828837428`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.6`", ",", "0.14966419785497465`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.7`", ",", "0.20899347008490043`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.7999999999999999`", ",", "0.2774702869122906`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.8999999999999999`", ",", "0.35441040394873097`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.9999999999999999`", ",", "0.4388170176853583`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.0999999999999999`", ",", "0.5293425085734305`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.2`", ",", "0.6242878280352724`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.3`", ",", "0.721653380477914`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.4000000000000001`", ",", "0.8192462639569805`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.5000000000000002`", ",", "0.9148343585742306`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.6000000000000003`", ",", "1.0063226358137278`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.7000000000000004`", ",", "1.091918032178319`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.8000000000000005`", ",", "1.1702513016824554`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.9000000000000006`", ",", "1.2404369531294792`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2.0000000000000004`", ",", "1.3020697212612469`"}], "}"}]}], 
+   "}"}], "}"}]], "Output",
+ ImageSize->{467, 79},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[9]=",
+ CellID->595340820,ExpressionUUID->"67e31fe3-6d39-4acd-9d27-d4d589cf66c4"]
+}, Open  ]],
+
+Cell["\<\
+Apply Euler's method to a differential equation using 30-digit precision \
+arithmetic:\
+\>", "ExampleText",
+ CellID->7376930,ExpressionUUID->"edd7a166-2e9f-40fa-98e8-88e86ee74a44"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"EulerMethod", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+      RowBox[{"t", " ", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"y", "[", "t", "]"}], "]"}]}]}], ",", 
+     RowBox[{
+      RowBox[{"y", "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}], ",", 
+   RowBox[{"y", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "2", ",", 
+     RowBox[{"1", "/", "10"}]}], "}"}], ",", 
+   RowBox[{"WorkingPrecision", "\[Rule]", "30"}]}], "]"}]}], "Input",
+ CellLabel->"In[5]:=",
+ CellID->85669322,ExpressionUUID->"74f23135-9b9a-4835-94e8-1faf83df5e4d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.1000000000000000000000000000000000000000000000000000000001`30.", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.2000000000000000000000000000000000000000000000000000000001`30.", ",", 
+     "0.01`29.69897000433602"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.3000000000000000000000000000000000000000000000000000000002`30.", ",", 
+     "0.0299990000083333055556051586750441334642494116796055422225`29.\
+698941051853087"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.4000000000000000000000000000000000000000000000000000000003`30.", ",", 
+     "0.0599855019206454452678147515166710820293799891491978977415`29.\
+698760124885126"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.5000000000000000000000000000000000000000000000000000000003`30.", ",", 
+     "0.0999135582883742635381713525412635993872089202114893226842`29.\
+698219067545967"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.6000000000000000000000000000000000000000000000000000000004`30.", ",", 
+     "0.1496641978549746398325908070989295034421637018362832564176`29.\
+697024139490075"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.7000000000000000000000000000000000000000000000000000000004`30.", ",", 
+     "0.2089934700849004324172866341361729579138235349873604009499`29.\
+694798631667144"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.8000000000000000000000000000000000000000000000000000000005`30.", ",", 
+     "0.2774702869122905736211947854804436927622120508047178748246`29.\
+69108826782744"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.9000000000000000000000000000000000000000000000000000000006`30.", ",", 
+     "0.3544104039487309619211566437976943560693070444771036172351`29.\
+68537072297105"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.0000000000000000000000000000000000000000000000000000000006`30.", ",", 
+     "0.4388170176853583051022876590929710680303648440125509171343`29.\
+67707049476679"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.1000000000000000000000000000000000000000000000000000000007`30.", ",", 
+     "0.5293425085734304691398824044792868765321353974119991796642`29.\
+66557985796572"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.2000000000000000000000000000000000000000000000000000000008`30.", ",", 
+     "0.6242878280352723361736507317530612116351228157568415442673`29.\
+650285612369967"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.3000000000000000000000000000000000000000000000000000000008`30.", ",", 
+     "0.7216533804779140261265188385675498789495576254150298207866`29.\
+630599868072174"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.4000000000000000000000000000000000000000000000000000000009`30.", ",", 
+     "0.8192462639569804971943223194942083666452272932133801123674`29.\
+605991544051403"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.500000000000000000000000000000000000000000000000000000001`30.", ",", 
+     "0.9148343585742305421904364199800825339754231087946951152129`29.\
+576014201509896"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.600000000000000000000000000000000000000000000000000000001`30.", ",", 
+     "1.0063226358137276919400587555611842345729390080647564801169`29.\
+54032592828089"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.7000000000000000000000000000000000000000000000000000000011`30.", ",", 
+     "1.0919180321783188741730920733258177728159179213506030487052`29.\
+498698478548064"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.8000000000000000000000000000000000000000000000000000000011`30.", ",", 
+     "1.1702513016824552221432164947690557097153948887078657963615`29.\
+45101530827156"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.9000000000000000000000000000000000000000000000000000000012`30.", ",", 
+     "1.2404369531294790255490252519033480962852902948043045843737`29.\
+397260548960126"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "2.0000000000000000000000000000000000000000000000000000000013`30.", ",", 
+     "1.3020697212612466627918725652715219019901001531228401472355`29.\
+337502386036572"}], "}"}]}], "}"}]], "Output",
+ ImageSize->{499, 319},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[6]=",
+ CellID->586953565,ExpressionUUID->"e2dd1e54-a701-41c0-89f8-3451f4ed21a8"]
+}, Open  ]],
+
+Cell["\<\
+The step size must have at least the same working precision as that set by \
+the option WorkingPrecision. The default precision for 0.1 is \
+MachinePrecision.\
+\>", "ExampleText",
+ CellID->384678529,ExpressionUUID->"f3c20a87-a297-4519-a182-0e48e19e61b7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"EulerMethod", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+      RowBox[{"t", " ", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"y", "[", "t", "]"}], "]"}]}]}], ",", 
+     RowBox[{
+      RowBox[{"y", "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}], ",", 
+   RowBox[{"y", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "2", ",", "0.1"}], "}"}], ",", 
+   RowBox[{"WorkingPrecision", "\[Rule]", "30"}]}], "]"}]}], "Input",
+ CellLabel->"In[7]:=",
+ CellID->25914386,ExpressionUUID->"b9414284-aa4d-4cf1-8904-69af9fa96732"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.1`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.2`", ",", "0.010000000000000002`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.30000000000000004`", ",", "0.02999900000833331`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.4`", ",", "0.05998550192064546`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.5`", ",", "0.09991355828837428`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.6`", ",", "0.14966419785497465`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.7`", ",", "0.20899347008490043`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.7999999999999999`", ",", "0.2774702869122906`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.8999999999999999`", ",", "0.35441040394873097`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.9999999999999999`", ",", "0.4388170176853583`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1.0999999999999999`", ",", "0.5293425085734305`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1.2`", ",", "0.6242878280352724`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1.3`", ",", "0.721653380477914`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1.4000000000000001`", ",", "0.8192462639569805`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1.5000000000000002`", ",", "0.9148343585742306`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1.6000000000000003`", ",", "1.0063226358137278`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1.7000000000000004`", ",", "1.091918032178319`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1.8000000000000005`", ",", "1.1702513016824554`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1.9000000000000006`", ",", "1.2404369531294792`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2.0000000000000004`", ",", "1.3020697212612469`"}], "}"}]}], 
+  "}"}]], "Output",
+ ImageSize->{573, 63},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[8]=",
+ CellID->90320349,ExpressionUUID->"b4a14a44-d695-43c7-99be-5d8913dddaa5"]
+}, Open  ]],
+
+Cell["The precision for 0.1`30 is 30.", "ExampleText",
+ CellID->113722229,ExpressionUUID->"e9ee1621-1972-400a-aaa3-0d0a6532089c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Precision", "[", ".1`30", "]"}]], "Input",
+ CellLabel->"In[15]:=",
+ CellID->142103473,ExpressionUUID->"268247b0-9bf2-4c84-b510-1bd07b9044d7"],
+
+Cell[BoxData["30.`"], "Output",
+ ImageSize->{25, 14},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[15]=",
+ CellID->168426617,ExpressionUUID->"11756d9a-ffd0-4885-bd14-f1c5d8f639b4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<KnoxPackages`Calculus`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"EulerMethod", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+      RowBox[{"t", " ", 
+       RowBox[{"Cos", "[", 
+        RowBox[{"y", "[", "t", "]"}], "]"}]}]}], ",", 
+     RowBox[{
+      RowBox[{"y", "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}], ",", 
+   RowBox[{"y", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "2", ",", "0.1`30"}], "}"}], ",", 
+   RowBox[{"WorkingPrecision", "\[Rule]", "30"}]}], "]"}]}], "Input",
+ CellLabel->"In[9]:=",
+ CellID->37029337,ExpressionUUID->"6621bcf8-adfd-45ef-8054-2dd5fa347775"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.1000000000000000000000000000000000000000000000000000000001`30.", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.2000000000000000000000000000000000000000000000000000000001`30.", ",", 
+     "0.01`29.69897000433602"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.3000000000000000000000000000000000000000000000000000000002`30.", ",", 
+     "0.0299990000083333055556051586750441334642494116796055422225`29.\
+698941051853087"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.4000000000000000000000000000000000000000000000000000000003`30.", ",", 
+     "0.0599855019206454452678147515166710820293799891491978977415`29.\
+698760124885126"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.5000000000000000000000000000000000000000000000000000000003`30.", ",", 
+     "0.0999135582883742635381713525412635993872089202114893226842`29.\
+698219067545967"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.6000000000000000000000000000000000000000000000000000000004`30.", ",", 
+     "0.1496641978549746398325908070989295034421637018362832564176`29.\
+697024139490075"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.7000000000000000000000000000000000000000000000000000000004`30.", ",", 
+     "0.2089934700849004324172866341361729579138235349873604009499`29.\
+694798631667144"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.8000000000000000000000000000000000000000000000000000000005`30.", ",", 
+     "0.2774702869122905736211947854804436927622120508047178748246`29.\
+69108826782744"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.9000000000000000000000000000000000000000000000000000000006`30.", ",", 
+     "0.3544104039487309619211566437976943560693070444771036172351`29.\
+68537072297105"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.0000000000000000000000000000000000000000000000000000000006`30.", ",", 
+     "0.4388170176853583051022876590929710680303648440125509171343`29.\
+67707049476679"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.1000000000000000000000000000000000000000000000000000000007`30.", ",", 
+     "0.5293425085734304691398824044792868765321353974119991796642`29.\
+66557985796572"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.2000000000000000000000000000000000000000000000000000000008`30.", ",", 
+     "0.6242878280352723361736507317530612116351228157568415442673`29.\
+650285612369967"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.3000000000000000000000000000000000000000000000000000000008`30.", ",", 
+     "0.7216533804779140261265188385675498789495576254150298207866`29.\
+630599868072174"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.4000000000000000000000000000000000000000000000000000000009`30.", ",", 
+     "0.8192462639569804971943223194942083666452272932133801123674`29.\
+605991544051403"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.500000000000000000000000000000000000000000000000000000001`30.", ",", 
+     "0.9148343585742305421904364199800825339754231087946951152129`29.\
+576014201509896"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.600000000000000000000000000000000000000000000000000000001`30.", ",", 
+     "1.0063226358137276919400587555611842345729390080647564801169`29.\
+54032592828089"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.7000000000000000000000000000000000000000000000000000000011`30.", ",", 
+     "1.0919180321783188741730920733258177728159179213506030487052`29.\
+498698478548064"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.8000000000000000000000000000000000000000000000000000000011`30.", ",", 
+     "1.1702513016824552221432164947690557097153948887078657963615`29.\
+45101530827156"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1.9000000000000000000000000000000000000000000000000000000012`30.", ",", 
+     "1.2404369531294790255490252519033480962852902948043045843737`29.\
+397260548960126"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "2.0000000000000000000000000000000000000000000000000000000013`30.", ",", 
+     "1.3020697212612466627918725652715219019901001531228401472355`29.\
+337502386036572"}], "}"}]}], "}"}]], "Output",
+ ImageSize->{499, 319},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[10]=",
+ CellID->3464288,ExpressionUUID->"4d9e832d-fb4b-424a-a2ed-c37de6a13dd9"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SectionFooterSpacer",ExpressionUUID->"dd3e7958-0f15-48a4-bd5f-07fd511468af"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{6},
+   "Spacer1"]],ExpressionUUID->"b73d35b9-f3bc-483d-a642-31795d68f6dd"],
+ "See Also"
+}], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704,ExpressionUUID->"a3ded4d7-8266-4465-a0e0-138c08424494"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["RungeKutta"]],"paclet:KnoxPackages/ref/RungeKutta"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"ac55ea56-946c-44df-9b5c-e289d3ed934e"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PlotEuler"]],"paclet:KnoxPackages/ref/PlotEuler"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"8fb2922f-ec37-4c54-b6c9-5df99c220c82"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["PlotRungeKutta"]],"paclet:KnoxPackages/ref/PlotRungeKutta"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontFamily -> "Verdana"}]], "InlineFormula",
+  ExpressionUUID->"607ba957-837f-428f-99f5-6420159bfcb2"]
+}], "SeeAlso",
+ CellID->929782353,ExpressionUUID->"8a56e5c1-ca10-4ecb-9715-dc90acb3118c"]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"e19b5153-4b86-4c24-8593-61b464adec51"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"EulerMethod",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "KnoxPackages", ButtonData -> 
+         "paclet:KnoxPackages/guide/KnoxPackages", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> True, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 3, 15, 14, 43, 18.7731452}", 
+    "history" -> {"1.0", "", "", ""}, "context" -> "KnoxPackages`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Knox Packages Symbol", "language" -> "en", "paclet" -> "KnoxPackages", 
+    "status" -> "None", "summary" -> 
+    "EulerMethod[{eqn, initialvalue}, x[t], {t, tmin, tmax, dt}] returns the \
+Euler approximation with step size dt to the solution x[t] of the \
+differential equation eqn with the given initial value. If dt is not given, \
+then is is set to (tmax - tmin)/20. If d t is negative, the approximation \
+proceeds backwards in time. EulerMethod[{eqns, initialvalue}, {x[t], y[t], \
+...}, {t, tmin, tmax, dt}] returns the Euler approximation to the solutions \
+{x[t], y[t], ...} of the system of differential equations eqns with the given \
+initial values.", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "EulerMethod", "titlemodifier" -> "", "windowtitle" -> "EulerMethod", 
+    "type" -> "Symbol", "uri" -> "KnoxPackages/ref/EulerMethod", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "NewStyles" -> 
+  False},
+CellContext->"Global`",
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  TaggingRules -> {"NewStyles" -> False}, FrontEndVersion -> 
+  "11.3 for Microsoft Windows (64-bit) (March 6, 2018)", StyleDefinitions -> 
+  "LaTeX_Book_12.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[10151, 262, 434, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"647b77f5-3dfa-4713-a9da-c047c4d81552",
+   CellTags->"PrimaryExamplesSection",
+   CellID->37961233]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 32225, 845}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[583, 21, 3649, 80, 55, "AnchorBarGrid",ExpressionUUID->"8e81cf74-9c9f-481f-87a2-fd88549b0e55",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4257, 105, 396, 9, 52, "ObjectNameGrid",ExpressionUUID->"22bc1d12-f865-44de-b358-f565d750552b"],
+Cell[4656, 116, 3527, 90, 245, "Usage",ExpressionUUID->"2f5e4141-f111-47a9-8cb4-6f85602a56aa",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8220, 211, 866, 21, 37, "NotesSection",ExpressionUUID->"0da0a192-b0cb-4068-985e-da0637634486",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->14803006],
+Cell[9089, 234, 86, 0, 70, "SectionHeaderSpacer",ExpressionUUID->"fc5a6de8-834d-4f34-baa7-517d3673337b"],
+Cell[9178, 236, 100, 1, 70, "Notes",ExpressionUUID->"f8e4b11d-5c09-468b-bf15-00d4ddffd3b1",
+ CellID->1067943069],
+Cell[9281, 239, 833, 18, 70, "3ColumnTableMod",ExpressionUUID->"e0284b2e-e165-4dfb-82d5-7b30f72ed114",
+ CellID->1364435577]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[10151, 262, 434, 11, 35, "PrimaryExamplesSection",ExpressionUUID->"647b77f5-3dfa-4713-a9da-c047c4d81552",
+ CellTags->"PrimaryExamplesSection",
+ CellID->37961233],
+Cell[CellGroupData[{
+Cell[10610, 277, 308, 7, 29, "ExampleSection",ExpressionUUID->"e7c3cce2-4511-4ac8-9aa0-a51bfe844faa",
+ CellID->534891887],
+Cell[10921, 286, 113, 1, 38, "ExampleText",ExpressionUUID->"17a3a6dd-0ee3-426a-bda9-b453a98125aa",
+ CellID->783355006],
+Cell[CellGroupData[{
+Cell[11059, 291, 690, 19, 43, "Input",ExpressionUUID->"e3d3811e-40a6-4db6-9c59-af007e1174b8",
+ CellID->33462083],
+Cell[11752, 312, 2144, 52, 100, "Output",ExpressionUUID->"67e31fe3-6d39-4acd-9d27-d4d589cf66c4",
+ CellID->595340820]
+}, Open  ]],
+Cell[13911, 367, 190, 4, 38, "ExampleText",ExpressionUUID->"edd7a166-2e9f-40fa-98e8-88e86ee74a44",
+ CellID->7376930],
+Cell[CellGroupData[{
+Cell[14126, 375, 766, 21, 59, "Input",ExpressionUUID->"74f23135-9b9a-4835-94e8-1faf83df5e4d",
+ CellID->85669322],
+Cell[14895, 398, 4412, 107, 340, "Output",ExpressionUUID->"e2dd1e54-a701-41c0-89f8-3451f4ed21a8",
+ CellID->586953565]
+}, Open  ]],
+Cell[19322, 508, 264, 5, 70, "ExampleText",ExpressionUUID->"f3c20a87-a297-4519-a182-0e48e19e61b7",
+ CellID->384678529],
+Cell[CellGroupData[{
+Cell[19611, 517, 741, 20, 70, "Input",ExpressionUUID->"b9414284-aa4d-4cf1-8904-69af9fa96732",
+ CellID->25914386],
+Cell[20355, 539, 2071, 50, 84, "Output",ExpressionUUID->"b4a14a44-d695-43c7-99be-5d8913dddaa5",
+ CellID->90320349]
+}, Open  ]],
+Cell[22441, 592, 129, 1, 70, "ExampleText",ExpressionUUID->"e9ee1621-1972-400a-aaa3-0d0a6532089c",
+ CellID->113722229],
+Cell[CellGroupData[{
+Cell[22595, 597, 165, 3, 70, "Input",ExpressionUUID->"268247b0-9bf2-4c84-b510-1bd07b9044d7",
+ CellID->142103473],
+Cell[22763, 602, 217, 5, 35, "Output",ExpressionUUID->"11756d9a-ffd0-4885-bd14-f1c5d8f639b4",
+ CellID->168426617]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23017, 612, 744, 20, 70, "Input",ExpressionUUID->"6621bcf8-adfd-45ef-8054-2dd5fa347775",
+ CellID->37029337],
+Cell[23764, 634, 4411, 107, 340, "Output",ExpressionUUID->"4d9e832d-fb4b-424a-a2ed-c37de6a13dd9",
+ CellID->3464288]
+}, Open  ]]
+}, Open  ]],
+Cell[28202, 745, 86, 0, 70, "SectionFooterSpacer",ExpressionUUID->"dd3e7958-0f15-48a4-bd5f-07fd511468af"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28325, 750, 260, 7, 70, "SeeAlsoSection",ExpressionUUID->"a3ded4d7-8266-4465-a0e0-138c08424494",
+ CellID->1255426704],
+Cell[28588, 759, 1110, 28, 70, "SeeAlso",ExpressionUUID->"8a56e5c1-ca10-4ecb-9715-dc90acb3118c",
+ CellID->929782353]
+}, Open  ]],
+Cell[29713, 790, 78, 0, 70, "FooterCell",ExpressionUUID->"e19b5153-4b86-4c24-8593-61b464adec51"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
