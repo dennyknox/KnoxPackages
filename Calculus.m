@@ -2,7 +2,7 @@
 
 (* Context:  KnoxPackages`Calculus` *)
 
-(* Mathematica Version:  11.1 *)
+(* Mathematica Version:  11.1 *)  
 
 (* :Author: Dennis M. Schneider with assistance from 
 	Nate Bode, Sylvia Cook, Jeff Dunn, Sanjay Nath, Anthony Rebello, 
